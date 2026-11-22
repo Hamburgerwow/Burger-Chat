@@ -193,10 +193,10 @@ api.events.emit(name, data)
 3. 点「生成并编译」：默认调用在线开源模型（Pollinations GPT-OSS 20B，免 Key）输出 manifest + main；也可在设置里切换硅基流动 Qwen2.5、OpenRouter Llama 3.3、Hugging Face Qwen2.5 或本机 Ollama。
 4. 编译阶段校验 manifest 字段、JavaScript 语法、API 调用和危险代码模式。
 5. 在「上架审核」运行本地规则 + 开源模型复核；审核通过后代码不能再次修改，否则审核失效。
-6. 已取消 GitHub Token 直写：点「导出并发布」会导出 `.bcp.json` 并打开 GitHub 上传页，把包拖入 `plugins/` 提交即可；不需要填写 Token。本周精选同理，点「导出本周精选 registry」生成 `registry.json` 并覆盖上传。
-7. Cloudflare 构建完成后，两端商店生效。
+6. 审核通过后自动执行发布：生成并导出 `.bcp.json`，同时打开 GitHub 上传页；没有 Token 时把包拖入 `plugins/` 提交即可。若配置了 `PUBLISH_API` 代发后端，则可直接写入 GitHub。
+7. 本周精选点「导出本周精选 registry」生成 `registry.json` 并覆盖上传；Cloudflare 构建完成后，两端商店生效。
 
-AI 工坊背景会自动读取本机电脑端 `GET http://127.0.0.1:8080/api/wall` 的当前壁纸：网页类壁纸用 iframe，视频类用静音循环视频，图片类用预览图，并在卡片下加半透明磨砂层保证可读。电脑端未启动时显示「壁纸未连接」，不影响工坊功能。设置页的「网页外观」可自定义开发者中心背景色和字体颜色，保存在本机 `bcp.dev.settings.v1`；颜色深浅会自动切换深色或浅色卡片，保证正文可读。
+AI 工坊已移除动态壁纸同步，不再读取电脑端 `GET http://127.0.0.1:8080/api/wall`，也不会在工坊里加载壁纸层。设置页的「网页外观」可自定义开发者中心背景色和字体颜色，保存在本机 `bcp.dev.settings.v1`；颜色深浅会自动切换深色或浅色卡片，保证正文可读。
 
 ## 9. AI 审核
 
