@@ -823,6 +823,10 @@ function saveSettings(){
   settings.aiModel = document.getElementById('sAiModel').value.trim();
   settings.aiKey = document.getElementById('sAiKey').value.trim();
   settings.mailEndpoint = document.getElementById('sMail').value.trim().replace(/\/+$/,'');
+  var bgEl = document.getElementById('sBgColor');
+  var fcEl = document.getElementById('sFontColor');
+  if(bgEl) settings.bgColor = colorOr(bgEl.value, '#f2f0f7');
+  if(fcEl) settings.fontColor = colorOr(fcEl.value, '#16181d');
   if(profile){
     profile.name = document.getElementById('sName').value.trim() || profile.name;
     profile.devId = (document.getElementById('sDevId').value.trim() || profile.devId).toLowerCase().replace(/[^a-z0-9-]/g,'');
@@ -836,6 +840,7 @@ function saveSettings(){
   }
   syncModelFields();
   renderProfileChip();
+  applyAppearance(settings.bgColor, settings.fontColor);
   toast('设置已保存');
 }
 function resetProfile(){
