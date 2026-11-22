@@ -504,6 +504,11 @@ var LS_DRAFT = 'bcp.dev.draft.v1';
 
 var profile = loadJSON(LS_PROFILE, null);
 var settings = loadJSON(LS_SETTINGS, {});
+/* 旧版曾把 GitHub Token 存在本机；升级后立即抹掉，避免遗留凭据 */
+if(settings && Object.prototype.hasOwnProperty.call(settings, 'ghToken')){
+  delete settings.ghToken;
+  saveJSON(LS_SETTINGS, settings);
+}
 var registry = null;
 var registryErr = '';
 var draft = loadJSON(LS_DRAFT, null) || emptyDraft();
