@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Burger Chat 开发者中心 · 插件工坊</title>
+<style>
+:root{--ink:#16181d;--sub:#6d7382;--line:#e7e4ef;--brand:#6355e8;--brand2:#8b6cf6;--soft:#f6f4fb;--ok:#2f9e67;--bad:#c64b4b;--warn:#b57a15;--panel:#ffffff}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font:14px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f2f0f7;-webkit-font-smoothing:antialiased}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+a{color:var(--brand);text-decoration:none}
+.hidden{display:none!important}
+
+/* 手机端闸门 */
+#gate{position:fixed;inset:0;background:radial-gradient(1200px 600px at 20% 0%,#ece9ff,#f7f6fb 55%,#fff);display:none;place-items:center;z-index:99;padding:26px}
+#gate .card{max-width:420px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 26px;box-shadow:0 30px 80px -40px rgba(30,20,80,.4);text-align:center}
+#gate .ico{width:58px;height:58px;margin:0 auto 14px;border-radius:17px;background:linear-gradient(145deg,#6f63f0,#9a7dff);display:grid;place-items:center;color:#fff;font-size:26px;box-shadow:0 12px 26px -12px rgba(99,85,232,.7)}
+#gate h1{font-size:20px;margin:0 0 8px}
+#gate p{font-size:12.5px;color:var(--sub);margin:0}
+
+/* 布局 */
+.shell{display:grid;grid-template-columns:252px minmax(0,1fr);min-height:100vh}
+.side{background:#171820;color:#fff;padding:22px 16px 18px;display:flex;flex-direction:column;gap:16px;position:sticky;top:0;height:100vh;overflow:auto}
+.brand{display:flex;align-items:center;gap:10px;padding:0 6px 4px}
+.brand .logo{width:36px;height:36px;border-radius:11px;background:linear-gradient(145deg,#7b6cf6,#a78bfa);display:grid;place-items:center;font-weight:800;font-size:13px;letter-spacing:.5px;box-shadow:0 8px 20px -8px rgba(124,106,255,.8)}
+.brand b{font-size:15px;letter-spacing:-.2px;display:block}
+.brand span{font-size:10px;color:rgba(255,255,255,.45);letter-spacing:1.2px;text-transform:uppercase}
+.profile{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:10px}
+.profile img{width:38px;height:38px;border-radius:12px;object-fit:cover;background:#2a2c3a}
+.profile .ph{width:38px;height:38px;border-radius:12px;background:linear-gradient(145deg,#3b3558,#2c293c);display:grid;place-items:center;font-size:18px}
+.profile b{font-size:12.5px;display:block;line-height:1.3}
+.profile span{font-size:10px;color:rgba(255,255,255,.5);display:block;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:130px}
+.nav{display:flex;flex-direction:column;gap:3px;margin-top:2px}
+.nav button{display:flex;align-items:center;gap:10px;height:40px;border:0;background:transparent;color:rgba(255,255,255,.62);border-radius:10px;padding:0 12px;font-size:12.5px;text-align:left;transition:.15s}
+.nav button i{font-style:normal;width:18px;text-align:center;font-size:14px;opacity:.8}
+.nav button:hover{background:rgba(255,255,255,.07);color:#fff}
+.nav button.on{background:linear-gradient(120deg,rgba(124,106,255,.22),rgba(124,106,255,.06));color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.09)}
+.nav button.on i{color:#c9c0ff}
+.sidefoot{margin-top:auto;padding:10px 8px 0;border-top:1px solid rgba(255,255,255,.08);font-size:10px;color:rgba(255,255,255,.38);display:flex;flex-direction:column;gap:6px}
+.sidefoot a{color:rgba(255,255,255,.62)}
+.main{padding:22px 28px 44px;min-width:0;max-width:1280px;width:100%}
+.topbar{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap;padding:2px 2px 18px}
+.crumb{font-size:11px;color:#9aa1ae;display:flex;gap:6px;align-items:center}
+.crumb b{color:#5d6270}
+.topbar h1{font-size:26px;line-height:1.2;letter-spacing:-.7px;margin:0;font-weight:760}
+.topbar .sp{flex:1}
+.topbar .stat{display:flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:99px;height:32px;padding:0 12px;font-size:11px;color:#69707e;box-shadow:0 4px 14px -12px rgba(40,30,80,.4)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(47,158,103,.13)}
+.section{display:block;animation:fade .18s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.grid{display:grid;gap:14px}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g2{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 18px 50px -42px rgba(30,20,80,.45)}
+.card-h{display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:13px}
+.card-h h2{font-size:15px;margin:0;font-weight:720;letter-spacing:-.2px}
+.card-h p{font-size:11px;color:var(--sub);margin:2px 0 0}
+.card-h .sp{flex:1}
+.mini{background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px 16px;position:relative;overflow:hidden}
+.mini .lbl{font-size:11px;color:var(--sub)}
+.mini .num{font-size:30px;font-weight:780;letter-spacing:-1px;line-height:1.1;margin-top:6px}
+.mini .num small{font-size:12px;font-weight:500;color:var(--sub);letter-spacing:0}
+.mini::after{content:'';position:absolute;right:-24px;bottom:-34px;width:96px;height:96px;border-radius:50%;background:radial-gradient(circle,rgba(124,106,255,.13),transparent 68%)}
+.mini .tag{position:absolute;right:13px;top:13px;font-size:9.5px;color:#6c5ce7;background:#f2efff;border-radius:99px;padding:2px 7px}
+.btn{height:36px;border-radius:10px;border:1px solid #ded9ec;background:#fff;color:#4e5462;padding:0 14px;font-size:12px;font-weight:600;transition:.15s;display:inline-flex;align-items:center;gap:6px;justify-content:center}
+.btn:hover{border-color:#b6aafa;color:#5d4fd1;background:#fbfaff}
+.btn.pri{background:linear-gradient(145deg,#6f63f0,#5b4ee0);border-color:transparent;color:#fff;box-shadow:0 8px 22px -10px rgba(91,78,224,.7)}
+.btn.pri:hover{filter:brightness(1.06);color:#fff}
+.btn.ghost{background:#f7f5fc;border-color:transparent;color:#6457c9}
+.btn.bad{color:#b84d4d;border-color:#ecd1d1}
+.btn.bad:hover{border-color:#d66;color:#b22;background:#fff7f7}
+.btn.sm{height:30px;font-size:11px;padding:0 10px;border-radius:8px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.rowlist{display:flex;flex-direction:column;gap:9px}
+.prow{display:flex;align-items:center;gap:11px;border:1px solid #ebe8f3;border-radius:13px;padding:11px 12px;background:#fdfdff}
+.pico{width:40px;height:40px;border-radius:11px;background:linear-gradient(150deg,#f0ecff,#e2dbff);display:grid;place-items:center;font-size:20px;flex:0 0 40px}
+.pmain{flex:1;min-width:0}
+.pname{font-weight:650;font-size:12.5px;display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.pname em{font-style:normal;font-size:10px;color:#9aa1ae;font-weight:400}
+.pmeta{font-size:10.5px;color:#969dab;margin-top:2px}
+.pdesc{font-size:11px;color:#68707e;margin-top:4px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.pacts{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.pill{font-size:9.5px;border-radius:99px;padding:2px 7px;background:#f1efff;color:#6b5ee0;font-weight:600}
+.pill.ok{background:#eaf7ef;color:#2f9e67}
+.pill.bad{background:#fdeeee;color:#c64b4b}
+.pill.warn{background:#fff6e5;color:#b57a15}
+.stars{color:#ffb531;font-size:12px;letter-spacing:-.5px}
+.stars i{color:#ded9e8;font-style:normal}
+.empty{border:1px dashed #ddd8ea;border-radius:14px;padding:26px 16px;text-align:center;font-size:11.5px;color:#8d94a2;background:#fbfaff}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.kv>div{background:#faf9fd;border:1px solid #eeebf5;border-radius:10px;padding:8px 10px}
+.kv b{display:block;font-size:9.5px;color:#9ba2b0;font-weight:500;margin-bottom:2px}
+.kv span{font-size:11.5px;color:#3f4451;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:10.5px;color:#7d8492}
+.field input,.field textarea,.field select{border:1px solid #ddd9e9;border-radius:9px;background:#fff;color:#363b47;padding:8px 10px;font-size:12px;outline:none;transition:.15s;min-width:0}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:#a79bfa;box-shadow:0 0 0 3px rgba(124,106,255,.11)}
+.field textarea{resize:vertical;line-height:1.6}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.formgrid .wide{grid-column:1/-1}
+.builder{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.block{border:1px solid #e7e3f1;border-radius:13px;padding:11px;background:#fdfdff;display:flex;flex-direction:column;gap:7px}
+.block .bh{display:flex;align-items:center;gap:8px}
+.block .bh input[type=checkbox]{width:16px;height:16px;accent-color:#6f63f0;margin:0}
+.block .bh b{font-size:11.5px;font-weight:650;color:#3f4451}
+.block .bh span{font-size:9.5px;color:#9aa1ae;margin-left:auto}
+.block .bf{display:flex;gap:6px;flex-wrap:wrap}
+.block .bf input{flex:1;min-width:80px;border:1px solid #e1ddec;border-radius:8px;padding:6px 8px;font-size:11px;background:#fff}
+.block .bf input:disabled,.block .bf textarea:disabled{background:#f5f4f8;color:#a5a9b6}
+.block textarea{width:100%;min-height:54px;border:1px solid #e1ddec;border-radius:8px;padding:6px 8px;font-size:11px;background:#fff;resize:vertical}
+.promptbox{position:relative}
+.promptbox textarea{width:100%;min-height:112px;border:1px solid #dcd7ea;border-radius:11px;padding:10px 11px;font-size:12px;line-height:1.65;outline:none;resize:vertical;background:#fff}
+.promptbox textarea:focus{border-color:#a79bfa;box-shadow:0 0 0 3px rgba(124,106,255,.11)}
+.promptbox .hint{font-size:10px;color:#9aa1ae;margin-top:5px}
+.codebox{border:1px solid #e0dceb;border-radius:12px;overflow:hidden;background:#1d1f2a}
+.codebox .ch{display:flex;align-items:center;gap:8px;background:#262936;padding:7px 11px;font-size:10px;color:#a9adc0}
+.codebox .ch b{color:#fff;font-weight:600;font-size:10.5px}
+.codebox .ch .sp{flex:1}
+.codebox textarea{width:100%;min-height:360px;border:0;outline:0;background:#1d1f2a;color:#dcdff0;padding:12px;font:11.5px/1.65 Consolas,"SFMono-Regular",Menlo,monospace;resize:vertical}
+.manifest{margin-top:9px;border:1px solid #e2deeb;border-radius:11px;background:#fbfaff;padding:9px 11px;font:10px/1.6 Consolas,Menlo,monospace;color:#5b6070;max-height:170px;overflow:auto;white-space:pre-wrap;word-break:break-all}
+.statusline{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin:0 0 10px}
+.statusline .s{display:flex;align-items:center;gap:5px;font-size:10.5px;color:#6d7382;background:#f7f5fc;border-radius:99px;padding:3px 9px}
+.statusline .s i{width:6px;height:6px;border-radius:50%;background:#a9aebd}
+.statusline .s.ok i{background:var(--ok)}
+.statusline .s.bad i{background:var(--bad)}
+.statusline .s.warn i{background:var(--warn)}
+.policy{display:grid;gap:8px}
+.rule{display:flex;gap:9px;align-items:flex-start;border:1px solid #ece9f4;border-radius:11px;padding:9px 10px;background:#fdfdff}
+.rule .n{width:22px;height:22px;border-radius:7px;background:#f1efff;color:#6b5ee0;display:grid;place-items:center;font-size:10px;font-weight:700;flex:0 0 22px}
+.rule b{font-size:11.5px;display:block;color:#3d4250}
+.rule span{font-size:10.5px;color:#8b92a1;display:block;margin-top:1px}
+.rule .st{margin-left:auto;font-size:9.5px;flex:0 0 auto}
+.auditlog{background:#fbfaff;border:1px solid #e6e2f0;border-radius:11px;padding:10px 12px;font:10.5px/1.7 Consolas,Menlo,monospace;color:#5b6070;max-height:220px;overflow:auto;white-space:pre-wrap}
+.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:6px}
+.calendar .d{height:28px;border-radius:6px;background:#f6f4fb;display:grid;place-items:center;font-size:9.5px;color:#9aa1ae}
+.calendar .d.on{background:#efeaff;color:#5d4fd1;font-weight:700}
+.calendar .d.top{background:#6f63f0;color:#fff}
+.notice{font-size:11px;line-height:1.6;color:#6f688f;background:#f6f4ff;border:1px solid #e4dfff;border-radius:11px;padding:9px 11px;margin:0 0 12px}
+.notice b{color:#5b51c9}
+.avatarrow{display:flex;align-items:center;gap:14px}
+.avatarbig{width:72px;height:72px;border-radius:22px;object-fit:cover;background:#f2efff;border:1px solid #e2dcf5;display:grid;place-items:center;font-size:30px}
+.avatarbig img{width:100%;height:100%;border-radius:22px;object-fit:cover}
+.avatarrow .col{flex:1}
+.avatarrow .col b{display:block;font-size:12px;margin-bottom:3px}
+.avatarrow .col span{display:block;font-size:10.5px;color:#8c93a2}
+
+/* 弹窗 */
+.modal{position:fixed;inset:0;background:rgba(18,14,32,.5);backdrop-filter:blur(6px);z-index:90;display:grid;place-items:center;padding:26px}
+.modal .box{width:min(620px,94vw);max-height:92vh;overflow:auto;background:#fff;border-radius:22px;box-shadow:0 40px 100px -30px rgba(20,10,60,.55);padding:24px}
+.modal .box h2{font-size:20px;margin:4px 0 5px;letter-spacing:-.5px}
+.modal .box p.sub{font-size:11.5px;color:var(--sub);margin:0 0 18px}
+.steps{display:flex;gap:6px;margin:0 0 16px}
+.steps div{flex:1;height:4px;border-radius:99px;background:#ebe7f7}
+.steps div.on{background:linear-gradient(90deg,#7b6cf6,#a78bfa)}
+.phonebox{display:flex;gap:8px}
+.phonebox input{flex:1;min-width:0}
+.codehint{font-size:10.5px;color:#8b7bb8;background:#f6f1ff;border:1px solid #e4d9ff;border-radius:8px;padding:6px 8px;margin-top:7px;display:none}
+.modal .actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin-top:18px}
+.modal .actions .sp{flex:1}
+.toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,20px);background:#20222c;color:#fff;border-radius:99px;padding:9px 16px;font-size:11.5px;box-shadow:0 14px 36px -12px rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:.2s;z-index:120;max-width:80vw}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+/* 响应式闸门 */
+@media (max-width:1023px){#gate{display:grid}.shell{display:none}}
+@media (min-width:1024px) and (max-width:1180px){.shell{grid-template-columns:226px minmax(0,1fr)}.main{padding:20px}.g4{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="card">
+    <div class="ico">🛠</div>
+    <h1>开发者中心只在电脑网页端开放</h1>
+    <p>插件编写、AI 工坊、审核与上架需要键盘和大屏。请用电脑浏览器打开 <b>hamburgerwow.top/developer.html</b>；手机端只负责安装、评分和使用插件。</p>
+  </div>
+</div>
+
+<div class="shell hidden" id="shell">
+  <aside class="side">
+    <div class="brand">
+      <div class="logo">BC</div>
+      <div><b>Burger Chat</b><span>Developer Center</span></div>
+    </div>
+    <div class="profile" id="sideProfile"></div>
+    <nav class="nav" id="nav">
+      <button class="on" data-view="overview"><i>◈</i>概览</button>
+      <button data-view="mine"><i>▦</i>我的插件</button>
+      <button data-view="studio"><i>✦</i>AI 插件工坊</button>
+      <button data-view="audit"><i>◉</i>上架审核</button>
+      <button data-view="weekly"><i>★</i>本周精选</button>
+      <button data-view="settings"><i>⚙</i>设置</button>
+    </nav>
+    <div class="sidefoot">
+      <span>插件开发仅适配电脑网页端</span>
+      <a href="https://hamburgerwow.top/" target="_blank">返回官网</a>
+      <a href="https://github.com/Hamburgerwow/Burger-Chat/tree/main/plugins" target="_blank">GitHub 插件目录</a>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <div class="crumb"><a href="https://hamburgerwow.top/">Burger Chat</a><span>/</span><b id="crumb">开发者中心</b></div>
+        <h1 id="pageTitle">概览</h1>
+      </div>
+      <div class="sp"></div>
+      <div class="stat"><span class="dot"></span><span id="syncText">商店连接中…</span></div>
+      <button class="btn sm" onclick="reloadRegistry(true)">同步商店</button>
+    </div>
+
+    <section class="section" id="view-overview">
+      <div class="grid g4" id="statCards"></div>
+      <div class="grid g2" style="margin-top:14px">
+        <div class="card">
+          <div class="card-h"><div><h2>快速开始</h2><p>从提示词到上架，四步走完</p></div></div>
+          <div class="rowlist">
+            <div class="prow"><div class="pico">✦</div><div class="pmain"><div class="pname">用 AI 生成插件</div><div class="pmeta">描述功能，自动写代码并校验 API 规范</div></div><div class="pacts"><button class="btn sm pri" onclick="showView('studio')">打开工坊</button></div></div>
+            <div class="prow"><div class="pico">◉</div><div class="pmain"><div class="pname">提交上架审核</div><div class="pmeta">本地规则 + 开源模型双审，拦截暴力色情等违规内容</div></div><div class="pacts"><button class="btn sm" onclick="showView('audit')">去审核</button></div></div>
+            <div class="prow"><div class="pico">★</div><div class="pmain"><div class="pname">结算本周精选</div><div class="pmeta">按评分排序，选 3 个置顶到两端商店</div></div><div class="pacts"><button class="btn sm" onclick="showView('weekly')">去结算</button></div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-h"><div><h2>本周榜单</h2><p id="weekLabel">—</p></div><div class="sp"></div><span class="pill">TOP 3</span></div>
+          <div class="rowlist" id="weekPreview"><div class="empty">正在读取商店…</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hidden" id="view-mine">
+      <div class="card">
+        <div class="card-h"><div><h2>我的插件</h2><p>只显示当前开发者标识名下的插件</p></div><div class="sp"></div><button class="btn pri" onclick="newDraft()">新建插件</button></div>
+        <div class="rowlist" id="mineList"><div class="empty">正在读取商店…</div></div>
+      </div>
+    </section>
+
+    <section class="section hidden" id="view-studio">
+      <div class="grid g2">
+        <div class="card">
+          <div class="card-h"><div><h2>插件资料</h2><p>按 burger-chat-plugin/v1 规范填写</p></div><div class="sp"></div><span class="pill" id="draftState">草稿</span></div>
+          <div class="formgrid">
+            <div class="field"><label>插件 ID</label><input id="fId" placeholder="bcp.dev.hello" oninput="markDirty()"></div>
+            <div class="field"><label>插件名称</label><input id="fName" maxlength="32" placeholder="快捷打招呼" oninput="markDirty()"></div>
+            <div class="field"><label>版本号</label><input id="fVer" value="1.0.0" placeholder="1.0.0" oninput="markDirty()"></div>
+            <div class="field"><label>分类</label><select id="fCat" onchange="markDirty()"><option>聊天增强</option><option>媒体</option><option>工具</option><option>主题</option><option>集成</option></select></div>
+            <div class="field"><label>图标（一个 emoji）</label><input id="fIcon" value="🧩" maxlength="8" oninput="markDirty()"></div>
+            <div class="field"><label>需要内存 MB</label><input id="fMem" type="number" min="1" max="64" value="4" oninput="markDirty()"></div>
+            <div class="field"><label>最低适配版本</label><input id="fMin" value="0.40.31"></div>
+            <div class="field"><label>最高适配版本</label><input id="fMax" value="0.40.99"></div>
+            <div class="field wide"><label>插件介绍（8–300 字）</label><textarea id="fDesc" rows="3" maxlength="300" placeholder="说清楚这个插件解决什么问题、怎么用。" oninput="markDirty()"></textarea></div>
+            <div class="field wide"><label>标签（逗号分隔，最多 5 个）</label><input id="fTags" placeholder="快捷, 聊天, 问候" oninput="markDirty()"></div>
+          </div>
+
+          <div class="card-h" style="margin-top:18px"><div><h2>图形化功能编排</h2><p>勾选需要的模块，AI 或模板会按规范生成代码</p></div></div>
+          <div class="builder">
+            <div class="block">
+              <div class="bh"><input type="checkbox" id="bTop" checked><b>聊天页顶部按钮</b><span>header</span></div>
+              <div class="bf"><input id="bTopLabel" value="打招呼" maxlength="12" placeholder="按钮文字"><input id="bTopText" value="你好呀！" placeholder="点击后发送的文字"></div>
+            </div>
+            <div class="block">
+              <div class="bh"><input type="checkbox" id="bCompose" checked><b>输入栏快捷按钮</b><span>compose</span></div>
+              <div class="bf"><input id="bComposeLabel" value="快捷语" maxlength="12" placeholder="按钮文字"><input id="bComposeText" value="收到，马上处理。" placeholder="点击后发送的文字"></div>
+            </div>
+            <div class="block">
+              <div class="bh"><input type="checkbox" id="bMsg"><b>消息关键词自动回复</b><span>chat</span></div>
+              <div class="bf"><input id="bMsgKey" value="在吗" placeholder="关键词"><input id="bMsgReply" value="在的，你说。" placeholder="自动回复"></div>
+            </div>
+            <div class="block">
+              <div class="bh"><input type="checkbox" id="bSet" checked><b>插件设置面板</b><span>settings</span></div>
+              <div class="bf"><input id="bSetTitle" value="使用说明" placeholder="面板标题"><input id="bSetBody" value="在顶部按钮发送预设问候语。" placeholder="面板说明"></div>
+            </div>
+            <div class="block">
+              <div class="bh"><input type="checkbox" id="bNet"><b>网络请求按钮</b><span>net</span></div>
+              <div class="bf"><input id="bNetUrl" placeholder="https://… 返回文本" style="flex:1"></div>
+            </div>
+            <div class="block">
+              <div class="bh"><input type="checkbox" id="bStorage"><b>本地存储示例</b><span>storage</span></div>
+              <div class="bf"><input id="bStoreKey" value="clicks" placeholder="存储键"></div>
+            </div>
+          </div>
+
+          <div class="card-h" style="margin-top:18px"><div><h2>给 AI 的需求描述</h2><p>用自然语言讲清楚功能、按钮位置、交互和边界</p></div></div>
+          <div class="promptbox">
+            <textarea id="fPrompt" placeholder="例如：在聊天输入栏加一个「翻译」按钮，点击后把我输入框里的文字转成英文再发送；再在插件设置里放一个说明面板。"></textarea>
+            <div class="hint">AI 会输出完整 manifest + main 代码；没有连接模型时，用图形化模板直接生成可编译的插件。</div>
+          </div>
+
+          <div class="card-h" style="margin-top:18px"><div><h2>开源模型设置</h2><p>OpenAI 兼容接口，推荐 Qwen2.5 / Llama 3.1 / Mistral</p></div></div>
+          <div class="formgrid">
+            <div class="field"><label>接口地址</label><input id="fAiEndpoint" placeholder="http://127.0.0.1:11434/v1/chat/completions"></div>
+            <div class="field"><label>模型名</label><input id="fAiModel" placeholder="qwen2.5:7b"></div>
+            <div class="field wide"><label>API Key（本地模型可留空）</label><input id="fAiKey" type="password" placeholder="sk-…（只存在本机 localStorage）"></div>
+          </div>
+
+          <div class="card-h" style="margin-top:18px"><div><h2>编译与发布</h2><p>先编译测试，再审核，最后写入 GitHub 商店</p></div></div>
+          <div class="statusline" id="compileStatus"><span class="s"><i></i>未编译</span></div>
+          <div style="display:flex;gap:7px;flex-wrap:wrap">
+            <button class="btn pri" onclick="generateDraft()">✦ 生成并编译</button>
+            <button class="btn" onclick="compileDraft(true)">仅重新编译</button>
+            <button class="btn ghost" onclick="showView('audit')">去审核</button>
+            <button class="btn" onclick="publishDraft()" id="pubBtn">发布到商店</button>
+            <button class="btn" onclick="downloadDraft()">导出 .bcp.json</button>
+          </div>
+          <div class="notice" style="margin-top:12px"><b>发布前置条件：</b>编译通过 + 审核通过 + GitHub Token 已填写。发布只写入 plugins/ 与 registry.json，Cloudflare 构建后两端商店生效。</div>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><div><h2>代码预览</h2><p>发布前可手动修正，仍会重新校验</p></div><div class="sp"></div><span class="pill" id="codeLines">0 行</span></div>
+          <div class="codebox">
+            <div class="ch"><b>main.js</b><span class="sp"></span><span>Burger Chat Plugin API v1</span></div>
+            <textarea id="codeOut" spellcheck="false" oninput="onCodeEdit()"></textarea>
+          </div>
+          <div class="manifest" id="manifestOut">manifest 预览</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hidden" id="view-audit">
+      <div class="grid g2">
+        <div class="card">
+          <div class="card-h"><div><h2>上架审核</h2><p>先跑本地规则，再交给开源模型复核</p></div><div class="sp"></div><span class="pill" id="auditBadge">未审核</span></div>
+          <div class="notice">审核范围：暴力血腥、色情低俗、未成年人性化、违法危险、赌博毒品、仇恨歧视、诈骗与恶意代码。命中任一项即拒绝上架。</div>
+          <div class="statusline" id="auditStatus"><span class="s"><i></i>等待审核</span></div>
+          <div class="card" style="box-shadow:none;padding:12px;background:#fbfaff">
+            <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+              <button class="btn pri" onclick="runAudit()">◉ 运行 AI 审核</button>
+              <button class="btn" onclick="localAuditOnly()">仅本地规则审核</button>
+              <span style="font-size:10.5px;color:#8c93a2" id="auditModel">模型：未配置</span>
+            </div>
+          </div>
+          <div class="auditlog" id="auditLog">尚未运行审核。\n当前草稿：—</div>
+        </div>
+        <div class="card">
+          <div class="card-h"><div><h2>审核规则</h2><p>客户端安装前还会做平台、版本、内存和哈希校验</p></div></div>
+          <div class="policy">
+            <div class="rule"><div class="n">01</div><div><b>暴力与血腥</b><span>不得宣传、教唆或展示伤害、武器制作、爆炸物等</span></div><span class="st pill">拒绝</span></div>
+            <div class="rule"><div class="n">02</div><div><b>色情与低俗</b><span>不得包含色情、性暗示、性交易或未成年人性化内容</span></div><span class="st pill">拒绝</span></div>
+            <div class="rule"><div class="n">03</div><div><b>违法与危险</b><span>不得涉及毒品、赌博、诈骗、黑客攻击、隐私窃取</span></div><span class="st pill">拒绝</span></div>
+            <div class="rule"><div class="n">04</div><div><b>代码安全</b><span>禁止 eval、动态 Function、直接读写 cookie、外链脚本注入</span></div><span class="st pill">拒绝</span></div>
+            <div class="rule"><div class="n">05</div><div><b>平台与版本</b><span>只允许 PC / both；手机端不能作为新插件唯一目标</span></div><span class="st pill warn">校验</span></div>
+            <div class="rule"><div class="n">06</div><div><b>内容质量</b><span>名称、介绍、按钮文案需清楚，不得堆砌关键词</span></div><span class="st pill warn">人工</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hidden" id="view-weekly">
+      <div class="grid g2">
+        <div class="card">
+          <div class="card-h"><div><h2>本周精选</h2><p>按评分与评分人数排序，最多置顶 3 个</p></div><div class="sp"></div><span class="pill" id="weeklyWeek">—</span></div>
+          <div class="notice">客户端商店会把 TOP1–3 固定在最上方，并显示「本周精选」徽章。评分由客户端本地记录；商店榜单字段由这里结算写入 registry.json。</div>
+          <div class="rowlist" id="weeklyList"><div class="empty">正在读取商店…</div></div>
+          <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:12px">
+            <button class="btn pri" onclick="saveWeekly()">保存本周精选</button>
+            <button class="btn" onclick="autoPickWeekly()">按评分自动选 TOP3</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-h"><div><h2>榜单说明</h2><p>周编号按 ISO 周计算，跨周自动换榜</p></div></div>
+          <div class="kv">
+            <div><b>当前周</b><span id="isoWeek">—</span></div>
+            <div><b>已收录插件</b><span id="pluginCount">—</span></div>
+            <div><b>有评分插件</b><span id="ratedCount">—</span></div>
+            <div><b>精选位数</b><span>TOP 3</span></div>
+          </div>
+          <div class="calendar" id="weekCalendar"></div>
+          <div class="notice" style="margin-top:12px"><b>评分聚合：</b>registry 的 <code>rating</code> 与 <code>ratingCount</code> 是榜单字段。客户端评分先本机保存；需要跨设备汇总时，在 registry 配置 <code>rateApi</code> 后由客户端上报。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hidden" id="view-settings">
+      <div class="grid g2">
+        <div class="card">
+          <div class="card-h"><div><h2>账号与发布</h2><p>敏感信息只保存在本机 localStorage</p></div></div>
+          <div class="formgrid">
+            <div class="field wide"><label>GitHub Token（contents:write）</label><input id="sGh" type="password" placeholder="github_pat_… 或 ghp_…"></div>
+            <div class="field"><label>开发者名称</label><input id="sName"></div>
+            <div class="field"><label>开发者标识</label><input id="sDevId" placeholder="小写字母、数字、短横线"></div>
+            <div class="field wide"><label>开发心情</label><select id="sMood"><option>开心</option><option>专注</option><option>灵感爆棚</option><option>摸鱼</option><option>深夜赶工</option><option>佛系</option></select></div>
+            <div class="field wide"><label>头像</label><input id="sAvatarFile" type="file" accept="image/*"></div>
+          </div>
+          <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:12px"><button class="btn pri" onclick="saveSettings()">保存设置</button><button class="btn bad" onclick="resetProfile()">清除本地资料</button></div>
+        </div>
+        <div class="card">
+          <div class="card-h"><div><h2>开源模型</h2><p>用于生成插件代码和内容审核</p></div></div>
+          <div class="formgrid">
+            <div class="field wide"><label>接口地址</label><input id="sAiEndpoint" placeholder="http://127.0.0.1:11434/v1/chat/completions"></div>
+            <div class="field"><label>模型名</label><input id="sAiModel" placeholder="qwen2.5:7b"></div>
+            <div class="field"><label>API Key</label><input id="sAiKey" type="password" placeholder="本地模型可留空"></div>
+            <div class="field wide"><label>短信网关（可选）</label><input id="sSms" placeholder="https://…/sms/send，POST {phone}"></div>
+          </div>
+          <div class="notice" style="margin-top:12px"><b>开源模型建议：</b>Qwen2.5-7B-Instruct、Llama-3.1-8B-Instruct、Mistral-7B-Instruct。用 Ollama 启动后接口通常是 <code>http://127.0.0.1:11434/v1/chat/completions</code>。未连接模型时，生成走图形化模板，审核走本地规则。</div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="modal hidden" id="onboard">
+  <div class="box">
+    <div class="steps"><div class="on"></div><div class="on" id="step2"></div></div>
+    <h2>成为 Burger Chat 插件开发者</h2>
+    <p class="sub">首次进入需要建立开发者名片。资料只保存在本机，不会上传服务器。</p>
+    <div class="avatarrow">
+      <div class="avatarbig" id="avatarPreview">🙂</div>
+      <div class="col">
+        <b>设置头像</b>
+        <span>支持 JPG / PNG，自动裁剪成方形，存为本地 dataURL。</span>
+        <div style="margin-top:7px"><input id="avatarFile" type="file" accept="image/*" style="font-size:11px"></div>
+      </div>
+    </div>
+    <div class="formgrid" style="margin-top:16px">
+      <div class="field"><label>开发者名称</label><input id="oName" maxlength="20" placeholder="例如 Hamburgerwow"></div>
+      <div class="field"><label>开发者标识（用于插件 ID）</label><input id="oDevId" maxlength="24" placeholder="hamburgerwow" oninput="this.value=this.value.toLowerCase().replace(/[^a-z0-9-]/g,'')"></div>
+      <div class="field wide"><label>开发心情</label><select id="oMood"><option>开心</option><option>专注</option><option>灵感爆棚</option><option>摸鱼</option><option>深夜赶工</option><option>佛系</option></select></div>
+      <div class="field wide"><label>手机号</label><div class="phonebox"><input id="oPhone" maxlength="11" placeholder="11 位手机号" oninput="this.value=this.value.replace(/\D/g,'')"><button class="btn" onclick="sendCode()">发送验证码</button></div></div>
+      <div class="field wide"><label>验证码</label><input id="oCode" maxlength="6" placeholder="6 位验证码" oninput="this.value=this.value.replace(/\D/g,'')"><div class="codehint" id="codeHint"></div></div>
+    </div>
+    <div class="actions">
+      <a href="https://hamburgerwow.top/" style="font-size:11px;color:#8c93a2;align-self:center">先随便看看</a>
+      <div class="sp"></div>
+      <button class="btn pri" onclick="saveProfile()">完成注册并进入</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+var REPO = 'Hamburgerwow/Burger-Chat';
+var REPO_URL = 'https://github.com/' + REPO;
+var REG_URLS = ['https://hamburgerwow.top/plugins/registry.json', 'http://hamburgerwow.top/plugins/registry.json'];
+var CATS = ['聊天增强','媒体','工具','主题','集成'];
+var LS_PROFILE = 'bcp.dev.profile.v1';
+var LS_SETTINGS = 'bcp.dev.settings.v1';
+var LS_DRAFT = 'bcp.dev.draft.v1';
+
+var profile = loadJSON(LS_PROFILE, null);
+var settings = loadJSON(LS_SETTINGS, {});
+var registry = null;
+var registryErr = '';
+var draft = loadJSON(LS_DRAFT, null) || emptyDraft();
+var compiled = false;
+var compileMsg = '';
+var audit = null;
+var smsCode = '';
+var smsExp = 0;
+var dirty = false;
+
+function loadJSON(k, d){ try{ var v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); }catch(e){ return d; } }
+function saveJSON(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+function h(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function num(n){ n = Number(n); return Number.isFinite(n) ? n : 0; }
+function toast(t){
+  var el = document.getElementById('toast');
+  el.textContent = String(t || '');
+  el.classList.add('on');
+  clearTimeout(toast._t);
+  toast._t = setTimeout(function(){ el.classList.remove('on'); }, 2600);
+}
+function semver(v){ return /^\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(String(v||'')); }
+function vcmp(a,b){
+  var x = String(a||'0.0.0').split('.').map(Number), y = String(b||'0.0.0').split('.').map(Number);
+  for(var i=0;i<3;i++){ var d=(x[i]||0)-(y[i]||0); if(d) return d>0?1:-1; }
+  return 0;
+}
+function weekKey(d){
+  d = d || new Date();
+  var t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  var day = t.getUTCDay() || 7;
+  t.setUTCDate(t.getUTCDate() + 4 - day);
+  var y = t.getUTCFullYear();
+  var start = new Date(Date.UTC(y,0,1));
+  var week = Math.ceil((((t - start) / 86400000) + 1) / 7);
+  return y + '-W' + (week < 10 ? '0' + week : week);
+}
+function slug(s){ return String(s||'').toLowerCase().replace(/[^a-z0-9-]/g,'-').replace(/^-+|-+$/g,'').slice(0,20) || 'plugin'; }
+function stars(avg){
+  var n = Math.round(num(avg) * 2) / 2;
+  var out = '';
+  for(var i=1;i<=5;i++) out += '<i class="' + (n >= i ? 'on' : '') + '" style="color:' + (n >= i ? '#ffb531' : '#ded9e8') + '">★</i>';
+  return out;
+}
+function fmtTime(ts){
+  if(!ts) return '—';
+  try{ var d = new Date(ts); return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }catch(e){ return '—'; }
+}
+
+function emptyDraft(){
+  return { id:'', name:'', version:'1.0.0', developer: profile ? profile.name : '', target:'both',
+    minApp:'0.40.31', maxApp:'0.40.99', apiVersion:1, memoryMB:4, category:'聊天增强',
+    description:'', icon:'🧩', tags:[], ui:[], main:'', homepage:'' };
+}
+
+/* —— 首次资料 —— */
+function needOnboard(){ return !profile || !profile.name || !profile.devId || !profile.phone || !profile.verified || !profile.avatar; }
+function showOnboard(){
+  document.getElementById('onboard').classList.remove('hidden');
+  if(profile){
+    document.getElementById('oName').value = profile.name || '';
+    document.getElementById('oDevId').value = profile.devId || '';
+    document.getElementById('oMood').value = profile.mood || '开心';
+    document.getElementById('oPhone').value = profile.phone || '';
+    if(profile.avatar){
+      document.getElementById('avatarPreview').innerHTML = '<img src="' + h(profile.avatar) + '" alt="avatar">';
+    }
+  }
+}
+function pickAvatar(input, cb){
+  var f = input.files && input.files[0];
+  if(!f) return;
+  var fr = new FileReader();
+  fr.onload = function(){
+    var img = new Image();
+    img.onload = function(){
+      var s = Math.min(img.width, img.height);
+      var c = document.createElement('canvas');
+      c.width = 128; c.height = 128;
+      var ctx = c.getContext('2d');
+      ctx.drawImage(img, (img.width-s)/2, (img.height-s)/2, s, s, 0, 0, 128, 128);
+      cb(c.toDataURL('image/jpeg', 0.86));
+    };
+    img.src = fr.result;
+  };
+  fr.readAsDataURL(f);
+}
+document.getElementById('avatarFile').addEventListener('change', function(){
+  pickAvatar(this, function(url){
+    document.getElementById('avatarPreview').innerHTML = '<img src="' + url + '" alt="avatar">';
+    window.__avatar = url;
+  });
+});
+function sendCode(){
+  var phone = document.getElementById('oPhone').value.trim();
+  if(!/^1[3-9]\d{9}$/.test(phone)){ toast('请输入 11 位手机号'); return; }
+  smsCode = String(Math.floor(100000 + Math.random() * 900000));
+  smsExp = Date.now() + 5 * 60 * 1000;
+  var hint = document.getElementById('codeHint');
+  hint.style.display = 'block';
+  if(settings.smsEndpoint){
+    hint.textContent = '正在调用短信网关…';
+    fetch(settings.smsEndpoint, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ phone: phone, scene:'bcp-dev' }) })
+      .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json().catch(function(){ return {}; }); })
+      .then(function(o){
+        if(o && o.code){ smsCode = String(o.code); }
+        hint.textContent = '验证码已发送，5 分钟内有效。';
+        toast('验证码已发送');
+      })
+      .catch(function(e){
+        hint.textContent = '短信网关未接通，本地验证码：' + smsCode + '（5 分钟有效）';
+        toast('网关失败，已改用本地验证码');
+      });
+  } else {
+    hint.textContent = '未接入短信网关，本地验证码：' + smsCode + '（5 分钟有效）。接入网关后可在设置里填写地址。';
+    toast('本地验证码：' + smsCode);
+  }
+}
+function saveProfile(){
+  var name = document.getElementById('oName').value.trim();
+  var devId = document.getElementById('oDevId').value.trim().toLowerCase();
+  var mood = document.getElementById('oMood').value;
+  var phone = document.getElementById('oPhone').value.trim();
+  var code = document.getElementById('oCode').value.trim();
+  if(name.length < 2) return toast('开发者名称至少 2 个字');
+  if(!/^[a-z0-9][a-z0-9-]{1,23}$/.test(devId)) return toast('开发者标识需小写字母/数字/短横线，2–24 位');
+  if(!/^1[3-9]\d{9}$/.test(phone)) return toast('手机号格式不对');
+  if(!smsCode || Date.now() > smsExp) return toast('验证码已过期，请重新发送');
+  if(code !== smsCode) return toast('验证码不正确');
+  var avatar = window.__avatar || (profile && profile.avatar) || '';
+  if(!avatar) return toast('请先上传并设置开发者头像');
+  profile = {
+    name: name, devId: devId, mood: mood, phone: phone, verified: true,
+    avatar: avatar,
+    createdAt: (profile && profile.createdAt) || Date.now()
+  };
+  saveJSON(LS_PROFILE, profile);
+  if(!draft.developer || draft.developer === '') draft.developer = name;
+  saveJSON(LS_DRAFT, draft);
+  document.getElementById('onboard').classList.add('hidden');
+  boot();
+  toast('开发者名片已保存');
+}
+
+/* —— 商店 —— */
+async function reloadRegistry(force){
+  document.getElementById('syncText').textContent = '商店同步中…';
+  registryErr = '';
+  for(var i=0;i<REG_URLS.length;i++){
+    try{
+      var r = await fetch(REG_URLS[i] + (REG_URLS[i].indexOf('?') < 0 ? ('?t=' + Date.now()) : ''), { cache:'no-store' });
+      if(!r.ok) throw new Error('HTTP ' + r.status);
+      var o = await r.json();
+      if(!o || o.schema !== 'burger-plugin-store/v1' || !Array.isArray(o.plugins)) throw new Error('商店数据格式不对');
+      registry = o;
+      for(var j=0;j<registry.plugins.length;j++){
+        if(registry.plugins[j].rating == null) registry.plugins[j].rating = 0;
+        if(registry.plugins[j].ratingCount == null) registry.plugins[j].ratingCount = 0;
+      }
+      document.getElementById('syncText').textContent = '商店已连接 · ' + fmtTime(registry.updated || Date.now());
+      renderAll();
+      if(force) toast('商店已同步');
+      return;
+    }catch(e){ registryErr = String(e.message || e); }
+  }
+  document.getElementById('syncText').textContent = '商店连接失败';
+  renderAll();
+  if(force) toast('商店读取失败：' + registryErr);
+}
+function pluginList(){ return registry && Array.isArray(registry.plugins) ? registry.plugins : []; }
+function isMine(p){
+  if(!profile) return false;
+  return String(p.developer || '') === String(profile.name || '') || String(p.id || '').indexOf('bcp.' + profile.devId + '.') === 0;
+}
+
+/* —— 渲染 —— */
+function renderAll(){
+  renderProfileChip();
+  renderStats();
+  renderMine();
+  renderWeekly();
+  renderOverviewWeek();
+  document.getElementById('pluginCount').textContent = pluginList().length;
+  document.getElementById('ratedCount').textContent = pluginList().filter(function(p){ return num(p.rating) > 0; }).length;
+  document.getElementById('isoWeek').textContent = weekKey();
+  renderCalendar();
+  renderSettings();
+  renderStudioMeta();
+}
+function renderProfileChip(){
+  var el = document.getElementById('sideProfile');
+  if(!profile) return;
+  var av = profile.avatar ? '<img src="' + h(profile.avatar) + '" alt="avatar">' : '<div class="ph">🙂</div>';
+  el.innerHTML = av + '<div><b>' + h(profile.name) + '</b><span>' + h(profile.mood || '专注') + ' · ' + h(profile.devId) + '</span></div>';
+}
+function renderStats(){
+  var mine = pluginList().filter(isMine);
+  var avg = mine.length ? mine.reduce(function(a,p){ return a + num(p.rating); }, 0) / mine.length : 0;
+  var top = weeklyIds().length;
+  var rated = mine.filter(function(p){ return num(p.rating) > 0; }).length;
+  var cards = [
+    { lbl:'已上架插件', num:mine.length, sub:'个', tag:'MINE' },
+    { lbl:'平均评分', num:(avg ? avg.toFixed(1) : '—'), sub:avg ? ' / 5' : '', tag:'RATING' },
+    { lbl:'本周精选', num:top, sub:' / 3', tag:'WEEKLY' },
+    { lbl:'有评分插件', num:rated, sub:' 个', tag:'FEEDBACK' }
+  ];
+  document.getElementById('statCards').innerHTML = cards.map(function(c){
+    return '<div class="mini"><span class="tag">' + c.tag + '</span><div class="lbl">' + c.lbl + '</div><div class="num">' + c.num + '<small>' + c.sub + '</small></div></div>';
+  }).join('');
+}
+function renderMine(){
+  var el = document.getElementById('mineList');
+  if(!profile){ el.innerHTML = '<div class="empty">先完成开发者注册</div>'; return; }
+  var list = pluginList().filter(isMine);
+  if(!list.length){ el.innerHTML = '<div class="empty">名下还没有插件。点「新建插件」或用 AI 工坊生成第一个。</div>'; return; }
+  el.innerHTML = list.map(function(p){
+    return '<div class="prow"><div class="pico">' + h(p.icon || '🧩') + '</div><div class="pmain">' +
+      '<div class="pname">' + h(p.name) + ' <em>v' + h(p.version) + '</em><span class="pill ok">已上架</span></div>' +
+      '<div class="pmeta">' + h(p.category) + ' · ' + num(p.memoryMB) + ' MB · 更新 ' + fmtTime(p.updated) + '</div>' +
+      '<div class="pdesc">' + h(p.description) + '</div>' +
+      '<div style="display:flex;gap:7px;align-items:center;margin-top:4px"><span class="stars">' + stars(p.rating) + '</span><span style="font-size:10px;color:#9aa1ae">' + (num(p.rating) ? num(p.rating).toFixed(1) : '暂无评分') + ' · ' + num(p.ratingCount) + ' 人</span></div></div>' +
+      '<div class="pacts"><button class="btn sm" onclick="editPlugin(\'' + h(p.id) + '\')">编辑</button><button class="btn sm" onclick="viewInStore(\'' + h(p.id) + '\')">查看</button><a class="btn sm" href="' + REPO_URL + '/blob/main/' + h(p.download || 'plugins/') + '" target="_blank">源文件</a></div></div>';
+  }).join('');
+}
+function weeklyIds(){
+  if(registry && registry.weekly && Array.isArray(registry.weekly.top)) return registry.weekly.top.slice(0,3);
+  return [];
+}
+function renderOverviewWeek(){
+  var el = document.getElementById('weekPreview');
+  var ids = weeklyIds();
+  var list = ids.map(function(id){ return pluginList().filter(function(p){ return p.id === id; })[0]; }).filter(Boolean);
+  if(!list.length){
+    list = pluginList().slice().sort(function(a,b){ return (num(b.rating) - num(a.rating)) || (num(b.ratingCount) - num(a.ratingCount)); }).slice(0,3);
+  }
+  document.getElementById('weekLabel').textContent = (registry && registry.weekly && registry.weekly.week ? registry.weekly.week : weekKey()) + ' · TOP ' + list.length;
+  el.innerHTML = list.length ? list.map(function(p,i){
+    return '<div class="prow"><div class="pico">' + h(p.icon||'🧩') + '</div><div class="pmain"><div class="pname">' + h(p.name) + ' <span class="pill">TOP' + (i+1) + '</span></div><div class="pmeta">' + h(p.developer) + ' · ' + h(p.category) + '</div><div class="pdesc">' + h(p.description) + '</div></div><div class="stars">' + stars(p.rating) + '</div></div>';
+  }).join('') : '<div class="empty">商店里还没有插件</div>';
+}
+function renderWeekly(){
+  var el = document.getElementById('weeklyList');
+  var list = pluginList().slice().sort(function(a,b){ return (num(b.rating) - num(a.rating)) || (num(b.ratingCount) - num(a.ratingCount)) || a.name.localeCompare(b.name); });
+  var ids = weeklyIds();
+  document.getElementById('weeklyWeek').textContent = (registry && registry.weekly && registry.weekly.week) || weekKey();
+  if(!list.length){ el.innerHTML = '<div class="empty">商店里还没有插件</div>'; return; }
+  el.innerHTML = list.map(function(p){
+    var on = ids.indexOf(p.id) >= 0;
+    return '<label class="prow" style="cursor:pointer"><input type="checkbox" class="wk" value="' + h(p.id) + '" ' + (on?'checked':'') + ' style="width:16px;height:16px;accent-color:#6f63f0;flex:0 0 16px">' +
+      '<div class="pico">' + h(p.icon||'🧩') + '</div><div class="pmain"><div class="pname">' + h(p.name) + ' <em>v' + h(p.version) + '</em></div>' +
+      '<div class="pmeta">' + h(p.developer) + ' · ' + h(p.category) + ' · ' + num(p.ratingCount) + ' 人评分</div>' +
+      '<div style="display:flex;gap:6px;align-items:center;margin-top:3px"><span class="stars">' + stars(p.rating) + '</span><b style="font-size:12px">' + (num(p.rating) ? num(p.rating).toFixed(1) : '—') + '</b></div></div></label>';
+  }).join('');
+  el.addEventListener('change', function(e){
+    if(!e.target.classList.contains('wk')) return;
+    var checked = [].slice.call(document.querySelectorAll('.wk:checked'));
+    if(checked.length > 3){ e.target.checked = false; toast('本周精选最多 3 个'); }
+  });
+}
+function renderCalendar(){
+  var el = document.getElementById('weekCalendar');
+  var d = new Date();
+  var day = d.getDay() || 7;
+  var monday = new Date(d); monday.setDate(d.getDate() - day + 1);
+  var html = '';
+  for(var i=0;i<7;i++){
+    var x = new Date(monday); x.setDate(monday.getDate() + i);
+    var cls = i === day - 1 ? 'top' : 'on';
+    html += '<div class="' + cls + '">' + (i+1) + '</div>';
+  }
+  el.innerHTML = html;
+}
+
+/* —— 设置 —— */
+function renderSettings(){
+  if(!profile) return;
+  document.getElementById('sGh').value = settings.ghToken || '';
+  document.getElementById('sName').value = profile.name || '';
+  document.getElementById('sDevId').value = profile.devId || '';
+  document.getElementById('sMood').value = profile.mood || '专注';
+  document.getElementById('sAiEndpoint').value = settings.aiEndpoint || '';
+  document.getElementById('sAiModel').value = settings.aiModel || '';
+  document.getElementById('sAiKey').value = settings.aiKey || '';
+  document.getElementById('sSms').value = settings.smsEndpoint || '';
+}
+function saveSettings(){
+  settings.ghToken = document.getElementById('sGh').value.trim();
+  settings.aiEndpoint = document.getElementById('sAiEndpoint').value.trim().replace(/\/+$/,'');
+  settings.aiModel = document.getElementById('sAiModel').value.trim();
+  settings.aiKey = document.getElementById('sAiKey').value.trim();
+  settings.smsEndpoint = document.getElementById('sSms').value.trim().replace(/\/+$/,'');
+  if(profile){
+    profile.name = document.getElementById('sName').value.trim() || profile.name;
+    profile.devId = (document.getElementById('sDevId').value.trim() || profile.devId).toLowerCase().replace(/[^a-z0-9-]/g,'');
+    profile.mood = document.getElementById('sMood').value;
+  }
+  saveJSON(LS_SETTINGS, settings);
+  saveJSON(LS_PROFILE, profile);
+  var f = document.getElementById('sAvatarFile');
+  if(f && f.files && f.files[0]){
+    pickAvatar(f, function(url){ profile.avatar = url; saveJSON(LS_PROFILE, profile); renderProfileChip(); toast('头像已更新'); });
+  }
+  syncModelFields();
+  renderProfileChip();
+  toast('设置已保存');
+}
+function resetProfile(){
+  if(!confirm('清除本机开发者名片、设置与当前草稿？商店里的插件不会删除。')) return;
+  [LS_PROFILE, LS_SETTINGS, LS_DRAFT].forEach(function(k){ try{ localStorage.removeItem(k); }catch(e){} });
+  location.reload();
+}
+function syncModelFields(){
+  document.getElementById('fAiEndpoint').value = settings.aiEndpoint || '';
+  document.getElementById('fAiModel').value = settings.aiModel || '';
+  document.getElementById('fAiKey').value = settings.aiKey || '';
+  document.getElementById('auditModel').textContent = '模型：' + (settings.aiModel || '未配置');
+}
+
+/* —— 草稿与工坊 —— */
+function loadDraft(){
+  document.getElementById('fId').value = draft.id || '';
+  document.getElementById('fName').value = draft.name || '';
+  document.getElementById('fVer').value = draft.version || '1.0.0';
+  document.getElementById('fCat').value = draft.category || '聊天增强';
+  document.getElementById('fIcon').value = draft.icon || '🧩';
+  document.getElementById('fMem').value = draft.memoryMB || 4;
+  document.getElementById('fMin').value = draft.minApp || '0.40.31';
+  document.getElementById('fMax').value = draft.maxApp || '0.40.99';
+  document.getElementById('fDesc').value = draft.description || '';
+  document.getElementById('fTags').value = (draft.tags || []).join(', ');
+  document.getElementById('codeOut').value = draft.main || '';
+  document.getElementById('fPrompt').value = draft.prompt || '';
+  syncModelFields();
+  renderManifest();
+  updateLineCount();
+}
+function renderStudioMeta(){ loadDraft(); }
+function newDraft(){
+  draft = emptyDraft();
+  draft.id = 'bcp.' + (profile ? profile.devId : 'dev') + '.new-plugin';
+  saveJSON(LS_DRAFT, draft);
+  loadDraft();
+  showView('studio');
+  toast('已新建草稿');
+}
+function markDirty(){ dirty = true; compiled = false; audit = null; updateCompileStatus(); renderManifest(); }
+function onCodeEdit(){ draft.main = document.getElementById('codeOut').value; dirty = true; compiled = false; audit = null; updateCompileStatus(); updateLineCount(); }
+function updateLineCount(){
+  var n = (document.getElementById('codeOut').value || '').split('\n').length;
+  document.getElementById('codeLines').textContent = n + ' 行';
+}
+function collectDraft(){
+  draft.id = document.getElementById('fId').value.trim();
+  draft.name = document.getElementById('fName').value.trim();
+  draft.version = document.getElementById('fVer').value.trim();
+  draft.category = document.getElementById('fCat').value;
+  draft.icon = document.getElementById('fIcon').value.trim() || '🧩';
+  draft.memoryMB = num(document.getElementById('fMem').value) || 4;
+  draft.minApp = document.getElementById('fMin').value.trim() || '0.40.31';
+  draft.maxApp = document.getElementById('fMax').value.trim() || '0.40.99';
+  draft.description = document.getElementById('fDesc').value.trim();
+  draft.tags = document.getElementById('fTags').value.split(',').map(function(x){ return x.trim(); }).filter(Boolean).slice(0,5);
+  draft.prompt = document.getElementById('fPrompt').value.trim();
+  draft.main = document.getElementById('codeOut').value;
+  draft.developer = profile ? profile.name : '';
+  return draft;
+}
+function renderManifest(){
+  collectDraft();
+  var m = {
+    schema:'burger-chat-plugin/v1', id:draft.id, name:draft.name, version:draft.version,
+    developer:draft.developer, target:draft.target, minApp:draft.minApp, maxApp:draft.maxApp,
+    apiVersion:1, memoryMB:num(draft.memoryMB), category:draft.category, description:draft.description,
+    icon:draft.icon, tags:draft.tags, ui:draft.ui || [], permissions:[], main:'/* code */'
+  };
+  document.getElementById('manifestOut').textContent = JSON.stringify(m, null, 2);
+  saveJSON(LS_DRAFT, draft);
+}
+function updateCompileStatus(){
+  var el = document.getElementById('compileStatus');
+  if(compiled) el.innerHTML = '<span class="s ok"><i></i>编译通过</span><span class="s">' + h(compileMsg) + '</span>';
+  else if(compileMsg) el.innerHTML = '<span class="s bad"><i></i>' + h(compileMsg) + '</span>';
+  else el.innerHTML = '<span class="s"><i></i>未编译</span>';
+}
+function jsStr(s){ return JSON.stringify(String(s == null ? '' : s)); }
+function genId(prefix){
+  return 'bcp.' + (profile ? profile.devId : 'dev') + '.' + slug(prefix);
+}
+function builtinGenerate(){
+  collectDraft();
+  var topOn = document.getElementById('bTop').checked;
+  var composeOn = document.getElementById('bCompose').checked;
+  var msgOn = document.getElementById('bMsg').checked;
+  var setOn = document.getElementById('bSet').checked;
+  var netOn = document.getElementById('bNet').checked;
+  var storageOn = document.getElementById('bStorage').checked;
+  var ui = [];
+  var code = '(function(){\n  \'use strict\';\n';
+  if(topOn){
+    var tl = document.getElementById('bTopLabel').value.trim().slice(0,12) || '快捷按钮';
+    var tt = document.getElementById('bTopText').value.trim();
+    ui.push({ id:'top-action', slot:'header', label:tl, icon:'✨', order:1 });
+    code += '  api.ui.onButton(\'top-action\', function(){\n    api.chat.sendText(' + jsStr(tt) + ');\n  });\n';
+  }
+  if(composeOn){
+    var cl = document.getElementById('bComposeLabel').value.trim().slice(0,12) || '快捷语';
+    var ct = document.getElementById('bComposeText').value.trim();
+    ui.push({ id:'compose-action', slot:'compose', label:cl, icon:'💬', order:2 });
+    code += '  api.ui.onButton(\'compose-action\', function(){\n    api.chat.sendText(' + jsStr(ct) + ');\n  });\n';
+  }
+  if(msgOn){
+    var mk = document.getElementById('bMsgKey').value.trim();
+    var mr = document.getElementById('bMsgReply').value.trim();
+    code += '  api.chat.onMessage(function(msg){\n    var t = String((msg && (msg.text || msg.content)) || \'\');\n    if(' + jsStr(mk) + ' && t.indexOf(' + jsStr(mk) + ') >= 0) api.chat.sendText(' + jsStr(mr) + ');\n  });\n';
+  }
+  if(setOn){
+    var st = document.getElementById('bSetTitle').value.trim() || '使用说明';
+    var sb = document.getElementById('bSetBody').value.trim();
+    code += '  api.ui.addSettingsPanel({ title:' + jsStr(st) + ', html:\'<div style="font-size:12px;line-height:1.65;color:#5b6070">\' + ' + jsStr(sb) + ' + \'</div>\' });\n';
+  }
+  if(netOn){
+    var nu = document.getElementById('bNetUrl').value.trim();
+    ui.push({ id:'net-action', slot:'header', label:'获取内容', icon:'🌐', order:3 });
+    code += '  api.ui.onButton(\'net-action\', async function(){\n    try{\n      var t = await api.net.get(' + jsStr(nu) + ');\n      api.toast(String(t).slice(0, 80));\n    }catch(e){ api.toast(\'请求失败\'); }\n  });\n';
+  }
+  if(storageOn){
+    var sk = document.getElementById('bStoreKey').value.trim() || 'clicks';
+    code += '  var n = api.storage.get(' + jsStr(sk) + ', 0);\n  api.storage.set(' + jsStr(sk) + ', n + 1);\n';
+  }
+  code += '})();\n';
+  draft.main = code;
+  draft.ui = ui;
+  if(!draft.name){
+    var p = draft.prompt || '';
+    draft.name = p ? p.slice(0, 12) : '我的插件';
+  }
+  if(!draft.id) draft.id = genId(draft.name);
+  if(!draft.description) draft.description = draft.prompt || '由 Burger Chat 图形化插件工坊生成。';
+  if(!document.getElementById('fName').value) document.getElementById('fName').value = draft.name;
+  if(!document.getElementById('fId').value) document.getElementById('fId').value = draft.id;
+  if(!document.getElementById('fDesc').value) document.getElementById('fDesc').value = draft.description;
+  document.getElementById('codeOut').value = draft.main;
+  saveJSON(LS_DRAFT, draft);
+  renderManifest();
+  updateLineCount();
+  compileDraft();
+}
+async function callAI(messages, maxTokens){
+  settings.aiEndpoint = document.getElementById('fAiEndpoint').value.trim().replace(/\/+$/,'');
+  settings.aiModel = document.getElementById('fAiModel').value.trim();
+  settings.aiKey = document.getElementById('fAiKey').value.trim();
+  saveJSON(LS_SETTINGS, settings);
+  if(!settings.aiEndpoint) throw new Error('还没有填写 AI 接口地址');
+  var url = settings.aiEndpoint;
+  if(!/\/chat\/completions$/.test(url)) url = url.replace(/\/v1$/,'') + '/v1/chat/completions';
+  var headers = { 'Content-Type':'application/json' };
+  if(settings.aiKey) headers['Authorization'] = 'Bearer ' + settings.aiKey;
+  var body = { model: settings.aiModel || 'qwen2.5:7b', messages: messages, temperature:0.2, max_tokens: maxTokens || 1200 };
+  var r = await fetch(url, { method:'POST', headers:headers, body: JSON.stringify(body) });
+  if(!r.ok) throw new Error('模型接口 HTTP ' + r.status);
+  var o = await r.json();
+  var txt = o && o.choices && o.choices[0] && o.choices[0].message ? o.choices[0].message.content : (o && o.response) || '';
+  if(!txt) throw new Error('模型没有返回内容');
+  return String(txt);
+}
+function parseAIJSON(txt){
+  var s = String(txt || '').trim();
+  s = s.replace(/^```(?:json)?/i,'').replace(/```$/,'').trim();
+  var a = s.indexOf('{'), b = s.lastIndexOf('}');
+  if(a >= 0 && b > a) s = s.slice(a, b+1);
+  return JSON.parse(s);
+}
+async function generateDraft(){
+  collectDraft();
+  document.getElementById('draftState').textContent = '生成中…';
+  try{
+    if(!settings.aiEndpoint && !document.getElementById('fAiEndpoint').value.trim()){
+      builtinGenerate();
+      toast('已用图形化模板生成，编译通过后可直接审核');
+      document.getElementById('draftState').textContent = '模板生成';
+      return;
+    }
+    toast('正在调用开源模型生成插件…');
+    var sys = '你是 Burger Chat 插件开发助手。只输出 JSON，不要解释。插件必须符合 burger-chat-plugin/v1：schema 固定；id 形如 bcp.<开发者标识>.<插件名>（小写字母数字短横线）；version x.y.z；name 2-32 字；developer 2-40 字；target 只能是 pc 或 both；minApp "0.40.31"；maxApp "0.40.99"；apiVersion 1；memoryMB 1-64 整数；category 只能是 聊天增强/媒体/工具/主题/集成；description 8-300 字；ui 最多 8 项，每项 id 小写字母数字短横线、slot 只能是 compose/header/settings、label 1-12 字；main 是纯 JavaScript 代码，使用注入的 api 对象，可用 api.chat.sendText、api.chat.onMessage、api.ui.onButton、api.ui.addSettingsPanel、api.storage、api.net、api.toast；禁止 eval、new Function、document.cookie、localStorage、XMLHttpRequest、WebSocket。输出字段：id,name,version,developer,target,minApp,maxApp,apiVersion,memoryMB,category,description,icon,tags,ui,main。';
+    var user = '开发者：' + (profile ? profile.name : '') + '（标识 ' + (profile ? profile.devId : '') + '）\n需求：' + (document.getElementById('fPrompt').value.trim() || '做一个简单的聊天增强插件') + '\n当前表单：' + JSON.stringify({ id:document.getElementById('fId').value.trim(), name:document.getElementById('fName').value.trim(), category:document.getElementById('fCat').value, icon:document.getElementById('fIcon').value }) + '\n图形化模块：顶部按钮=' + document.getElementById('bTop').checked + '，输入栏按钮=' + document.getElementById('bCompose').checked + '，消息监听=' + document.getElementById('bMsg').checked + '，设置面板=' + document.getElementById('bSet').checked;
+    var txt = await callAI([{ role:'system', content:sys }, { role:'user', content:user }], 1600);
+    var o = parseAIJSON(txt);
+    draft = Object.assign({}, draft, o);
+    draft.developer = profile ? profile.name : o.developer;
+    draft.target = o.target === 'phone' ? 'pc' : (o.target || 'pc');
+    draft.tags = Array.isArray(o.tags) ? o.tags.slice(0,5) : draft.tags;
+    draft.ui = Array.isArray(o.ui) ? o.ui : draft.ui;
+    saveJSON(LS_DRAFT, draft);
+    loadDraft();
+    compileDraft();
+    document.getElementById('draftState').textContent = 'AI 生成';
+    toast('AI 已生成插件，已自动编译');
+  }catch(e){
+    document.getElementById('draftState').textContent = '生成失败';
+    toast('AI 生成失败：' + (e.message || e) + '；可改用图形化模板');
+  }
+}
+function localValidate(d){
+  if(!/^bcp\.[a-z0-9][a-z0-9-]{1,23}\.[a-z0-9][a-z0-9-]{1,23}$/.test(String(d.id||''))) return '插件 ID 不符合规范：bcp.<开发者>.<插件名>';
+  if(!semver(d.version)) return '版本号必须是 x.y.z';
+  if(String(d.name||'').length < 2 || String(d.name||'').length > 32) return '插件名称需要 2–32 个字';
+  if(!d.developer || String(d.developer).length < 2) return '缺少开发者名称';
+  if(!['pc','phone','both'].includes(d.target)) return 'target 必须是 pc / phone / both';
+  if(d.target === 'phone') return '插件开发只适配电脑网页端，新插件不能只面向手机端';
+  if(!semver(d.minApp) || !semver(d.maxApp)) return 'minApp / maxApp 必须是 x.y.z';
+  if(vcmp(d.minApp, d.maxApp) > 0) return 'minApp 不能高于 maxApp';
+  if(!Number.isInteger(num(d.memoryMB)) || num(d.memoryMB) < 1 || num(d.memoryMB) > 64) return '内存需要 1–64 的整数';
+  if(CATS.indexOf(d.category) < 0) return '分类不在允许范围';
+  if(String(d.description||'').length < 8 || String(d.description||'').length > 300) return '插件介绍需要 8–300 个字';
+  if(!d.main || !String(d.main).trim()) return '插件代码不能为空';
+  if(String(d.main).length > 200000) return '插件代码超过 200KB';
+  if((d.ui || []).length > 8) return 'ui 最多 8 项';
+  return '';
+}
+function codeRisk(code){
+  var rules = [
+    { re:/document\s*\.\s*cookie/i, msg:'禁止直接读取 document.cookie' },
+    { re:/localStorage|sessionStorage/i, msg:'禁止直接访问 localStorage / sessionStorage，请用 api.storage' },
+    { re:/\beval\s*\(/, msg:'禁止使用 eval' },
+    { re:/new\s+Function\s*\(/, msg:'禁止动态创建 Function' },
+    { re:/\bimport\s*\(/, msg:'禁止动态 import' },
+    { re:/XMLHttpRequest|WebSocket/i, msg:'禁止直接使用 XMLHttpRequest / WebSocket' },
+    { re:/top\.location|window\.open\s*\(/i, msg:'禁止控制外部窗口或顶层跳转' }
+  ];
+  for(var i=0;i<rules.length;i++) if(rules[i].re.test(String(code||''))) return rules[i].msg;
+  return '';
+}
+function compileDraft(silent){
+  collectDraft();
+  var err = localValidate(draft);
+  if(err){ compiled = false; compileMsg = err; updateCompileStatus(); if(!silent) toast('编译失败：' + err); return false; }
+  try{ new Function('api', '"use strict";' + draft.main); }
+  catch(e){ compiled = false; compileMsg = '代码语法错误：' + (e.message || e); updateCompileStatus(); if(!silent) toast(compileMsg); return false; }
+  var risk = codeRisk(draft.main);
+  if(risk){ compiled = false; compileMsg = risk; updateCompileStatus(); if(!silent) toast(risk); return false; }
+  var mock = {
+    apiVersion:1, app:{version:'0.40.31',platform:'pc',platformName:'桌面端'},
+    plugin:{id:draft.id,name:draft.name,version:draft.version}, log:function(){}, toast:function(){},
+    storage:{get:function(k,d){return d;},set:function(){return true;},remove:function(){}},
+    chat:{sendText:function(){return true;},currentPeer:function(){return '';},onMessage:function(){}},
+    ui:{onButton:function(id,fn){ if(typeof fn==='function') handlersMock[id]=fn; },addButton:function(){},addSettingsPanel:function(){},refresh:function(){}},
+    net:{get:async function(){return '';},post:async function(){return '';}},
+    events:{on:function(){},emit:function(){}}
+  };
+  var handlersMock = {};
+  try{ new Function('api', '"use strict";' + draft.main)(mock); }
+  catch(e){ compiled = false; compileMsg = '运行测试失败：' + (e.message || e); updateCompileStatus(); if(!silent) toast(compileMsg); return false; }
+  compiled = true; compileMsg = '语法/API/安全规则通过 · ' + (draft.ui.length) + ' 个界面入口';
+  document.getElementById('draftState').textContent = '已编译';
+  updateCompileStatus();
+  renderManifest();
+  if(!silent) toast('编译通过');
+  return true;
+}
+function buildPackage(){
+  collectDraft();
+  return {
+    schema:'burger-chat-plugin/v1', id:draft.id, name:draft.name, version:draft.version,
+    developer:draft.developer, target:draft.target, minApp:draft.minApp, maxApp:draft.maxApp,
+    apiVersion:1, memoryMB:num(draft.memoryMB), category:draft.category, description:draft.description,
+    icon:draft.icon, tags:draft.tags, ui:draft.ui || [], permissions:[], main:draft.main,
+    homepage:String(draft.homepage || '')
+  };
+}
+function downloadDraft(){
+  var pkg = buildPackage();
+  var name = pkg.id + '-' + pkg.version + '.bcp.json';
+  var blob = new Blob([JSON.stringify(pkg, null, 2)], { type:'application/json;charset=utf-8' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+}
+
+/* —— 审核 —— */
+function localAudit(d){
+  var items = [];
+  var text = [d.name, d.description, d.prompt, d.main].join('\n');
+  var rules = [
+    { cat:'色情低俗', re:/色情|成人视频|裸聊|约炮|性交易|未成年.{0,4}性|偷拍裙底/i },
+    { cat:'暴力血腥', re:/杀人|砍人|自制炸弹|炸药配方|枪支制作|血腥|虐杀/i },
+    { cat:'违法危险', re:/制毒|冰毒|毒品交易|赌博平台|洗钱|诈骗话术|黑客入侵|盗号|木马/i },
+    { cat:'仇恨歧视', re:/地域黑|种族仇恨|歧视.{0,4}(性别|民族|宗教)|灭绝/i },
+    { cat:'隐私窃取', re:/盗取.{0,6}(密码|通讯录)|窃听|定位跟踪|开房记录/i }
+  ];
+  for(var i=0;i<rules.length;i++){
+    if(rules[i].re.test(text)) items.push({ cat:rules[i].cat, ok:false, msg:'命中本地规则，禁止上架' });
+  }
+  var cr = codeRisk(d.main);
+  if(cr) items.push({ cat:'代码安全', ok:false, msg:cr });
+  if(!items.length) items.push({ cat:'本地规则', ok:true, msg:'未命中暴力、色情、违法、隐私窃取关键词' });
+  return {
+    pass: items.every(function(x){ return x.ok; }),
+    items: items,
+    mode:'local',
+    at: Date.now(),
+    codeHash: hashString(d.main)
+  };
+}
+function hashString(s){
+  var h1 = 0x811c9dc5, h2 = 0x1000193;
+  s = String(s||'');
+  for(var i=0;i<s.length;i++){
+    var c = s.charCodeAt(i);
+    h1 ^= c; h1 = (h1 * 0x01000193) >>> 0;
+    h2 = ((h2 ^ c) * 0x85ebca6b) >>> 0;
+  }
+  return (h1.toString(16) + h2.toString(16)).slice(0,24);
+}
+function renderAudit(status, log){
+  var badge = document.getElementById('auditBadge');
+  var st = document.getElementById('auditStatus');
+  if(!audit){ badge.textContent = '未审核'; badge.className = 'pill'; st.innerHTML = '<span class="s"><i></i>等待审核</span>'; }
+  else if(audit.pass){ badge.textContent = '审核通过'; badge.className = 'pill ok'; st.innerHTML = '<span class="s ok"><i></i>审核通过</span><span class="s">' + h(audit.mode === 'ai' ? '本地规则 + 开源模型' : '仅本地规则') + '</span>'; }
+  else { badge.textContent = '审核拒绝'; badge.className = 'pill bad'; st.innerHTML = '<span class="s bad"><i></i>审核拒绝</span>'; }
+  if(status || log) document.getElementById('auditLog').textContent = log || status;
+  syncModelFields();
+}
+async function runAudit(){
+  collectDraft();
+  if(!compileDraft(true)){ renderAudit('', '编译未通过，无法审核：\n' + compileMsg); toast('先修复编译错误'); return; }
+  var local = localAudit(draft);
+  document.getElementById('auditLog').textContent = '本地规则检查：\n' + local.items.map(function(x){ return (x.ok?'✓ ':'✗ ') + x.cat + ' · ' + x.msg; }).join('\n') + '\n\n正在调用开源模型复核…';
+  audit = local;
+  if(!local.pass){ renderAudit(); toast('本地规则已拒绝，不能上架'); return; }
+  if(!settings.aiEndpoint){
+    audit.mode = 'local';
+    renderAudit('', document.getElementById('auditLog').textContent + '\n\n未配置 AI 接口，仅本地规则通过。可在设置里连接 Qwen / Llama 后重新审核。');
+    toast('本地规则通过；AI 模型未配置');
+    return;
+  }
+  try{
+    var sys = '你是 Burger Chat 插件商店的内容安全审核员。审核范围：暴力血腥、色情低俗、未成年人性化、违法危险（毒品/赌博/诈骗/黑客）、仇恨歧视、隐私窃取、恶意代码。只输出 JSON：{"pass":true|false,"categories":["..."],"reason":"简短理由","score":0-100}。不要复述违规内容。';
+    var user = '插件名称：' + draft.name + '\n介绍：' + draft.description + '\n需求描述：' + draft.prompt + '\n代码（截断 6000 字）：\n' + String(draft.main).slice(0, 6000);
+    var txt = await callAI([{ role:'system', content:sys }, { role:'user', content:user }], 500);
+    var o = parseAIJSON(txt);
+    var aiItems = [{ cat:'开源模型复核', ok:!!o.pass, msg:(o.reason || '模型未给出理由') + (o.categories && o.categories.length ? ' · ' + o.categories.join(' / ') : '') }];
+    audit = { pass: !!o.pass, items: local.items.concat(aiItems), mode:'ai', at:Date.now(), codeHash:hashString(draft.main) };
+    renderAudit('', document.getElementById('auditLog').textContent + '\n\n模型结论：' + (o.pass ? '通过' : '拒绝') + '\n' + (o.reason || '') + (o.categories && o.categories.length ? '\n分类：' + o.categories.join(' / ') : '') + '\n评分：' + (o.score == null ? '—' : o.score));
+    toast(o.pass ? '审核通过' : '审核拒绝：' + (o.reason || ''));
+  }catch(e){
+    audit = { pass:false, items:local.items, mode:'ai-error', at:Date.now(), codeHash:hashString(draft.main) };
+    renderAudit('', document.getElementById('auditLog').textContent + '\n\n模型调用失败：' + (e.message || e) + '\n未获得 AI 结论，暂不能发布。');
+    toast('模型调用失败：' + (e.message || e));
+  }
+}
+function localAuditOnly(){
+  collectDraft();
+  if(!compileDraft(true)){ toast('先通过编译'); return; }
+  audit = localAudit(draft);
+  audit.mode = 'local';
+  renderAudit('', '仅本地规则审核\n' + audit.items.map(function(x){ return (x.ok?'✓ ':'✗ ') + x.cat + ' · ' + x.msg; }).join('\n') + (audit.pass ? '\n\n本地规则通过。未连接 AI 模型，发布前请人工复核。' : '\n\n存在违规项，禁止上架。'));
+  toast(audit.pass ? '本地规则通过' : '存在违规内容');
+}
+function auditValid(){
+  if(!audit || !audit.pass) return false;
+  if(!compileDraft(true)) return false;
+  return audit.codeHash === hashString(draft.main);
+}
+
+/* —— GitHub 发布 —— */
+async function ghGet(path, tk){
+  var r = await fetch('https://api.github.com/repos/' + REPO + '/contents/' + path.split('/').map(encodeURIComponent).join('/'), {
+    headers:{ 'Accept':'application/vnd.github+json', 'Authorization':'Bearer ' + tk, 'X-GitHub-Api-Version':'2022-11-28' }, cache:'no-store'
+  });
+  if(r.status === 404) return null;
+  if(!r.ok) throw new Error('GitHub 读取失败 HTTP ' + r.status);
+  return await r.json();
+}
+function b64(text){
+  var bytes = new TextEncoder().encode(text);
+  var bin = '';
+  for(var i=0;i<bytes.length;i+=0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i+0x8000));
+  return btoa(bin);
+}
+async function ghPut(path, text, message, tk, sha){
+  var body = { message: message, content: b64(text), branch: 'main' };
+  if(sha) body.sha = sha;
+  var r = await fetch('https://api.github.com/repos/' + REPO + '/contents/' + path.split('/').map(encodeURIComponent).join('/'), {
+    method:'PUT',
+    headers:{ 'Accept':'application/vnd.github+json', 'Authorization':'Bearer ' + tk, 'Content-Type':'application/json', 'X-GitHub-Api-Version':'2022-11-28' },
+    body: JSON.stringify(body)
+  });
+  var data = await r.json().catch(function(){ return {}; });
+  if(!r.ok) throw new Error(data.message || ('GitHub 写入失败 HTTP ' + r.status));
+  return data;
+}
+async function sha256(text){
+  var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  return Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+}
+async function publishDraft(){
+  collectDraft();
+  if(!compiled && !compileDraft(true)){ toast('编译未通过：' + compileMsg); return; }
+  if(!auditValid()){ toast('请先在上架审核里通过审核，且审核后代码未改动'); showView('audit'); return; }
+  var tk = settings.ghToken;
+  if(!tk){ toast('请先在设置里填写 GitHub Token'); showView('settings'); return; }
+  var pkg = buildPackage();
+  var text = JSON.stringify(pkg, null, 2);
+  var hash = await sha256(text);
+  var filename = pkg.id + '-' + pkg.version + '.bcp.json';
+  var pkgPath = 'plugins/' + filename;
+  var btn = document.getElementById('pubBtn');
+  btn.disabled = true; btn.textContent = '正在发布…';
+  try{
+    var curPkg = await ghGet(pkgPath, tk);
+    await ghPut(pkgPath, text, '插件上架：' + pkg.name + ' v' + pkg.version, tk, curPkg && curPkg.sha);
+    var regPath = 'plugins/registry.json';
+    var cur = await ghGet(regPath, tk);
+    var reg = { schema:'burger-plugin-store/v1', updated:0, plugins:[] };
+    if(cur && cur.content){
+      try{ reg = JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(cur.content.replace(/\n/g,'')), function(c){ return c.charCodeAt(0); }))) || reg; }catch(e){}
+    }
+    var old = (reg.plugins || []).filter(function(p){ return p.id === pkg.id; })[0] || {};
+    var entry = {
+      id:pkg.id, name:pkg.name, version:pkg.version, developer:pkg.developer,
+      target:pkg.target, minApp:pkg.minApp, maxApp:pkg.maxApp, apiVersion:1,
+      memoryMB:pkg.memoryMB, category:pkg.category, description:pkg.description,
+      icon:pkg.icon, tags:pkg.tags, download:pkgPath, sha256:hash, updated:Date.now(),
+      rating: old.rating || 0, ratingCount: old.ratingCount || 0,
+      reviewedBy:'bcp-dev-audit', reviewMode:audit.mode, reviewedAt:Date.now()
+    };
+    reg.plugins = (reg.plugins || []).filter(function(p){ return p.id !== pkg.id; }).concat(entry);
+    reg.updated = Date.now(); reg.schema = 'burger-plugin-store/v1';
+    await ghPut(regPath, JSON.stringify(reg, null, 2), '更新插件商店：' + pkg.name + ' v' + pkg.version, tk, cur && cur.sha);
+    toast('已发布，Cloudflare 构建后两端商店生效');
+    await reloadRegistry(true);
+  }catch(e){
+    toast('发布失败：' + (e.message || e));
+  }
+  btn.disabled = false; btn.textContent = '发布到商店';
+}
+
+/* —— 本周精选 —— */
+function autoPickWeekly(){
+  var top = pluginList().slice().sort(function(a,b){ return (num(b.rating)-num(a.rating)) || (num(b.ratingCount)-num(a.ratingCount)); }).slice(0,3).map(function(p){ return p.id; });
+  document.querySelectorAll('.wk').forEach(function(el){ el.checked = top.indexOf(el.value) >= 0; });
+  toast('已按评分选出 TOP3');
+}
+async function saveWeekly(){
+  if(!settings.ghToken){ toast('请先在设置里填写 GitHub Token'); showView('settings'); return; }
+  var ids = [].slice.call(document.querySelectorAll('.wk:checked')).map(function(el){ return el.value; }).slice(0,3);
+  if(!ids.length){ toast('至少选 1 个插件'); return; }
+  try{
+    var cur = await ghGet('plugins/registry.json', settings.ghToken);
+    var reg = { schema:'burger-plugin-store/v1', updated:0, plugins:[], weekly:{} };
+    if(cur && cur.content){
+      try{ reg = JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(cur.content.replace(/\n/g,'')), function(c){ return c.charCodeAt(0); }))) || reg; }catch(e){}
+    }
+    reg.weekly = { week:weekKey(), top:ids, updated:Date.now() };
+    reg.updated = Date.now();
+    await ghPut('plugins/registry.json', JSON.stringify(reg, null, 2), '结算本周精选：' + weekKey(), settings.ghToken, cur && cur.sha);
+    toast('本周精选已保存');
+    await reloadRegistry(true);
+  }catch(e){ toast('保存失败：' + (e.message || e)); }
+}
+
+/* —— 导航 / 启动 —— */
+var VIEWS = { overview:['概览','概览'], mine:['我的插件','我的插件'], studio:['AI 插件工坊','AI 插件工坊'], audit:['上架审核','上架审核'], weekly:['本周精选','本周精选'], settings:['设置','设置'] };
+function showView(v){
+  Object.keys(VIEWS).forEach(function(k){
+    var sec = document.getElementById('view-' + k);
+    if(sec) sec.classList.toggle('hidden', k !== v);
+  });
+  document.querySelectorAll('#nav button').forEach(function(b){ b.classList.toggle('on', b.dataset.view === v); });
+  var info = VIEWS[v] || ['开发者中心','开发者中心'];
+  document.getElementById('pageTitle').textContent = info[0];
+  document.getElementById('crumb').textContent = info[1];
+  if(v === 'settings') renderSettings();
+  if(v === 'studio') loadDraft();
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+document.querySelectorAll('#nav button').forEach(function(b){ b.addEventListener('click', function(){ showView(b.dataset.view); }); });
+document.getElementById('draftState').textContent = '草稿';
+document.getElementById('avatarFile').addEventListener('change', function(){});
+function editPlugin(id){
+  var p = pluginList().filter(function(x){ return x.id === id; })[0];
+  if(!p){ toast('商店里没有这个插件'); return; }
+  draft = Object.assign({}, p, { prompt:'', prompt:'' });
+  draft.main = '';
+  draft.ui = p.ui || [];
+  saveJSON(LS_DRAFT, draft);
+  loadDraft();
+  showView('studio');
+  toast('已载入插件资料；源码请从 GitHub 文件或重新生成');
+}
+function viewInStore(id){
+  window.open('https://hamburgerwow.top/#dl', '_blank');
+}
+function boot(){
+  if(needOnboard()){ showOnboard(); return; }
+  document.getElementById('shell').classList.remove('hidden');
+  renderProfileChip();
+  renderSettings();
+  syncModelFields();
+  loadDraft();
+  reloadRegistry(false);
+}
+window.addEventListener('resize', function(){
+  if(window.innerWidth < 1024){ document.getElementById('gate').style.display = 'grid'; document.getElementById('shell').classList.add('hidden'); }
+  else { document.getElementById('gate').style.display = 'none'; if(profile) document.getElementById('shell').classList.remove('hidden'); }
+});
+window.addEventListener('beforeunload', function(){ try{ collectDraft(); saveJSON(LS_DRAFT, draft); }catch(e){} });
+boot();
+</script>
+</body>
+</html>
