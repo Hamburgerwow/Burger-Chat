@@ -1,0 +1,57 @@
+{
+  "ok": true,
+  "app": "burger-pub",
+  "ver": "1.0",
+  "proto": "http+tcp",
+  "port": 54970,
+  "latest": {
+    "id": "v0.40.29",
+    "ver": "0.40.29",
+    "notes": "0.40.29 更新：\n· 修复网页壁纸设置窗口被透明图层挡住、鼠标点不了的问题\n· 电脑端与手机端下载源切到 hamburgerwow.top\n· 手机端版本同步到 0.40.29",
+    "ts": 1795363085000,
+    "force": false,
+    "apk": {
+      "url": "/f/android",
+      "name": "Burger Chat-安卓.apk",
+      "size": 959596
+    },
+    "exe": {
+      "url": "/f/windows",
+      "name": "Burger Chat.exe",
+      "size": 91269632
+    }
+  },
+  "versions": [
+    {
+      "id": "v0.40.29",
+      "ver": "0.40.29",
+      "notes": "0.40.29 更新：\n· 修复网页壁纸设置窗口被透明图层挡住、鼠标点不了的问题\n· 电脑端与手机端下载源切到 hamburgerwow.top\n· 手机端版本同步到 0.40.29",
+      "ts": 1795363085000,
+      "force": false,
+      "apk": {
+        "url": "/f/android",
+        "name": "Burger Chat-安卓.apk",
+        "size": 959596
+      },
+      "exe": {
+        "url": "/f/windows",
+        "name": "Burger Chat.exe",
+        "size": 91269632
+      }
+    }
+  ],
+  "anns": [
+    {
+      "id": "v0.40.29",
+      "title": "下载源已切到官网",
+      "body": "电脑端和手机端都改成从 hamburgerwow.top 检查更新与下载，手机端版本同步到 0.40.29。安装包实际托管在 GitHub Release，官网下载卡片已标注来源并提供发布页链接。",
+      "ts": 1795363085000,
+      "pinned": true
+    }
+  ],
+  "count": {
+    "versions": 1,
+    "anns": 1
+  },
+  "updated": 1795363085000
+}
