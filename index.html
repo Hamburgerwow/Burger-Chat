@@ -45,6 +45,9 @@ h1 span{color:var(--brand)}
 .btn.hide{display:none}
 .dlnote{margin:16px 0 0;font-size:12.5px;color:var(--sub)}
 .dlnote a{color:var(--sub);text-decoration:underline}
+.dlfrom{margin:9px 0 0;font-size:12.5px;color:var(--sub)}
+.dlfrom a{color:var(--brand);text-decoration:none;font-weight:600}
+.dlfrom a:hover{text-decoration:underline}
 
 section{padding:64px 0 0}
 h3{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);margin:0 0 18px;font-weight:600}
@@ -81,7 +84,7 @@ footer .sp{flex:1}
   <header>
     <h1>手机和电脑<br>在<span>自家局域网</span>里直接聊</h1>
     <p class="lead">不经过任何服务器：消息、图片、文件都在你自己的路由器里走。手机装个 App，电脑开个程序，配对码一连就能用。</p>
-    <div class="banner" id="banner" style="display:flex"><b>官网直接下载</b><span>安装包已放到 GitHub Release，不再依赖发布服务器，点下面的按钮就能下载。</span></div>
+    <div class="banner" id="banner" style="display:flex"><b>官网直接下载</b><span>后续新版本统一发布到 hamburgerwow.top，下载入口和版本信息都在官网更新。</span></div>
   </header>
 
   <section id="dl" style="padding-top:0">
@@ -91,10 +94,11 @@ footer .sp{flex:1}
         <span class="verchip" id="verText">最新版本 0.40.29 · 2026 年 11 月 22 日</span>
       </div>
       <div class="btns">
-        <a class="btn pri" id="apkBtn" href="https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.29/Burger.Chat-Android.apk"><span class="t">下载安卓版</span><span class="s" id="apkSub">APK · 0.92 MB</span></a>
-        <a class="btn gh" id="exeBtn" href="https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.29/Burger.Chat-Windows.exe"><span class="t">下载电脑版（Windows）</span><span class="s" id="exeSub">EXE · 87.04 MB</span></a>
+        <a class="btn pri" id="apkBtn" href="/f/android"><span class="t">下载安卓版</span><span class="s" id="apkSub">APK · 0.92 MB</span></a>
+        <a class="btn gh" id="exeBtn" href="/f/windows"><span class="t">下载电脑版（Windows）</span><span class="s" id="exeSub">EXE · 87.04 MB</span></a>
       </div>
-      <p class="dlnote" id="dlNote">点按钮直接下载安装包。安卓若提示“未知来源”，允许一次即可安装；电脑版是单个 exe，双击就能用。</p>
+      <p class="dlnote" id="dlNote">点按钮直接从官网下载最新安装包。安卓若提示“未知来源”，允许一次即可安装；电脑版是单个 exe，双击就能用。</p>
+      <p class="dlfrom">此下载源来自 GitHub · <a href="https://github.com/Hamburgerwow/Burger-Chat/releases/tag/v0.40.29" target="_blank" rel="noopener">查看 Burger Chat v0.40.29 发布页</a></p>
     </div>
   </section>
 
@@ -109,7 +113,7 @@ footer .sp{flex:1}
 
   <section id="log">
     <h3>更新日志</h3>
-    <p id="logText">0.40.29：修复网页壁纸设置窗口被透明图层挡住、鼠标点不了的问题。安卓版同步更新。</p>
+    <p id="logText">0.40.29：修复网页壁纸设置窗口被透明图层挡住、鼠标点不了的问题。电脑端与手机端下载源同步切到 hamburgerwow.top，手机端版本同步到 0.40.29。</p>
   </section>
 
   <section id="faq">
@@ -124,7 +128,7 @@ footer .sp{flex:1}
   <footer>
     <span>Burger Chat</span>
     <span class="sp"></span>
-    <span id="src">安装包托管在 GitHub Release，官网不再依赖发布服务器</span>
+    <span id="src">下载源：https://hamburgerwow.top</span>
     <span id="tip"></span>
   </footer>
 </div>
