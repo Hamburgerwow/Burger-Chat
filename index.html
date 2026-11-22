@@ -17,7 +17,7 @@ nav{position:sticky;top:0;z-index:9;background:rgba(255,255,255,.86);backdrop-fi
 .nav .sp{flex:1}
 .nav a{color:var(--sub);text-decoration:none;font-size:13.5px;margin-left:18px}
 .nav a:hover{color:var(--ink)}
-@media(max-width:520px){.nav a:nth-child(1),.nav a:nth-child(2){display:none}}
+@media(max-width:520px){.nav a:nth-last-child(1),.nav a:nth-last-child(2){display:none}}
 
 header{padding:72px 0 8px}
 h1{font-size:40px;line-height:1.2;letter-spacing:-1px;margin:0 0 16px;font-weight:700}
@@ -64,6 +64,17 @@ h3{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--sub)
 .qa{border:1px solid var(--line);border-radius:14px;padding:16px 18px}
 .qa b{font-weight:650;font-size:14px}
 .qa p{margin:6px 0 0;font-size:13.5px;color:var(--sub);line-height:1.7}
+.plug-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.plug-card{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff;position:relative;overflow:hidden}
+.plug-card:hover{border-color:#cfc7f3}
+.plug-card .pi{width:40px;height:40px;border-radius:12px;background:linear-gradient(145deg,#f1edff,#e4dcff);display:grid;place-items:center;font-size:20px;margin-bottom:10px}
+.plug-card b{display:block;font-size:14.5px;font-weight:650;margin-bottom:5px}
+.plug-card p{margin:0;font-size:12.5px;color:var(--sub);line-height:1.65}
+.plug-card a{display:inline-flex;margin-top:10px;font-size:12px;color:var(--brand);font-weight:600}
+.plug-top{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.plug-top span{font-size:11.5px;border:1px solid var(--line);border-radius:99px;padding:3px 9px;color:#555b68;background:#faf9ff}
+.plug-top b{color:#7a6bd8}
+@media(max-width:640px){.plug-grid{grid-template-columns:1fr}}
 footer{margin-top:72px;border-top:1px solid var(--line);padding:26px 0 46px;color:var(--sub);font-size:12.5px;display:flex;flex-wrap:wrap;gap:10px}
 footer .sp{flex:1}
 #tip{color:#b42318}
@@ -76,6 +87,8 @@ footer .sp{flex:1}
   <div class="brand">Burger Chat</div>
   <div class="sp"></div>
   <a href="#dl">下载</a>
+  <a href="#plugins">插件</a>
+  <a href="/developer.html">开发者</a>
   <a href="#log">更新日志</a>
   <a href="#faq">常见问题</a>
 </div></nav>
@@ -91,11 +104,11 @@ footer .sp{flex:1}
     <div class="dlbox">
       <div class="dlhead">
         <h2>下载</h2>
-        <span class="verchip" id="verText">最新版本 0.40.30 · 2026 年 11 月 23 日</span>
+        <span class="verchip" id="verText">最新版本 0.40.31 · 2026 年 11 月 23 日</span>
       </div>
       <div class="btns">
-        <a class="btn pri" id="apkBtn" href="/f/android"><span class="t">下载安卓版</span><span class="s" id="apkSub">APK · 0.97 MB</span></a>
-        <a class="btn gh" id="exeBtn" href="/f/windows"><span class="t">下载电脑版（Windows）</span><span class="s" id="exeSub">EXE · 87.46 MB</span></a>
+        <a class="btn pri" id="apkBtn" href="/f/android"><span class="t">下载安卓版</span><span class="s" id="apkSub">APK · 1.00 MB</span></a>
+        <a class="btn gh" id="exeBtn" href="/f/windows"><span class="t">下载电脑版（Windows）</span><span class="s" id="exeSub">EXE · 87.71 MB</span></a>
       </div>
       <p class="dlnote" id="dlNote">点按钮直接从官网下载最新安装包。安卓若提示“未知来源”，允许一次即可安装；电脑版是单个 exe，双击就能用。</p>
       <p class="dlfrom">此下载源来自官方发布端 · 安装包由 Burger Chat 发布服务提供</p>
@@ -111,9 +124,19 @@ footer .sp{flex:1}
     </div>
   </section>
 
+  <section id="plugins">
+    <h3>插件生态</h3>
+    <div class="plug-grid">
+      <div class="plug-card"><div class="pi">🧩</div><b>插件商店</b><p>电脑端和手机端的设置里都有在线商店，支持搜索、分类、评分、本周精选和安装进度。</p><a href="/plugins/registry.json" target="_blank">查看商店索引 →</a></div>
+      <div class="plug-card"><div class="pi">⭐</div><b>评分与本周精选</b><p>每个插件都能打 1–5 星，每周按评分与编辑推荐结算 TOP3，固定置顶到两端商店。</p><a href="/developer.html#weekly">查看本周榜单 →</a></div>
+      <div class="plug-card"><div class="pi">🛠</div><b>电脑网页端开发者中心</b><p>资料名片、图形化编程、AI 生成代码、编译校验、内容审核与一键上架，全在电脑网页端完成。</p><a href="/developer.html">进入开发者中心 →</a></div>
+    </div>
+    <div class="plug-top" id="plugTop"><span>商店连接中…</span></div>
+  </section>
+
   <section id="log">
     <h3>更新日志</h3>
-    <p id="logText">0.40.30：新增图片/视频统一发送入口；两端支持导入、上传和在线安装插件，插件会自动适配功能与界面位置。</p>
+    <p id="logText">0.40.31：插件商店升级为三级菜单，新增搜索、分类、评分、本周精选、详情页安装进度和插件设置；两端取消插件上传，开发与上架统一到电脑网页端开发者中心。</p>
   </section>
 
   <section id="faq">
@@ -133,5 +156,23 @@ footer .sp{flex:1}
   </footer>
 </div>
 
+<script>
+(function(){
+  var box = document.getElementById('plugTop');
+  if(!box) return;
+  fetch('/plugins/registry.json?t=' + Date.now(), {cache:'no-store'}).then(function(r){
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }).then(function(o){
+    var ps = (o && o.plugins) || [];
+    var weekly = (o && o.weekly && o.weekly.top) || [];
+    var top = weekly.map(function(id){ return ps.filter(function(p){ return p.id === id; })[0]; }).filter(Boolean);
+    if(!top.length) top = ps.slice().sort(function(a,b){ return (Number(b.rating)||0) - (Number(a.rating)||0); }).slice(0,3);
+    box.innerHTML = '<span>已收录 <b>' + ps.length + '</b> 个插件</span>' + (top.length ? top.map(function(p,i){ return '<span>TOP' + (i+1) + ' · ' + (p.icon||'🧩') + ' ' + (p.name||'') + '</span>'; }).join('') : '');
+  }).catch(function(){
+    box.innerHTML = '<span>商店索引暂时打不开，客户端里仍可正常使用</span>';
+  });
+})();
+</script>
 </body>
 </html>
