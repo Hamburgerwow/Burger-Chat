@@ -336,10 +336,10 @@ body.dark-surface .main .pill.warn{background:rgba(181,122,21,.2);color:#ffd28a!
             <button class="btn pri" onclick="generateDraft()">✦ 生成并编译</button>
             <button class="btn" onclick="compileDraft(true)">仅重新编译</button>
             <button class="btn ghost" onclick="showView('audit')">去审核</button>
-            <button class="btn" onclick="publishDraft()" id="pubBtn" title="填写 GitHub Token 可一键发布；未填时导出 .bcp.json">发布到商店</button>
+            <button class="btn" onclick="publishDraft()" id="pubBtn" title="导出 .bcp.json 并打开 GitHub 上传页，无需 Token">导出并发布</button>
             <button class="btn" onclick="downloadDraft()">导出 .bcp.json</button>
           </div>
-          <div class="notice" style="margin-top:12px"><b>发布前置条件：</b>编译通过 + 审核通过。GitHub Token 为选填项：不填仍可生成、编译、审核、导出 .bcp.json；只有点「发布到商店」直接写入 GitHub 时才需要填写。</div>
+          <div class="notice" style="margin-top:12px"><b>发布前置条件：</b>编译通过 + 审核通过。已取消 GitHub Token 直写：点「导出并发布」会导出 <code>.bcp.json</code> 并打开 GitHub 上传页，把包拖入 <code>plugins/</code> 提交即可，不需要填写 Token。</div>
         </div>
 
         <div class="card">
@@ -386,10 +386,10 @@ body.dark-surface .main .pill.warn{background:rgba(181,122,21,.2);color:#ffd28a!
       <div class="grid g2">
         <div class="card">
           <div class="card-h"><div><h2>本周精选</h2><p>按评分与评分人数排序，最多置顶 3 个</p></div><div class="sp"></div><span class="pill" id="weeklyWeek">—</span></div>
-          <div class="notice">客户端商店会把 TOP1–3 固定在最上方，并显示「本周精选」徽章。评分由客户端本地记录；商店榜单字段由这里结算写入 registry.json。</div>
+          <div class="notice">客户端商店会把 TOP1–3 固定在最上方，并显示「本周精选」徽章。已取消 GitHub Token 直写；点「导出本周精选 registry」会生成新的 <code>registry.json</code> 并打开 GitHub 上传页，上传覆盖后由 Cloudflare 构建生效。</div>
           <div class="rowlist" id="weeklyList"><div class="empty">正在读取商店…</div></div>
           <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:12px">
-            <button class="btn pri" onclick="saveWeekly()">保存本周精选</button>
+            <button class="btn pri" onclick="saveWeekly()">导出本周精选 registry</button>
             <button class="btn" onclick="autoPickWeekly()">按评分自动选 TOP3</button>
           </div>
         </div>
@@ -410,15 +410,15 @@ body.dark-surface .main .pill.warn{background:rgba(181,122,21,.2);color:#ffd28a!
     <section class="section hidden" id="view-settings">
       <div class="grid g2">
         <div class="card">
-          <div class="card-h"><div><h2>账号与发布</h2><p>敏感信息只保存在本机 localStorage</p></div></div>
+          <div class="card-h"><div><h2>账号与发布</h2><p>不再填写 GitHub Token；资料只保存在本机 localStorage</p></div></div>
           <div class="formgrid">
-            <div class="field wide"><label>GitHub Token（contents:write，选填）</label><input id="sGh" type="password" placeholder="github_pat_…；不填仍可生成、编译、审核、导出"></div>
             <div class="field"><label>开发者名称</label><input id="sName"></div>
             <div class="field"><label>注册邮箱</label><input id="sEmail" type="email" placeholder="you@example.com" readonly style="background:#f7f6fb;color:#6f6885"></div>
             <div class="field wide"><label>开发者标识</label><input id="sDevId" placeholder="小写字母、数字、短横线"></div>
             <div class="field wide"><label>开发心情</label><select id="sMood"><option>开心</option><option>专注</option><option>灵感爆棚</option><option>摸鱼</option><option>深夜赶工</option><option>佛系</option></select></div>
             <div class="field wide"><label>头像</label><input id="sAvatarFile" type="file" accept="image/*"></div>
           </div>
+          <div class="notice" style="margin-top:12px"><b>发布方式：</b>已取消 GitHub Token 直接写入。插件发布和本周精选都改为「导出文件 + 打开 GitHub 上传页」，在网页里提交即可。</div>
           <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:12px"><button class="btn pri" onclick="saveSettings()">保存设置</button><button class="btn bad" onclick="resetProfile()">清除本地资料</button></div>
         </div>
         <div class="card">
@@ -803,7 +803,6 @@ function renderCalendar(){
 /* —— 设置 —— */
 function renderSettings(){
   if(!profile) return;
-  document.getElementById('sGh').value = settings.ghToken || '';
   document.getElementById('sName').value = profile.name || '';
   document.getElementById('sDevId').value = profile.devId || '';
   document.getElementById('sMood').value = profile.mood || '专注';
@@ -818,7 +817,6 @@ function renderSettings(){
   if(fc) fc.value = colorOr(settings.fontColor, '#16181d');
 }
 function saveSettings(){
-  settings.ghToken = document.getElementById('sGh').value.trim();
   settings.aiEndpoint = document.getElementById('sAiEndpoint').value.trim().replace(/\/+$/,'');
   settings.aiModel = document.getElementById('sAiModel').value.trim();
   settings.aiKey = document.getElementById('sAiKey').value.trim();
@@ -1285,14 +1283,17 @@ function buildPackage(){
     homepage:String(draft.homepage || '')
   };
 }
-function downloadDraft(){
-  var pkg = buildPackage();
-  var name = pkg.id + '-' + pkg.version + '.bcp.json';
-  var blob = new Blob([JSON.stringify(pkg, null, 2)], { type:'application/json;charset=utf-8' });
+function downloadText(name, text){
+  var blob = new Blob([text], { type:'application/json;charset=utf-8' });
   var a = document.createElement('a');
   a.href = URL.createObjectURL(blob); a.download = name;
   document.body.appendChild(a); a.click(); a.remove();
   setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+}
+function downloadDraft(){
+  var pkg = buildPackage();
+  var name = pkg.id + '-' + pkg.version + '.bcp.json';
+  downloadText(name, JSON.stringify(pkg, null, 2));
 }
 /* 导入已有的 .bcp.json（buildPackage/downloadDraft 导出的包） */
 function importDraft(input){
@@ -1408,81 +1409,18 @@ function auditValid(){
   return audit.codeHash === hashString(draft.main);
 }
 
-/* —— GitHub 发布 —— */
-async function ghGet(path, tk){
-  var r = await fetch('https://api.github.com/repos/' + REPO + '/contents/' + path.split('/').map(encodeURIComponent).join('/'), {
-    headers:{ 'Accept':'application/vnd.github+json', 'Authorization':'Bearer ' + tk, 'X-GitHub-Api-Version':'2022-11-28' }, cache:'no-store'
-  });
-  if(r.status === 404) return null;
-  if(!r.ok) throw new Error('GitHub 读取失败 HTTP ' + r.status);
-  return await r.json();
-}
-function b64(text){
-  var bytes = new TextEncoder().encode(text);
-  var bin = '';
-  for(var i=0;i<bytes.length;i+=0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i+0x8000));
-  return btoa(bin);
-}
-async function ghPut(path, text, message, tk, sha){
-  var body = { message: message, content: b64(text), branch: 'main' };
-  if(sha) body.sha = sha;
-  var r = await fetch('https://api.github.com/repos/' + REPO + '/contents/' + path.split('/').map(encodeURIComponent).join('/'), {
-    method:'PUT',
-    headers:{ 'Accept':'application/vnd.github+json', 'Authorization':'Bearer ' + tk, 'Content-Type':'application/json', 'X-GitHub-Api-Version':'2022-11-28' },
-    body: JSON.stringify(body)
-  });
-  var data = await r.json().catch(function(){ return {}; });
-  if(!r.ok) throw new Error(data.message || ('GitHub 写入失败 HTTP ' + r.status));
-  return data;
-}
-async function sha256(text){
-  var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
-  return Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+/* —— 导出发布（不再直接写 GitHub） —— */
+function openUploadPage(){
+  window.open('https://github.com/Hamburgerwow/Burger-Chat/upload/main/plugins', '_blank');
 }
 async function publishDraft(){
   collectDraft();
   if(!compiled && !compileDraft(true)){ toast('编译未通过：' + compileMsg); return; }
   if(!auditValid()){ toast('请先在上架审核里通过审核，且审核后代码未改动'); showView('audit'); return; }
-  var tk = settings.ghToken;
-  if(!tk){
-    downloadDraft();
-    toast('GitHub Token 未填，已导出 .bcp.json；可手动上传到 plugins/，或填 Token 后一键发布');
-    return;
-  }
   var pkg = buildPackage();
-  var text = JSON.stringify(pkg, null, 2);
-  var hash = await sha256(text);
-  var filename = pkg.id + '-' + pkg.version + '.bcp.json';
-  var pkgPath = 'plugins/' + filename;
-  var btn = document.getElementById('pubBtn');
-  btn.disabled = true; btn.textContent = '正在发布…';
-  try{
-    var curPkg = await ghGet(pkgPath, tk);
-    await ghPut(pkgPath, text, '插件上架：' + pkg.name + ' v' + pkg.version, tk, curPkg && curPkg.sha);
-    var regPath = 'plugins/registry.json';
-    var cur = await ghGet(regPath, tk);
-    var reg = { schema:'burger-plugin-store/v1', updated:0, plugins:[] };
-    if(cur && cur.content){
-      try{ reg = JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(cur.content.replace(/\n/g,'')), function(c){ return c.charCodeAt(0); }))) || reg; }catch(e){}
-    }
-    var old = (reg.plugins || []).filter(function(p){ return p.id === pkg.id; })[0] || {};
-    var entry = {
-      id:pkg.id, name:pkg.name, version:pkg.version, developer:pkg.developer,
-      target:pkg.target, minApp:pkg.minApp, maxApp:pkg.maxApp, apiVersion:1,
-      memoryMB:pkg.memoryMB, category:pkg.category, description:pkg.description,
-      icon:pkg.icon, tags:pkg.tags, download:pkgPath, sha256:hash, updated:Date.now(),
-      rating: old.rating || 0, ratingCount: old.ratingCount || 0,
-      reviewedBy:'bcp-dev-audit', reviewMode:audit.mode, reviewedAt:Date.now()
-    };
-    reg.plugins = (reg.plugins || []).filter(function(p){ return p.id !== pkg.id; }).concat(entry);
-    reg.updated = Date.now(); reg.schema = 'burger-plugin-store/v1';
-    await ghPut(regPath, JSON.stringify(reg, null, 2), '更新插件商店：' + pkg.name + ' v' + pkg.version, tk, cur && cur.sha);
-    toast('已发布，Cloudflare 构建后两端商店生效');
-    await reloadRegistry(true);
-  }catch(e){
-    toast('发布失败：' + (e.message || e));
-  }
-  btn.disabled = false; btn.textContent = '发布到商店';
+  openUploadPage();
+  downloadDraft();
+  toast('已导出 ' + pkg.id + '-' + pkg.version + '.bcp.json，并打开 GitHub 上传页；把包拖入 plugins/ 提交即可');
 }
 
 /* —— 本周精选 —— */
@@ -1491,22 +1429,34 @@ function autoPickWeekly(){
   document.querySelectorAll('.wk').forEach(function(el){ el.checked = top.indexOf(el.value) >= 0; });
   toast('已按评分选出 TOP3');
 }
+async function publicRegistry(){
+  if(registry && Array.isArray(registry.plugins)) return JSON.parse(JSON.stringify(registry));
+  var urls = [
+    'https://raw.githubusercontent.com/' + REPO + '/main/plugins/registry.json?t=' + Date.now(),
+    'https://hamburgerwow.top/plugins/registry.json?t=' + Date.now()
+  ];
+  for(var i=0;i<urls.length;i++){
+    try{
+      var r = await fetch(urls[i], { cache:'no-store' });
+      if(!r.ok) continue;
+      var o = await r.json();
+      if(o && o.schema === 'burger-plugin-store/v1' && Array.isArray(o.plugins)) return o;
+    }catch(e){}
+  }
+  return null;
+}
 async function saveWeekly(){
-  if(!settings.ghToken){ toast('请先在设置里填写 GitHub Token'); showView('settings'); return; }
   var ids = [].slice.call(document.querySelectorAll('.wk:checked')).map(function(el){ return el.value; }).slice(0,3);
   if(!ids.length){ toast('至少选 1 个插件'); return; }
+  openUploadPage();
   try{
-    var cur = await ghGet('plugins/registry.json', settings.ghToken);
-    var reg = { schema:'burger-plugin-store/v1', updated:0, plugins:[], weekly:{} };
-    if(cur && cur.content){
-      try{ reg = JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(cur.content.replace(/\n/g,'')), function(c){ return c.charCodeAt(0); }))) || reg; }catch(e){}
-    }
+    var reg = await publicRegistry();
+    if(!reg){ toast('读取 registry.json 失败，请先刷新商店再试'); return; }
     reg.weekly = { week:weekKey(), top:ids, updated:Date.now() };
     reg.updated = Date.now();
-    await ghPut('plugins/registry.json', JSON.stringify(reg, null, 2), '结算本周精选：' + weekKey(), settings.ghToken, cur && cur.sha);
-    toast('本周精选已保存');
-    await reloadRegistry(true);
-  }catch(e){ toast('保存失败：' + (e.message || e)); }
+    downloadText('registry.json', JSON.stringify(reg, null, 2));
+    toast('已导出 registry.json，并打开 GitHub 上传页；覆盖 plugins/registry.json 后提交即可');
+  }catch(e){ toast('导出失败：' + (e.message || e)); }
 }
 
 /* —— 导航 / 启动 —— */
