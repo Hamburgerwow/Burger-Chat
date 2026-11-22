@@ -1,6 +1,6 @@
 {
   "schema": "burger-plugin-store/v1",
-  "updated": 1795368776651,
+  "updated": 1795372735309,
   "plugins": [
     {
       "id": "bcp.hamburgerwow.focus-note",
@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "developer": "Hamburgerwow",
       "target": "both",
-      "minApp": "0.40.29",
+      "minApp": "0.40.31",
       "maxApp": "0.40.99",
       "apiVersion": 1,
       "memoryMB": 3,
@@ -17,7 +17,14 @@
       "icon": "📝",
       "download": "plugins/bcp.hamburgerwow.focus-note-1.0.0.bcp.json",
       "sha256": "c188b1298e724a9b15c205f783fffe962ad5fe2590878ea9989683dfab8f60d5",
-      "updated": 1795368776646
+      "updated": 1795368776646,
+      "rating": 0,
+      "ratingCount": 0,
+      "tags": [
+        "便签",
+        "专注",
+        "工具"
+      ]
     },
     {
       "id": "bcp.hamburgerwow.hello",
@@ -25,7 +32,7 @@
       "version": "1.0.0",
       "developer": "Hamburgerwow",
       "target": "both",
-      "minApp": "0.40.29",
+      "minApp": "0.40.31",
       "maxApp": "0.40.99",
       "apiVersion": 1,
       "memoryMB": 4,
@@ -34,7 +41,14 @@
       "icon": "👋",
       "download": "plugins/bcp.hamburgerwow.hello-1.0.0.bcp.json",
       "sha256": "45d94c0afd10b49a6894269e1432a50cbe3f0b96099197939606c8a60fe4f33b",
-      "updated": 1795368776650
+      "updated": 1795368776650,
+      "rating": 0,
+      "ratingCount": 0,
+      "tags": [
+        "快捷",
+        "聊天",
+        "问候"
+      ]
     },
     {
       "id": "bcp.hamburgerwow.media-tip",
@@ -42,7 +56,7 @@
       "version": "1.0.0",
       "developer": "Hamburgerwow",
       "target": "both",
-      "minApp": "0.40.29",
+      "minApp": "0.40.31",
       "maxApp": "0.40.99",
       "apiVersion": 1,
       "memoryMB": 2,
@@ -51,7 +65,23 @@
       "icon": "🖼️",
       "download": "plugins/bcp.hamburgerwow.media-tip-1.0.0.bcp.json",
       "sha256": "b0329f9584489a510ffab415f6f634a9233d35cc0f51611aa9582b177cfa7bfb",
-      "updated": 1795368776651
+      "updated": 1795368776651,
+      "rating": 0,
+      "ratingCount": 0,
+      "tags": [
+        "图片",
+        "媒体",
+        "快捷"
+      ]
     }
-  ]
+  ],
+  "weekly": {
+    "week": "2026-W48",
+    "top": [
+      "bcp.hamburgerwow.hello",
+      "bcp.hamburgerwow.focus-note",
+      "bcp.hamburgerwow.media-tip"
+    ],
+    "updated": 1795372735309
+  }
 }
