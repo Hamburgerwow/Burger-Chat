@@ -391,7 +391,7 @@ a{color:var(--brand);text-decoration:none}
             <div class="field wide"><label>接口地址</label><input id="sAiEndpoint" placeholder="http://127.0.0.1:11434/v1/chat/completions"></div>
             <div class="field"><label>模型名</label><input id="sAiModel" placeholder="qwen2.5:7b"></div>
             <div class="field"><label>API Key</label><input id="sAiKey" type="password" placeholder="本地模型可留空"></div>
-            <div class="field wide"><label>邮件网关（可选）</label><input id="sMail" placeholder="https://…/email/send，POST {email,code}"></div>
+            <div class="field wide"><label>邮件网关（默认本机）</label><input id="sMail" placeholder="http://127.0.0.1:8787/email/send"></div>
           </div>
           <div class="notice" style="margin-top:12px"><b>开源模型建议：</b>Qwen2.5-7B-Instruct、Llama-3.1-8B-Instruct、Mistral-7B-Instruct。用 Ollama 启动后接口通常是 <code>http://127.0.0.1:11434/v1/chat/completions</code>。未连接模型时，生成走图形化模板，审核走本地规则。</div>
         </div>
@@ -451,6 +451,7 @@ var audit = null;
 var mailCode = '';
 var mailExp = 0;
 var mailSentTo = '';
+var DEFAULT_MAIL_ENDPOINT = 'http://127.0.0.1:8787/email/send';
 var dirty = false;
 
 function loadJSON(k, d){ try{ var v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); }catch(e){ return d; } }
@@ -545,7 +546,7 @@ function sendCode(){
   mailSentTo = email;
   var hint = document.getElementById('codeHint');
   hint.style.display = 'block';
-  var ep = String(settings.mailEndpoint || '').trim();
+  var ep = String(settings.mailEndpoint || DEFAULT_MAIL_ENDPOINT).trim();
   if(ep){
     hint.textContent = '正在发送验证码邮件…';
     fetch(ep, {
