@@ -184,12 +184,12 @@ api.events.emit(name, data)
 - 邮箱 + 邮箱验证码
 - 开发者标识（用于插件 ID 的 `bcp.<标识>.<插件名>`）
 
-邮箱验证码默认是本地演示码（未配置邮件网关时直接显示在页面上，5 分钟有效）。生产环境可在设置里填写邮件网关地址，客户端会 POST `{email, code, scene}`，由网关真实发送验证码邮件；网关返回 `{ok:true}` 即视为发送成功。
+邮箱验证码默认走本机邮件网关 `http://127.0.0.1:8787/email/send`，真实发送到邮箱；网关未启动时页面会明确提示并给出本地演示码。生产环境也可在设置里改成其他邮件网关地址，客户端会 POST `{email, code, scene}`，由网关真实发送验证码邮件；网关返回 `{ok:true}` 即视为发送成功。
 
 上架流程：
 
 1. 在「AI 插件工坊」填插件资料和图形化功能块，写需求提示词。
-2. 点「生成并编译」：连接开源模型时由模型输出 manifest + main；未连接模型时用图形化模板生成。
+2. 点「生成并编译」：默认调用在线开源模型（Pollinations GPT-OSS 20B，免 Key）输出 manifest + main；也可在设置里切换硅基流动 Qwen2.5、OpenRouter Llama 3.3、Hugging Face Qwen2.5 或本机 Ollama。
 3. 编译阶段校验 manifest 字段、JavaScript 语法、API 调用和危险代码模式。
 4. 在「上架审核」运行本地规则 + 开源模型复核；审核通过后代码不能再次修改，否则审核失效。
 5. 填 GitHub Token，发布时写入 `plugins/<id>-<version>.bcp.json`，并更新 `plugins/registry.json`。
@@ -200,7 +200,7 @@ api.events.emit(name, data)
 审核分两层：
 
 1. 本地规则：扫描名称、介绍、提示词和代码，拦截暴力血腥、色情低俗、未成年人性化、违法危险、赌博毒品、仇恨歧视、隐私窃取和恶意代码；同时检查 `eval`、动态 `Function`、`document.cookie`、直接 `localStorage`、`XMLHttpRequest`、`WebSocket`、顶层跳转等危险写法。
-2. 开源模型复核：通过 OpenAI 兼容接口调用 Qwen2.5、Llama 3.1、Mistral 等开源模型，要求只返回 `{pass, categories, reason, score}` JSON。模型不可用时只能走本地规则，并在界面上明确标注“未连接 AI 模型”。
+2. 开源模型复核：默认通过在线 OpenAI 兼容接口调用 GPT-OSS 20B（Pollinations，免 Key）；可在设置里切到硅基流动 Qwen2.5、OpenRouter Llama 3.3、Hugging Face Qwen2.5 或本机 Ollama，要求只返回 `{pass, categories, reason, score}` JSON。免费接口有额度冷却（约每 45 秒一次），页面会自动等待并重试；模型持续不可用时不得发布。
 
 审核不通过、编译不通过或审核后代码被修改，都不允许发布。
 
