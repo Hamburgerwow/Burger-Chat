@@ -81,20 +81,20 @@ footer .sp{flex:1}
   <header>
     <h1>手机和电脑<br>在<span>自家局域网</span>里直接聊</h1>
     <p class="lead">不经过任何服务器：消息、图片、文件都在你自己的路由器里走。手机装个 App，电脑开个程序，配对码一连就能用。</p>
-    <div class="banner" id="banner"><b></b><span></span></div>
+    <div class="banner" id="banner" style="display:flex"><b>官网直接下载</b><span>安装包已放到 GitHub Release，不再依赖发布服务器，点下面的按钮就能下载。</span></div>
   </header>
 
   <section id="dl" style="padding-top:0">
     <div class="dlbox">
       <div class="dlhead">
         <h2>下载</h2>
-        <span class="verchip" id="verText">正在读取版本…</span>
+        <span class="verchip" id="verText">最新版本 0.40.29 · 2026 年 11 月 22 日</span>
       </div>
       <div class="btns">
-        <a class="btn pri hide" id="apkBtn" href="#"><span class="t">下载安卓版</span><span class="s" id="apkSub">APK</span></a>
-        <a class="btn gh hide" id="exeBtn" href="#"><span class="t">下载电脑版（Windows）</span><span class="s" id="exeSub">exe</span></a>
+        <a class="btn pri" id="apkBtn" href="https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.29/Burger.Chat-Android.apk"><span class="t">下载安卓版</span><span class="s" id="apkSub">APK · 0.92 MB</span></a>
+        <a class="btn gh" id="exeBtn" href="https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.29/Burger.Chat-Windows.exe"><span class="t">下载电脑版（Windows）</span><span class="s" id="exeSub">EXE · 87.04 MB</span></a>
       </div>
-      <p class="dlnote" id="dlNote">安装包直接来自发布服务器，点一下就开始下载。</p>
+      <p class="dlnote" id="dlNote">点按钮直接下载安装包。安卓若提示“未知来源”，允许一次即可安装；电脑版是单个 exe，双击就能用。</p>
     </div>
   </section>
 
@@ -109,7 +109,7 @@ footer .sp{flex:1}
 
   <section id="log">
     <h3>更新日志</h3>
-    <p id="logText" class="empty">正在读取…</p>
+    <p id="logText">0.40.29：修复网页壁纸设置窗口被透明图层挡住、鼠标点不了的问题。安卓版同步更新。</p>
   </section>
 
   <section id="faq">
@@ -124,116 +124,10 @@ footer .sp{flex:1}
   <footer>
     <span>Burger Chat</span>
     <span class="sp"></span>
-    <span id="src">版本信息实时来自你的发布服务器</span>
+    <span id="src">安装包托管在 GitHub Release，官网不再依赖发布服务器</span>
     <span id="tip"></span>
   </footer>
 </div>
 
-<script>
-/* 版本、公告、安装包地址全部实时从发布端 /api/latest 拉，传了新版本这里自动变 */
-const API_CANDIDATES = ['/api/latest', 'http://114.66.28.183:58612/api/latest', 'http://192.168.31.185:54970/api/latest'];
-const $ = id => document.getElementById(id);
-
-function size(n){
-  n = Number(n || 0);
-  if(!n) return '';
-  if(n < 1048576) return (n / 1024).toFixed(1) + ' KB';
-  if(n < 1073741824) return (n / 1048576).toFixed(1) + ' MB';
-  return (n / 1073741824).toFixed(2) + ' GB';
-}
-function day(ts){
-  const d = new Date(ts || Date.now());
-  return (d.getMonth() + 1) + ' 月 ' + d.getDate() + ' 日';
-}
-/* 两个地址同时试，谁先成功用谁，5 秒超时不至于让页面卡住 */
-function probe(u, ms){
-  return new Promise(resolve => {
-    const ac = new AbortController();
-    const t = setTimeout(() => { ac.abort(); resolve(null); }, ms);
-    fetch(u, { cache:'no-store', signal: ac.signal })
-      .then(r => r.ok ? r.json() : null)
-      .then(d => { clearTimeout(t); resolve(d && d.ok ? d : null); })
-      .catch(() => { clearTimeout(t); resolve(null); });
-  });
-}
-async function getLatest(){
-  const rs = await Promise.all(API_CANDIDATES.map(u => probe(u, 6000)));
-  for(let i = 0; i < rs.length; i++){
-    if(rs[i]){
-      const base = API_CANDIDATES[i].replace(/\/api\/latest.*$/, '');
-      return { d: rs[i], base };
-    }
-  }
-  return null;
-}
-function loc(base, u){
-  u = String(u || '');
-  if(u.charAt(0) === '/') return base + u;
-  return u;
-}
-function idOf(u){
-  return String(u || '').split('/').pop().split('?')[0];
-}
-/* 下载走本站 /dl 转发（和页面同源），点多少次都能重新下，不会因为跨域被浏览器拦掉 */
-function bindDl(a){
-  a.addEventListener('click', function(){
-    const id = a.dataset.id;
-    if(!id) return;
-    const name = a.dataset.name || 'download.bin';
-    a.href = '/dl?id=' + encodeURIComponent(id) + '&name=' + encodeURIComponent(name) + '&t=' + Date.now();
-    $('dlNote').textContent = '已开始下载 ' + name + '，没反应就再点一次。';
-  });
-}
-bindDl($('apkBtn'));
-bindDl($('exeBtn'));
-function fill(d, base){
-  const v = d.latest;
-  if(!v){
-    $('verText').textContent = '还没有发布版本';
-    $('dlNote').textContent = '发布端还没有上传安装包，稍后再来。';
-    return;
-  }
-  $('verText').textContent = '版本 ' + v.ver + ' · ' + day(v.ts) + (v.force ? ' · 强制更新' : '');
-  if(v.apk && v.apk.url){
-    const id = idOf(v.apk.url), nm = v.apk.name || 'Burger Chat-安卓.apk';
-    $('apkBtn').dataset.id = id;
-    $('apkBtn').dataset.name = nm;
-    $('apkBtn').href = '/dl?id=' + encodeURIComponent(id) + '&name=' + encodeURIComponent(nm);
-    $('apkBtn').classList.remove('hide');
-    $('apkSub').textContent = 'APK · ' + size(v.apk.size);
-  }
-  if(v.exe && v.exe.url){
-    const id = idOf(v.exe.url), nm = v.exe.name || 'Burger Chat.exe';
-    $('exeBtn').dataset.id = id;
-    $('exeBtn').dataset.name = nm;
-    $('exeBtn').href = '/dl?id=' + encodeURIComponent(id) + '&name=' + encodeURIComponent(nm);
-    $('exeBtn').classList.remove('hide');
-    $('exeSub').textContent = 'exe · ' + size(v.exe.size);
-  }
-  if(v.notes){
-    $('logText').classList.remove('empty');
-    $('logText').textContent = v.notes;
-  }else{
-    $('logText').textContent = '这个版本没写更新说明。';
-  }
-
-  const ann = (d.anns || []).find(a => a.pinned) || (d.anns || [])[0];
-  if(ann){
-    $('banner').querySelector('b').textContent = ann.title || '';
-    $('banner').querySelector('span').textContent = (ann.body || '').slice(0, 140);
-    $('banner').style.display = 'block';
-  }
-}
-(async function(){
-  const r = await getLatest();
-  if(!r){
-    $('verText').textContent = '暂时连不上发布服务器';
-    $('logText').textContent = '版本信息读取失败，可能是服务器刚重启或公网隧道抖动，刷新一下页面再试。';
-    return;
-  }
-  $('src').textContent = '版本实时来自 ' + (r.base || location.host) + ' 发布服务器';
-  fill(r.d, r.base);
-})();
-</script>
 </body>
 </html>
