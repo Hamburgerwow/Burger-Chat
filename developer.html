@@ -51,14 +51,6 @@ a{color:var(--brand);text-decoration:none}
 .topbar .stat{display:flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:99px;height:32px;padding:0 12px;font-size:11px;color:#69707e;box-shadow:0 4px 14px -12px rgba(40,30,80,.4)}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(47,158,103,.13)}
 .section{display:block;animation:fade .18s ease}
-/* AI 工坊背景：同步电脑端 Wallpaper Engine 的当前壁纸 */
-#view-studio{position:relative}
-#view-studio>.grid{position:relative;z-index:1}
-.studio-wall{position:absolute;inset:-6px;z-index:0;overflow:hidden;border-radius:22px;pointer-events:none;opacity:0;transition:opacity .45s;background:#171820}
-.studio-wall.on{opacity:.78}
-.studio-wall>iframe,.studio-wall>video,.studio-wall>.sw-bg{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover;background-position:center;background-size:cover;background-repeat:no-repeat}
-.studio-wall::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.28));pointer-events:none}
-#view-studio .studio-wall.on~.grid .card{background:rgba(255,255,255,.74);backdrop-filter:blur(18px) saturate(1.08);-webkit-backdrop-filter:blur(18px) saturate(1.08)}
 body.custom-font .main :is(h1,h2,h3,p,span,b,small,label,div,button,input,textarea,select,a){color:var(--user-font)!important}
 body.custom-font .main .codebox,body.custom-font .main .codebox *{color:#dcdff0!important}
 body.custom-font .main ::placeholder{color:var(--user-font);opacity:.55}
@@ -67,7 +59,6 @@ body.custom-font:not(.dark-surface){background:color-mix(in srgb,var(--page-bg) 
 body.dark-surface .main{--panel:#241f33;--line:rgba(255,255,255,.16);--soft:rgba(255,255,255,.07);--sub:rgba(255,255,255,.65)}
 body.dark-bg:not(.custom-font):not(.dark-surface) .main .topbar .crumb,body.dark-bg:not(.custom-font):not(.dark-surface) .main .topbar h1,body.dark-bg:not(.custom-font):not(.dark-surface) .main .topbar .crumb :is(a,b,span){color:#f4f1ff!important}
 body.dark-surface .main .card{background:var(--panel);border-color:var(--line)}
-body.dark-surface #view-studio .studio-wall.on~.grid .card{background:rgba(30,25,44,.82);border-color:rgba(255,255,255,.16)}
 body.dark-surface .main .mini,body.dark-surface .main .prow,body.dark-surface .main .kv>div,body.dark-surface .main .notice,body.dark-surface .main .empty,body.dark-surface .main .statusline .s{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.14)}
 body.dark-surface .main .field input,body.dark-surface .main .field textarea,body.dark-surface .main .field select{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.2)}
 body.dark-surface .main .btn{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.2);color:var(--user-font)!important}
@@ -265,10 +256,9 @@ body.dark-surface .main .pill.warn{background:rgba(181,122,21,.2);color:#ffd28a!
     </section>
 
     <section class="section hidden" id="view-studio">
-      <div class="studio-wall" id="studioWall" aria-hidden="true"></div>
       <div class="grid g2">
         <div class="card">
-          <div class="card-h"><div><h2>插件资料</h2><p>按 burger-chat-plugin/v1 规范填写</p></div><div class="sp"></div><span class="pill" id="studioWallChip">壁纸未同步</span><span class="pill" id="draftState">草稿</span></div>
+          <div class="card-h"><div><h2>插件资料</h2><p>按 burger-chat-plugin/v1 规范填写</p></div><div class="sp"></div><span class="pill" id="draftState">草稿</span></div>
           <div class="formgrid">
             <div class="field"><label>插件 ID</label><input id="fId" placeholder="bcp.dev.hello" oninput="markDirty()"></div>
             <div class="field"><label>插件名称</label><input id="fName" maxlength="32" placeholder="快捷打招呼" oninput="markDirty()"></div>
@@ -328,7 +318,7 @@ body.dark-surface .main .pill.warn{background:rgba(181,122,21,.2);color:#ffd28a!
             <span class="codehint" id="fAiModelState" style="display:block;margin:0">默认在线免 Key；调用失败会自动回退图形化模板。</span>
           </div>
 
-          <div class="card-h" style="margin-top:18px"><div><h2>编译与发布</h2><p>先编译测试，再审核，最后写入 GitHub 商店</p></div></div>
+          <div class="card-h" style="margin-top:18px"><div><h2>编译与发布</h2><p>先编译测试，再审核；审核通过后自动导出并打开 GitHub 上传页</p></div></div>
           <div class="statusline" id="compileStatus"><span class="s"><i></i>未编译</span></div>
           <div style="display:flex;gap:7px;flex-wrap:wrap">
             <input type="file" id="importPluginFile" accept=".json,application/json" style="display:none" onchange="importDraft(this)">
@@ -338,8 +328,9 @@ body.dark-surface .main .pill.warn{background:rgba(181,122,21,.2);color:#ffd28a!
             <button class="btn ghost" onclick="showView('audit')">去审核</button>
             <button class="btn" onclick="publishDraft()" id="pubBtn" title="导出 .bcp.json 并打开 GitHub 上传页，无需 Token">导出并发布</button>
             <button class="btn" onclick="downloadDraft()">导出 .bcp.json</button>
+            <a class="btn" id="uploadFallback" href="https://github.com/Hamburgerwow/Burger-Chat/upload/main/plugins" target="_blank" rel="noopener" style="display:none">打开 GitHub 上传页</a>
           </div>
-          <div class="notice" style="margin-top:12px"><b>发布前置条件：</b>编译通过 + 审核通过。已取消 GitHub Token 直写：点「导出并发布」会导出 <code>.bcp.json</code> 并打开 GitHub 上传页，把包拖入 <code>plugins/</code> 提交即可，不需要填写 Token。</div>
+          <div class="notice" style="margin-top:12px"><b>发布前置条件：</b>编译通过 + 审核通过。审核通过后会自动导出 <code>.bcp.json</code> 并打开 GitHub 上传页；已配置代发后端时可直接写入 <code>plugins/</code>，不需要填写 Token。</div>
         </div>
 
         <div class="card">
@@ -496,6 +487,8 @@ body.dark-surface .main .pill.warn{background:rgba(181,122,21,.2);color:#ffd28a!
 'use strict';
 var REPO = 'Hamburgerwow/Burger-Chat';
 var REPO_URL = 'https://github.com/' + REPO;
+/* 可选：后端代发地址；为空时审核通过后自动导出并打开 GitHub 上传页 */
+var PUBLISH_API = '';
 var REG_URLS = ['https://hamburgerwow.top/plugins/registry.json', 'http://hamburgerwow.top/plugins/registry.json'];
 var CATS = ['聊天增强','媒体','工具','主题','集成'];
 var LS_PROFILE = 'bcp.dev.profile.v1';
@@ -530,9 +523,6 @@ var DEFAULT_AI = AI_PRESETS[0];
 var AI_MIN_INTERVAL = 46000;
 var aiLastCallAt = 0;
 var dirty = false;
-/* 本机电脑端 Burger Chat 的 HTTP 端口；AI 工坊背景从这里读当前壁纸 */
-var DESKTOP_BASE = 'http://127.0.0.1:8080';
-var studioWallSig = '';
 
 function loadJSON(k, d){ try{ var v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); }catch(e){ return d; } }
 function saveJSON(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
@@ -1394,6 +1384,7 @@ async function runAudit(){
     audit = { pass: !!o.pass, items: local.items.concat(aiItems), mode:'ai', at:Date.now(), codeHash:hashString(draft.main) };
     renderAudit('', document.getElementById('auditLog').textContent + '\n\n模型结论：' + (o.pass ? '通过' : '拒绝') + '\n' + (o.reason || '') + (o.categories && o.categories.length ? '\n分类：' + o.categories.join(' / ') : '') + '\n评分：' + (o.score == null ? '—' : o.score));
     toast(o.pass ? '审核通过' : '审核拒绝：' + (o.reason || ''));
+    if(o.pass) setTimeout(autoPublishAfterAudit, 0);
   }catch(e){
     audit = { pass:false, items:local.items, mode:'ai-error', at:Date.now(), codeHash:hashString(draft.main) };
     renderAudit('', document.getElementById('auditLog').textContent + '\n\n模型调用失败：' + (e.message || e) + '\n未获得 AI 结论，暂不能发布。');
@@ -1407,6 +1398,7 @@ function localAuditOnly(){
   audit.mode = 'local';
   renderAudit('', '仅本地规则审核\n' + audit.items.map(function(x){ return (x.ok?'✓ ':'✗ ') + x.cat + ' · ' + x.msg; }).join('\n') + (audit.pass ? '\n\n本地规则通过。未连接 AI 模型，发布前请人工复核。' : '\n\n存在违规项，禁止上架。'));
   toast(audit.pass ? '本地规则通过' : '存在违规内容');
+  if(audit.pass) setTimeout(autoPublishAfterAudit, 0);
 }
 function auditValid(){
   if(!audit || !audit.pass) return false;
@@ -1416,7 +1408,10 @@ function auditValid(){
 
 /* —— 导出发布（不再直接写 GitHub） —— */
 function openUploadPage(){
-  window.open('https://github.com/Hamburgerwow/Burger-Chat/upload/main/plugins', '_blank');
+  var el = document.getElementById('uploadFallback');
+  if(el) el.style.display = 'inline-flex';
+  var w = window.open('https://github.com/Hamburgerwow/Burger-Chat/upload/main/plugins', '_blank');
+  return w;
 }
 async function publishDraft(){
   collectDraft();
@@ -1426,6 +1421,36 @@ async function publishDraft(){
   openUploadPage();
   downloadDraft();
   toast('已导出 ' + pkg.id + '-' + pkg.version + '.bcp.json，并打开 GitHub 上传页；把包拖入 plugins/ 提交即可');
+}
+var autoPublishing = false;
+async function autoPublishAfterAudit(){
+  if(autoPublishing) return;
+  if(!auditValid()) return;
+  autoPublishing = true;
+  try{
+    var pkg = buildPackage();
+    if(PUBLISH_API){
+      var r = await fetch(PUBLISH_API, {
+        method:'POST',
+        headers:{ 'Content-Type':'application/json' },
+        body:JSON.stringify({ package:pkg })
+      });
+      var o = await r.json().catch(function(){ return {}; });
+      if(!r.ok || !o.ok) throw new Error(o.error || ('HTTP ' + r.status));
+      toast('审核通过，已自动上传到 GitHub：' + pkg.id + ' v' + pkg.version);
+      return;
+    }
+    downloadDraft();
+    var w = openUploadPage();
+    toast(w ? ('审核通过，已自动导出 ' + pkg.id + '-' + pkg.version + '.bcp.json，并打开 GitHub 上传页')
+            : '审核通过，包已自动导出；点「打开 GitHub 上传页」完成提交');
+  }catch(e){
+    downloadDraft();
+    openUploadPage();
+    toast('自动上传失败：' + (e.message || e) + '；已导出包并打开上传页');
+  }finally{
+    autoPublishing = false;
+  }
 }
 
 /* —— 本周精选 —— */
@@ -1465,81 +1490,6 @@ async function saveWeekly(){
 }
 
 /* —— 导航 / 启动 —— */
-function deskUrl(path){
-  path = String(path || '');
-  if(!path) return '';
-  if(/^https?:\/\//i.test(path)) return path;
-  return DESKTOP_BASE + (path.charAt(0) === '/' ? path : '/' + path);
-}
-function studioWallChip(text, cls, title){
-  var el = document.getElementById('studioWallChip');
-  if(!el) return;
-  el.textContent = text;
-  el.className = 'pill' + (cls ? ' ' + cls : '');
-  el.title = title || text;
-}
-function clearStudioWall(){
-  var box = document.getElementById('studioWall');
-  if(box){ box.innerHTML = ''; box.classList.remove('on'); }
-  studioWallSig = '';
-}
-async function syncStudioWall(force){
-  var box = document.getElementById('studioWall');
-  if(!box) return;
-  try{
-    var ctrl = new AbortController();
-    var timer = setTimeout(function(){ ctrl.abort(); }, 5000);
-    var r = await fetch(DESKTOP_BASE + '/api/wall', { cache:'no-store', signal:ctrl.signal });
-    clearTimeout(timer);
-    if(!r.ok) throw new Error('HTTP ' + r.status);
-    var o = await r.json();
-    var w = o && o.wall;
-    if(!w || !w.kind || w.kind === 'none' || (!w.url && !(w.meta && (w.meta.web || w.meta.media || w.meta.preview)))){
-      clearStudioWall();
-      studioWallChip('壁纸未选择', 'warn');
-      return;
-    }
-    var meta = w.meta || {};
-    var sig = JSON.stringify([w.kind, w.url, w.name, w.dim, meta.web, meta.media, meta.preview]);
-    if(!force && sig === studioWallSig){ box.classList.add('on'); return; }
-    studioWallSig = sig;
-    box.innerHTML = '';
-    var preview = meta.preview ? deskUrl(meta.preview) : (w.kind === 'url' ? deskUrl(w.url) : '');
-    if(meta.web){
-      if(preview){
-        var pbg = document.createElement('div');
-        pbg.className = 'sw-bg';
-        pbg.style.backgroundImage = 'url("' + preview.replace(/"/g, '%22') + '")';
-        box.appendChild(pbg);
-      }
-      var fr = document.createElement('iframe');
-      fr.src = deskUrl(meta.web);
-      fr.loading = 'lazy';
-      fr.setAttribute('scrolling', 'no');
-      fr.setAttribute('sandbox', 'allow-scripts allow-same-origin');
-      fr.title = w.name || 'Wallpaper Engine';
-      box.appendChild(fr);
-    } else if(meta.media){
-      var vd = document.createElement('video');
-      vd.src = deskUrl(meta.media);
-      vd.muted = true; vd.loop = true; vd.autoplay = true; vd.playsInline = true;
-      if(preview) vd.poster = preview;
-      box.appendChild(vd);
-      try{ vd.play(); }catch(e){}
-    } else {
-      var bg = document.createElement('div');
-      bg.className = 'sw-bg';
-      if(w.kind === 'grad' && w.url) bg.style.backgroundImage = String(w.url);
-      else if(preview) bg.style.backgroundImage = 'url("' + preview.replace(/"/g, '%22') + '")';
-      box.appendChild(bg);
-    }
-    box.classList.add('on');
-    studioWallChip('壁纸已同步', 'ok', w.name || 'Wallpaper Engine');
-  }catch(e){
-    clearStudioWall();
-    studioWallChip('壁纸未连接', 'warn', '请先打开电脑端 Burger Chat（127.0.0.1:8080）');
-  }
-}
 var VIEWS = { overview:['概览','概览'], mine:['我的插件','我的插件'], studio:['AI 插件工坊','AI 插件工坊'], audit:['上架审核','上架审核'], weekly:['本周精选','本周精选'], settings:['设置','设置'] };
 function showView(v){
   Object.keys(VIEWS).forEach(function(k){
@@ -1551,7 +1501,7 @@ function showView(v){
   document.getElementById('pageTitle').textContent = info[0];
   document.getElementById('crumb').textContent = info[1];
   if(v === 'settings'){ renderSettings(); syncModelFields(); }
-  if(v === 'studio'){ loadDraft(); syncStudioWall(true); }
+  if(v === 'studio'){ loadDraft(); }
   window.scrollTo({ top:0, behavior:'smooth' });
 }
 document.querySelectorAll('#nav button').forEach(function(b){ b.addEventListener('click', function(){ showView(b.dataset.view); }); });
@@ -1586,10 +1536,6 @@ window.addEventListener('resize', function(){
   else { document.getElementById('gate').style.display = 'none'; if(profile) document.getElementById('shell').classList.remove('hidden'); }
 });
 window.addEventListener('beforeunload', function(){ try{ collectDraft(); saveJSON(LS_DRAFT, draft); }catch(e){} });
-setInterval(function(){
-  var sec = document.getElementById('view-studio');
-  if(sec && !sec.classList.contains('hidden')) syncStudioWall(false);
-}, 15000);
 boot();
 </script>
 </body>
