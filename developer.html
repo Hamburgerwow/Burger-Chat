@@ -305,10 +305,10 @@ a{color:var(--brand);text-decoration:none}
             <button class="btn pri" onclick="generateDraft()">✦ 生成并编译</button>
             <button class="btn" onclick="compileDraft(true)">仅重新编译</button>
             <button class="btn ghost" onclick="showView('audit')">去审核</button>
-            <button class="btn" onclick="publishDraft()" id="pubBtn">发布到商店</button>
+            <button class="btn" onclick="publishDraft()" id="pubBtn" title="填写 GitHub Token 可一键发布；未填时导出 .bcp.json">发布到商店</button>
             <button class="btn" onclick="downloadDraft()">导出 .bcp.json</button>
           </div>
-          <div class="notice" style="margin-top:12px"><b>发布前置条件：</b>编译通过 + 审核通过 + GitHub Token 已填写。发布只写入 plugins/ 与 registry.json，Cloudflare 构建后两端商店生效。</div>
+          <div class="notice" style="margin-top:12px"><b>发布前置条件：</b>编译通过 + 审核通过。GitHub Token 为选填项：不填仍可生成、编译、审核、导出 .bcp.json；只有点「发布到商店」直接写入 GitHub 时才需要填写。</div>
         </div>
 
         <div class="card">
@@ -381,7 +381,7 @@ a{color:var(--brand);text-decoration:none}
         <div class="card">
           <div class="card-h"><div><h2>账号与发布</h2><p>敏感信息只保存在本机 localStorage</p></div></div>
           <div class="formgrid">
-            <div class="field wide"><label>GitHub Token（contents:write）</label><input id="sGh" type="password" placeholder="github_pat_… 或 ghp_…"></div>
+            <div class="field wide"><label>GitHub Token（contents:write，选填）</label><input id="sGh" type="password" placeholder="github_pat_…；不填仍可生成、编译、审核、导出"></div>
             <div class="field"><label>开发者名称</label><input id="sName"></div>
             <div class="field"><label>注册邮箱</label><input id="sEmail" type="email" placeholder="you@example.com" readonly style="background:#f7f6fb;color:#6f6885"></div>
             <div class="field wide"><label>开发者标识</label><input id="sDevId" placeholder="小写字母、数字、短横线"></div>
@@ -1318,7 +1318,11 @@ async function publishDraft(){
   if(!compiled && !compileDraft(true)){ toast('编译未通过：' + compileMsg); return; }
   if(!auditValid()){ toast('请先在上架审核里通过审核，且审核后代码未改动'); showView('audit'); return; }
   var tk = settings.ghToken;
-  if(!tk){ toast('请先在设置里填写 GitHub Token'); showView('settings'); return; }
+  if(!tk){
+    downloadDraft();
+    toast('GitHub Token 未填，已导出 .bcp.json；可手动上传到 plugins/，或填 Token 后一键发布');
+    return;
+  }
   var pkg = buildPackage();
   var text = JSON.stringify(pkg, null, 2);
   var hash = await sha256(text);
