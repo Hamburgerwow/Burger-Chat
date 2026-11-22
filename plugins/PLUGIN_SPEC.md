@@ -192,7 +192,7 @@ api.events.emit(name, data)
 2. 点「生成并编译」：默认调用在线开源模型（Pollinations GPT-OSS 20B，免 Key）输出 manifest + main；也可在设置里切换硅基流动 Qwen2.5、OpenRouter Llama 3.3、Hugging Face Qwen2.5 或本机 Ollama。
 3. 编译阶段校验 manifest 字段、JavaScript 语法、API 调用和危险代码模式。
 4. 在「上架审核」运行本地规则 + 开源模型复核；审核通过后代码不能再次修改，否则审核失效。
-5. 填 GitHub Token，发布时写入 `plugins/<id>-<version>.bcp.json`，并更新 `plugins/registry.json`。
+5. GitHub Token 为选填：不填仍可生成、编译、审核和导出 `.bcp.json`；要一键发布到商店时再填写带 `contents:write` 权限的 Token，发布时写入 `plugins/<id>-<version>.bcp.json` 并更新 `plugins/registry.json`。
 6. Cloudflare 构建完成后，两端商店生效。
 
 ## 9. AI 审核
