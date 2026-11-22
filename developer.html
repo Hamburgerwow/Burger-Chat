@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Burger Chat 开发者中心 · 插件工坊</title>
 <style>
-:root{--ink:#16181d;--sub:#6d7382;--line:#e7e4ef;--brand:#6355e8;--brand2:#8b6cf6;--soft:#f6f4fb;--ok:#2f9e67;--bad:#c64b4b;--warn:#b57a15;--panel:#ffffff}
+:root{--ink:#16181d;--sub:#6d7382;--line:#e7e4ef;--brand:#6355e8;--brand2:#8b6cf6;--soft:#f6f4fb;--ok:#2f9e67;--bad:#c64b4b;--warn:#b57a15;--panel:#ffffff;--page-bg:#f2f0f7;--user-font:#16181d}
 *{box-sizing:border-box}
 html,body{margin:0;height:100%}
-body{font:14px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f2f0f7;-webkit-font-smoothing:antialiased}
+body{font:14px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--page-bg);-webkit-font-smoothing:antialiased}
+body.custom-font{--ink:var(--user-font);--sub:var(--user-font)}
 button,input,textarea,select{font:inherit}
 button{cursor:pointer}
 a{color:var(--brand);text-decoration:none}
@@ -50,6 +51,32 @@ a{color:var(--brand);text-decoration:none}
 .topbar .stat{display:flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:99px;height:32px;padding:0 12px;font-size:11px;color:#69707e;box-shadow:0 4px 14px -12px rgba(40,30,80,.4)}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(47,158,103,.13)}
 .section{display:block;animation:fade .18s ease}
+/* AI 工坊背景：同步电脑端 Wallpaper Engine 的当前壁纸 */
+#view-studio{position:relative}
+#view-studio>.grid{position:relative;z-index:1}
+.studio-wall{position:absolute;inset:-6px;z-index:0;overflow:hidden;border-radius:22px;pointer-events:none;opacity:0;transition:opacity .45s;background:#171820}
+.studio-wall.on{opacity:.78}
+.studio-wall>iframe,.studio-wall>video,.studio-wall>.sw-bg{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover;background-position:center;background-size:cover;background-repeat:no-repeat}
+.studio-wall::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.28));pointer-events:none}
+#view-studio .studio-wall.on~.grid .card{background:rgba(255,255,255,.74);backdrop-filter:blur(18px) saturate(1.08);-webkit-backdrop-filter:blur(18px) saturate(1.08)}
+body.custom-font .main :is(h1,h2,h3,p,span,b,small,label,div,button,input,textarea,select,a){color:var(--user-font)!important}
+body.custom-font .main .codebox,body.custom-font .main .codebox *{color:#dcdff0!important}
+body.custom-font .main ::placeholder{color:var(--user-font);opacity:.55}
+body.dark-surface{background:color-mix(in srgb,var(--page-bg) 25%,#15121d)}
+body.custom-font:not(.dark-surface){background:color-mix(in srgb,var(--page-bg) 42%,#f2f0f7)}
+body.dark-surface{--panel:#241f33;--line:rgba(255,255,255,.16);--soft:rgba(255,255,255,.07);--sub:rgba(255,255,255,.65)}
+body.dark-surface .card{background:var(--panel);border-color:var(--line)}
+body.dark-surface #view-studio .studio-wall.on~.grid .card{background:rgba(30,25,44,.82);border-color:rgba(255,255,255,.16)}
+body.dark-surface .mini,body.dark-surface .prow,body.dark-surface .kv>div,body.dark-surface .notice,body.dark-surface .empty,body.dark-surface .statusline .s{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.14)}
+body.dark-surface .field input,body.dark-surface .field textarea,body.dark-surface .field select{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.2)}
+body.dark-surface .btn{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.2);color:var(--user-font)!important}
+body.dark-surface .btn.pri{background:linear-gradient(145deg,#6f63f0,#5b4ee0)!important;border-color:transparent!important;color:#fff!important}
+body.dark-surface .btn.bad{background:rgba(198,75,75,.16);border-color:rgba(198,75,75,.4)}
+body.dark-surface .pill{background:rgba(255,255,255,.1);color:var(--user-font)!important}
+body.dark-surface .pill.ok{background:rgba(47,158,103,.22);color:#9be7bd!important}
+body.dark-surface .pill.bad{background:rgba(198,75,75,.2);color:#ffaaa8!important}
+body.dark-surface .pill.warn{background:rgba(181,122,21,.2);color:#ffd28a!important}
+.field input[type=color]{height:38px;padding:4px 6px;cursor:pointer}
 @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 .grid{display:grid;gap:14px}
 .g4{grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -237,9 +264,10 @@ a{color:var(--brand);text-decoration:none}
     </section>
 
     <section class="section hidden" id="view-studio">
+      <div class="studio-wall" id="studioWall" aria-hidden="true"></div>
       <div class="grid g2">
         <div class="card">
-          <div class="card-h"><div><h2>插件资料</h2><p>按 burger-chat-plugin/v1 规范填写</p></div><div class="sp"></div><span class="pill" id="draftState">草稿</span></div>
+          <div class="card-h"><div><h2>插件资料</h2><p>按 burger-chat-plugin/v1 规范填写</p></div><div class="sp"></div><span class="pill" id="studioWallChip">壁纸未同步</span><span class="pill" id="draftState">草稿</span></div>
           <div class="formgrid">
             <div class="field"><label>插件 ID</label><input id="fId" placeholder="bcp.dev.hello" oninput="markDirty()"></div>
             <div class="field"><label>插件名称</label><input id="fName" maxlength="32" placeholder="快捷打招呼" oninput="markDirty()"></div>
@@ -302,6 +330,8 @@ a{color:var(--brand);text-decoration:none}
           <div class="card-h" style="margin-top:18px"><div><h2>编译与发布</h2><p>先编译测试，再审核，最后写入 GitHub 商店</p></div></div>
           <div class="statusline" id="compileStatus"><span class="s"><i></i>未编译</span></div>
           <div style="display:flex;gap:7px;flex-wrap:wrap">
+            <input type="file" id="importPluginFile" accept=".json,application/json" style="display:none" onchange="importDraft(this)">
+            <button class="btn" onclick="document.getElementById('importPluginFile').click()">⇧ 导入 .bcp.json</button>
             <button class="btn pri" onclick="generateDraft()">✦ 生成并编译</button>
             <button class="btn" onclick="compileDraft(true)">仅重新编译</button>
             <button class="btn ghost" onclick="showView('audit')">去审核</button>
@@ -405,6 +435,18 @@ a{color:var(--brand);text-decoration:none}
           </div>
           <div class="notice" style="margin-top:12px"><b>在线开源模型：</b>默认使用 Pollinations 的 GPT-OSS 20B（免 Key，OpenAI 兼容）；也可切到硅基流动 Qwen2.5、OpenRouter Llama 3.3、Hugging Face Qwen2.5，或本机 Ollama。在线接口需要能访问对应域名；本地 Ollama 接口通常是 <code>http://127.0.0.1:11434/v1/chat/completions</code>。</div>
         </div>
+        <div class="card">
+          <div class="card-h"><div><h2>网页外观</h2><p>自定义开发者中心的背景颜色和字体颜色</p></div></div>
+          <div class="formgrid">
+            <div class="field"><label>背景颜色</label><input id="sBgColor" type="color" value="#f2f0f7" oninput="previewAppearance()"></div>
+            <div class="field"><label>字体颜色</label><input id="sFontColor" type="color" value="#16181d" oninput="previewAppearance()"></div>
+          </div>
+          <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:12px">
+            <button class="btn pri" onclick="saveAppearance()">应用并保存颜色</button>
+            <button class="btn" onclick="resetAppearance()">恢复默认</button>
+          </div>
+          <div class="notice" style="margin-top:12px"><b>只影响这台电脑的开发者中心：</b>颜色保存在本机 localStorage，不会改插件、不会写到 GitHub；换浏览器或清缓存后需要重新设置。字体颜色会应用到主内容区，深色背景建议配浅色字。</div>
+        </div>
       </div>
     </section>
   </main>
@@ -482,6 +524,9 @@ var DEFAULT_AI = AI_PRESETS[0];
 var AI_MIN_INTERVAL = 46000;
 var aiLastCallAt = 0;
 var dirty = false;
+/* 本机电脑端 Burger Chat 的 HTTP 端口；AI 工坊背景从这里读当前壁纸 */
+var DESKTOP_BASE = 'http://127.0.0.1:8080';
+var studioWallSig = '';
 
 function loadJSON(k, d){ try{ var v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); }catch(e){ return d; } }
 function saveJSON(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
@@ -766,6 +811,10 @@ function renderSettings(){
   document.getElementById('sAiKey').value = settings.aiKey || '';
   document.getElementById('sEmail').value = profile.email || '';
   document.getElementById('sMail').value = settings.mailEndpoint || '';
+  var bg = document.getElementById('sBgColor');
+  var fc = document.getElementById('sFontColor');
+  if(bg) bg.value = colorOr(settings.bgColor, '#f2f0f7');
+  if(fc) fc.value = colorOr(settings.fontColor, '#16181d');
 }
 function saveSettings(){
   settings.ghToken = document.getElementById('sGh').value.trim();
@@ -792,6 +841,43 @@ function resetProfile(){
   if(!confirm('清除本机开发者名片、设置与当前草稿？商店里的插件不会删除。')) return;
   [LS_PROFILE, LS_SETTINGS, LS_DRAFT].forEach(function(k){ try{ localStorage.removeItem(k); }catch(e){} });
   location.reload();
+}
+function colorOr(v,d){ v = String(v || ''); return /^#[0-9a-f]{6}$/i.test(v) ? v : d; }
+function isLightColor(hex){
+  var m = /^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(String(hex || ''));
+  if(!m) return false;
+  var r = parseInt(m[1],16), g = parseInt(m[2],16), b = parseInt(m[3],16);
+  return (0.2126 * r + 0.7152 * g + 0.0722 * b) > 150;
+}
+function applyAppearance(bg, fc){
+  bg = colorOr(bg, '#f2f0f7');
+  fc = colorOr(fc, '#16181d');
+  document.documentElement.style.setProperty('--page-bg', bg);
+  document.documentElement.style.setProperty('--user-font', fc);
+  document.body.classList.toggle('custom-font', fc !== '#16181d');
+  document.body.classList.toggle('dark-surface', isLightColor(fc));
+}
+function previewAppearance(){
+  var bg = document.getElementById('sBgColor');
+  var fc = document.getElementById('sFontColor');
+  applyAppearance(bg ? bg.value : '', fc ? fc.value : '');
+}
+function saveAppearance(){
+  var bg = document.getElementById('sBgColor');
+  var fc = document.getElementById('sFontColor');
+  settings.bgColor = colorOr(bg && bg.value, '#f2f0f7');
+  settings.fontColor = colorOr(fc && fc.value, '#16181d');
+  saveJSON(LS_SETTINGS, settings);
+  applyAppearance(settings.bgColor, settings.fontColor);
+  toast('网页颜色已保存');
+}
+function resetAppearance(){
+  settings.bgColor = '';
+  settings.fontColor = '';
+  saveJSON(LS_SETTINGS, settings);
+  applyAppearance('', '');
+  renderSettings();
+  toast('已恢复默认背景和字体颜色');
 }
 function aiPresetById(id){
   for(var i=0;i<AI_PRESETS.length;i++) if(AI_PRESETS[i].id === id) return AI_PRESETS[i];
@@ -1201,6 +1287,39 @@ function downloadDraft(){
   document.body.appendChild(a); a.click(); a.remove();
   setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
 }
+/* 导入已有的 .bcp.json（buildPackage/downloadDraft 导出的包） */
+function importDraft(input){
+  var file = input && input.files && input.files[0];
+  if(!file) return;
+  var reader = new FileReader();
+  reader.onload = function(){
+    try{
+      var raw = JSON.parse(String(reader.result || ''));
+      var p = raw && raw.plugin && !raw.schema ? raw.plugin : raw;
+      if(!p || typeof p !== 'object') throw new Error('不是有效的 JSON 对象');
+      if(p.schema && p.schema !== 'burger-chat-plugin/v1') throw new Error('schema 不是 burger-chat-plugin/v1');
+      if(!p.id || !p.main) throw new Error('缺少 id 或 main');
+      draft = Object.assign(emptyDraft(), p);
+      draft.id = String(draft.id || '').trim();
+      draft.name = String(draft.name || '').trim();
+      draft.version = String(draft.version || '1.0.0').trim();
+      draft.main = String(draft.main || '');
+      draft.ui = normalizeAIUI(p.ui || []) || [];
+      draft.tags = Array.isArray(p.tags) ? p.tags : [];
+      draft.prompt = String(p.prompt || '');
+      if(!draft.developer || typeof draft.developer !== 'string') draft.developer = profile ? profile.name : '';
+      saveJSON(LS_DRAFT, draft);
+      loadDraft();
+      showView('studio');
+      document.getElementById('draftState').textContent = '已导入';
+      toast('已导入 ' + draft.name + ' v' + draft.version);
+      setTimeout(function(){ compileDraft(true); }, 0);
+    }catch(e){ toast('导入失败：' + (e.message || e)); }
+    input.value = '';
+  };
+  reader.onerror = function(){ toast('读取文件失败'); input.value = ''; };
+  reader.readAsText(file, 'utf-8');
+}
 
 /* —— 审核 —— */
 function localAudit(d){
@@ -1384,6 +1503,81 @@ async function saveWeekly(){
 }
 
 /* —— 导航 / 启动 —— */
+function deskUrl(path){
+  path = String(path || '');
+  if(!path) return '';
+  if(/^https?:\/\//i.test(path)) return path;
+  return DESKTOP_BASE + (path.charAt(0) === '/' ? path : '/' + path);
+}
+function studioWallChip(text, cls, title){
+  var el = document.getElementById('studioWallChip');
+  if(!el) return;
+  el.textContent = text;
+  el.className = 'pill' + (cls ? ' ' + cls : '');
+  el.title = title || text;
+}
+function clearStudioWall(){
+  var box = document.getElementById('studioWall');
+  if(box){ box.innerHTML = ''; box.classList.remove('on'); }
+  studioWallSig = '';
+}
+async function syncStudioWall(force){
+  var box = document.getElementById('studioWall');
+  if(!box) return;
+  try{
+    var ctrl = new AbortController();
+    var timer = setTimeout(function(){ ctrl.abort(); }, 5000);
+    var r = await fetch(DESKTOP_BASE + '/api/wall', { cache:'no-store', signal:ctrl.signal });
+    clearTimeout(timer);
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+    var o = await r.json();
+    var w = o && o.wall;
+    if(!w || !w.kind || w.kind === 'none' || (!w.url && !(w.meta && (w.meta.web || w.meta.media || w.meta.preview)))){
+      clearStudioWall();
+      studioWallChip('壁纸未选择', 'warn');
+      return;
+    }
+    var meta = w.meta || {};
+    var sig = JSON.stringify([w.kind, w.url, w.name, w.dim, meta.web, meta.media, meta.preview]);
+    if(!force && sig === studioWallSig){ box.classList.add('on'); return; }
+    studioWallSig = sig;
+    box.innerHTML = '';
+    var preview = meta.preview ? deskUrl(meta.preview) : (w.kind === 'url' ? deskUrl(w.url) : '');
+    if(meta.web){
+      if(preview){
+        var pbg = document.createElement('div');
+        pbg.className = 'sw-bg';
+        pbg.style.backgroundImage = 'url("' + preview.replace(/"/g, '%22') + '")';
+        box.appendChild(pbg);
+      }
+      var fr = document.createElement('iframe');
+      fr.src = deskUrl(meta.web);
+      fr.loading = 'lazy';
+      fr.setAttribute('scrolling', 'no');
+      fr.setAttribute('sandbox', 'allow-scripts allow-same-origin');
+      fr.title = w.name || 'Wallpaper Engine';
+      box.appendChild(fr);
+    } else if(meta.media){
+      var vd = document.createElement('video');
+      vd.src = deskUrl(meta.media);
+      vd.muted = true; vd.loop = true; vd.autoplay = true; vd.playsInline = true;
+      if(preview) vd.poster = preview;
+      box.appendChild(vd);
+      try{ vd.play(); }catch(e){}
+    } else {
+      var bg = document.createElement('div');
+      bg.className = 'sw-bg';
+      if(w.kind === 'grad' && w.url) bg.style.backgroundImage = String(w.url);
+      else if(preview) bg.style.backgroundImage = 'url("' + preview.replace(/"/g, '%22') + '")';
+      box.appendChild(bg);
+    }
+    box.classList.add('on');
+    studioWallChip('壁纸已同步', 'ok', w.name || 'Wallpaper Engine');
+  }catch(e){
+    clearStudioWall();
+    studioWallChip('壁纸未连接', 'warn', '请先打开电脑端 Burger Chat（127.0.0.1:8080）');
+  }
+}
 var VIEWS = { overview:['概览','概览'], mine:['我的插件','我的插件'], studio:['AI 插件工坊','AI 插件工坊'], audit:['上架审核','上架审核'], weekly:['本周精选','本周精选'], settings:['设置','设置'] };
 function showView(v){
   Object.keys(VIEWS).forEach(function(k){
@@ -1395,7 +1589,7 @@ function showView(v){
   document.getElementById('pageTitle').textContent = info[0];
   document.getElementById('crumb').textContent = info[1];
   if(v === 'settings'){ renderSettings(); syncModelFields(); }
-  if(v === 'studio') loadDraft();
+  if(v === 'studio'){ loadDraft(); syncStudioWall(true); }
   window.scrollTo({ top:0, behavior:'smooth' });
 }
 document.querySelectorAll('#nav button').forEach(function(b){ b.addEventListener('click', function(){ showView(b.dataset.view); }); });
@@ -1416,6 +1610,7 @@ function viewInStore(id){
   window.open('https://hamburgerwow.top/#dl', '_blank');
 }
 function boot(){
+  applyAppearance(settings.bgColor, settings.fontColor);
   if(needOnboard()){ showOnboard(); return; }
   document.getElementById('shell').classList.remove('hidden');
   renderProfileChip();
@@ -1429,6 +1624,10 @@ window.addEventListener('resize', function(){
   else { document.getElementById('gate').style.display = 'none'; if(profile) document.getElementById('shell').classList.remove('hidden'); }
 });
 window.addEventListener('beforeunload', function(){ try{ collectDraft(); saveJSON(LS_DRAFT, draft); }catch(e){} });
+setInterval(function(){
+  var sec = document.getElementById('view-studio');
+  if(sec && !sec.classList.contains('hidden')) syncStudioWall(false);
+}, 15000);
 boot();
 </script>
 </body>
