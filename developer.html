@@ -815,7 +815,8 @@ function applyAiPreset(scope){
   if(!p) return;
   document.getElementById(pre + 'AiEndpoint').value = p.endpoint;
   document.getElementById(pre + 'AiModel').value = p.model;
-  if(p.id === 'pollinations') document.getElementById(pre + 'AiKey').value = '';
+  if(p.id === 'pollinations' || p.id === 'ollama') document.getElementById(pre + 'AiKey').value = '';
+  else document.getElementById(pre + 'AiKey').value = p.key || '';
   var am = document.getElementById('auditModel');
   if(am) am.textContent = '模型：' + p.model;
   toast('已选择 ' + p.label + (p.note ? '：' + p.note : ''));
