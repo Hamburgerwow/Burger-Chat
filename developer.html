@@ -287,11 +287,16 @@ a{color:var(--brand);text-decoration:none}
             <div class="hint">AI 会输出完整 manifest + main 代码；没有连接模型时，用图形化模板直接生成可编译的插件。</div>
           </div>
 
-          <div class="card-h" style="margin-top:18px"><div><h2>开源模型设置</h2><p>OpenAI 兼容接口，推荐 Qwen2.5 / Llama 3.1 / Mistral</p></div></div>
+          <div class="card-h" style="margin-top:18px"><div><h2>开源模型设置</h2><p>默认在线开源模型（GPT-OSS 20B，免 Key）；也可切到本地 Ollama 或其他在线服务</p></div></div>
           <div class="formgrid">
-            <div class="field"><label>接口地址</label><input id="fAiEndpoint" placeholder="http://127.0.0.1:11434/v1/chat/completions"></div>
-            <div class="field"><label>模型名</label><input id="fAiModel" placeholder="qwen2.5:7b"></div>
-            <div class="field wide"><label>API Key（本地模型可留空）</label><input id="fAiKey" type="password" placeholder="sk-…（只存在本机 localStorage）"></div>
+            <div class="field wide"><label>模型来源</label><select id="fAiPreset" onchange="applyAiPreset('f')"></select></div>
+            <div class="field wide"><label>接口地址</label><input id="fAiEndpoint" list="aiEndpointList" placeholder="https://text.pollinations.ai/openai"></div>
+            <div class="field"><label>模型名</label><input id="fAiModel" list="aiModelList" placeholder="openai"></div>
+            <div class="field"><label>API Key（在线免 Key 模型可留空）</label><input id="fAiKey" type="password" placeholder="sk-…（只存在本机 localStorage）"></div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px">
+            <button class="btn sm" onclick="pullOnlineModels('f')">↻ 拉取在线模型</button>
+            <span class="codehint" id="fAiModelState" style="display:block;margin:0">默认在线免 Key；调用失败会自动回退图形化模板。</span>
           </div>
 
           <div class="card-h" style="margin-top:18px"><div><h2>编译与发布</h2><p>先编译测试，再审核，最后写入 GitHub 商店</p></div></div>
@@ -386,14 +391,19 @@ a{color:var(--brand);text-decoration:none}
           <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:12px"><button class="btn pri" onclick="saveSettings()">保存设置</button><button class="btn bad" onclick="resetProfile()">清除本地资料</button></div>
         </div>
         <div class="card">
-          <div class="card-h"><div><h2>开源模型</h2><p>用于生成插件代码和内容审核</p></div></div>
+          <div class="card-h"><div><h2>开源模型</h2><p>默认在线开源模型，用于生成插件代码和内容审核</p></div></div>
           <div class="formgrid">
-            <div class="field wide"><label>接口地址</label><input id="sAiEndpoint" placeholder="http://127.0.0.1:11434/v1/chat/completions"></div>
-            <div class="field"><label>模型名</label><input id="sAiModel" placeholder="qwen2.5:7b"></div>
-            <div class="field"><label>API Key</label><input id="sAiKey" type="password" placeholder="本地模型可留空"></div>
+            <div class="field wide"><label>模型来源</label><select id="sAiPreset" onchange="applyAiPreset('s')"></select></div>
+            <div class="field wide"><label>接口地址</label><input id="sAiEndpoint" list="aiEndpointList" placeholder="https://text.pollinations.ai/openai"></div>
+            <div class="field"><label>模型名</label><input id="sAiModel" list="aiModelList" placeholder="openai"></div>
+            <div class="field"><label>API Key</label><input id="sAiKey" type="password" placeholder="在线免 Key 模型可留空"></div>
             <div class="field wide"><label>邮件网关（默认本机）</label><input id="sMail" placeholder="http://127.0.0.1:8787/email/send"></div>
           </div>
-          <div class="notice" style="margin-top:12px"><b>开源模型建议：</b>Qwen2.5-7B-Instruct、Llama-3.1-8B-Instruct、Mistral-7B-Instruct。用 Ollama 启动后接口通常是 <code>http://127.0.0.1:11434/v1/chat/completions</code>。未连接模型时，生成走图形化模板，审核走本地规则。</div>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px">
+            <button class="btn sm" onclick="pullOnlineModels('s')">↻ 拉取在线模型</button>
+            <span class="codehint" id="sAiModelState" style="display:block;margin:0">默认在线免 Key；也可填硅基流动、OpenRouter、Hugging Face 或本地 Ollama。</span>
+          </div>
+          <div class="notice" style="margin-top:12px"><b>在线开源模型：</b>默认使用 Pollinations 的 GPT-OSS 20B（免 Key，OpenAI 兼容）；也可切到硅基流动 Qwen2.5、OpenRouter Llama 3.3、Hugging Face Qwen2.5，或本机 Ollama。在线接口需要能访问对应域名；本地 Ollama 接口通常是 <code>http://127.0.0.1:11434/v1/chat/completions</code>。</div>
         </div>
       </div>
     </section>
@@ -428,6 +438,15 @@ a{color:var(--brand);text-decoration:none}
   </div>
 </div>
 
+<datalist id="aiEndpointList">
+  <option value="https://text.pollinations.ai/openai"></option>
+  <option value="https://api.siliconflow.cn/v1/chat/completions"></option>
+  <option value="https://openrouter.ai/api/v1/chat/completions"></option>
+  <option value="https://router.huggingface.co/v1/chat/completions"></option>
+  <option value="http://127.0.0.1:11434/v1/chat/completions"></option>
+</datalist>
+<datalist id="aiModelList"></datalist>
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -452,6 +471,16 @@ var mailCode = '';
 var mailExp = 0;
 var mailSentTo = '';
 var DEFAULT_MAIL_ENDPOINT = 'http://127.0.0.1:8787/email/send';
+var AI_PRESETS = [
+  { id:'pollinations', label:'在线开源 · GPT-OSS 20B（免 Key）', endpoint:'https://text.pollinations.ai/openai', model:'openai', key:'', note:'免 Key，OpenAI 兼容；国内可直连。' },
+  { id:'siliconflow', label:'硅基流动 · Qwen2.5（需 Key）', endpoint:'https://api.siliconflow.cn/v1/chat/completions', model:'Qwen/Qwen2.5-7B-Instruct', key:'', note:'国内节点，注册后填 API Key。' },
+  { id:'openrouter', label:'OpenRouter · Llama 3.3 免费模型（需 Key）', endpoint:'https://openrouter.ai/api/v1/chat/completions', model:'meta-llama/llama-3.3-70b-instruct:free', key:'', note:'免费模型可能限流，可在拉取列表后换模型。' },
+  { id:'huggingface', label:'Hugging Face · Qwen2.5（需 Token）', endpoint:'https://router.huggingface.co/v1/chat/completions', model:'Qwen/Qwen2.5-7B-Instruct', key:'', note:'需要 Hugging Face Token，网络需可访问。' },
+  { id:'ollama', label:'本机 Ollama · Qwen2.5（本地）', endpoint:'http://127.0.0.1:11434/v1/chat/completions', model:'qwen2.5:7b', key:'', note:'需要本机已启动 Ollama 并拉取模型。' }
+];
+var DEFAULT_AI = AI_PRESETS[0];
+var AI_MIN_INTERVAL = 46000;
+var aiLastCallAt = 0;
 var dirty = false;
 
 function loadJSON(k, d){ try{ var v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); }catch(e){ return d; } }
@@ -764,11 +793,90 @@ function resetProfile(){
   [LS_PROFILE, LS_SETTINGS, LS_DRAFT].forEach(function(k){ try{ localStorage.removeItem(k); }catch(e){} });
   location.reload();
 }
+function aiPresetById(id){
+  for(var i=0;i<AI_PRESETS.length;i++) if(AI_PRESETS[i].id === id) return AI_PRESETS[i];
+  return null;
+}
+function matchAiPreset(ep){
+  for(var i=0;i<AI_PRESETS.length;i++) if(AI_PRESETS[i].endpoint === ep) return AI_PRESETS[i];
+  return null;
+}
+function fillPresetSelects(){
+  var html = AI_PRESETS.map(function(p){ return '<option value="' + h(p.id) + '">' + h(p.label) + '</option>'; }).join('') + '<option value="custom">自定义接口</option>';
+  ['fAiPreset','sAiPreset'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.innerHTML = html;
+  });
+}
+function applyAiPreset(scope){
+  var pre = scope === 's' ? 's' : 'f';
+  var sel = document.getElementById(pre + 'AiPreset');
+  var p = aiPresetById(sel ? sel.value : '');
+  if(!p) return;
+  document.getElementById(pre + 'AiEndpoint').value = p.endpoint;
+  document.getElementById(pre + 'AiModel').value = p.model;
+  if(p.id === 'pollinations') document.getElementById(pre + 'AiKey').value = '';
+  var am = document.getElementById('auditModel');
+  if(am) am.textContent = '模型：' + p.model;
+  toast('已选择 ' + p.label + (p.note ? '：' + p.note : ''));
+}
+async function pullOnlineModels(scope){
+  var pre = scope === 's' ? 's' : 'f';
+  var state = document.getElementById(pre + 'AiModelState');
+  var ep = String(document.getElementById(pre + 'AiEndpoint').value || '').trim() || DEFAULT_AI.endpoint;
+  var key = String(document.getElementById(pre + 'AiKey').value || '').trim();
+  var url;
+  if(/text\.pollinations\.ai/i.test(ep)){
+    url = 'https://text.pollinations.ai/models';
+  } else {
+    var base = ep.replace(/\/chat\/completions\/?$/i,'').replace(/\/+$/,'');
+    url = base + '/models';
+  }
+  if(state) state.textContent = '正在拉取 ' + url + ' …';
+  try{
+    var headers = {};
+    if(key) headers.Authorization = 'Bearer ' + key;
+    var r = await fetch(url, { headers:headers, cache:'no-store' });
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+    var o = await r.json();
+    var raw = Array.isArray(o) ? o : (o.data || o.models || ((o.id || o.name) ? [o] : []));
+    var names = [];
+    raw.forEach(function(x){
+      var list = [];
+      if(typeof x === 'string') list = [x];
+      else if(x){ list = [x.id, x.name].concat(Array.isArray(x.aliases) ? x.aliases : []); }
+      list.forEach(function(n){ if(n && names.indexOf(String(n)) < 0) names.push(String(n)); });
+    });
+    if(!names.length) throw new Error('接口没有返回模型列表');
+    names = names.slice(0,300);
+    var dl = document.getElementById('aiModelList');
+    if(dl) dl.innerHTML = names.map(function(n){ return '<option value="' + h(n) + '"></option>'; }).join('');
+    var mel = document.getElementById(pre + 'AiModel');
+    if(mel && (!mel.value || names.indexOf(mel.value) < 0)) mel.value = names[0];
+    if(state) state.textContent = '已拉取 ' + names.length + ' 个模型，点模型名可切换。';
+    toast('在线模型列表已更新');
+  }catch(e){
+    if(state) state.textContent = '拉取失败：' + (e.message || e);
+    toast('模型列表拉取失败：' + (e.message || e));
+  }
+}
 function syncModelFields(){
-  document.getElementById('fAiEndpoint').value = settings.aiEndpoint || '';
-  document.getElementById('fAiModel').value = settings.aiModel || '';
-  document.getElementById('fAiKey').value = settings.aiKey || '';
-  document.getElementById('auditModel').textContent = '模型：' + (settings.aiModel || '未配置');
+  fillPresetSelects();
+  var ep = String(settings.aiEndpoint || '').trim() || DEFAULT_AI.endpoint;
+  var model = String(settings.aiModel || '').trim() || DEFAULT_AI.model;
+  var key = settings.aiKey || '';
+  ['f','s'].forEach(function(pre){
+    var epEl = document.getElementById(pre + 'AiEndpoint');
+    var mEl = document.getElementById(pre + 'AiModel');
+    var kEl = document.getElementById(pre + 'AiKey');
+    var sel = document.getElementById(pre + 'AiPreset');
+    if(epEl) epEl.value = ep;
+    if(mEl) mEl.value = model;
+    if(kEl) kEl.value = key;
+    if(sel){ var p = matchAiPreset(ep); sel.value = p ? p.id : 'custom'; }
+  });
+  var am = document.getElementById('auditModel');
+  if(am) am.textContent = '模型：' + (model || '未配置');
 }
 
 /* —— 草稿与工坊 —— */
@@ -901,22 +1009,56 @@ function builtinGenerate(){
   compileDraft();
 }
 async function callAI(messages, maxTokens){
-  settings.aiEndpoint = document.getElementById('fAiEndpoint').value.trim().replace(/\/+$/,'');
-  settings.aiModel = document.getElementById('fAiModel').value.trim();
-  settings.aiKey = document.getElementById('fAiKey').value.trim();
+  settings.aiEndpoint = String(document.getElementById('fAiEndpoint').value || '').trim().replace(/\/+$/,'') || DEFAULT_AI.endpoint;
+  settings.aiModel = String(document.getElementById('fAiModel').value || '').trim() || DEFAULT_AI.model;
+  settings.aiKey = String(document.getElementById('fAiKey').value || '').trim();
   saveJSON(LS_SETTINGS, settings);
-  if(!settings.aiEndpoint) throw new Error('还没有填写 AI 接口地址');
   var url = settings.aiEndpoint;
-  if(!/\/chat\/completions$/.test(url)) url = url.replace(/\/v1$/,'') + '/v1/chat/completions';
+  // Pollinations 的 /openai 本身就是完整 OpenAI 兼容端点，不能补 /v1。
+  if(!/text\.pollinations\.ai/i.test(url) && !/\/chat\/completions$/i.test(url)){
+    url = url.replace(/\/v1$/,'') + '/v1/chat/completions';
+  }
   var headers = { 'Content-Type':'application/json' };
   if(settings.aiKey) headers['Authorization'] = 'Bearer ' + settings.aiKey;
-  var body = { model: settings.aiModel || 'qwen2.5:7b', messages: messages, temperature:0.2, max_tokens: maxTokens || 1200 };
-  var r = await fetch(url, { method:'POST', headers:headers, body: JSON.stringify(body) });
-  if(!r.ok) throw new Error('模型接口 HTTP ' + r.status);
-  var o = await r.json();
-  var txt = o && o.choices && o.choices[0] && o.choices[0].message ? o.choices[0].message.content : (o && o.response) || '';
-  if(!txt) throw new Error('模型没有返回内容');
-  return String(txt);
+  var body = JSON.stringify({
+    model: settings.aiModel || DEFAULT_AI.model,
+    messages: messages,
+    temperature: 0.2,
+    max_tokens: maxTokens || 1200
+  });
+  var controller = new AbortController();
+  var timer = setTimeout(function(){ controller.abort(); }, 180000);
+  try{
+    var isPollinations = /text\.pollinations\.ai/i.test(url);
+    if(isPollinations){
+      var wait = AI_MIN_INTERVAL - (Date.now() - aiLastCallAt);
+      if(wait > 1000){
+        toast('在线模型额度冷却中，等待 ' + Math.ceil(wait / 1000) + ' 秒…');
+        await new Promise(function(resolve){ setTimeout(resolve, wait); });
+      }
+      aiLastCallAt = Date.now();
+    }
+    var r = await fetch(url, { method:'POST', headers:headers, body:body, signal:controller.signal });
+    if(isPollinations && r.status === 402){
+      toast('在线模型免费额度已用完，46 秒后自动重试…');
+      await new Promise(function(resolve){ setTimeout(resolve, 46000); });
+      aiLastCallAt = Date.now();
+      r = await fetch(url, { method:'POST', headers:headers, body:body, signal:controller.signal });
+    } else if(!r.ok && (r.status === 429 || r.status >= 500)){
+      await new Promise(function(resolve){ setTimeout(resolve, 1800); });
+      r = await fetch(url, { method:'POST', headers:headers, body:body, signal:controller.signal });
+    }
+    if(!r.ok) throw new Error('模型接口 HTTP ' + r.status);
+    var o = await r.json();
+    var txt = o && o.choices && o.choices[0] && o.choices[0].message ? o.choices[0].message.content : (o && o.response) || '';
+    if(!txt) throw new Error('模型没有返回内容');
+    return String(txt);
+  }catch(e){
+    if(e && e.name === 'AbortError') throw new Error('模型接口 180 秒未响应');
+    throw e;
+  }finally{
+    clearTimeout(timer);
+  }
 }
 function parseAIJSON(txt){
   var s = String(txt || '').trim();
@@ -925,17 +1067,31 @@ function parseAIJSON(txt){
   if(a >= 0 && b > a) s = s.slice(a, b+1);
   return JSON.parse(s);
 }
+function normalizeAIUI(list){
+  if(!Array.isArray(list)) return null;
+  var slots = ['compose','header','settings'];
+  var seen = {};
+  return list.slice(0,8).map(function(x, i){
+    var rawSlot = String((x && x.slot) || 'header').toLowerCase();
+    var slot = rawSlot.indexOf('compose') >= 0 ? 'compose' : (rawSlot.indexOf('settings') >= 0 ? 'settings' : 'header');
+    var rawId = String((x && x.id) || ('ai-action-' + (i+1))).toLowerCase().replace(/[^a-z0-9-]/g,'').slice(0,24) || ('ai-action-' + (i+1));
+    var id = rawId;
+    while(seen[id]) id = (rawId + '-' + (i+1)).slice(0,24);
+    seen[id] = true;
+    return {
+      id: id,
+      slot: slots.indexOf(slot) >= 0 ? slot : 'header',
+      label: String((x && x.label) || 'AI 按钮').slice(0,12),
+      icon: String((x && x.icon) || '✨').slice(0,8),
+      order: Number.isFinite(Number(x && x.order)) ? Number(x.order) : (i+1)
+    };
+  });
+}
 async function generateDraft(){
   collectDraft();
   document.getElementById('draftState').textContent = '生成中…';
   try{
-    if(!settings.aiEndpoint && !document.getElementById('fAiEndpoint').value.trim()){
-      builtinGenerate();
-      toast('已用图形化模板生成，编译通过后可直接审核');
-      document.getElementById('draftState').textContent = '模板生成';
-      return;
-    }
-    toast('正在调用开源模型生成插件…');
+    toast('正在调用在线开源模型生成插件…');
     var sys = '你是 Burger Chat 插件开发助手。只输出 JSON，不要解释。插件必须符合 burger-chat-plugin/v1：schema 固定；id 形如 bcp.<开发者标识>.<插件名>（小写字母数字短横线）；version x.y.z；name 2-32 字；developer 2-40 字；target 只能是 pc 或 both；minApp "0.40.31"；maxApp "0.40.99"；apiVersion 1；memoryMB 1-64 整数；category 只能是 聊天增强/媒体/工具/主题/集成；description 8-300 字；ui 最多 8 项，每项 id 小写字母数字短横线、slot 只能是 compose/header/settings、label 1-12 字；main 是纯 JavaScript 代码，使用注入的 api 对象，可用 api.chat.sendText、api.chat.onMessage、api.ui.onButton、api.ui.addSettingsPanel、api.storage、api.net、api.toast；禁止 eval、new Function、document.cookie、localStorage、XMLHttpRequest、WebSocket。输出字段：id,name,version,developer,target,minApp,maxApp,apiVersion,memoryMB,category,description,icon,tags,ui,main。';
     var user = '开发者：' + (profile ? profile.name : '') + '（标识 ' + (profile ? profile.devId : '') + '）\n需求：' + (document.getElementById('fPrompt').value.trim() || '做一个简单的聊天增强插件') + '\n当前表单：' + JSON.stringify({ id:document.getElementById('fId').value.trim(), name:document.getElementById('fName').value.trim(), category:document.getElementById('fCat').value, icon:document.getElementById('fIcon').value }) + '\n图形化模块：顶部按钮=' + document.getElementById('bTop').checked + '，输入栏按钮=' + document.getElementById('bCompose').checked + '，消息监听=' + document.getElementById('bMsg').checked + '，设置面板=' + document.getElementById('bSet').checked;
     var txt = await callAI([{ role:'system', content:sys }, { role:'user', content:user }], 1600);
@@ -944,15 +1100,21 @@ async function generateDraft(){
     draft.developer = profile ? profile.name : o.developer;
     draft.target = o.target === 'phone' ? 'pc' : (o.target || 'pc');
     draft.tags = Array.isArray(o.tags) ? o.tags.slice(0,5) : draft.tags;
-    draft.ui = Array.isArray(o.ui) ? o.ui : draft.ui;
+    draft.ui = normalizeAIUI(o.ui) || draft.ui;
     saveJSON(LS_DRAFT, draft);
     loadDraft();
     compileDraft();
     document.getElementById('draftState').textContent = 'AI 生成';
     toast('AI 已生成插件，已自动编译');
   }catch(e){
-    document.getElementById('draftState').textContent = '生成失败';
-    toast('AI 生成失败：' + (e.message || e) + '；可改用图形化模板');
+    document.getElementById('draftState').textContent = '在线模型失败，改用模板';
+    try{
+      builtinGenerate();
+      toast('在线模型调用失败：' + (e.message || e) + '；已改用图形化模板');
+    }catch(e2){
+      document.getElementById('draftState').textContent = '生成失败';
+      toast('生成失败：' + (e2.message || e2));
+    }
   }
 }
 function localValidate(d){
@@ -970,6 +1132,13 @@ function localValidate(d){
   if(!d.main || !String(d.main).trim()) return '插件代码不能为空';
   if(String(d.main).length > 200000) return '插件代码超过 200KB';
   if((d.ui || []).length > 8) return 'ui 最多 8 项';
+  var uiSlots = ['compose','header','settings'];
+  for(var ui=0; ui<(d.ui || []).length; ui++){
+    var item = d.ui[ui] || {};
+    if(!/^[a-z0-9][a-z0-9-]{0,23}$/.test(String(item.id || ''))) return 'ui.id 只能是小写字母/数字/短横线，1–24 位';
+    if(uiSlots.indexOf(String(item.slot || '')) < 0) return 'ui.slot 只能是 compose / header / settings';
+    if(!item.label || String(item.label).length > 12) return 'ui.label 需要 1–12 个字';
+  }
   return '';
 }
 function codeRisk(code){
@@ -1083,12 +1252,6 @@ async function runAudit(){
   document.getElementById('auditLog').textContent = '本地规则检查：\n' + local.items.map(function(x){ return (x.ok?'✓ ':'✗ ') + x.cat + ' · ' + x.msg; }).join('\n') + '\n\n正在调用开源模型复核…';
   audit = local;
   if(!local.pass){ renderAudit(); toast('本地规则已拒绝，不能上架'); return; }
-  if(!settings.aiEndpoint){
-    audit.mode = 'local';
-    renderAudit('', document.getElementById('auditLog').textContent + '\n\n未配置 AI 接口，仅本地规则通过。可在设置里连接 Qwen / Llama 后重新审核。');
-    toast('本地规则通过；AI 模型未配置');
-    return;
-  }
   try{
     var sys = '你是 Burger Chat 插件商店的内容安全审核员。审核范围：暴力血腥、色情低俗、未成年人性化、违法危险（毒品/赌博/诈骗/黑客）、仇恨歧视、隐私窃取、恶意代码。只输出 JSON：{"pass":true|false,"categories":["..."],"reason":"简短理由","score":0-100}。不要复述违规内容。';
     var user = '插件名称：' + draft.name + '\n介绍：' + draft.description + '\n需求描述：' + draft.prompt + '\n代码（截断 6000 字）：\n' + String(draft.main).slice(0, 6000);
@@ -1226,7 +1389,7 @@ function showView(v){
   var info = VIEWS[v] || ['开发者中心','开发者中心'];
   document.getElementById('pageTitle').textContent = info[0];
   document.getElementById('crumb').textContent = info[1];
-  if(v === 'settings') renderSettings();
+  if(v === 'settings'){ renderSettings(); syncModelFields(); }
   if(v === 'studio') loadDraft();
   window.scrollTo({ top:0, behavior:'smooth' });
 }
