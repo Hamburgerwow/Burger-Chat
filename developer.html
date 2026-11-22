@@ -64,19 +64,19 @@ body.custom-font .main .codebox,body.custom-font .main .codebox *{color:#dcdff0!
 body.custom-font .main ::placeholder{color:var(--user-font);opacity:.55}
 body.dark-surface{background:color-mix(in srgb,var(--page-bg) 25%,#15121d)}
 body.custom-font:not(.dark-surface){background:color-mix(in srgb,var(--page-bg) 42%,#f2f0f7)}
-body.dark-surface{--panel:#241f33;--line:rgba(255,255,255,.16);--soft:rgba(255,255,255,.07);--sub:rgba(255,255,255,.65)}
+body.dark-surface .main{--panel:#241f33;--line:rgba(255,255,255,.16);--soft:rgba(255,255,255,.07);--sub:rgba(255,255,255,.65)}
 body.dark-bg:not(.custom-font):not(.dark-surface) .main .topbar .crumb,body.dark-bg:not(.custom-font):not(.dark-surface) .main .topbar h1,body.dark-bg:not(.custom-font):not(.dark-surface) .main .topbar .crumb :is(a,b,span){color:#f4f1ff!important}
-body.dark-surface .card{background:var(--panel);border-color:var(--line)}
+body.dark-surface .main .card{background:var(--panel);border-color:var(--line)}
 body.dark-surface #view-studio .studio-wall.on~.grid .card{background:rgba(30,25,44,.82);border-color:rgba(255,255,255,.16)}
-body.dark-surface .mini,body.dark-surface .prow,body.dark-surface .kv>div,body.dark-surface .notice,body.dark-surface .empty,body.dark-surface .statusline .s{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.14)}
-body.dark-surface .field input,body.dark-surface .field textarea,body.dark-surface .field select{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.2)}
-body.dark-surface .btn{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.2);color:var(--user-font)!important}
-body.dark-surface .btn.pri{background:linear-gradient(145deg,#6f63f0,#5b4ee0)!important;border-color:transparent!important;color:#fff!important}
-body.dark-surface .btn.bad{background:rgba(198,75,75,.16);border-color:rgba(198,75,75,.4)}
-body.dark-surface .pill{background:rgba(255,255,255,.1);color:var(--user-font)!important}
-body.dark-surface .pill.ok{background:rgba(47,158,103,.22);color:#9be7bd!important}
-body.dark-surface .pill.bad{background:rgba(198,75,75,.2);color:#ffaaa8!important}
-body.dark-surface .pill.warn{background:rgba(181,122,21,.2);color:#ffd28a!important}
+body.dark-surface .main .mini,body.dark-surface .main .prow,body.dark-surface .main .kv>div,body.dark-surface .main .notice,body.dark-surface .main .empty,body.dark-surface .main .statusline .s{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.14)}
+body.dark-surface .main .field input,body.dark-surface .main .field textarea,body.dark-surface .main .field select{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.2)}
+body.dark-surface .main .btn{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.2);color:var(--user-font)!important}
+body.dark-surface .main .btn.pri{background:linear-gradient(145deg,#6f63f0,#5b4ee0)!important;border-color:transparent!important;color:#fff!important}
+body.dark-surface .main .btn.bad{background:rgba(198,75,75,.16);border-color:rgba(198,75,75,.4)}
+body.dark-surface .main .pill{background:rgba(255,255,255,.1);color:var(--user-font)!important}
+body.dark-surface .main .pill.ok{background:rgba(47,158,103,.22);color:#9be7bd!important}
+body.dark-surface .main .pill.bad{background:rgba(198,75,75,.2);color:#ffaaa8!important}
+body.dark-surface .main .pill.warn{background:rgba(181,122,21,.2);color:#ffd28a!important}
 .field input[type=color]{height:38px;padding:4px 6px;cursor:pointer}
 @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 .grid{display:grid;gap:14px}
