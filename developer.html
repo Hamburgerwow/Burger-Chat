@@ -65,6 +65,7 @@ body.custom-font .main ::placeholder{color:var(--user-font);opacity:.55}
 body.dark-surface{background:color-mix(in srgb,var(--page-bg) 25%,#15121d)}
 body.custom-font:not(.dark-surface){background:color-mix(in srgb,var(--page-bg) 42%,#f2f0f7)}
 body.dark-surface{--panel:#241f33;--line:rgba(255,255,255,.16);--soft:rgba(255,255,255,.07);--sub:rgba(255,255,255,.65)}
+body.dark-bg:not(.custom-font):not(.dark-surface) .main .topbar .crumb,body.dark-bg:not(.custom-font):not(.dark-surface) .main .topbar h1,body.dark-bg:not(.custom-font):not(.dark-surface) .main .topbar .crumb :is(a,b,span){color:#f4f1ff!important}
 body.dark-surface .card{background:var(--panel);border-color:var(--line)}
 body.dark-surface #view-studio .studio-wall.on~.grid .card{background:rgba(30,25,44,.82);border-color:rgba(255,255,255,.16)}
 body.dark-surface .mini,body.dark-surface .prow,body.dark-surface .kv>div,body.dark-surface .notice,body.dark-surface .empty,body.dark-surface .statusline .s{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.14)}
@@ -856,6 +857,7 @@ function applyAppearance(bg, fc){
   document.documentElement.style.setProperty('--user-font', fc);
   document.body.classList.toggle('custom-font', fc !== '#16181d');
   document.body.classList.toggle('dark-surface', isLightColor(fc));
+  document.body.classList.toggle('dark-bg', bg !== '#f2f0f7' && !isLightColor(bg));
 }
 function previewAppearance(){
   var bg = document.getElementById('sBgColor');
