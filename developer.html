@@ -156,8 +156,8 @@ a{color:var(--brand);text-decoration:none}
 .steps{display:flex;gap:6px;margin:0 0 16px}
 .steps div{flex:1;height:4px;border-radius:99px;background:#ebe7f7}
 .steps div.on{background:linear-gradient(90deg,#7b6cf6,#a78bfa)}
-.phonebox{display:flex;gap:8px}
-.phonebox input{flex:1;min-width:0}
+.emailbox{display:flex;gap:8px}
+.emailbox input{flex:1;min-width:0}
 .codehint{font-size:10.5px;color:#8b7bb8;background:#f6f1ff;border:1px solid #e4d9ff;border-radius:8px;padding:6px 8px;margin-top:7px;display:none}
 .modal .actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin-top:18px}
 .modal .actions .sp{flex:1}
@@ -378,7 +378,8 @@ a{color:var(--brand);text-decoration:none}
           <div class="formgrid">
             <div class="field wide"><label>GitHub Token（contents:write）</label><input id="sGh" type="password" placeholder="github_pat_… 或 ghp_…"></div>
             <div class="field"><label>开发者名称</label><input id="sName"></div>
-            <div class="field"><label>开发者标识</label><input id="sDevId" placeholder="小写字母、数字、短横线"></div>
+            <div class="field"><label>注册邮箱</label><input id="sEmail" type="email" placeholder="you@example.com" readonly style="background:#f7f6fb;color:#6f6885"></div>
+            <div class="field wide"><label>开发者标识</label><input id="sDevId" placeholder="小写字母、数字、短横线"></div>
             <div class="field wide"><label>开发心情</label><select id="sMood"><option>开心</option><option>专注</option><option>灵感爆棚</option><option>摸鱼</option><option>深夜赶工</option><option>佛系</option></select></div>
             <div class="field wide"><label>头像</label><input id="sAvatarFile" type="file" accept="image/*"></div>
           </div>
@@ -390,7 +391,7 @@ a{color:var(--brand);text-decoration:none}
             <div class="field wide"><label>接口地址</label><input id="sAiEndpoint" placeholder="http://127.0.0.1:11434/v1/chat/completions"></div>
             <div class="field"><label>模型名</label><input id="sAiModel" placeholder="qwen2.5:7b"></div>
             <div class="field"><label>API Key</label><input id="sAiKey" type="password" placeholder="本地模型可留空"></div>
-            <div class="field wide"><label>短信网关（可选）</label><input id="sSms" placeholder="https://…/sms/send，POST {phone}"></div>
+            <div class="field wide"><label>邮件网关（可选）</label><input id="sMail" placeholder="https://…/email/send，POST {email,code}"></div>
           </div>
           <div class="notice" style="margin-top:12px"><b>开源模型建议：</b>Qwen2.5-7B-Instruct、Llama-3.1-8B-Instruct、Mistral-7B-Instruct。用 Ollama 启动后接口通常是 <code>http://127.0.0.1:11434/v1/chat/completions</code>。未连接模型时，生成走图形化模板，审核走本地规则。</div>
         </div>
@@ -416,8 +417,8 @@ a{color:var(--brand);text-decoration:none}
       <div class="field"><label>开发者名称</label><input id="oName" maxlength="20" placeholder="例如 Hamburgerwow"></div>
       <div class="field"><label>开发者标识（用于插件 ID）</label><input id="oDevId" maxlength="24" placeholder="hamburgerwow" oninput="this.value=this.value.toLowerCase().replace(/[^a-z0-9-]/g,'')"></div>
       <div class="field wide"><label>开发心情</label><select id="oMood"><option>开心</option><option>专注</option><option>灵感爆棚</option><option>摸鱼</option><option>深夜赶工</option><option>佛系</option></select></div>
-      <div class="field wide"><label>手机号</label><div class="phonebox"><input id="oPhone" maxlength="11" placeholder="11 位手机号" oninput="this.value=this.value.replace(/\D/g,'')"><button class="btn" onclick="sendCode()">发送验证码</button></div></div>
-      <div class="field wide"><label>验证码</label><input id="oCode" maxlength="6" placeholder="6 位验证码" oninput="this.value=this.value.replace(/\D/g,'')"><div class="codehint" id="codeHint"></div></div>
+      <div class="field wide"><label>邮箱</label><div class="emailbox"><input id="oEmail" type="email" maxlength="80" placeholder="you@example.com" autocomplete="email"><button class="btn" onclick="sendCode()">发送验证码</button></div></div>
+      <div class="field wide"><label>邮箱验证码</label><input id="oCode" maxlength="6" placeholder="6 位验证码" oninput="this.value=this.value.replace(/\D/g,'')"><div class="codehint" id="codeHint"></div></div>
     </div>
     <div class="actions">
       <a href="https://hamburgerwow.top/" style="font-size:11px;color:#8c93a2;align-self:center">先随便看看</a>
@@ -447,8 +448,9 @@ var draft = loadJSON(LS_DRAFT, null) || emptyDraft();
 var compiled = false;
 var compileMsg = '';
 var audit = null;
-var smsCode = '';
-var smsExp = 0;
+var mailCode = '';
+var mailExp = 0;
+var mailSentTo = '';
 var dirty = false;
 
 function loadJSON(k, d){ try{ var v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); }catch(e){ return d; } }
@@ -497,14 +499,14 @@ function emptyDraft(){
 }
 
 /* —— 首次资料 —— */
-function needOnboard(){ return !profile || !profile.name || !profile.devId || !profile.phone || !profile.verified || !profile.avatar; }
+function needOnboard(){ return !profile || !profile.name || !profile.devId || !profile.email || !profile.verified || !profile.avatar; }
 function showOnboard(){
   document.getElementById('onboard').classList.remove('hidden');
   if(profile){
     document.getElementById('oName').value = profile.name || '';
     document.getElementById('oDevId').value = profile.devId || '';
     document.getElementById('oMood').value = profile.mood || '开心';
-    document.getElementById('oPhone').value = profile.phone || '';
+    document.getElementById('oEmail').value = profile.email || '';
     if(profile.avatar){
       document.getElementById('avatarPreview').innerHTML = '<img src="' + h(profile.avatar) + '" alt="avatar">';
     }
@@ -534,46 +536,54 @@ document.getElementById('avatarFile').addEventListener('change', function(){
     window.__avatar = url;
   });
 });
+function validEmail(v){ return /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,24}$/.test(String(v||'')); }
 function sendCode(){
-  var phone = document.getElementById('oPhone').value.trim();
-  if(!/^1[3-9]\d{9}$/.test(phone)){ toast('请输入 11 位手机号'); return; }
-  smsCode = String(Math.floor(100000 + Math.random() * 900000));
-  smsExp = Date.now() + 5 * 60 * 1000;
+  var email = document.getElementById('oEmail').value.trim();
+  if(!validEmail(email)){ toast('请输入正确的邮箱地址'); return; }
+  mailCode = String(Math.floor(100000 + Math.random() * 900000));
+  mailExp = Date.now() + 5 * 60 * 1000;
+  mailSentTo = email;
   var hint = document.getElementById('codeHint');
   hint.style.display = 'block';
-  if(settings.smsEndpoint){
-    hint.textContent = '正在调用短信网关…';
-    fetch(settings.smsEndpoint, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ phone: phone, scene:'bcp-dev' }) })
+  var ep = String(settings.mailEndpoint || '').trim();
+  if(ep){
+    hint.textContent = '正在发送验证码邮件…';
+    fetch(ep, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ email:email, code:mailCode, scene:'bcp-dev', name:document.getElementById('oName').value.trim() })
+    })
       .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json().catch(function(){ return {}; }); })
       .then(function(o){
-        if(o && o.code){ smsCode = String(o.code); }
-        hint.textContent = '验证码已发送，5 分钟内有效。';
-        toast('验证码已发送');
+        if(o && o.code){ mailCode = String(o.code); }
+        hint.textContent = '验证码已发送至 ' + email + '，5 分钟内有效。';
+        toast('验证码已发送至邮箱');
       })
       .catch(function(e){
-        hint.textContent = '短信网关未接通，本地验证码：' + smsCode + '（5 分钟有效）';
-        toast('网关失败，已改用本地验证码');
+        hint.textContent = '邮件网关未接通（' + (e.message || e) + '），本地验证码：' + mailCode + '（5 分钟有效）';
+        toast('邮件发送失败，已改用本地验证码');
       });
   } else {
-    hint.textContent = '未接入短信网关，本地验证码：' + smsCode + '（5 分钟有效）。接入网关后可在设置里填写地址。';
-    toast('本地验证码：' + smsCode);
+    hint.textContent = '未配置邮件网关，无法真实发送邮件。本地验证码：' + mailCode + '（5 分钟有效）。请在设置里填写邮件网关。';
+    toast('未配置邮件网关，本地验证码：' + mailCode);
   }
 }
 function saveProfile(){
   var name = document.getElementById('oName').value.trim();
   var devId = document.getElementById('oDevId').value.trim().toLowerCase();
   var mood = document.getElementById('oMood').value;
-  var phone = document.getElementById('oPhone').value.trim();
+  var email = document.getElementById('oEmail').value.trim();
   var code = document.getElementById('oCode').value.trim();
   if(name.length < 2) return toast('开发者名称至少 2 个字');
   if(!/^[a-z0-9][a-z0-9-]{1,23}$/.test(devId)) return toast('开发者标识需小写字母/数字/短横线，2–24 位');
-  if(!/^1[3-9]\d{9}$/.test(phone)) return toast('手机号格式不对');
-  if(!smsCode || Date.now() > smsExp) return toast('验证码已过期，请重新发送');
-  if(code !== smsCode) return toast('验证码不正确');
+  if(!validEmail(email)) return toast('邮箱格式不对');
+  if(mailSentTo !== email) return toast('请先向这个邮箱发送验证码');
+  if(!mailCode || Date.now() > mailExp) return toast('验证码已过期，请重新发送');
+  if(code !== mailCode) return toast('验证码不正确');
   var avatar = window.__avatar || (profile && profile.avatar) || '';
   if(!avatar) return toast('请先上传并设置开发者头像');
   profile = {
-    name: name, devId: devId, mood: mood, phone: phone, verified: true,
+    name: name, devId: devId, mood: mood, email: email, verified: true,
     avatar: avatar,
     createdAt: (profile && profile.createdAt) || Date.now()
   };
@@ -724,14 +734,15 @@ function renderSettings(){
   document.getElementById('sAiEndpoint').value = settings.aiEndpoint || '';
   document.getElementById('sAiModel').value = settings.aiModel || '';
   document.getElementById('sAiKey').value = settings.aiKey || '';
-  document.getElementById('sSms').value = settings.smsEndpoint || '';
+  document.getElementById('sEmail').value = profile.email || '';
+  document.getElementById('sMail').value = settings.mailEndpoint || '';
 }
 function saveSettings(){
   settings.ghToken = document.getElementById('sGh').value.trim();
   settings.aiEndpoint = document.getElementById('sAiEndpoint').value.trim().replace(/\/+$/,'');
   settings.aiModel = document.getElementById('sAiModel').value.trim();
   settings.aiKey = document.getElementById('sAiKey').value.trim();
-  settings.smsEndpoint = document.getElementById('sSms').value.trim().replace(/\/+$/,'');
+  settings.mailEndpoint = document.getElementById('sMail').value.trim().replace(/\/+$/,'');
   if(profile){
     profile.name = document.getElementById('sName').value.trim() || profile.name;
     profile.devId = (document.getElementById('sDevId').value.trim() || profile.devId).toLowerCase().replace(/[^a-z0-9-]/g,'');
