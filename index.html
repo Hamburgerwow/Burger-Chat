@@ -111,20 +111,21 @@ footer .sp{flex:1}
   <header>
     <h1>手机和电脑<br>在<span>自家局域网</span>里直接聊</h1>
     <p class="lead">不经过任何服务器：消息、图片、文件都在你自己的路由器里走。手机装个 App，电脑开个程序，配对码一连就能用。</p>
-    <div class="banner" id="banner" style="display:flex"><b>官网直接下载</b><span>后续新版本统一发布到 hamburgerwow.top，下载入口和版本信息都在官网更新。</span></div>
+    <div class="banner" id="banner" style="display:flex"><b>官网直接下载</b><span>每个新版本同步发布到 hamburgerwow.top 和 GitHub；Windows 整合包内含 EXE 与电脑端源码。</span></div>
   </header>
 
   <section id="dl" style="padding-top:0">
     <div class="dlbox">
       <div class="dlhead">
         <h2>下载</h2>
-        <span class="verchip" id="verText">最新版本 0.40.42 · 2026 年 11 月 23 日</span>
+        <span class="verchip" id="verText">最新版本 0.40.43 · 2026 年 11 月 24 日</span>
       </div>
       <div class="btns">
-        <a class="btn pri" id="apkBtn" href="/f/android"><span class="t">下载安卓版</span><span class="s" id="apkSub">APK · 1.09 MB</span></a>
-        <a class="btn gh" id="exeBtn" href="/f/windows"><span class="t">下载电脑版（Windows）</span><span class="s" id="exeSub">EXE · 88.58 MB</span></a>
+        <a class="btn pri" id="apkBtn" href="/f/android"><span class="t">下载安卓版</span><span class="s" id="apkSub">APK · 1.10 MB</span></a>
+        <a class="btn gh" id="exeBtn" href="/f/windows"><span class="t">下载电脑版（Windows）</span><span class="s" id="exeSub">EXE · 88.68 MB</span></a>
+        <a class="btn gh" id="bundleBtn" href="/f/bundle"><span class="t">下载整合包（EXE + 源码）</span><span class="s" id="bundleSub">ZIP · 47.54 MB</span></a>
       </div>
-      <p class="dlnote" id="dlNote">点按钮直接从官网下载最新安装包。安卓若提示“未知来源”，允许一次即可安装；电脑版是单个 exe，双击就能用。</p>
+      <p class="dlnote" id="dlNote">点按钮直接从官网下载最新安装包。安卓若提示“未知来源”，允许一次即可安装；电脑版是单个 exe，双击就能用。整合包带电脑端源码，解压后请保留 window-host 文件夹。</p>
       <p class="dlfrom">此下载源来自官方发布端 · 安装包由 Burger Chat 发布服务提供</p>
     </div>
   </section>
@@ -160,7 +161,7 @@ footer .sp{flex:1}
 
   <section id="log">
     <h3>更新日志</h3>
-    <p id="logText">0.40.42：注册后生成加密账号密钥并上传 GitHub，登录时自动恢复账号、聊天与成就并继续同步。手机端更新检查只访问官方网站，连接失败自动进入聊天主界面；连接页语言按钮移到屏幕下方居中、无边框且只显示当前语言。电脑版插件商店改为右侧竖排纯图标导航与平滑切页动画；Windows 窗口重绘为无边框自绘标题栏，并修复右键菜单点击空白处不关闭。</p>
+    <p id="logText">0.40.43：修复电脑端最大化覆盖任务栏与底部白边，最大化严格贴合当前屏幕工作区；设备右键菜单不再重复堆叠，连续右键始终单例，点击空白、滚动或按 Esc 即关闭；无边框窗口标题栏恢复按住拖动，最大化时按比例还原后继续拖；最小化还原后页面不再黑屏。最大化、还原、最小化改回 Windows 原生窗口状态与 DWM 过渡，保留系统动画。</p>
   </section>
 
   <section id="faq">
