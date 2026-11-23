@@ -5,24 +5,42 @@
   "proto": "http+tcp",
   "port": 54970,
   "latest": {
-    "id": "gh-v0.40.40",
-    "ver": "0.40.40",
-    "notes": "0.40.40 更新：\n· 电脑端窗口全屏或大屏时，左侧导航图标自动垂直居中并固定，不再堆在顶部\n· 设置、插件、插件商店、壁纸库和聊天内容按窗口宽高自动伸展，插件商店高度跟随动态视口\n· 电脑端设置新增「邮箱账号」：邮箱验证码注册、密码登录、忘记密码、资料编辑与退出登录\n· 电脑端可与手机端共用账号，把已安装插件清单同步到账号并刷新云端清单\n· 五种语言电脑页面同步适配，简中 / 繁中 / English / 日本語 / 한국어\n· 版本升到 0.40.40，电脑端 EXE 0.40.40，安卓 versionCode 71",
-    "ts": 1795415676465,
+    "id": "gh-v0.40.41",
+    "ver": "0.40.41",
+    "notes": "0.40.41 更新：\n· 修复平板插件商店无法滑动：商店内容改为独立滚动层，不再被右栏 overflow 裁死\n· 平板右侧插件商店底部导航独立成栏，不再跟着列表滚走\n· 手机端插件商店底部导航固定在屏幕下方，全部 / 排行榜 / 分类 / 我的随时切换\n· 手机与电脑网页新增 500 个成就，登录同一邮箱后合并解锁记录\n· 五种语言页面版本同步到 0.40.41\n· 安卓 versionCode 72、versionName 0.40.41；电脑端 EXE 0.40.41.0",
+    "ts": 1795418361791,
     "force": false,
     "dl": true,
     "apk": {
-      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.40/Burger.Chat-Android.apk",
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.41/Burger.Chat-Android.apk",
       "name": "Burger Chat-安卓.apk",
-      "size": 1127532
+      "size": 1131628
     },
     "exe": {
-      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.40/Burger.Chat-Windows.exe",
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.41/Burger.Chat-Windows.exe",
       "name": "Burger Chat.exe",
-      "size": 92634112
+      "size": 92688384
     }
   },
   "versions": [
+    {
+      "id": "gh-v0.40.41",
+      "ver": "0.40.41",
+      "notes": "0.40.41 更新：\n· 修复平板插件商店无法滑动：商店内容改为独立滚动层，不再被右栏 overflow 裁死\n· 平板右侧插件商店底部导航独立成栏，不再跟着列表滚走\n· 手机端插件商店底部导航固定在屏幕下方，全部 / 排行榜 / 分类 / 我的随时切换\n· 手机与电脑网页新增 500 个成就，登录同一邮箱后合并解锁记录\n· 五种语言页面版本同步到 0.40.41\n· 安卓 versionCode 72、versionName 0.40.41；电脑端 EXE 0.40.41.0",
+      "ts": 1795418361791,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.41/Burger.Chat-Android.apk",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1131628
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.41/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92688384
+      }
+    },
     {
       "id": "gh-v0.40.40",
       "ver": "0.40.40",
@@ -134,11 +152,18 @@
   ],
   "anns": [
     {
+      "id": "ann-0.40.41",
+      "title": "0.40.41 插件商店滚动与底部导航修复",
+      "body": "平板设置右栏的插件商店改为独立滚动层，长列表可以正常上下滑动；商店底部导航从列表里拆出来，平板固定在右栏底部，手机固定在屏幕下方。手机与电脑网页新增 500 个成就，登录同一邮箱后合并解锁记录。安卓 versionCode 72，电脑端 EXE 0.40.41.0。",
+      "ts": 1795418361791,
+      "pinned": true
+    },
+    {
       "id": "ann-0.40.40",
       "title": "0.40.40 电脑端全屏自适应与邮箱账号",
       "body": "电脑端窗口全屏后，左侧导航图标会自动垂直居中，设置、插件、插件商店、壁纸库和聊天内容按窗口宽高伸展，插件商店不再被固定高度截断。设置页新增邮箱账号，和手机端共用同一套接口：邮箱验证码注册、密码登录、忘记密码重置、头像名称心情编辑、退出登录，以及把本机已安装插件清单同步到账号。五种语言页面同步更新。",
       "ts": 1795415676465,
-      "pinned": true
+      "pinned": false
     },
     {
       "id": "ann-0.40.39",
@@ -170,8 +195,8 @@
     }
   ],
   "count": {
-    "versions": 6,
-    "anns": 5
+    "versions": 7,
+    "anns": 6
   },
-  "updated": 1795415676465
+  "updated": 1795418361791
 }
