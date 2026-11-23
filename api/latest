@@ -5,24 +5,42 @@
   "proto": "http+tcp",
   "port": 54970,
   "latest": {
-    "id": "pmwst7php580884",
-    "ver": "0.40.37",
-    "notes": "0.40.37 更新：\n· 修复手机端新上传插件下载安装报错：商店强制刷新先秒回缓存，GitHub 扫描放到后台，不再等到 12 秒超时或 502\n· 插件包下载改为多源回退：本机同源代理、官网 HTTPS、GitHub raw，单个地址失败自动换下一个\n· 哈希校验同时支持原始字节和文本，避免 BOM / 换行导致「插件哈希校验失败，文件可能损坏」\n· 修正两个新插件调用不存在的 toast.show / ui.createPanel / 旧版 addSettingsPanel 参数，minApp 从 0.40.31 降到 0.40.0\n· 手机端 5 个语言页面全部接入新的多源下载与双哈希逻辑，版本升到 0.40.37，安卓 versionCode 68",
-    "ts": 1795410766285,
+    "id": "gh-v0.40.38",
+    "ver": "0.40.38",
+    "notes": "0.40.38 更新：\n· 电脑端插件商店改为左右排版，导航固定在右侧并垂直居中，只保留图标\n· 修复电脑端插件商店分类打不开的问题，五类插件现在可以正常筛选\n· 插件商店与下载加入趣味动画，电脑端主要页面和插件商店统一使用过渡动画\n· 手机端设置页新增邮箱账号入口，支持注册与登录，点击账号可直接编辑头像、名称和心情\n· 账号资料与已安装插件同步到插件中心「我的」页，可同步本机、刷新云端清单并前往安装\n· 版本升到 0.40.38，安卓 versionCode 69",
+    "ts": 1795412635452,
     "force": false,
     "dl": true,
     "apk": {
-      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.37/Burger.Chat-Android.apk",
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.38/Burger.Chat-Android.apk",
       "name": "Burger Chat-安卓.apk",
-      "size": 1090668
+      "size": 1123436
     },
     "exe": {
-      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.37/Burger.Chat-Windows.exe",
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.38/Burger.Chat-Windows.exe",
       "name": "Burger Chat.exe",
-      "size": 92349440
+      "size": 92532224
     }
   },
   "versions": [
+    {
+      "id": "gh-v0.40.38",
+      "ver": "0.40.38",
+      "notes": "0.40.38 更新：\n· 电脑端插件商店改为左右排版，导航固定在右侧并垂直居中，只保留图标\n· 修复电脑端插件商店分类打不开的问题，五类插件现在可以正常筛选\n· 插件商店与下载加入趣味动画，电脑端主要页面和插件商店统一使用过渡动画\n· 手机端设置页新增邮箱账号入口，支持注册与登录，点击账号可直接编辑头像、名称和心情\n· 账号资料与已安装插件同步到插件中心「我的」页，可同步本机、刷新云端清单并前往安装\n· 版本升到 0.40.38，安卓 versionCode 69",
+      "ts": 1795412635452,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.38/Burger.Chat-Android.apk",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1123436
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.38/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92532224
+      }
+    },
     {
       "id": "pmwst7php580884",
       "ver": "0.40.37",
