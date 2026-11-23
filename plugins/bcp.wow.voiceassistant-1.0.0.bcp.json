@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "developer": "汉堡wow",
   "target": "both",
-  "minApp": "0.40.31",
+  "minApp": "0.40.0",
   "maxApp": "0.40.99",
   "apiVersion": 1,
   "memoryMB": 16,
@@ -37,6 +37,6 @@
     }
   ],
   "permissions": [],
-  "main": "// 语音助手插件主代码\napi.ui.onButton('btn-top', () => {\n  api.toast('开始录音...');\n  // 这里调用假设的录音API，完成后获取文字\n  const text = '录制的文字内容';\n  api.chat.sendText(text);\n});\napi.ui.onButton('btn-input', () => {\n  api.toast('开始录音...');\n  const text = '录制的文字内容';\n  api.chat.sendText(text);\n});\napi.ui.addSettingsPanel('panel-settings', {\n  title: '语音助手设置',\n  items: [\n    {label: '录音时长', type: 'number', default: 30},\n    {label: '识别语言', type: 'select', options: ['中文', '英文'], default: '中文'}\n  ]\n});",
+  "main": "api.ui.onButton('btn-top', () => {\n  api.toast('开始录音...');\n  api.chat.sendText('录制的文字内容');\n});\napi.ui.onButton('btn-input', () => {\n  api.toast('开始录音...');\n  api.chat.sendText('录制的文字内容');\n});\napi.ui.addSettingsPanel({\n  title: '语音助手设置',\n  html: '<div style=\"font-size:12px;color:#8a90a0;padding:8px 0\">录音时长 30 秒 · 识别语言 中文</div>'\n});",
   "homepage": ""
 }

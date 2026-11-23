@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "developer": "汉堡wow",
   "target": "both",
-  "minApp": "0.40.31",
+  "minApp": "0.40.0",
   "maxApp": "0.40.99",
   "apiVersion": 1,
   "memoryMB": 8,
@@ -41,6 +41,6 @@
     }
   ],
   "permissions": [],
-  "main": "(() => {\n  const { chat, ui, storage, toast } = api;\n  // 发送语音消息（示例）\n  ui.onButton('btn-voice', () => {\n    const text = '这是语音消息示例';\n    chat.sendText(text);\n    toast.show('已发送语音消息');\n  });\n  // 语音输入按钮\n  ui.onButton('btn-voice-input', () => {\n    toast.show('语音输入功能尚未实现');\n  });\n  // 设置面板\n  ui.addSettingsPanel('settings-voice', '语音设置', () => {\n    const panel = ui.createPanel();\n    panel.addText('此处可配置语音合成参数');\n    return panel;\n  });\n})();",
+  "main": "api.ui.onButton('btn-voice', () => {\n  api.chat.sendText('这是语音消息示例');\n  api.toast('已发送语音消息');\n});\napi.ui.onButton('btn-voice-input', () => {\n  api.toast('语音输入功能尚未实现');\n});\napi.ui.addSettingsPanel({\n  title: '语音设置',\n  html: '<div style=\"font-size:12px;color:#8a90a0;padding:8px 0\">此处可配置语音合成参数</div>'\n});",
   "homepage": ""
 }
