@@ -1,0 +1,42 @@
+{
+  "schema": "burger-chat-plugin/v1",
+  "id": "bcp.wow.voiceassistant",
+  "name": "语音助手",
+  "version": "1.0.0",
+  "developer": "汉堡wow",
+  "target": "both",
+  "minApp": "0.40.31",
+  "maxApp": "0.40.99",
+  "apiVersion": 1,
+  "memoryMB": 16,
+  "category": "聊天增强",
+  "description": "本插件提供语音输入功能，用户可通过点击顶部或输入栏按钮录制语音，插件将语音转为文字后发送到聊天窗口。支持设置录音时长、语言识别等参数，提升聊天体验。",
+  "icon": "🧩",
+  "tags": [],
+  "ui": [
+    {
+      "id": "btn-top",
+      "slot": "header",
+      "label": "语音",
+      "icon": "✨",
+      "order": 1
+    },
+    {
+      "id": "btn-input",
+      "slot": "compose",
+      "label": "录音",
+      "icon": "✨",
+      "order": 2
+    },
+    {
+      "id": "panel-settings",
+      "slot": "settings",
+      "label": "设置",
+      "icon": "✨",
+      "order": 3
+    }
+  ],
+  "permissions": [],
+  "main": "// 语音助手插件主代码\napi.ui.onButton('btn-top', () => {\n  api.toast('开始录音...');\n  // 这里调用假设的录音API，完成后获取文字\n  const text = '录制的文字内容';\n  api.chat.sendText(text);\n});\napi.ui.onButton('btn-input', () => {\n  api.toast('开始录音...');\n  const text = '录制的文字内容';\n  api.chat.sendText(text);\n});\napi.ui.addSettingsPanel('panel-settings', {\n  title: '语音助手设置',\n  items: [\n    {label: '录音时长', type: 'number', default: 30},\n    {label: '识别语言', type: 'select', options: ['中文', '英文'], default: '中文'}\n  ]\n});",
+  "homepage": ""
+}
