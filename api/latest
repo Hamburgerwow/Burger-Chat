@@ -5,26 +5,46 @@
   "proto": "http+tcp",
   "port": 54970,
   "latest": {
-    "id": "gh-v0.40.43",
-    "ver": "0.40.43",
-    "notes": "0.40.43 更新：\n· 修复电脑端最大化覆盖任务栏、底部白边：最大化贴合当前屏幕工作区\n· 修复设备右键菜单重复堆叠，连续右键始终保持单例，点击空白 / 滚动 / Esc 关闭\n· 修复无边框窗口无法拖动：标题栏按住即可拖动，最大化时按比例还原后继续拖动\n· 修复最小化还原后页面黑屏，恢复可见性并重绘\n· 最大化 / 还原 / 最小化改回 Windows 原生窗口状态与 DWM 过渡，保留系统动画\n· 版本升到 0.40.43，电脑端 EXE 0.40.43.0，安卓 versionCode 74",
-    "ts": 1795450474329,
+    "id": "gh-v0.40.44",
+    "ver": "0.40.44",
+    "notes": "0.40.44 更新：\n· 电脑端配对窗口、扫码窗口在手机连接成功后自动收起\n· 修复电脑端和手机端邮箱账号登录失败：浏览器 / WebView 自动填充的邮箱密码也能直接登录\n· 手机连接页登录依次尝试当前填写地址、已保存地址和当前页面地址，连不上电脑也能先登录账号\n· 服务端放通账号请求头，登录成功后清除失败计数，避免试错几次后被锁\n· 外观设置新增「窗口 / 卡片外观」：默认 / 融合壁纸 / 颜色边框\n· 融合壁纸可调透明度，颜色边框可选颜色和 1–6px 粗细，带实时预览\n· 独立外观窗口也能显示壁纸；自定义壁纸支持 URL 预览、拖拽图片和从剪贴板粘贴\n· 版本升到 0.40.44，电脑端 EXE 0.40.44.0，安卓 versionCode 75",
+    "ts": 1795453736411,
     "force": false,
     "dl": true,
     "apk": {
-      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.43/Burger.Chat-Android.apk",
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.44/Burger.Chat-Android.apk",
       "name": "Burger Chat-安卓.apk",
-      "size": 1152108,
-      "sha256": "9CB0619B9A9AA5EC3F81FFB36EDE4286BB1834669443915097C980690E48C059"
+      "size": 1156204,
+      "sha256": "168CFF50ED5FB788ACE69A0A5FD54BA199BC2296F232C356C9545B71F982A992"
     },
     "exe": {
-      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.43/Burger.Chat-Windows.exe",
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.44/Burger.Chat-Windows.exe",
       "name": "Burger Chat.exe",
-      "size": 92984832,
-      "sha256": "FBA7A3774EF254FA0963FCD2F76CC887E28828D147E9A7F968F22451B8D45AA6"
+      "size": 93113344,
+      "sha256": "EC3C8FEC3AC789439A06B4E9593204E9C2DB65EEEDAF7CDA632D204285F53C39"
     }
   },
   "versions": [
+    {
+      "id": "gh-v0.40.44",
+      "ver": "0.40.44",
+      "notes": "0.40.44 更新：\n· 电脑端配对窗口、扫码窗口在手机连接成功后自动收起\n· 修复电脑端和手机端邮箱账号登录失败：浏览器 / WebView 自动填充的邮箱密码也能直接登录\n· 手机连接页登录依次尝试当前填写地址、已保存地址和当前页面地址，连不上电脑也能先登录账号\n· 服务端放通账号请求头，登录成功后清除失败计数，避免试错几次后被锁\n· 外观设置新增「窗口 / 卡片外观」：默认 / 融合壁纸 / 颜色边框\n· 融合壁纸可调透明度，颜色边框可选颜色和 1–6px 粗细，带实时预览\n· 独立外观窗口也能显示壁纸；自定义壁纸支持 URL 预览、拖拽图片和从剪贴板粘贴\n· 版本升到 0.40.44，电脑端 EXE 0.40.44.0，安卓 versionCode 75",
+      "ts": 1795453736411,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.44/Burger.Chat-Android.apk",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1156204,
+        "sha256": "168CFF50ED5FB788ACE69A0A5FD54BA199BC2296F232C356C9545B71F982A992"
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.44/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 93113344,
+        "sha256": "EC3C8FEC3AC789439A06B4E9593204E9C2DB65EEEDAF7CDA632D204285F53C39"
+      }
+    },
     {
       "id": "gh-v0.40.43",
       "ver": "0.40.43",
@@ -176,11 +196,18 @@
   ],
   "anns": [
     {
+      "id": "ann-0.40.44",
+      "title": "0.40.44 配对自动收起、账号登录修复与窗口外观",
+      "body": "电脑端配对和扫码窗口在手机连接成功后自动收起并提示；修复电脑端、手机端邮箱账号登录，自动填充也能登录，手机连接页会回退到可用地址，登录成功后清除失败计数；外观新增默认、融合壁纸、颜色边框三种窗口样式，可调透明度和边框颜色粗细，独立外观窗口能显示壁纸，自定义壁纸支持 URL 预览、拖拽和剪贴板粘贴。安卓 versionCode 75，电脑端 EXE 0.40.44.0。",
+      "ts": 1795453736411,
+      "pinned": true
+    },
+    {
       "id": "ann-0.40.43",
       "title": "0.40.43 修复桌面端最大化、右键菜单与窗口拖动",
       "body": "电脑端最大化改为严格贴合当前屏幕工作区，不再盖住任务栏或在窗口下方留白；设备右键菜单连续触发时只保留一个，点击空白、滚动、失焦或按 Esc 即关闭。无边框窗口标题栏恢复按住拖动，最大化状态下按鼠标位置比例还原后继续拖；最小化还原后页面不再黑屏。最大化、还原与最小化改回 Windows 原生窗口状态并保留系统过渡动画。安卓 versionCode 74，电脑端 EXE 0.40.43.0。",
       "ts": 1795450474329,
-      "pinned": true
+      "pinned": false
     },
     {
       "id": "ann-0.40.42",
@@ -226,8 +253,8 @@
     }
   ],
   "count": {
-    "versions": 8,
-    "anns": 7
+    "versions": 9,
+    "anns": 8
   },
-  "updated": 1795450474329
+  "updated": 1795453736411
 }
