@@ -5,24 +5,42 @@
   "proto": "http+tcp",
   "port": 54970,
   "latest": {
-    "id": "gh-v0.40.39",
-    "ver": "0.40.39",
-    "notes": "0.40.39 更新：\n· 邮箱注册接入 QQ 邮箱 SMTP，验证码 10 分钟内有效、最多尝试 5 次，同一邮箱 60 秒内只能发送一次\n· 新增邮箱找回密码：验证码通过后重设密码，旧账号会话全部失效并自动登录当前设备\n· 登录页新增「忘记密码？用邮箱找回」，注册页新增验证码输入与获取按钮，支持重新获取\n· SMTP 授权码只放服务端 data/mail.json 或环境变量，不写入页面、账号库和安装包\n· 未配置发信邮箱的电脑仍可直接注册；配置后注册必须完成邮箱验证码\n· 账号资料、头像、心情与插件清单同步保持不变，插件中心「我的」页继续可用\n· 版本升到 0.40.39，安卓 versionCode 70",
-    "ts": 1795414618533,
+    "id": "gh-v0.40.40",
+    "ver": "0.40.40",
+    "notes": "0.40.40 更新：\n· 电脑端窗口全屏或大屏时，左侧导航图标自动垂直居中并固定，不再堆在顶部\n· 设置、插件、插件商店、壁纸库和聊天内容按窗口宽高自动伸展，插件商店高度跟随动态视口\n· 电脑端设置新增「邮箱账号」：邮箱验证码注册、密码登录、忘记密码、资料编辑与退出登录\n· 电脑端可与手机端共用账号，把已安装插件清单同步到账号并刷新云端清单\n· 五种语言电脑页面同步适配，简中 / 繁中 / English / 日本語 / 한국어\n· 版本升到 0.40.40，电脑端 EXE 0.40.40，安卓 versionCode 71",
+    "ts": 1795415676465,
     "force": false,
     "dl": true,
     "apk": {
-      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.39/Burger.Chat-Android.apk",
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.40/Burger.Chat-Android.apk",
       "name": "Burger Chat-安卓.apk",
       "size": 1127532
     },
     "exe": {
-      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.39/Burger.Chat-Windows.exe",
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.40/Burger.Chat-Windows.exe",
       "name": "Burger Chat.exe",
-      "size": 92570112
+      "size": 92634112
     }
   },
   "versions": [
+    {
+      "id": "gh-v0.40.40",
+      "ver": "0.40.40",
+      "notes": "0.40.40 更新：\n· 电脑端窗口全屏或大屏时，左侧导航图标自动垂直居中并固定，不再堆在顶部\n· 设置、插件、插件商店、壁纸库和聊天内容按窗口宽高自动伸展，插件商店高度跟随动态视口\n· 电脑端设置新增「邮箱账号」：邮箱验证码注册、密码登录、忘记密码、资料编辑与退出登录\n· 电脑端可与手机端共用账号，把已安装插件清单同步到账号并刷新云端清单\n· 五种语言电脑页面同步适配，简中 / 繁中 / English / 日本語 / 한국어\n· 版本升到 0.40.40，电脑端 EXE 0.40.40，安卓 versionCode 71",
+      "ts": 1795415676465,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.40/Burger.Chat-Android.apk",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1127532
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.40/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92634112
+      }
+    },
     {
       "id": "gh-v0.40.39",
       "ver": "0.40.39",
@@ -116,11 +134,18 @@
   ],
   "anns": [
     {
+      "id": "ann-0.40.40",
+      "title": "0.40.40 电脑端全屏自适应与邮箱账号",
+      "body": "电脑端窗口全屏后，左侧导航图标会自动垂直居中，设置、插件、插件商店、壁纸库和聊天内容按窗口宽高伸展，插件商店不再被固定高度截断。设置页新增邮箱账号，和手机端共用同一套接口：邮箱验证码注册、密码登录、忘记密码重置、头像名称心情编辑、退出登录，以及把本机已安装插件清单同步到账号。五种语言页面同步更新。",
+      "ts": 1795415676465,
+      "pinned": true
+    },
+    {
       "id": "ann-0.40.39",
       "title": "0.40.39 邮箱验证码注册与找回密码",
       "body": "这一版补齐邮箱验证码注册和找回密码：注册会向邮箱发 6 位验证码，10 分钟内有效、最多尝试 5 次；忘记密码可用验证码重置，旧账号会话全部失效并自动登录当前设备。登录页新增找回密码入口，注册页新增验证码输入与重新获取按钮。QQ 邮箱 SMTP 授权码只保存在电脑端服务端配置，不写入页面、账号库或安装包；没有配置发信邮箱的电脑仍可直接注册。",
       "ts": 1795414618533,
-      "pinned": true
+      "pinned": false
     },
     {
       "id": "ann-0.40.37",
@@ -145,8 +170,8 @@
     }
   ],
   "count": {
-    "versions": 5,
-    "anns": 4
+    "versions": 6,
+    "anns": 5
   },
-  "updated": 1795414618533
+  "updated": 1795415676465
 }
