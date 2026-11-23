@@ -75,6 +75,19 @@ h3{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--sub)
 .plug-top span{font-size:11.5px;border:1px solid var(--line);border-radius:99px;padding:3px 9px;color:#555b68;background:#faf9ff}
 .plug-top b{color:#7a6bd8}
 @media(max-width:640px){.plug-grid{grid-template-columns:1fr}}
+.achbox{border:1px solid var(--line);border-radius:18px;padding:22px 24px;background:linear-gradient(160deg,#fbfaff,#fff 60%)}
+.achhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.achhead b{font-size:30px;line-height:1;color:var(--brand);letter-spacing:-.8px}
+.achhead span{font-size:13px;color:var(--sub)}
+.achbar{height:8px;margin:16px 0 14px;border-radius:99px;background:#eceaf8;overflow:hidden}
+.achbar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#7b6cf0,#4f46e5);transition:width .6s ease}
+.achgroups{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+.achgroups div{border:1px solid var(--line);border-radius:11px;padding:9px 10px;background:#fff}
+.achgroups b{display:block;font-size:12px;color:#2f3340}
+.achgroups span{display:block;margin-top:3px;font-size:10.5px;color:var(--sub)}
+.achnote{margin:13px 0 0;font-size:12.5px;color:var(--sub)}
+.achnote a{color:var(--brand);text-decoration:none;font-weight:600}
+@media(max-width:640px){.achgroups{grid-template-columns:repeat(2,1fr)}.achbox{padding:18px 16px}}
 footer{margin-top:72px;border-top:1px solid var(--line);padding:26px 0 46px;color:var(--sub);font-size:12.5px;display:flex;flex-wrap:wrap;gap:10px}
 footer .sp{flex:1}
 #tip{color:#b42318}
@@ -87,6 +100,7 @@ footer .sp{flex:1}
   <div class="brand">Burger Chat</div>
   <div class="sp"></div>
   <a href="#dl">下载</a>
+  <a href="#ach">成就</a>
   <a href="#plugins">插件</a>
   <a href="/developer">开发者</a>
   <a href="#log">更新日志</a>
@@ -107,8 +121,8 @@ footer .sp{flex:1}
         <span class="verchip" id="verText">最新版本 0.40.41 · 2026 年 11 月 23 日</span>
       </div>
       <div class="btns">
-        <a class="btn pri" id="apkBtn" href="/f/android"><span class="t">下载安卓版</span><span class="s" id="apkSub">APK · 1.08 MB</span></a>
-        <a class="btn gh" id="exeBtn" href="/f/windows"><span class="t">下载电脑版（Windows）</span><span class="s" id="exeSub">EXE · 88.40 MB</span></a>
+        <a class="btn pri" id="apkBtn" href="/f/android"><span class="t">下载安卓版</span><span class="s" id="apkSub">APK · 1.09 MB</span></a>
+        <a class="btn gh" id="exeBtn" href="/f/windows"><span class="t">下载电脑版（Windows）</span><span class="s" id="exeSub">EXE · 88.58 MB</span></a>
       </div>
       <p class="dlnote" id="dlNote">点按钮直接从官网下载最新安装包。安卓若提示“未知来源”，允许一次即可安装；电脑版是单个 exe，双击就能用。</p>
       <p class="dlfrom">此下载源来自官方发布端 · 安装包由 Burger Chat 发布服务提供</p>
@@ -124,6 +138,16 @@ footer .sp{flex:1}
     </div>
   </section>
 
+  <section id="ach">
+    <h3>成就系统</h3>
+    <div class="achbox">
+      <div class="achhead"><b id="achTotal">515</b><span>个成就，登录邮箱后手机、电脑和网页端合并进度</span></div>
+      <div class="achbar"><i id="achBar"></i></div>
+      <div class="achgroups" id="achGroups"><div><b>发送</b><span>200 个</span></div><div><b>接收</b><span>120 个</span></div><div><b>文件</b><span>60 个</span></div><div><b>天数</b><span>60 个</span></div><div><b>设备</b><span>60 个</span></div></div>
+      <p class="achnote" id="achNote">0.40.41 新增 500 个成就，官网成就目录从 <a href="/api/achievements" target="_blank">/api/achievements</a> 实时读取，每次版本更新继续追加。</p>
+    </div>
+  </section>
+
   <section id="plugins">
     <h3>插件生态</h3>
     <div class="plug-grid">
@@ -136,7 +160,7 @@ footer .sp{flex:1}
 
   <section id="log">
     <h3>更新日志</h3>
-    <p id="logText">0.40.41：修复平板插件商店无法滑动，商店内容改为独立滚动层；底部导航独立成栏，平板固定在右栏底部，手机固定在屏幕下方。手机与电脑网页新增 500 个成就，登录同一邮箱后合并解锁记录。</p>
+    <p id="logText">0.40.41：账号密码登录后同步聊天记录与成就，手机、电脑网页同一邮箱可同时在线；支持上传自定义头像。手机连接页新增邮箱账号登录 / 注册，取消二维码登录与数据目录入口；字体颜色只改文字不改菜单栏，在线商店菜单移到盒子最外缘并居中固定。新增 500 个成就，总计 515 个，官网实时展示并在后续版本继续追加。电脑端设备右键支持详情、重新连接、断开和删除，详情卡片显示设备 IP、端口与重连按钮。</p>
   </section>
 
   <section id="faq">
@@ -172,6 +196,20 @@ footer .sp{flex:1}
   }).catch(function(){
     box.innerHTML = '<span>商店索引暂时打不开，客户端里仍可正常使用</span>';
   });
+})();
+(function(){
+  fetch('/api/achievements?t=' + Date.now(), {cache:'no-store'}).then(function(r){
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }).then(function(o){
+    var total = Number(o.total) || 0, added = Number(o.added) || 0, groups = o.groups || [];
+    var t = document.getElementById('achTotal'); if(t) t.textContent = total || '515';
+    var bar = document.getElementById('achBar'); if(bar) bar.style.width = (total ? Math.min(100, Math.round((added / total) * 100)) : 0) + '%';
+    var box = document.getElementById('achGroups');
+    if(box && groups.length) box.innerHTML = groups.map(function(g){ return '<div><b>' + g.name + '</b><span>' + g.count + ' 个 · ' + g.from + '–' + g.to + ' ' + g.unit + '</span></div>'; }).join('');
+    var note = document.getElementById('achNote');
+    if(note) note.innerHTML = '0.40.41 新增 ' + added + ' 个成就，官网成就目录从 <a href="/api/achievements" target="_blank">/api/achievements</a> 实时读取，每次版本更新继续追加。';
+  }).catch(function(){});
 })();
 </script>
 </body>
