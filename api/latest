@@ -5,24 +5,46 @@
   "proto": "http+tcp",
   "port": 54970,
   "latest": {
-    "id": "gh-v0.40.41",
-    "ver": "0.40.41",
-    "notes": "0.40.41 更新：\n· 电脑端账号密码登录后同步聊天记录与成就，手机、电脑网页同一邮箱可同时在线\n· 账号资料支持上传自定义头像，聊天记录、成就与插件都按邮箱合并\n· 手机连接页新增邮箱账号登录 / 注册，未配对也能先登录\n· 取消二维码登录与数据目录入口，进入账号页不再自动跳到编辑页\n· 字体颜色只改文字不改菜单栏，二级菜单与标签页跟随文字颜色\n· 在线商店菜单移到盒子最外缘底部并居中固定\n· 新增 500 个成就，总计 515 个，官网实时展示并随版本继续追加\n· 电脑端设备右键支持设备详情、重新连接、断开连接和删除设备\n· 设备详情改成窗口卡片，显示设备 IP、端口、连接状态和重连按钮\n· 版本升到 0.40.41，电脑端 EXE 0.40.41.0，安卓 versionCode 72",
-    "ts": 1795420059000,
+    "id": "gh-v0.40.42",
+    "ver": "0.40.42",
+    "notes": "0.40.42 更新：\n· 注册后自动生成加密账号密钥，登录时从 GitHub 密钥文件恢复账号、聊天与成就并继续同步\n· 手机端检查更新只访问官方网站，不再依赖电脑或局域网地址\n· 手机连接失败自动进入聊天主界面，保留本地缓存消息并显示重连提示\n· 连接页语言按钮移到屏幕下方居中，无边框，只显示当前语言\n· 电脑版插件商店改为右侧竖排纯图标导航，带平滑切换页动画\n· 电脑端 Windows 窗口重绘为无边框自绘标题栏，与软件紫色风格统一\n· 修复桌面端右键菜单点击空白处不关闭的问题\n· 版本升到 0.40.42，电脑端 EXE 0.40.42.0，安卓 versionCode 73",
+    "ts": 1795445030219,
     "force": false,
     "dl": true,
     "apk": {
-      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.41/Burger.Chat-Android.apk",
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.42/Burger.Chat-Android.apk",
       "name": "Burger Chat-安卓.apk",
-      "size": 1148012
+      "size": 1152108,
+      "sha256": "A8D4F7B1ABBEF9049153269808A27CFB26EB0D945BBCA40B9AAE686372BDC5DD"
     },
     "exe": {
-      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.41/Burger.Chat-Windows.exe",
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.42/Burger.Chat-Windows.exe",
       "name": "Burger Chat.exe",
-      "size": 92885504
+      "size": 92980224,
+      "sha256": "245BE92DAA72098AAD8B1F7E9CBF4971B0127CDF76B4AEF7C6FABD2C5ACC2168"
     }
   },
   "versions": [
+    {
+      "id": "gh-v0.40.42",
+      "ver": "0.40.42",
+      "notes": "0.40.42 更新：\n· 注册后自动生成加密账号密钥，登录时从 GitHub 密钥文件恢复账号、聊天与成就并继续同步\n· 手机端检查更新只访问官方网站，不再依赖电脑或局域网地址\n· 手机连接失败自动进入聊天主界面，保留本地缓存消息并显示重连提示\n· 连接页语言按钮移到屏幕下方居中，无边框，只显示当前语言\n· 电脑版插件商店改为右侧竖排纯图标导航，带平滑切换页动画\n· 电脑端 Windows 窗口重绘为无边框自绘标题栏，与软件紫色风格统一\n· 修复桌面端右键菜单点击空白处不关闭的问题\n· 版本升到 0.40.42，电脑端 EXE 0.40.42.0，安卓 versionCode 73",
+      "ts": 1795445030219,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.42/Burger.Chat-Android.apk",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1152108,
+        "sha256": "A8D4F7B1ABBEF9049153269808A27CFB26EB0D945BBCA40B9AAE686372BDC5DD"
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.42/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92980224,
+        "sha256": "245BE92DAA72098AAD8B1F7E9CBF4971B0127CDF76B4AEF7C6FABD2C5ACC2168"
+      }
+    },
     {
       "id": "gh-v0.40.41",
       "ver": "0.40.41",
@@ -152,11 +174,18 @@
   ],
   "anns": [
     {
+      "id": "ann-0.40.42",
+      "title": "0.40.42 加密密钥、手机离线主界面与 Windows 窗口重绘",
+      "body": "注册后生成加密账号密钥并上传 GitHub 官方公开仓库；登录先查本机密钥，再自动拉取 GitHub 密钥恢复账号、聊天与成就。手机端更新检查只连官方网站，连接失败自动进入聊天主界面并保留本地消息。连接页语言按钮改为屏幕下方居中的无边框按钮，只显示当前语言。电脑版插件商店使用右侧竖排纯图标导航与平滑切页动画；Windows 窗口改为无边框自绘标题栏，并修复右键菜单点击空白处不关闭。安卓 versionCode 73，电脑端 EXE 0.40.42.0。",
+      "ts": 1795445030219,
+      "pinned": true
+    },
+    {
       "id": "ann-0.40.41",
       "title": "0.40.41 账号同步、500 成就与设备详情",
       "body": "电脑端账号密码登录后同步聊天记录与成就，同一邮箱可在手机、电脑网页同时在线；账号资料支持上传自定义头像。手机连接页新增邮箱账号登录 / 注册，未配对也能先登录；取消二维码登录与数据目录入口，进入账号页不再自动跳到编辑页。字体颜色只改文字不改菜单栏，二级菜单与标签页跟随文字颜色；在线商店菜单移到盒子最外缘并居中固定。新增 500 个成就，总计 515 个，官网从 /api/achievements 实时展示并在后续版本继续追加。电脑端设备右键支持详情、重连、断开和删除，详情为窗口卡片，显示 IP、端口和重连按钮。安卓 versionCode 72，电脑端 EXE 0.40.41.0。",
       "ts": 1795420059000,
-      "pinned": true
+      "pinned": false
     },
     {
       "id": "ann-0.40.40",
@@ -195,8 +224,8 @@
     }
   ],
   "count": {
-    "versions": 7,
-    "anns": 6
+    "versions": 8,
+    "anns": 7
   },
-  "updated": 1795418361791
+  "updated": 1795445030219
 }
