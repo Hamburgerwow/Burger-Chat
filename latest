@@ -1,0 +1,202 @@
+{
+  "ok": true,
+  "app": "burger-pub",
+  "ver": "1.0",
+  "proto": "http+tcp",
+  "port": 54970,
+  "latest": {
+    "id": "gh-v0.40.41",
+    "ver": "0.40.41",
+    "notes": "0.40.41 更新：\n· 修复平板插件商店无法滑动：商店内容改为独立滚动层，不再被右栏 overflow 裁死\n· 平板右侧插件商店底部导航独立成栏，不再跟着列表滚走\n· 手机端插件商店底部导航固定在屏幕下方，全部 / 排行榜 / 分类 / 我的随时切换\n· 手机与电脑网页新增 500 个成就，登录同一邮箱后合并解锁记录\n· 五种语言页面版本同步到 0.40.41\n· 安卓 versionCode 72、versionName 0.40.41；电脑端 EXE 0.40.41.0",
+    "ts": 1795418361791,
+    "force": false,
+    "dl": true,
+    "apk": {
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.41/Burger.Chat-Android.apk",
+      "name": "Burger Chat-安卓.apk",
+      "size": 1131628
+    },
+    "exe": {
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.41/Burger.Chat-Windows.exe",
+      "name": "Burger Chat.exe",
+      "size": 92688384
+    }
+  },
+  "versions": [
+    {
+      "id": "gh-v0.40.41",
+      "ver": "0.40.41",
+      "notes": "0.40.41 更新：\n· 修复平板插件商店无法滑动：商店内容改为独立滚动层，不再被右栏 overflow 裁死\n· 平板右侧插件商店底部导航独立成栏，不再跟着列表滚走\n· 手机端插件商店底部导航固定在屏幕下方，全部 / 排行榜 / 分类 / 我的随时切换\n· 手机与电脑网页新增 500 个成就，登录同一邮箱后合并解锁记录\n· 五种语言页面版本同步到 0.40.41\n· 安卓 versionCode 72、versionName 0.40.41；电脑端 EXE 0.40.41.0",
+      "ts": 1795418361791,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.41/Burger.Chat-Android.apk",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1131628
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.41/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92688384
+      }
+    },
+    {
+      "id": "gh-v0.40.40",
+      "ver": "0.40.40",
+      "notes": "0.40.40 更新：\n· 电脑端窗口全屏或大屏时，左侧导航图标自动垂直居中并固定，不再堆在顶部\n· 设置、插件、插件商店、壁纸库和聊天内容按窗口宽高自动伸展，插件商店高度跟随动态视口\n· 电脑端设置新增「邮箱账号」：邮箱验证码注册、密码登录、忘记密码、资料编辑与退出登录\n· 电脑端可与手机端共用账号，把已安装插件清单同步到账号并刷新云端清单\n· 五种语言电脑页面同步适配，简中 / 繁中 / English / 日本語 / 한국어\n· 版本升到 0.40.40，电脑端 EXE 0.40.40，安卓 versionCode 71",
+      "ts": 1795415676465,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.40/Burger.Chat-Android.apk",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1127532
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.40/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92634112
+      }
+    },
+    {
+      "id": "gh-v0.40.39",
+      "ver": "0.40.39",
+      "notes": "0.40.39 更新：\n· 邮箱注册接入 QQ 邮箱 SMTP，验证码 10 分钟内有效、最多尝试 5 次，同一邮箱 60 秒内只能发送一次\n· 新增邮箱找回密码：验证码通过后重设密码，旧账号会话全部失效并自动登录当前设备\n· 登录页新增「忘记密码？用邮箱找回」，注册页新增验证码输入与获取按钮，支持重新获取\n· SMTP 授权码只放服务端 data/mail.json 或环境变量，不写入页面、账号库和安装包\n· 未配置发信邮箱的电脑仍可直接注册；配置后注册必须完成邮箱验证码\n· 账号资料、头像、心情与插件清单同步保持不变，插件中心「我的」页继续可用\n· 版本升到 0.40.39，安卓 versionCode 70",
+      "ts": 1795414618533,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.39/Burger.Chat-Android.apk",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1127532
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.39/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92570112
+      }
+    },
+    {
+      "id": "gh-v0.40.38",
+      "ver": "0.40.38",
+      "notes": "0.40.38 更新：\n· 电脑端插件商店改为左右排版，导航固定在右侧并垂直居中，只保留图标\n· 修复电脑端插件商店分类打不开的问题，五类插件现在可以正常筛选\n· 插件商店与下载加入趣味动画，电脑端主要页面和插件商店统一使用过渡动画\n· 手机端设置页新增邮箱账号入口，支持注册与登录，点击账号可直接编辑头像、名称和心情\n· 账号资料与已安装插件同步到插件中心「我的」页，可同步本机、刷新云端清单并前往安装\n· 版本升到 0.40.38，安卓 versionCode 69",
+      "ts": 1795412635452,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.38/Burger.Chat-Android.apk",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1123436
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.38/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92532224
+      }
+    },
+    {
+      "id": "pmwst7php580884",
+      "ver": "0.40.37",
+      "notes": "0.40.37 更新：\n· 修复手机端新上传插件下载安装报错：商店强制刷新先秒回缓存，GitHub 扫描放到后台，不再等到 12 秒超时或 502\n· 插件包下载改为多源回退：本机同源代理、官网 HTTPS、GitHub raw，单个地址失败自动换下一个\n· 哈希校验同时支持原始字节和文本，避免 BOM / 换行导致「插件哈希校验失败，文件可能损坏」\n· 修正两个新插件调用不存在的 toast.show / ui.createPanel / 旧版 addSettingsPanel 参数，minApp 从 0.40.31 降到 0.40.0\n· 手机端 5 个语言页面全部接入新的多源下载与双哈希逻辑，版本升到 0.40.37，安卓 versionCode 68",
+      "ts": 1795410766285,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.37/Burger.Chat-Android.apk",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1090668
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.37/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92349440
+      }
+    },
+    {
+      "id": "pmwsrfx3g08487c",
+      "ver": "0.40.36",
+      "notes": "0.40.36 更新：\n· 修复新上传的插件不出现在商店：电脑端会自动扫描 GitHub plugins/ 目录里的 .bcp.json 并合并进商店，不再依赖手工登记 registry.json\n· 插件商店列表和插件包改由电脑端同源代理，HTTP 优先，手机和电脑都不再被 HTTPS 超时卡住\n· 商店刷新支持强制绕过缓存；首次启动会在后台预热商店数据，避免第一次打开超时\n· 手机端与电脑端共 10 个语言页面全部接入本机代理，插件包下载也走本机代理并校验 SHA256\n· 版本升到 0.40.36，安卓 versionCode 67",
+      "ts": 1795407814560,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "http://114.66.28.183:58612/f/pmwsrft2g521442",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1082476
+      },
+      "exe": {
+        "url": "http://114.66.28.183:58612/f/pmwsrftgie5778f",
+        "name": "Burger Chat.exe",
+        "size": 92305920
+      }
+    },
+    {
+      "id": "pmwsg2qbxd6c6eb",
+      "ver": "0.40.35",
+      "notes": "0.40.35 更新：\n· 手机和电脑插件商店改为底部四项导航：全部插件 / 排行榜 / 分类 / 我的\n· 商店首屏直接进「全部插件」，排行榜有前三名领奖台，分类独立成页，我的集中管理已安装插件\n· 电脑端新增二维码登录：另一台设备扫本机二维码即可配对登录，可查看已配对设备\n· 新增取消连接与取消配对：取消连接只标离线、保留配对关系；取消配对会吊销令牌\n· 配对界面新增语言按钮和语言选择卡片，选择后配对界面与主界面一起切换\n· 修复另一台手机打开时已配对设备不自动进入消息栏；启动时先静默补拉设备再渲染会话",
+      "ts": 1795388700233,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "http://114.66.28.183:58612/f/pmwsg2nvj0d085f",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1082476
+      },
+      "exe": {
+        "url": "http://114.66.28.183:58612/f/pmwsg2o34d5b34d",
+        "name": "Burger Chat.exe",
+        "size": 92291072
+      }
+    }
+  ],
+  "anns": [
+    {
+      "id": "ann-0.40.41",
+      "title": "0.40.41 插件商店滚动与底部导航修复",
+      "body": "平板设置右栏的插件商店改为独立滚动层，长列表可以正常上下滑动；商店底部导航从列表里拆出来，平板固定在右栏底部，手机固定在屏幕下方。手机与电脑网页新增 500 个成就，登录同一邮箱后合并解锁记录。安卓 versionCode 72，电脑端 EXE 0.40.41.0。",
+      "ts": 1795418361791,
+      "pinned": true
+    },
+    {
+      "id": "ann-0.40.40",
+      "title": "0.40.40 电脑端全屏自适应与邮箱账号",
+      "body": "电脑端窗口全屏后，左侧导航图标会自动垂直居中，设置、插件、插件商店、壁纸库和聊天内容按窗口宽高伸展，插件商店不再被固定高度截断。设置页新增邮箱账号，和手机端共用同一套接口：邮箱验证码注册、密码登录、忘记密码重置、头像名称心情编辑、退出登录，以及把本机已安装插件清单同步到账号。五种语言页面同步更新。",
+      "ts": 1795415676465,
+      "pinned": false
+    },
+    {
+      "id": "ann-0.40.39",
+      "title": "0.40.39 邮箱验证码注册与找回密码",
+      "body": "这一版补齐邮箱验证码注册和找回密码：注册会向邮箱发 6 位验证码，10 分钟内有效、最多尝试 5 次；忘记密码可用验证码重置，旧账号会话全部失效并自动登录当前设备。登录页新增找回密码入口，注册页新增验证码输入与重新获取按钮。QQ 邮箱 SMTP 授权码只保存在电脑端服务端配置，不写入页面、账号库或安装包；没有配置发信邮箱的电脑仍可直接注册。",
+      "ts": 1795414618533,
+      "pinned": false
+    },
+    {
+      "id": "ann-0.40.37",
+      "title": "0.40.37 修复手机端新插件下载安装",
+      "body": "手机端插件商店强制刷新不再等 GitHub 扫描：先返回已有缓存，后台刷新再合并。新插件包下载改成本机代理、官网、GitHub raw 多源回退，单个地址失败自动换下一个；SHA256 同时校验原始字节和文本，避免 BOM / 换行误报文件损坏。两个新插件里不存在的 toast.show、createPanel 和旧版设置面板参数也已改正，minApp 降到 0.40.0。",
+      "ts": 1795410766285,
+      "pinned": false
+    },
+    {
+      "id": "pmwsrfx4b1b5865",
+      "title": "0.40.36 修复新上传插件不显示",
+      "body": "这一版修插件商店最关键的 bug：以前在开发者中心导出的 .bcp.json 上传到 GitHub plugins/ 后，如果没手工改 registry.json，商店里永远看不到新插件。现在电脑端会直接扫描 GitHub plugins/ 目录，把没有登记的 .bcp.json 自动补进商店；包版本更高时还会用包里的信息覆盖旧条目。商店列表和插件包下载都改成电脑端同源代理，HTTP 优先、强制刷新绕过缓存，并在启动后后台预热，解决首次打开超时。手机与电脑 10 个语言页面全部接入本机代理。",
+      "ts": 1795407814560,
+      "pinned": false
+    },
+    {
+      "id": "pmwsg2qcr229e32",
+      "title": "0.40.35 插件商店导航与二维码登录",
+      "body": "这一版把插件商店重排成底部四项导航：全部插件、排行榜、分类、我的。手机和电脑都直接进「全部插件」，排行榜按评分排出前三名，分类独立成页，我的集中显示已安装、占用内存和可更新。电脑端新增二维码登录，另一台设备扫本机二维码就能配对登录；设备管理里可以取消连接或彻底取消配对。配对界面新增语言入口，选完语言配对页和主界面一起切换。另外修了另一台手机打开时，已经配对过的设备不自动进入消息栏的问题。",
+      "ts": 1795388700246,
+      "pinned": false
+    }
+  ],
+  "count": {
+    "versions": 7,
+    "anns": 6
+  },
+  "updated": 1795418361791
+}
