@@ -104,11 +104,11 @@ footer .sp{flex:1}
     <div class="dlbox">
       <div class="dlhead">
         <h2>下载</h2>
-        <span class="verchip" id="verText">最新版本 0.40.35 · 2026 年 11 月 23 日</span>
+        <span class="verchip" id="verText">最新版本 0.40.36 · 2026 年 11 月 23 日</span>
       </div>
       <div class="btns">
         <a class="btn pri" id="apkBtn" href="/f/android"><span class="t">下载安卓版</span><span class="s" id="apkSub">APK · 1.03 MB</span></a>
-        <a class="btn gh" id="exeBtn" href="/f/windows"><span class="t">下载电脑版（Windows）</span><span class="s" id="exeSub">EXE · 88.02 MB</span></a>
+        <a class="btn gh" id="exeBtn" href="/f/windows"><span class="t">下载电脑版（Windows）</span><span class="s" id="exeSub">EXE · 88.03 MB</span></a>
       </div>
       <p class="dlnote" id="dlNote">点按钮直接从官网下载最新安装包。安卓若提示“未知来源”，允许一次即可安装；电脑版是单个 exe，双击就能用。</p>
       <p class="dlfrom">此下载源来自官方发布端 · 安装包由 Burger Chat 发布服务提供</p>
@@ -136,7 +136,7 @@ footer .sp{flex:1}
 
   <section id="log">
     <h3>更新日志</h3>
-    <p id="logText">0.40.35：插件商店改为底部四项导航，全部插件 / 排行榜 / 分类 / 我的独立成页；电脑端新增二维码登录，另一台设备扫码即可配对，并支持取消连接、取消配对；配对界面可选语言；修复已配对手机启动后不自动进入消息栏。</p>
+    <p id="logText">0.40.36：修复新上传的插件不出现在商店。电脑端会自动扫描 GitHub plugins/ 目录里的 .bcp.json，没手工登记 registry.json 也能在商店出现；商店列表与插件包下载改走电脑端同源代理，HTTP 优先、强制刷新绕过缓存，并在启动后后台预热，解决首次打开超时。</p>
   </section>
 
   <section id="faq">
@@ -176,3 +176,4 @@ footer .sp{flex:1}
 </script>
 </body>
 </html>
+
