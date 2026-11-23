@@ -5,24 +5,42 @@
   "proto": "http+tcp",
   "port": 54970,
   "latest": {
-    "id": "gh-v0.40.38",
-    "ver": "0.40.38",
-    "notes": "0.40.38 更新：\n· 电脑端插件商店改为左右排版，导航固定在右侧并垂直居中，只保留图标\n· 修复电脑端插件商店分类打不开的问题，五类插件现在可以正常筛选\n· 插件商店与下载加入趣味动画，电脑端主要页面和插件商店统一使用过渡动画\n· 手机端设置页新增邮箱账号入口，支持注册与登录，点击账号可直接编辑头像、名称和心情\n· 账号资料与已安装插件同步到插件中心「我的」页，可同步本机、刷新云端清单并前往安装\n· 版本升到 0.40.38，安卓 versionCode 69",
-    "ts": 1795412635452,
+    "id": "gh-v0.40.39",
+    "ver": "0.40.39",
+    "notes": "0.40.39 更新：\n· 邮箱注册接入 QQ 邮箱 SMTP，验证码 10 分钟内有效、最多尝试 5 次，同一邮箱 60 秒内只能发送一次\n· 新增邮箱找回密码：验证码通过后重设密码，旧账号会话全部失效并自动登录当前设备\n· 登录页新增「忘记密码？用邮箱找回」，注册页新增验证码输入与获取按钮，支持重新获取\n· SMTP 授权码只放服务端 data/mail.json 或环境变量，不写入页面、账号库和安装包\n· 未配置发信邮箱的电脑仍可直接注册；配置后注册必须完成邮箱验证码\n· 账号资料、头像、心情与插件清单同步保持不变，插件中心「我的」页继续可用\n· 版本升到 0.40.39，安卓 versionCode 70",
+    "ts": 1795414618533,
     "force": false,
     "dl": true,
     "apk": {
-      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.38/Burger.Chat-Android.apk",
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.39/Burger.Chat-Android.apk",
       "name": "Burger Chat-安卓.apk",
-      "size": 1123436
+      "size": 1127532
     },
     "exe": {
-      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.38/Burger.Chat-Windows.exe",
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.39/Burger.Chat-Windows.exe",
       "name": "Burger Chat.exe",
-      "size": 92532224
+      "size": 92570112
     }
   },
   "versions": [
+    {
+      "id": "gh-v0.40.39",
+      "ver": "0.40.39",
+      "notes": "0.40.39 更新：\n· 邮箱注册接入 QQ 邮箱 SMTP，验证码 10 分钟内有效、最多尝试 5 次，同一邮箱 60 秒内只能发送一次\n· 新增邮箱找回密码：验证码通过后重设密码，旧账号会话全部失效并自动登录当前设备\n· 登录页新增「忘记密码？用邮箱找回」，注册页新增验证码输入与获取按钮，支持重新获取\n· SMTP 授权码只放服务端 data/mail.json 或环境变量，不写入页面、账号库和安装包\n· 未配置发信邮箱的电脑仍可直接注册；配置后注册必须完成邮箱验证码\n· 账号资料、头像、心情与插件清单同步保持不变，插件中心「我的」页继续可用\n· 版本升到 0.40.39，安卓 versionCode 70",
+      "ts": 1795414618533,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.39/Burger.Chat-Android.apk",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1127532
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.39/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92570112
+      }
+    },
     {
       "id": "gh-v0.40.38",
       "ver": "0.40.38",
@@ -94,33 +112,22 @@
         "name": "Burger Chat.exe",
         "size": 92291072
       }
-    },
-    {
-      "id": "pmwsbjoei6b2cfd",
-      "ver": "0.40.34",
-      "notes": "0.40.34 更新：\n· 修复检测更新看不到新版：手机与电脑改用多发布源并行查询，按版本号取最高，不再被官网旧接口挡住\n· 官网静态接口停在 0.40.31 时，会自动切到 NAS / 公网 54970 发布端读取真正的最新版\n· 下载包地址跟随实际来源，避免版本信息来自 54970、下载却拼官网地址导致 404\n· 手机四种语言页与电脑四种语言页同步修复\n· 电脑端与安卓同步升到 0.40.34",
-      "ts": 1795381093463,
-      "force": false,
-      "dl": false,
-      "apk": {
-        "url": "http://114.66.28.183:58612/f/pmwsbjkcyc1ed73",
-        "name": "Burger Chat-安卓.apk",
-        "size": 1049708
-      },
-      "exe": {
-        "url": "http://114.66.28.183:58612/f/pmwsbjkqc399c2a",
-        "name": "Burger Chat.exe",
-        "size": 91976704
-      }
     }
   ],
   "anns": [
+    {
+      "id": "ann-0.40.39",
+      "title": "0.40.39 邮箱验证码注册与找回密码",
+      "body": "这一版补齐邮箱验证码注册和找回密码：注册会向邮箱发 6 位验证码，10 分钟内有效、最多尝试 5 次；忘记密码可用验证码重置，旧账号会话全部失效并自动登录当前设备。登录页新增找回密码入口，注册页新增验证码输入与重新获取按钮。QQ 邮箱 SMTP 授权码只保存在电脑端服务端配置，不写入页面、账号库或安装包；没有配置发信邮箱的电脑仍可直接注册。",
+      "ts": 1795414618533,
+      "pinned": true
+    },
     {
       "id": "ann-0.40.37",
       "title": "0.40.37 修复手机端新插件下载安装",
       "body": "手机端插件商店强制刷新不再等 GitHub 扫描：先返回已有缓存，后台刷新再合并。新插件包下载改成本机代理、官网、GitHub raw 多源回退，单个地址失败自动换下一个；SHA256 同时校验原始字节和文本，避免 BOM / 换行误报文件损坏。两个新插件里不存在的 toast.show、createPanel 和旧版设置面板参数也已改正，minApp 降到 0.40.0。",
       "ts": 1795410766285,
-      "pinned": true
+      "pinned": false
     },
     {
       "id": "pmwsrfx4b1b5865",
@@ -138,8 +145,8 @@
     }
   ],
   "count": {
-    "versions": 4,
-    "anns": 3
+    "versions": 5,
+    "anns": 4
   },
-  "updated": 1795411037297
+  "updated": 1795414618533
 }
