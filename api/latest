@@ -5,26 +5,58 @@
   "proto": "http+tcp",
   "port": 54970,
   "latest": {
-    "id": "gh-v0.40.42",
-    "ver": "0.40.42",
-    "notes": "0.40.42 更新：\n· 注册后自动生成加密账号密钥，登录时从 GitHub 密钥文件恢复账号、聊天与成就并继续同步\n· 手机端检查更新只访问官方网站，不再依赖电脑或局域网地址\n· 手机连接失败自动进入聊天主界面，保留本地缓存消息并显示重连提示\n· 连接页语言按钮移到屏幕下方居中，无边框，只显示当前语言\n· 电脑版插件商店改为右侧竖排纯图标导航，带平滑切换页动画\n· 电脑端 Windows 窗口重绘为无边框自绘标题栏，与软件紫色风格统一\n· 修复桌面端右键菜单点击空白处不关闭的问题\n· 版本升到 0.40.42，电脑端 EXE 0.40.42.0，安卓 versionCode 73",
-    "ts": 1795445030219,
+    "id": "gh-v0.40.43",
+    "ver": "0.40.43",
+    "notes": "0.40.43 更新：\n· 修复电脑端最大化覆盖任务栏、底部白边：最大化贴合当前屏幕工作区\n· 修复设备右键菜单重复堆叠，连续右键始终保持单例，点击空白/滚动/Esc 关闭\n· 修复无边框窗口无法拖动：标题栏按住即可拖动，最大化时按比例还原后继续拖动\n· 修复最小化还原后页面黑屏，恢复可见性并重绘\n· 最大化/还原/最小化改回 Windows 原生窗口状态与 DWM 过渡，保留系统动画\n· 版本升到 0.40.43，电脑端 EXE 0.40.43.0，安卓 versionCode 74\n· 新增 Windows 整合包：EXE + 电脑端源码，官网与 GitHub 同步提供下载",
+    "ts": 1795450376910,
     "force": false,
     "dl": true,
     "apk": {
-      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.42/Burger.Chat-Android.apk",
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.43/Burger.Chat-Android.apk",
       "name": "Burger Chat-安卓.apk",
       "size": 1152108,
-      "sha256": "A8D4F7B1ABBEF9049153269808A27CFB26EB0D945BBCA40B9AAE686372BDC5DD"
+      "sha256": "9CB0619B9A9AA5EC3F81FFB36EDE4286BB1834669443915097C980690E48C059"
     },
     "exe": {
-      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.42/Burger.Chat-Windows.exe",
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.43/Burger.Chat-Windows.exe",
       "name": "Burger Chat.exe",
-      "size": 92980224,
-      "sha256": "245BE92DAA72098AAD8B1F7E9CBF4971B0127CDF76B4AEF7C6FABD2C5ACC2168"
+      "size": 92984832,
+      "sha256": "FBA7A3774EF254FA0963FCD2F76CC887E28828D147E9A7F968F22451B8D45AA6"
+    },
+    "bundle": {
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.43/Burger.Chat-0.40.43-Windows-Bundle.zip",
+      "name": "Burger Chat 0.40.43 整合包（EXE+源码）",
+      "size": 49848719,
+      "sha256": "668C7A5FE4BA5DD24E46AEFEF8BA8592324717C97432328F8044B36432C5C60C"
     }
   },
   "versions": [
+    {
+      "id": "gh-v0.40.43",
+      "ver": "0.40.43",
+      "notes": "0.40.43 更新：\n· 修复电脑端最大化覆盖任务栏、底部白边：最大化贴合当前屏幕工作区\n· 修复设备右键菜单重复堆叠，连续右键始终保持单例，点击空白/滚动/Esc 关闭\n· 修复无边框窗口无法拖动：标题栏按住即可拖动，最大化时按比例还原后继续拖动\n· 修复最小化还原后页面黑屏，恢复可见性并重绘\n· 最大化/还原/最小化改回 Windows 原生窗口状态与 DWM 过渡，保留系统动画\n· 版本升到 0.40.43，电脑端 EXE 0.40.43.0，安卓 versionCode 74\n· 新增 Windows 整合包：EXE + 电脑端源码，官网与 GitHub 同步提供下载",
+      "ts": 1795450376910,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.43/Burger.Chat-Android.apk",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1152108,
+        "sha256": "9CB0619B9A9AA5EC3F81FFB36EDE4286BB1834669443915097C980690E48C059"
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.43/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92984832,
+        "sha256": "FBA7A3774EF254FA0963FCD2F76CC887E28828D147E9A7F968F22451B8D45AA6"
+      },
+      "bundle": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.43/Burger.Chat-0.40.43-Windows-Bundle.zip",
+        "name": "Burger Chat 0.40.43 整合包（EXE+源码）",
+        "size": 49848719,
+        "sha256": "668C7A5FE4BA5DD24E46AEFEF8BA8592324717C97432328F8044B36432C5C60C"
+      }
+    },
     {
       "id": "gh-v0.40.42",
       "ver": "0.40.42",
@@ -174,11 +206,18 @@
   ],
   "anns": [
     {
+      "id": "ann-0.40.43",
+      "title": "0.40.43 Windows 窗口修复与 EXE+源码整合包",
+      "body": "电脑端最大化改为贴合当前屏幕工作区，修复任务栏覆盖与底部白边；设备右键菜单连续右键保持单例，点击空白、滚动或按 Esc 都会关闭；修复无边框窗口无法拖动、最小化还原后黑屏，最大化/还原/最小化改回 Windows 原生窗口状态与 DWM 过渡。新增 Windows 整合包，内含 EXE 与电脑端源码，官网和 GitHub 同步提供下载。安卓 versionCode 74，电脑端 EXE 0.40.43.0。",
+      "ts": 1795450376910,
+      "pinned": true
+    },
+    {
       "id": "ann-0.40.42",
       "title": "0.40.42 加密密钥、手机离线主界面与 Windows 窗口重绘",
       "body": "注册后生成加密账号密钥并上传 GitHub 官方公开仓库；登录先查本机密钥，再自动拉取 GitHub 密钥恢复账号、聊天与成就。手机端更新检查只连官方网站，连接失败自动进入聊天主界面并保留本地消息。连接页语言按钮改为屏幕下方居中的无边框按钮，只显示当前语言。电脑版插件商店使用右侧竖排纯图标导航与平滑切页动画；Windows 窗口改为无边框自绘标题栏，并修复右键菜单点击空白处不关闭。安卓 versionCode 73，电脑端 EXE 0.40.42.0。",
       "ts": 1795445030219,
-      "pinned": true
+      "pinned": false
     },
     {
       "id": "ann-0.40.41",
@@ -224,8 +263,8 @@
     }
   ],
   "count": {
-    "versions": 8,
-    "anns": 7
+    "versions": 9,
+    "anns": 8
   },
-  "updated": 1795445030219
+  "updated": 1795450376910
 }
