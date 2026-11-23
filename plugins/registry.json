@@ -1,6 +1,6 @@
 {
   "schema": "burger-plugin-store/v1",
-  "updated": 1795372735309,
+  "updated": 1795406876369,
   "plugins": [
     {
       "id": "bcp.hamburgerwow.focus-note",
@@ -73,6 +73,50 @@
         "媒体",
         "快捷"
       ]
+    },
+    {
+      "id": "bcp.wow.new-plugin",
+      "name": "语音助手",
+      "version": "1.0.0",
+      "developer": "汉堡wow",
+      "target": "both",
+      "minApp": "0.40.31",
+      "maxApp": "0.40.99",
+      "apiVersion": 1,
+      "memoryMB": 8,
+      "category": "聊天增强",
+      "description": "一个简易的语音助手插件，支持在聊天窗口发送语音消息，并可在设置面板中配置语音合成参数。",
+      "icon": "🧩",
+      "download": "plugins/bcp.wow.new-plugin-1.0.0.bcp.json",
+      "sha256": "9f992f322b68195bb3c0d9f80e255c64c7c83b047f4e78f7781174aca3e4d072",
+      "updated": 1795406876369,
+      "rating": 0,
+      "ratingCount": 0,
+      "tags": [
+        "语音",
+        "聊天",
+        "助手"
+      ]
+    },
+    {
+      "id": "bcp.wow.voiceassistant",
+      "name": "语音助手",
+      "version": "1.0.0",
+      "developer": "汉堡wow",
+      "target": "both",
+      "minApp": "0.40.31",
+      "maxApp": "0.40.99",
+      "apiVersion": 1,
+      "memoryMB": 16,
+      "category": "聊天增强",
+      "description": "本插件提供语音输入功能，用户可通过点击顶部或输入栏按钮录制语音，插件将语音转为文字后发送到聊天窗口。支持设置录音时长、语言识别等参数，提升聊天体验。",
+      "icon": "🧩",
+      "download": "plugins/bcp.wow.voiceassistant-1.0.0.bcp.json",
+      "sha256": "11e257fd6fabb6f3b5e01128171a7962e90e17ca307862ce9790bc9cd862d186",
+      "updated": 1795406876369,
+      "rating": 0,
+      "ratingCount": 0,
+      "tags": []
     }
   ],
   "weekly": {
