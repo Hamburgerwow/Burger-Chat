@@ -5,40 +5,122 @@
   "proto": "http+tcp",
   "port": 54970,
   "latest": {
-    "id": "gh-v0.40.41",
-    "ver": "0.40.41",
-    "notes": "0.40.41 更新：\n· 修复平板插件商店无法滑动：商店内容改为独立滚动层，不再被右栏 overflow 裁死\n· 平板右侧插件商店底部导航独立成栏，不再跟着列表滚走\n· 手机端插件商店底部导航固定在屏幕下方，全部 / 排行榜 / 分类 / 我的随时切换\n· 手机与电脑网页新增 500 个成就，登录同一邮箱后合并解锁记录\n· 五种语言页面版本同步到 0.40.41\n· 安卓 versionCode 72、versionName 0.40.41；电脑端 EXE 0.40.41.0",
-    "ts": 1795418361791,
+    "id": "gh-v0.40.45",
+    "ver": "0.40.45",
+    "notes": "0.40.45 更新：\n· 壁纸页新增「窗口 / 卡片外观」，可直接切换默认、融合壁纸和颜色边框\n· 旁边的齿轮按钮打开独立外观窗口，继续调整融合透明度、边框颜色与 1–6px 粗细\n· 融合和边框覆盖壁纸添加区：URL 输入、预览图、拖拽上传、剪贴板按钮、壁纸卡片与网页壁纸设置条一起变化\n· 自定义壁纸继续支持 URL 预览、拖拽图片、剪贴板粘贴；静态图、GIF、网页壁纸截图均可直接使用\n· 独立外观窗口在默认模式下内容不再被壁纸层盖住\n· 版本升到 0.40.45，电脑端 EXE 0.40.45.0，安卓 versionCode 76",
+    "ts": 1795457517411,
     "force": false,
     "dl": true,
     "apk": {
-      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.41/Burger.Chat-Android.apk",
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.45/Burger.Chat-Android.apk",
       "name": "Burger Chat-安卓.apk",
-      "size": 1131628
+      "size": 1156204,
+      "sha256": "C694000FF76DAFF8A86A6304F77FB70198C5C23FF20CDA6797A21550F330B52C"
     },
     "exe": {
-      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.41/Burger.Chat-Windows.exe",
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.45/Burger.Chat-Windows.exe",
       "name": "Burger Chat.exe",
-      "size": 92688384
+      "size": 93133312,
+      "sha256": "7D8C3008E21F001D22BD44B26C2E8A95DD0F428E7EFD91A38753B6ED38EE6EAE"
     }
   },
   "versions": [
     {
+      "id": "gh-v0.40.45",
+      "ver": "0.40.45",
+      "notes": "0.40.45 更新：\n· 壁纸页新增「窗口 / 卡片外观」，可直接切换默认、融合壁纸和颜色边框\n· 旁边的齿轮按钮打开独立外观窗口，继续调整融合透明度、边框颜色与 1–6px 粗细\n· 融合和边框覆盖壁纸添加区：URL 输入、预览图、拖拽上传、剪贴板按钮、壁纸卡片与网页壁纸设置条一起变化\n· 自定义壁纸继续支持 URL 预览、拖拽图片、剪贴板粘贴；静态图、GIF、网页壁纸截图均可直接使用\n· 独立外观窗口在默认模式下内容不再被壁纸层盖住\n· 版本升到 0.40.45，电脑端 EXE 0.40.45.0，安卓 versionCode 76",
+      "ts": 1795457517411,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.45/Burger.Chat-Android.apk",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1156204,
+        "sha256": "C694000FF76DAFF8A86A6304F77FB70198C5C23FF20CDA6797A21550F330B52C"
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.45/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 93133312,
+        "sha256": "7D8C3008E21F001D22BD44B26C2E8A95DD0F428E7EFD91A38753B6ED38EE6EAE"
+      }
+    },
+    {
+      "id": "gh-v0.40.44",
+      "ver": "0.40.44",
+      "notes": "0.40.44 更新：\n· 窗口最大化、最小化和关闭动画更顺畅：去掉最大化过渡中重复设置窗口边框，最小化还原等系统过渡结束后再重建网页视图，关闭时先收拢再退出\n· 电脑端壁纸随窗口比例缩放：最大化、还原、拖动改变大小时按窗口面积自动计算缩放系数，静态图、GIF、视频和网页壁纸都跟随窗口，减少裁切和拉伸\n· 在线商店隐藏滚动条，仍可正常滚动\n· 账号同步改为官网保存：头像、名称、聊天记录和成就用 AES-256-GCM 加密后保存到 hamburgerwow.top，官网只存密文\n· 新增官网账号密钥：注册后生成 BC1 密钥，换电脑输入同一密钥即可验证登录并加载头像、名称、聊天记录和成就\n· 版本升到 0.40.44，电脑端 EXE 0.40.44.0，安卓 versionCode 75",
+      "ts": 1795456212143,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.44/Burger.Chat-Android.apk",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1156204,
+        "sha256": "023EBF8DFEB673D61241E5DA077F797B6ED88E270BA5F030D202717F77EA631B"
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.44/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 93113856,
+        "sha256": "65B6A16484D1E76CDD49D6C550EFFD3672FBE5CC974BFE6B48BD463C2C519551"
+      }
+    },
+    {
+      "id": "gh-v0.40.43",
+      "ver": "0.40.43",
+      "notes": "0.40.43 更新：\n· 修复电脑端最大化覆盖任务栏、底部白边：最大化贴合当前屏幕工作区\n· 修复设备右键菜单重复堆叠，连续右键始终保持单例，点击空白 / 滚动 / Esc 关闭\n· 修复无边框窗口无法拖动：标题栏按住即可拖动，最大化时按比例还原后继续拖动\n· 修复最小化还原后页面黑屏，恢复可见性并重绘\n· 最大化 / 还原 / 最小化改回 Windows 原生窗口状态与 DWM 过渡，保留系统动画\n· 版本升到 0.40.43，电脑端 EXE 0.40.43.0，安卓 versionCode 74",
+      "ts": 1795450474329,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.43/Burger.Chat-Android.apk",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1152108,
+        "sha256": "9CB0619B9A9AA5EC3F81FFB36EDE4286BB1834669443915097C980690E48C059"
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.43/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92984832,
+        "sha256": "FBA7A3774EF254FA0963FCD2F76CC887E28828D147E9A7F968F22451B8D45AA6"
+      }
+    },
+    {
+      "id": "gh-v0.40.42",
+      "ver": "0.40.42",
+      "notes": "0.40.42 更新：\n· 注册后自动生成加密账号密钥，登录时从 GitHub 密钥文件恢复账号、聊天与成就并继续同步\n· 手机端检查更新只访问官方网站，不再依赖电脑或局域网地址\n· 手机连接失败自动进入聊天主界面，保留本地缓存消息并显示重连提示\n· 连接页语言按钮移到屏幕下方居中，无边框，只显示当前语言\n· 电脑版插件商店改为右侧竖排纯图标导航，带平滑切换页动画\n· 电脑端 Windows 窗口重绘为无边框自绘标题栏，与软件紫色风格统一\n· 修复桌面端右键菜单点击空白处不关闭的问题\n· 版本升到 0.40.42，电脑端 EXE 0.40.42.0，安卓 versionCode 73",
+      "ts": 1795445030219,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.42/Burger.Chat-Android.apk",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1152108,
+        "sha256": "A8D4F7B1ABBEF9049153269808A27CFB26EB0D945BBCA40B9AAE686372BDC5DD"
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.42/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92980224,
+        "sha256": "245BE92DAA72098AAD8B1F7E9CBF4971B0127CDF76B4AEF7C6FABD2C5ACC2168"
+      }
+    },
+    {
       "id": "gh-v0.40.41",
       "ver": "0.40.41",
-      "notes": "0.40.41 更新：\n· 修复平板插件商店无法滑动：商店内容改为独立滚动层，不再被右栏 overflow 裁死\n· 平板右侧插件商店底部导航独立成栏，不再跟着列表滚走\n· 手机端插件商店底部导航固定在屏幕下方，全部 / 排行榜 / 分类 / 我的随时切换\n· 手机与电脑网页新增 500 个成就，登录同一邮箱后合并解锁记录\n· 五种语言页面版本同步到 0.40.41\n· 安卓 versionCode 72、versionName 0.40.41；电脑端 EXE 0.40.41.0",
-      "ts": 1795418361791,
+      "notes": "0.40.41 更新：\n· 电脑端账号密码登录后同步聊天记录与成就，手机、电脑网页同一邮箱可同时在线\n· 账号资料支持上传自定义头像，聊天记录、成就与插件都按邮箱合并\n· 手机连接页新增邮箱账号登录 / 注册，未配对也能先登录\n· 取消二维码登录与数据目录入口，进入账号页不再自动跳到编辑页\n· 字体颜色只改文字不改菜单栏，二级菜单与标签页跟随文字颜色\n· 在线商店菜单移到盒子最外缘底部并居中固定\n· 新增 500 个成就，总计 515 个，官网实时展示并随版本继续追加\n· 电脑端设备右键支持设备详情、重新连接、断开连接和删除设备\n· 设备详情改成窗口卡片，显示设备 IP、端口、连接状态和重连按钮\n· 版本升到 0.40.41，电脑端 EXE 0.40.41.0，安卓 versionCode 72",
+      "ts": 1795420059000,
       "force": false,
       "dl": true,
       "apk": {
         "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.41/Burger.Chat-Android.apk",
         "name": "Burger Chat-安卓.apk",
-        "size": 1131628
+        "size": 1148012
       },
       "exe": {
         "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.41/Burger.Chat-Windows.exe",
         "name": "Burger Chat.exe",
-        "size": 92688384
+        "size": 92885504
       }
     },
     {
@@ -112,51 +194,43 @@
         "name": "Burger Chat.exe",
         "size": 92349440
       }
-    },
-    {
-      "id": "pmwsrfx3g08487c",
-      "ver": "0.40.36",
-      "notes": "0.40.36 更新：\n· 修复新上传的插件不出现在商店：电脑端会自动扫描 GitHub plugins/ 目录里的 .bcp.json 并合并进商店，不再依赖手工登记 registry.json\n· 插件商店列表和插件包改由电脑端同源代理，HTTP 优先，手机和电脑都不再被 HTTPS 超时卡住\n· 商店刷新支持强制绕过缓存；首次启动会在后台预热商店数据，避免第一次打开超时\n· 手机端与电脑端共 10 个语言页面全部接入本机代理，插件包下载也走本机代理并校验 SHA256\n· 版本升到 0.40.36，安卓 versionCode 67",
-      "ts": 1795407814560,
-      "force": false,
-      "dl": true,
-      "apk": {
-        "url": "http://114.66.28.183:58612/f/pmwsrft2g521442",
-        "name": "Burger Chat-安卓.apk",
-        "size": 1082476
-      },
-      "exe": {
-        "url": "http://114.66.28.183:58612/f/pmwsrftgie5778f",
-        "name": "Burger Chat.exe",
-        "size": 92305920
-      }
-    },
-    {
-      "id": "pmwsg2qbxd6c6eb",
-      "ver": "0.40.35",
-      "notes": "0.40.35 更新：\n· 手机和电脑插件商店改为底部四项导航：全部插件 / 排行榜 / 分类 / 我的\n· 商店首屏直接进「全部插件」，排行榜有前三名领奖台，分类独立成页，我的集中管理已安装插件\n· 电脑端新增二维码登录：另一台设备扫本机二维码即可配对登录，可查看已配对设备\n· 新增取消连接与取消配对：取消连接只标离线、保留配对关系；取消配对会吊销令牌\n· 配对界面新增语言按钮和语言选择卡片，选择后配对界面与主界面一起切换\n· 修复另一台手机打开时已配对设备不自动进入消息栏；启动时先静默补拉设备再渲染会话",
-      "ts": 1795388700233,
-      "force": false,
-      "dl": true,
-      "apk": {
-        "url": "http://114.66.28.183:58612/f/pmwsg2nvj0d085f",
-        "name": "Burger Chat-安卓.apk",
-        "size": 1082476
-      },
-      "exe": {
-        "url": "http://114.66.28.183:58612/f/pmwsg2o34d5b34d",
-        "name": "Burger Chat.exe",
-        "size": 92291072
-      }
     }
   ],
   "anns": [
     {
-      "id": "ann-0.40.41",
-      "title": "0.40.41 插件商店滚动与底部导航修复",
-      "body": "平板设置右栏的插件商店改为独立滚动层，长列表可以正常上下滑动；商店底部导航从列表里拆出来，平板固定在右栏底部，手机固定在屏幕下方。手机与电脑网页新增 500 个成就，登录同一邮箱后合并解锁记录。安卓 versionCode 72，电脑端 EXE 0.40.41.0。",
-      "ts": 1795418361791,
+      "id": "ann-0.40.45",
+      "title": "0.40.45 壁纸添加窗口融合与颜色边框",
+      "body": "壁纸页新增「窗口 / 卡片外观」，可直接选择默认、融合壁纸或颜色边框；旁边的齿轮打开独立外观窗口，继续调整融合透明度、边框颜色与 1–6px 粗细。融合和颜色边框现在覆盖 URL 输入、预览图、拖拽上传、剪贴板按钮、壁纸卡片和网页壁纸设置条，不再留下白色方块。独立外观窗口在默认模式下内容不再被壁纸层盖住。安卓 versionCode 76，电脑端 EXE 0.40.45.0。",
+      "ts": 1795457517411,
       "pinned": true
+    },
+    {
+      "id": "ann-0.40.44",
+      "title": "0.40.44 窗口动画、壁纸缩放、商店滚动条与官网密钥登录",
+      "body": "窗口最大化、最小化和关闭动画更顺畅，最小化还原等系统过渡结束后再重建网页视图；电脑端壁纸按窗口面积自动缩放，最大化、还原和拖动时静态图、GIF、视频与网页壁纸都跟随窗口；在线商店隐藏滚动条但保留滚动；账号同步改为官网加密保存头像、名称、聊天记录和成就，注册后生成 BC1 密钥，换电脑输入同一密钥即可验证登录并加载这些资料。安卓 versionCode 75，电脑端 EXE 0.40.44.0。",
+      "ts": 1795456212143,
+      "pinned": false
+    },
+    {
+      "id": "ann-0.40.43",
+      "title": "0.40.43 修复桌面端最大化、右键菜单与窗口拖动",
+      "body": "电脑端最大化改为严格贴合当前屏幕工作区，不再盖住任务栏或在窗口下方留白；设备右键菜单连续触发时只保留一个，点击空白、滚动、失焦或按 Esc 即关闭。无边框窗口标题栏恢复按住拖动，最大化状态下按鼠标位置比例还原后继续拖；最小化还原后页面不再黑屏。最大化、还原与最小化改回 Windows 原生窗口状态并保留系统过渡动画。安卓 versionCode 74，电脑端 EXE 0.40.43.0。",
+      "ts": 1795450474329,
+      "pinned": false
+    },
+    {
+      "id": "ann-0.40.42",
+      "title": "0.40.42 加密密钥、手机离线主界面与 Windows 窗口重绘",
+      "body": "注册后生成加密账号密钥并上传 GitHub 官方公开仓库；登录先查本机密钥，再自动拉取 GitHub 密钥恢复账号、聊天与成就。手机端更新检查只连官方网站，连接失败自动进入聊天主界面并保留本地消息。连接页语言按钮改为屏幕下方居中的无边框按钮，只显示当前语言。电脑版插件商店使用右侧竖排纯图标导航与平滑切页动画；Windows 窗口改为无边框自绘标题栏，并修复右键菜单点击空白处不关闭。安卓 versionCode 73，电脑端 EXE 0.40.42.0。",
+      "ts": 1795445030219,
+      "pinned": false
+    },
+    {
+      "id": "ann-0.40.41",
+      "title": "0.40.41 账号同步、500 成就与设备详情",
+      "body": "电脑端账号密码登录后同步聊天记录与成就，同一邮箱可在手机、电脑网页同时在线；账号资料支持上传自定义头像。手机连接页新增邮箱账号登录 / 注册，未配对也能先登录；取消二维码登录与数据目录入口，进入账号页不再自动跳到编辑页。字体颜色只改文字不改菜单栏，二级菜单与标签页跟随文字颜色；在线商店菜单移到盒子最外缘并居中固定。新增 500 个成就，总计 515 个，官网从 /api/achievements 实时展示并在后续版本继续追加。电脑端设备右键支持详情、重连、断开和删除，详情为窗口卡片，显示 IP、端口和重连按钮。安卓 versionCode 72，电脑端 EXE 0.40.41.0。",
+      "ts": 1795420059000,
+      "pinned": false
     },
     {
       "id": "ann-0.40.40",
@@ -178,25 +252,11 @@
       "body": "手机端插件商店强制刷新不再等 GitHub 扫描：先返回已有缓存，后台刷新再合并。新插件包下载改成本机代理、官网、GitHub raw 多源回退，单个地址失败自动换下一个；SHA256 同时校验原始字节和文本，避免 BOM / 换行误报文件损坏。两个新插件里不存在的 toast.show、createPanel 和旧版设置面板参数也已改正，minApp 降到 0.40.0。",
       "ts": 1795410766285,
       "pinned": false
-    },
-    {
-      "id": "pmwsrfx4b1b5865",
-      "title": "0.40.36 修复新上传插件不显示",
-      "body": "这一版修插件商店最关键的 bug：以前在开发者中心导出的 .bcp.json 上传到 GitHub plugins/ 后，如果没手工改 registry.json，商店里永远看不到新插件。现在电脑端会直接扫描 GitHub plugins/ 目录，把没有登记的 .bcp.json 自动补进商店；包版本更高时还会用包里的信息覆盖旧条目。商店列表和插件包下载都改成电脑端同源代理，HTTP 优先、强制刷新绕过缓存，并在启动后后台预热，解决首次打开超时。手机与电脑 10 个语言页面全部接入本机代理。",
-      "ts": 1795407814560,
-      "pinned": false
-    },
-    {
-      "id": "pmwsg2qcr229e32",
-      "title": "0.40.35 插件商店导航与二维码登录",
-      "body": "这一版把插件商店重排成底部四项导航：全部插件、排行榜、分类、我的。手机和电脑都直接进「全部插件」，排行榜按评分排出前三名，分类独立成页，我的集中显示已安装、占用内存和可更新。电脑端新增二维码登录，另一台设备扫本机二维码就能配对登录；设备管理里可以取消连接或彻底取消配对。配对界面新增语言入口，选完语言配对页和主界面一起切换。另外修了另一台手机打开时，已经配对过的设备不自动进入消息栏的问题。",
-      "ts": 1795388700246,
-      "pinned": false
     }
   ],
   "count": {
-    "versions": 7,
-    "anns": 6
+    "versions": 8,
+    "anns": 7
   },
-  "updated": 1795418361791
+  "updated": 1795456212143
 }
