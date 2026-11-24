@@ -10,13 +10,13 @@
     "default": true
   },
   "latest": {
-    "id": "2122ff346aaf",
-    "title": "3 Strikes (Explicit) - Terror Jr",
+    "id": "fb352e377807",
+    "title": "His Theme (From Undertale) - Sprightly、GameChops",
     "uploader": "Hamburger",
-    "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/2122ff346aaf.mp3",
-    "size": 7124875,
-    "at": 1795505480991,
-    "original": "3 Strikes (Explicit) - Terror Jr.mp3"
+    "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/fb352e377807.mp3",
+    "size": 7092384,
+    "at": 1795535397011,
+    "original": "His Theme (From Undertale) - Sprightly、GameChops.mp3"
   },
   "tracks": [
     {
@@ -27,7 +27,16 @@
       "size": 7124875,
       "at": 1795505480991,
       "original": "3 Strikes (Explicit) - Terror Jr.mp3"
+    },
+    {
+      "id": "fb352e377807",
+      "title": "His Theme (From Undertale) - Sprightly、GameChops",
+      "uploader": "Hamburger",
+      "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/fb352e377807.mp3",
+      "size": 7092384,
+      "at": 1795535397011,
+      "original": "His Theme (From Undertale) - Sprightly、GameChops.mp3"
     }
   ],
-  "updatedAt": 1795505480992
+  "updatedAt": 1795535397011
 }
