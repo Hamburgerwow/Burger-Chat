@@ -10,15 +10,24 @@
     "default": true
   },
   "latest": {
-    "id": "fb352e377807",
-    "title": "His Theme (From Undertale) - Sprightly、GameChops",
-    "uploader": "Hamburger",
-    "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/fb352e377807.mp3",
-    "size": 7092384,
-    "at": 1795535397011,
-    "original": "His Theme (From Undertale) - Sprightly、GameChops.mp3"
+    "id": "mu-china-x-mwuwvv8f",
+    "title": "China-X - 徐梦圆",
+    "uploader": "汉堡wow",
+    "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-china-x-mwuwvv8f.mp3",
+    "size": 9095426,
+    "duration": 226,
+    "at": 1795537864671
   },
   "tracks": [
+    {
+      "id": "mu-china-x-mwuwvv8f",
+      "title": "China-X - 徐梦圆",
+      "uploader": "汉堡wow",
+      "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-china-x-mwuwvv8f.mp3",
+      "size": 9095426,
+      "duration": 226,
+      "at": 1795537864671
+    },
     {
       "id": "2122ff346aaf",
       "title": "3 Strikes (Explicit) - Terror Jr",
