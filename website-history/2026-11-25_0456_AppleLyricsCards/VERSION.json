@@ -1,0 +1,337 @@
+{
+  "version": "2026-11-25_0456_AppleLyricsCards",
+  "createdAt": "2026-11-25T04:56:17+08:00",
+  "site": "https://hamburgerwow.top/",
+  "source": "D:\\app1\\官网",
+  "files": 64,
+  "bytes": 23118331.0,
+  "notes": [
+    "Director Bao 命名统一：-selector 目标页品牌、首页入口卡与过渡文案、Windows 下载左侧按钮",
+    "手机端隐藏 Fort Selector / dock 入口",
+    "电脑端界面演示改为离线演示模式，版本 0.40.53，不请求 /api、不弹更新卡",
+    "开发者侧栏音乐与动态壁纸导入支持 GitHub 直写，保留旧 index 条目",
+    "每个版本使用独立目录，不覆盖历史版本"
+  ],
+  "fileList": [
+    {
+      "path": "_headers",
+      "bytes": 976,
+      "sha256": "6fcd3db1c16ebeaf8f4f7ee5e7b3862273394f54eabcf54d60b2a03c3f524ef7"
+    },
+    {
+      "path": "_redirects",
+      "bytes": 596,
+      "sha256": "cc2cdf3e16524bad03605ced971b39acd070d7bc965814ca9f2ae06f5c3b3783"
+    },
+    {
+      "path": "index.html",
+      "bytes": 24734,
+      "sha256": "f55dddf34316a415fe5382434ad20add3c29106485853660370daccc0754f3d5"
+    },
+    {
+      "path": "index-tw.html",
+      "bytes": 24785,
+      "sha256": "78b741a2da8bde0cedf43a4ebc691edefc6ebd2ff3768aad9f0ba2182f78b8f7"
+    },
+    {
+      "path": "index-en.html",
+      "bytes": 24870,
+      "sha256": "8a2e483a64b9b21d1f400e10fcf4c602fcaebcc78513fa961fd06c2d3d109136"
+    },
+    {
+      "path": "index-ja.html",
+      "bytes": 25897,
+      "sha256": "4e638297c11bba9d4f63c4bcab50b6387d1ccdb673ce1b561a0e2b56ebb30c13"
+    },
+    {
+      "path": "index-ko.html",
+      "bytes": 25419,
+      "sha256": "e2e44ffdf4704162f883cf8a55781f0ec3253879ff6c3d5929320dbd59d995b7"
+    },
+    {
+      "path": "fort-selector.html",
+      "bytes": 38068,
+      "sha256": "e6454741f57e1ebe84e4ed4b15e0b9f5cbad63d423092d3e1918dd7f5046fe5c"
+    },
+    {
+      "path": "developer.html",
+      "bytes": 136515,
+      "sha256": "3b260630262d9c1443f1e180370d2d074748ae8cbff688b7d72701405a7594b7"
+    },
+    {
+      "path": "worker.js",
+      "bytes": 3387,
+      "sha256": "43172ae60e7470a67d5aefb51feb0016734397f32fe4176df41543f8b0748af2"
+    },
+    {
+      "path": "assets/apple-touch-icon.png",
+      "bytes": 49767,
+      "sha256": "4ca06c8d7d32af96f431069ba3e4efe69e358ab40aa0ccd28baaccf3a9df375b"
+    },
+    {
+      "path": "assets/browserconfig.xml",
+      "bytes": 349,
+      "sha256": "b47420b6abc078780680aee2e05420e794afefd80b5c4170e64b84a036536be5"
+    },
+    {
+      "path": "assets/developer-icon-128.png",
+      "bytes": 35061,
+      "sha256": "72d92b2bed7ad41873d8a930aa4690b0d42e273e5cedbc3fb93ab20cc94cfa18"
+    },
+    {
+      "path": "assets/developer-icon.png",
+      "bytes": 120164,
+      "sha256": "36d93c85c19eaa4e58512bb663b3e762a8d2bbea80d31e47c97bc62e17e1fd15"
+    },
+    {
+      "path": "assets/favicon.ico",
+      "bytes": 141450,
+      "sha256": "61ddce10d0f5c62e588d35b3654c132c4da6a5f9d38341b96769d94643491bef"
+    },
+    {
+      "path": "assets/fort-selector-icon.png",
+      "bytes": 17800,
+      "sha256": "55176fbfef88e2bb71c1405d0697987d1efd49aef87116b5dfb5d668bec6c6cc"
+    },
+    {
+      "path": "assets/hero-girl.png",
+      "bytes": 1633776,
+      "sha256": "5ef39c734c9fbad3223f85f90f51047f5ff341540a8326c8344c7efc6b229e3b"
+    },
+    {
+      "path": "assets/icon-1024.png",
+      "bytes": 1075163,
+      "sha256": "5ad73da80f8a717695c32acdf4bb58d5fd7ce661e9bbe4bef254ca48bfc1250f"
+    },
+    {
+      "path": "assets/icon-16.png",
+      "bytes": 689,
+      "sha256": "a724b3f81a5f2f734fb1b6d4ae34b330a8416b2763b581a73a08237edb717278"
+    },
+    {
+      "path": "assets/icon-180.png",
+      "bytes": 49767,
+      "sha256": "4ca06c8d7d32af96f431069ba3e4efe69e358ab40aa0ccd28baaccf3a9df375b"
+    },
+    {
+      "path": "assets/icon-192.png",
+      "bytes": 56252,
+      "sha256": "27b5468c1d0a96cb81c6c59051ab2917d9d53ff44f5dd70fdac36cca1f750393"
+    },
+    {
+      "path": "assets/icon-32.png",
+      "bytes": 2199,
+      "sha256": "5391aecd5615749d2622c7a14e9201f5315d46bf0acba10de12186ed51b44bd3"
+    },
+    {
+      "path": "assets/icon-48.png",
+      "bytes": 4506,
+      "sha256": "a0033f4cc5a8a7ffe9a23ad52439f039ed8fd1a7517a26c17f1c4126802b42f1"
+    },
+    {
+      "path": "assets/icon-512.png",
+      "bytes": 339558,
+      "sha256": "94c795c2f29c284f86c918d4ba144da331aa04854bbe6ad9867180667b75ede7"
+    },
+    {
+      "path": "assets/icon-64.png",
+      "bytes": 7496,
+      "sha256": "3c09be6ae196388556a9b07ccda1976d9cead82ad1c2f4ff1589bc80bd909d97"
+    },
+    {
+      "path": "assets/pc-demo-achievements.webp",
+      "bytes": 22332,
+      "sha256": "f6664131eb81b3a1b7d9f8a054b4febc569bc87c109620832e30f41a25270645"
+    },
+    {
+      "path": "assets/pc-demo-chat.webp",
+      "bytes": 28182,
+      "sha256": "7d26e1df1797cc81224cd2d7a3b5923dfac41b273366ef1b555c2f1cdabc578d"
+    },
+    {
+      "path": "assets/pc-demo-look.webp",
+      "bytes": 51150,
+      "sha256": "e96f04e8a3dfc0f88cd0f2feef5733516c1e53ca7be4e31a17e712387a13d036"
+    },
+    {
+      "path": "assets/pc-demo-settings.webp",
+      "bytes": 28498,
+      "sha256": "e7c374dcea542b9cdb8bd72c967588a41e7a5fcc8a5f184c0254acc0788fa75f"
+    },
+    {
+      "path": "assets/pc-demo.html",
+      "bytes": 500271,
+      "sha256": "8f51f081f4eb795dc0d85bc9de100a9f560409755b563439657abd7b648f310d"
+    },
+    {
+      "path": "assets/site-069.js",
+      "bytes": 36604,
+      "sha256": "d6ed85cd99f88d20afaa603a8da4413e5d8384763bcac2af650f1bcb8b1d20e3"
+    },
+    {
+      "path": "assets/site-fix.css",
+      "bytes": 54771,
+      "sha256": "5c40139e518e2cf11037acf15011e7ab9c0706945a1c0cd017f673e7ca0464d2"
+    },
+    {
+      "path": "assets/site-fix.js",
+      "bytes": 39728,
+      "sha256": "84816f5e80a878c31b225930ff81183d52f666f7deee0ad1f1970a96bb302592"
+    },
+    {
+      "path": "assets/site-fix2.js",
+      "bytes": 41413,
+      "sha256": "40a62318a73d49ac1bd516f2dd49cf69974f7485847590f3ee17abcdd088ed34"
+    },
+    {
+      "path": "assets/site-mobile-2.js",
+      "bytes": 38420,
+      "sha256": "1746da13cd186610180504d75cfefb83716addcc2f339cfab23dd273d0f97e29"
+    },
+    {
+      "path": "assets/site-mobile-3.js",
+      "bytes": 40145,
+      "sha256": "33d95e042727efcc1908a4b91c807d5598deec5c1c33369cde0738d01fbdd4bf"
+    },
+    {
+      "path": "assets/site-mobile.css",
+      "bytes": 54408,
+      "sha256": "870d34a67d9a7edc2705a8fb57c6465cdc381cf2d9cd4651948ecd00d268e509"
+    },
+    {
+      "path": "assets/site-mobile.js",
+      "bytes": 37040,
+      "sha256": "be12ae370386aa474fb3785d2ca7c024390cb138ad49880e0cce794b58690bcf"
+    },
+    {
+      "path": "assets/site-v4.css",
+      "bytes": 76415,
+      "sha256": "a34658a4e65c06740df66ce2751c66ffd9721928f310f0d31833ecfe31656af1"
+    },
+    {
+      "path": "assets/site-v4.js",
+      "bytes": 86205,
+      "sha256": "d87771710ee62f71764b150fe9fd50668bff5e4bb8806bd66dc283555116cf7e"
+    },
+    {
+      "path": "assets/site.css",
+      "bytes": 53697,
+      "sha256": "fbc41540ee47a554179cf660575c1e9495f44193bcb224289d49207b4b85e137"
+    },
+    {
+      "path": "assets/site.js",
+      "bytes": 39432,
+      "sha256": "1af56497a7619bc93a248eb6cc6293e4379cbcd6fb357bfc163a7b6a46729c5d"
+    },
+    {
+      "path": "assets/site.webmanifest",
+      "bytes": 621,
+      "sha256": "372e5958a9a59582e8c26e5a276eb3b358f428715b569b6283586a0c8b65e6c3"
+    },
+    {
+      "path": "assets/sub-i18n.js",
+      "bytes": 203775,
+      "sha256": "a2b9d2b8b59ad5da2815ff40eb4b15b2c57f9046bdff77a5e9ccbf4be0e1a554"
+    },
+    {
+      "path": "assets/wallpaper-horizontal-poster.jpg",
+      "bytes": 157755,
+      "sha256": "4a6f562bd1a084c20f43c5f0ab8ec74bc37da0ade796e0a18e60cd1a815cd593"
+    },
+    {
+      "path": "assets/wallpaper-horizontal.gif",
+      "bytes": 853267,
+      "sha256": "4c2f7191dd5edbaa3ce26d939ee09a3817490b66b131ad2a71c9ec69d6de9940"
+    },
+    {
+      "path": "assets/wallpaper-horizontal.mp4",
+      "bytes": 3933827,
+      "sha256": "0c70b488534b109ae338ac8e47ffa5febf5c9f57af4143eb7b21c2bc15fa028b"
+    },
+    {
+      "path": "assets/wallpaper-vertical-poster.jpg",
+      "bytes": 149497,
+      "sha256": "00dca81b0408ae301d25a337a12489cd307486e8f478c1fd30e634c61f1fd3be"
+    },
+    {
+      "path": "assets/wallpaper-vertical.jpg",
+      "bytes": 211116,
+      "sha256": "3c46ea1a1e16dbd6c7e971aad2d0fb3bce880c7c78115763b095baed17f9bf42"
+    },
+    {
+      "path": "assets/wallpaper-vertical.mp4",
+      "bytes": 4107801,
+      "sha256": "664205703877dbd4c41af5b22cc644a30302fd5a74d3e92306bd6f2de6874e6c"
+    },
+    {
+      "path": "assets/music/firefly-cmj.mp3",
+      "bytes": 6148594,
+      "sha256": "98fd6a641d0e423c4f294bca416edc148ace652c1c8771f1b2c227f9f1ea9493"
+    },
+    {
+      "path": "api/achievements",
+      "bytes": 71201,
+      "sha256": "b4cf524232c949efe6060eb1ceebe30ea7cd0e33742769700f487e19c6f11d20"
+    },
+    {
+      "path": "api/latest",
+      "bytes": 69583,
+      "sha256": "7f29631407de713dafa7424b33b6ae72d05a25840731f262de9c2f9387b56ad6"
+    },
+    {
+      "path": "api/music",
+      "bytes": 268,
+      "sha256": "78ce4f939660a8f2cb507717033121d4b0240d9e5e2bbd93deb37b73f5f414b8"
+    },
+    {
+      "path": "dl/Burger.Chat-Android.apk",
+      "bytes": 2078167,
+      "sha256": "6629e63bf0ccfab305d8accf0aca3ab940dcb7558fa2001b170d413e91498d0f"
+    },
+    {
+      "path": "music/index.json",
+      "bytes": 268,
+      "sha256": "78ce4f939660a8f2cb507717033121d4b0240d9e5e2bbd93deb37b73f5f414b8"
+    },
+    {
+      "path": "plugins/bcp.hamburgerwow.focus-note-1.0.0.bcp.json",
+      "bytes": 1305,
+      "sha256": "c188b1298e724a9b15c205f783fffe962ad5fe2590878ea9989683dfab8f60d5"
+    },
+    {
+      "path": "plugins/bcp.hamburgerwow.hello-1.0.0.bcp.json",
+      "bytes": 700,
+      "sha256": "45d94c0afd10b49a6894269e1432a50cbe3f0b96099197939606c8a60fe4f33b"
+    },
+    {
+      "path": "plugins/bcp.hamburgerwow.media-tip-1.0.0.bcp.json",
+      "bytes": 774,
+      "sha256": "b0329f9584489a510ffab415f6f634a9233d35cc0f51611aa9582b177cfa7bfb"
+    },
+    {
+      "path": "plugins/bcp.wow.new-plugin-1.0.0.bcp.json",
+      "bytes": 1412,
+      "sha256": "892eb664c9ff10465b5989362e109d51b09de0637fc6fa89330390f02f5efb1e"
+    },
+    {
+      "path": "plugins/bcp.wow.voiceassistant-1.0.0.bcp.json",
+      "bytes": 1471,
+      "sha256": "3ccdc3dae5e279ba79ebb68305c971487b1613e7058cf79d609598891b208153"
+    },
+    {
+      "path": "plugins/registry.json",
+      "bytes": 4292,
+      "sha256": "766358c9f87d8fc81e10a1b9c798b63d0d7b45e6d68bfc56030781bc9b60e392"
+    },
+    {
+      "path": "wallpapers/index.json",
+      "bytes": 51,
+      "sha256": "243e6376855472ee39de54271b27768990d10809d080901bd849b418fdc8d3d6"
+    },
+    {
+      "path": "tools/build-site.js",
+      "bytes": 54631,
+      "sha256": "1d20a765f7f9759678887e1ca8914794155523fa37b53d79d26fd8e7302bd774"
+    }
+  ]
+}
