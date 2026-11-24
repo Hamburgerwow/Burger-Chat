@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "default": {
+    "id": "firefly-cmj",
+    "title": "萤火之森",
+    "uploader": "CMJ",
+    "url": "https://hamburgerwow.top/assets/music/firefly-cmj.mp3",
+    "size": 6148594,
+    "at": 0,
+    "default": true
+  },
+  "latest": {
+    "id": "2122ff346aaf",
+    "title": "3 Strikes (Explicit) - Terror Jr",
+    "uploader": "Hamburger",
+    "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/2122ff346aaf.mp3",
+    "size": 7124875,
+    "at": 1795505480991,
+    "original": "3 Strikes (Explicit) - Terror Jr.mp3"
+  },
+  "tracks": [
+    {
+      "id": "2122ff346aaf",
+      "title": "3 Strikes (Explicit) - Terror Jr",
+      "uploader": "Hamburger",
+      "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/2122ff346aaf.mp3",
+      "size": 7124875,
+      "at": 1795505480991,
+      "original": "3 Strikes (Explicit) - Terror Jr.mp3"
+    }
+  ],
+  "updatedAt": 1795505480992
+}
