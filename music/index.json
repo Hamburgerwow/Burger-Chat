@@ -10,15 +10,24 @@
     "default": true
   },
   "latest": {
-    "id": "mu-china-x-mwuwvv8f",
-    "title": "China-X - 徐梦圆",
+    "id": "mu-die-for-you---the-we-mwv5j5xb",
+    "title": "Die For You - The Weeknd",
     "uploader": "汉堡wow",
-    "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-china-x-mwuwvv8f.mp3",
-    "size": 9095426,
-    "duration": 226,
-    "at": 1795537864671
+    "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-die-for-you---the-we-mwv5j5xb.mp3",
+    "size": 10532569,
+    "duration": 260,
+    "at": 1795552388543
   },
   "tracks": [
+    {
+      "id": "mu-die-for-you---the-we-mwv5j5xb",
+      "title": "Die For You - The Weeknd",
+      "uploader": "汉堡wow",
+      "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-die-for-you---the-we-mwv5j5xb.mp3",
+      "size": 10532569,
+      "duration": 260,
+      "at": 1795552388543
+    },
     {
       "id": "mu-china-x-mwuwvv8f",
       "title": "China-X - 徐梦圆",
