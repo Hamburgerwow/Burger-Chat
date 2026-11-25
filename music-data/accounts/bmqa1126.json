@@ -5,6 +5,13 @@
   "nick": "QA Burger",
   "avatar": "",
   "createdAt": "2026-11-25T21:19:25.089Z",
-  "updatedAt": 1795641565089,
-  "data": {}
+  "updatedAt": 1795641581382,
+  "data": {
+    "bm:playlists": [
+      {
+        "name": "QA"
+      }
+    ]
+  },
+  "__sha": "556a2f15f10e2fb0a21ba072105240ea4ee57304"
 }
