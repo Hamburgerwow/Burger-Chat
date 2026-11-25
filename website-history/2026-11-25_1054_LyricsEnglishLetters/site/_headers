@@ -1,0 +1,58 @@
+/*
+  Access-Control-Allow-Origin: *
+
+/
+  Cache-Control: no-store
+
+/index.html
+  Cache-Control: no-store
+
+/index-tw.html
+  Cache-Control: no-store
+
+/index-en.html
+  Cache-Control: no-store
+
+/index-ja.html
+  Cache-Control: no-store
+
+/index-ko.html
+  Cache-Control: no-store
+
+/assets/site.css
+  Cache-Control: no-cache
+
+/assets/site.js
+  Cache-Control: no-cache
+
+/assets/*
+  Cache-Control: public, max-age=604800
+
+/api/latest
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: no-store
+
+/api/achievements
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: no-store
+
+/api/music
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: no-store
+
+/plugins
+  Cache-Control: no-store
+
+/plugins/*
+  Cache-Control: no-store
+
+/assets/music/*
+  Content-Type: audio/mpeg
+  Cache-Control: public, max-age=31536000, immutable
+
+/f/android
+  Cache-Control: no-store
+
+/dl/Burger.Chat-Android.apk
+  Content-Type: application/vnd.android.package-archive
+  Cache-Control: public, max-age=31536000, immutable
