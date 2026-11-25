@@ -10,15 +10,24 @@
     "default": true
   },
   "latest": {
-    "id": "mu-lonely-lonely---true-mwvh7mbw",
-    "title": "Lonely Lonely - TrueShimo",
+    "id": "mu-pank-----super-ky-mwviriod",
+    "title": "空白 - Pank、罗凯元（SUPER KY）",
     "uploader": "汉堡wow",
-    "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-lonely-lonely---true-mwvh7mbw.mp3",
-    "size": 2836229,
-    "duration": 70,
-    "at": 1795572005324
+    "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-pank-----super-ky-mwviriod.mp3",
+    "size": 6899151,
+    "duration": 171,
+    "at": 1795574613325
   },
   "tracks": [
+    {
+      "id": "mu-pank-----super-ky-mwviriod",
+      "title": "空白 - Pank、罗凯元（SUPER KY）",
+      "uploader": "汉堡wow",
+      "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-pank-----super-ky-mwviriod.mp3",
+      "size": 6899151,
+      "duration": 171,
+      "at": 1795574613325
+    },
     {
       "id": "mu-lonely-lonely---true-mwvh7mbw",
       "title": "Lonely Lonely - TrueShimo",
