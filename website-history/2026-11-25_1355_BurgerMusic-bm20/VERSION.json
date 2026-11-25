@@ -1,0 +1,435 @@
+{
+  "version": "2026-11-25_1355_BurgerMusic-bm20",
+  "createdAt": "2026-11-25T14:02:00+08:00",
+  "site": "https://hamburgerwow.top/",
+  "source": "D:\\app1\\官网",
+  "files": 83,
+  "bytes": 24412331,
+  "notes": [
+    "主页播放卡片新增隐藏按钮，收起后仅保留顶部栏歌曲封面胶囊",
+    "顶部标签栏移除 Burger music 入口，改为主站标题选择轮播第 5 张卡",
+    "顶部标签栏新增歌词放大入口，与歌词卡原有放大按钮同步",
+    "Burger music 侧边播放卡支持收起为小字标签栏 + 单张方形封面",
+    "酷狗导入支持 t.kugou.com 分享短链与 global_collection_id 分享页",
+    "酷狗纯数字码先走酷狗码接口，失败自动回退数字歌单 ID",
+    "Worker 新增 MD5 签名与酷狗分享页歌曲提取，失败提示改为改用分享链接",
+    "五语首页、bm20 子站、独立快照，旧版本快照不覆盖"
+  ],
+  "fileList": [
+    {
+      "path": "_headers",
+      "bytes": 1023,
+      "sha256": "739bae942be5e30a6368dff619ca253be5f20fa2f8e3737f50078eab3d5125cd"
+    },
+    {
+      "path": "_redirects",
+      "bytes": 632,
+      "sha256": "660f2fe7a8d780e49b3ad36af28471bb0410cbd3af220e428ea77512d41fa6a5"
+    },
+    {
+      "path": "api/achievements",
+      "bytes": 71201,
+      "sha256": "b4cf524232c949efe6060eb1ceebe30ea7cd0e33742769700f487e19c6f11d20"
+    },
+    {
+      "path": "api/latest",
+      "bytes": 88911,
+      "sha256": "a143337e17618af7c7bd46db5f64c9686bc7105fafd02c46f516bbc2bfadb28a"
+    },
+    {
+      "path": "api/latest-v055",
+      "bytes": 70595,
+      "sha256": "e61c61d4aeb184fc99eb97c49dba432ef92dabae30a0c5966466890aabddc86d"
+    },
+    {
+      "path": "api/latest-v056",
+      "bytes": 72509,
+      "sha256": "a723c1f8234278fd0f5c16ad9afaba2c37589ab69aaea6ac310208b9e48b3094"
+    },
+    {
+      "path": "api/latest-v057",
+      "bytes": 74166,
+      "sha256": "7418378bd7fd730b5e667c86cb128a75e6fbbf94f7e131eb65426ec5e3972abb"
+    },
+    {
+      "path": "api/latest-v058",
+      "bytes": 75914,
+      "sha256": "932ce7e148509926fc5101571dd2e3395859dbb4977630748395a49f97b73713"
+    },
+    {
+      "path": "api/latest-v059",
+      "bytes": 77996,
+      "sha256": "6214b7bf27d1fda532cd66a440f90e04c1c71cfba1168a169c316ef58193f2e9"
+    },
+    {
+      "path": "api/latest-v060",
+      "bytes": 79909,
+      "sha256": "dbe4d24bce463c5fa99c9089e7a09e5670ca0b1b7af462142d54799a7d8597df"
+    },
+    {
+      "path": "api/latest-v061",
+      "bytes": 82025,
+      "sha256": "3552c42541bcb74e6405d8067e712569f029b47196d96458f526cf27f6867255"
+    },
+    {
+      "path": "api/latest-v062",
+      "bytes": 83737,
+      "sha256": "0da3a1a3f961052aa7f424a08d53143cb0295a07403d9bcf41c6dccd16563112"
+    },
+    {
+      "path": "api/latest-v063",
+      "bytes": 85421,
+      "sha256": "d5672ea1ac25419dfa07a2ed468a9575bdaca9c5ffe9c197b14c623c229b1162"
+    },
+    {
+      "path": "api/latest-v064",
+      "bytes": 87184,
+      "sha256": "6fe240160f4cd91e9d9b314f4a49a125950ef67e75903520ef5b32c6006165a7"
+    },
+    {
+      "path": "api/latest-v065",
+      "bytes": 88911,
+      "sha256": "a143337e17618af7c7bd46db5f64c9686bc7105fafd02c46f516bbc2bfadb28a"
+    },
+    {
+      "path": "api/music",
+      "bytes": 268,
+      "sha256": "38bba6186c2e0320d30f77c0985a842e25c44c67341a2d6b5a522a4bcd067a1d"
+    },
+    {
+      "path": "assets/apple-touch-icon.png",
+      "bytes": 49767,
+      "sha256": "4ca06c8d7d32af96f431069ba3e4efe69e358ab40aa0ccd28baaccf3a9df375b"
+    },
+    {
+      "path": "assets/browserconfig.xml",
+      "bytes": 349,
+      "sha256": "e8ee2b41cb249b6f3c34bdee5d91ecec7c131273e01fad13071cf5494661b6e1"
+    },
+    {
+      "path": "assets/burger-music.css",
+      "bytes": 80082,
+      "sha256": "d39ed56d491dc186a74b476873d852650aaa68a1b69693562903a73829ebe02e"
+    },
+    {
+      "path": "assets/burger-music.js",
+      "bytes": 94254,
+      "sha256": "da1a2ecd4b32625abd96ac76242f947d71242f6934bd07f824089db7dfc1cdea"
+    },
+    {
+      "path": "assets/developer-icon-128.png",
+      "bytes": 35061,
+      "sha256": "72d92b2bed7ad41873d8a930aa4690b0d42e273e5cedbc3fb93ab20cc94cfa18"
+    },
+    {
+      "path": "assets/developer-icon.png",
+      "bytes": 120164,
+      "sha256": "36d93c85c19eaa4e58512bb663b3e762a8d2bbea80d31e47c97bc62e17e1fd15"
+    },
+    {
+      "path": "assets/favicon.ico",
+      "bytes": 141450,
+      "sha256": "61ddce10d0f5c62e588d35b3654c132c4da6a5f9d38341b96769d94643491bef"
+    },
+    {
+      "path": "assets/fort-selector-icon.png",
+      "bytes": 17800,
+      "sha256": "55176fbfef88e2bb71c1405d0697987d1efd49aef87116b5dfb5d668bec6c6cc"
+    },
+    {
+      "path": "assets/hero-girl.png",
+      "bytes": 1633776,
+      "sha256": "5ef39c734c9fbad3223f85f90f51047f5ff341540a8326c8344c7efc6b229e3b"
+    },
+    {
+      "path": "assets/icon-1024.png",
+      "bytes": 1075163,
+      "sha256": "5ad73da80f8a717695c32acdf4bb58d5fd7ce661e9bbe4bef254ca48bfc1250f"
+    },
+    {
+      "path": "assets/icon-16.png",
+      "bytes": 689,
+      "sha256": "046e251c8d58574ca6362949021c1f74aa445a60c3b04840eb80f674477b1a1d"
+    },
+    {
+      "path": "assets/icon-180.png",
+      "bytes": 49767,
+      "sha256": "4ca06c8d7d32af96f431069ba3e4efe69e358ab40aa0ccd28baaccf3a9df375b"
+    },
+    {
+      "path": "assets/icon-192.png",
+      "bytes": 56252,
+      "sha256": "27b5468c1d0a96cb81c6c59051ab2917d9d53ff44f5dd70fdac36cca1f750393"
+    },
+    {
+      "path": "assets/icon-32.png",
+      "bytes": 2199,
+      "sha256": "5391aecd5615749d2622c7a14e9201f5315d46bf0acba10de12186ed51b44bd3"
+    },
+    {
+      "path": "assets/icon-48.png",
+      "bytes": 4506,
+      "sha256": "a0033f4cc5a8a7ffe9a23ad52439f039ed8fd1a7517a26c17f1c4126802b42f1"
+    },
+    {
+      "path": "assets/icon-512.png",
+      "bytes": 339558,
+      "sha256": "94c795c2f29c284f86c918d4ba144da331aa04854bbe6ad9867180667b75ede7"
+    },
+    {
+      "path": "assets/icon-64.png",
+      "bytes": 7496,
+      "sha256": "3c09be6ae196388556a9b07ccda1976d9cead82ad1c2f4ff1589bc80bd909d97"
+    },
+    {
+      "path": "assets/music/firefly-cmj.mp3",
+      "bytes": 6148594,
+      "sha256": "98fd6a641d0e423c4f294bca416edc148ace652c1c8771f1b2c227f9f1ea9493"
+    },
+    {
+      "path": "assets/pc-demo-achievements.webp",
+      "bytes": 22332,
+      "sha256": "f6664131eb81b3a1b7d9f8a054b4febc569bc87c109620832e30f41a25270645"
+    },
+    {
+      "path": "assets/pc-demo-chat.webp",
+      "bytes": 28182,
+      "sha256": "7d26e1df1797cc81224cd2d7a3b5923dfac41b273366ef1b555c2f1cdabc578d"
+    },
+    {
+      "path": "assets/pc-demo-look.webp",
+      "bytes": 51150,
+      "sha256": "e96f04e8a3dfc0f88cd0f2feef5733516c1e53ca7be4e31a17e712387a13d036"
+    },
+    {
+      "path": "assets/pc-demo-settings.webp",
+      "bytes": 28498,
+      "sha256": "e7c374dcea542b9cdb8bd72c967588a41e7a5fcc8a5f184c0254acc0788fa75f"
+    },
+    {
+      "path": "assets/pc-demo.html",
+      "bytes": 500271,
+      "sha256": "8f51f081f4eb795dc0d85bc9de100a9f560409755b563439657abd7b648f310d"
+    },
+    {
+      "path": "assets/plugin-store.css",
+      "bytes": 13062,
+      "sha256": "1c910a333610d13cf17753da5e6e49dacb9b61bd3eca014d5cc2079f42095ae7"
+    },
+    {
+      "path": "assets/plugin-store.js",
+      "bytes": 13764,
+      "sha256": "1d1a652428152603cbbf422d95bda94645c2a6d0e2c8f0a60c25fa9291fb54f9"
+    },
+    {
+      "path": "assets/site-069.js",
+      "bytes": 36604,
+      "sha256": "d6ed85cd99f88d20afaa603a8da4413e5d8384763bcac2af650f1bcb8b1d20e3"
+    },
+    {
+      "path": "assets/site-fix.css",
+      "bytes": 54771,
+      "sha256": "5c40139e518e2cf11037acf15011e7ab9c0706945a1c0cd017f673e7ca0464d2"
+    },
+    {
+      "path": "assets/site-fix.js",
+      "bytes": 39728,
+      "sha256": "84816f5e80a878c31b225930ff81183d52f666f7deee0ad1f1970a96bb302592"
+    },
+    {
+      "path": "assets/site-fix2.js",
+      "bytes": 41413,
+      "sha256": "40a62318a73d49ac1bd516f2dd49cf69974f7485847590f3ee17abcdd088ed34"
+    },
+    {
+      "path": "assets/site-mobile-2.js",
+      "bytes": 38420,
+      "sha256": "1746da13cd186610180504d75cfefb83716addcc2f339cfab23dd273d0f97e29"
+    },
+    {
+      "path": "assets/site-mobile-3.js",
+      "bytes": 40145,
+      "sha256": "33d95e042727efcc1908a4b91c807d5598deec5c1c33369cde0738d01fbdd4bf"
+    },
+    {
+      "path": "assets/site-mobile.css",
+      "bytes": 54408,
+      "sha256": "870d34a67d9a7edc2705a8fb57c6465cdc381cf2d9cd4651948ecd00d268e509"
+    },
+    {
+      "path": "assets/site-mobile.js",
+      "bytes": 37040,
+      "sha256": "be12ae370386aa474fb3785d2ca7c024390cb138ad49880e0cce794b58690bcf"
+    },
+    {
+      "path": "assets/site-v4.css",
+      "bytes": 101276,
+      "sha256": "8d0fe26f41efc71c37bdb350f91b6f68e226798684c6f79b213caa726c28a497"
+    },
+    {
+      "path": "assets/site-v4.js",
+      "bytes": 113999,
+      "sha256": "ebce2a6c7296c70d6ebe5a79b233b30837d8fe854c3ce97a8f0561f3b216952e"
+    },
+    {
+      "path": "assets/site.css",
+      "bytes": 53697,
+      "sha256": "fbc41540ee47a554179cf660575c1e9495f44193bcb224289d49207b4b85e137"
+    },
+    {
+      "path": "assets/site.js",
+      "bytes": 39432,
+      "sha256": "1af56497a7619bc93a248eb6cc6293e4379cbcd6fb357bfc163a7b6a46729c5d"
+    },
+    {
+      "path": "assets/site.webmanifest",
+      "bytes": 621,
+      "sha256": "372e5958a9a59582e8c26e5a276eb3b358f428715b569b6283586a0c8b65e6c3"
+    },
+    {
+      "path": "assets/sub-i18n.js",
+      "bytes": 204071,
+      "sha256": "54343834a0cb7438f9247cbe70f727c646eb9fa41dfcb36c55df318702171799"
+    },
+    {
+      "path": "assets/sub-music.css",
+      "bytes": 2503,
+      "sha256": "215b474ebdd919c534fdff39518077affd2138a626027fce43280b5aeb907e59"
+    },
+    {
+      "path": "assets/sub-music.js",
+      "bytes": 7656,
+      "sha256": "05d9829a93c2f890d3544f6b03e82472f1c276105f82d9543416e276da09648f"
+    },
+    {
+      "path": "assets/wallpaper-horizontal-poster.jpg",
+      "bytes": 157755,
+      "sha256": "4a6f562bd1a084c20f43c5f0ab8ec74bc37da0ade796e0a18e60cd1a815cd593"
+    },
+    {
+      "path": "assets/wallpaper-horizontal.gif",
+      "bytes": 853267,
+      "sha256": "4c2f7191dd5edbaa3ce26d939ee09a3817490b66b131ad2a71c9ec69d6de9940"
+    },
+    {
+      "path": "assets/wallpaper-horizontal.mp4",
+      "bytes": 3933827,
+      "sha256": "0c70b488534b109ae338ac8e47ffa5febf5c9f57af4143eb7b21c2bc15fa028b"
+    },
+    {
+      "path": "assets/wallpaper-vertical-poster.jpg",
+      "bytes": 149497,
+      "sha256": "00dca81b0408ae301d25a337a12489cd307486e8f478c1fd30e634c61f1fd3be"
+    },
+    {
+      "path": "assets/wallpaper-vertical.jpg",
+      "bytes": 211116,
+      "sha256": "3c46ea1a1e16dbd6c7e971aad2d0fb3bce880c7c78115763b095baed17f9bf42"
+    },
+    {
+      "path": "assets/wallpaper-vertical.mp4",
+      "bytes": 4107801,
+      "sha256": "664205703877dbd4c41af5b22cc644a30302fd5a74d3e92306bd6f2de6874e6c"
+    },
+    {
+      "path": "burger-music.html",
+      "bytes": 28672,
+      "sha256": "1a7e0591cbb6271102060611b17eea5bbdf8f30ebf7d9e09c2a20b7a9eb091c2"
+    },
+    {
+      "path": "developer.html",
+      "bytes": 144262,
+      "sha256": "8cdee2bd4111a13c2af5939d691724dc52ea0ede01cc7753e2f4cc6b992621a5"
+    },
+    {
+      "path": "dl/Burger.Chat-Android.apk",
+      "bytes": 2098682,
+      "sha256": "66e93da46638317905b2e80eb658c06c0ce5f425b8c37cbd26cd4fdfdbd7fbec"
+    },
+    {
+      "path": "fort-selector.html",
+      "bytes": 38178,
+      "sha256": "8e1689322a39c67e09a98b2b5f0b253cca60b01e0452b571876d19a9b6f64a5a"
+    },
+    {
+      "path": "index-en.html",
+      "bytes": 30109,
+      "sha256": "39fae15fbdce0cd0901245cd652a211e5592162b698d0ce8a440c4708278a45c"
+    },
+    {
+      "path": "index-ja.html",
+      "bytes": 31283,
+      "sha256": "25f4fe94a281cf3b1bae7677943936d4a5a74394abdf9302dc4140acec2e91af"
+    },
+    {
+      "path": "index-ko.html",
+      "bytes": 30787,
+      "sha256": "fdf5c316c06bbbc52f7fb1b25da7296c99fee77b7199dbae3ef79ba7195b4875"
+    },
+    {
+      "path": "index-tw.html",
+      "bytes": 30031,
+      "sha256": "77962b75835bc9e1a895b8a28bc698baab9220f81381bd37c4128f62939d6198"
+    },
+    {
+      "path": "index.html",
+      "bytes": 29980,
+      "sha256": "c849ceccf9ed3e64ae4370c121be6f8af3c008d0b7da586082c762d8560d0789"
+    },
+    {
+      "path": "music/index.json",
+      "bytes": 268,
+      "sha256": "38bba6186c2e0320d30f77c0985a842e25c44c67341a2d6b5a522a4bcd067a1d"
+    },
+    {
+      "path": "plugins/bcp.hamburgerwow.focus-note-1.0.0.bcp.json",
+      "bytes": 1305,
+      "sha256": "c188b1298e724a9b15c205f783fffe962ad5fe2590878ea9989683dfab8f60d5"
+    },
+    {
+      "path": "plugins/bcp.hamburgerwow.hello-1.0.0.bcp.json",
+      "bytes": 700,
+      "sha256": "45d94c0afd10b49a6894269e1432a50cbe3f0b96099197939606c8a60fe4f33b"
+    },
+    {
+      "path": "plugins/bcp.hamburgerwow.media-tip-1.0.0.bcp.json",
+      "bytes": 774,
+      "sha256": "b0329f9584489a510ffab415f6f634a9233d35cc0f51611aa9582b177cfa7bfb"
+    },
+    {
+      "path": "plugins/bcp.wow.new-plugin-1.0.0.bcp.json",
+      "bytes": 1412,
+      "sha256": "892eb664c9ff10465b5989362e109d51b09de0637fc6fa89330390f02f5efb1e"
+    },
+    {
+      "path": "plugins/bcp.wow.voiceassistant-1.0.0.bcp.json",
+      "bytes": 1471,
+      "sha256": "3ccdc3dae5e279ba79ebb68305c971487b1613e7058cf79d609598891b208153"
+    },
+    {
+      "path": "plugins/index.html",
+      "bytes": 7453,
+      "sha256": "c442d25f4fafdf1b6a89436252cd8bf4c6c62484b0cecfe2760d4f251032e615"
+    },
+    {
+      "path": "plugins/registry.json",
+      "bytes": 4292,
+      "sha256": "9fa62f69e6368e5226fd2ba038c0ad6c4a4871485291585f60a63ddaed342ac5"
+    },
+    {
+      "path": "tools/build-site.js",
+      "bytes": 57773,
+      "sha256": "93409c5c89c5d636155bb69a0f45707dade4eee1574ce4e375bd988c8f105cce"
+    },
+    {
+      "path": "wallpapers/index.json",
+      "bytes": 51,
+      "sha256": "8e8fe47e4a33b178bf0433d8050cb0ad7ec323fbdeeab3ecfd857b4ce1805b7a"
+    },
+    {
+      "path": "worker.js",
+      "bytes": 41213,
+      "sha256": "f8d1bd40a833b6a28f10a58385bfd427d01f8595f8d487919ebfa4f022ff1713"
+    }
+  ]
+}
