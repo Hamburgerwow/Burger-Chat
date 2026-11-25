@@ -2,7 +2,7 @@
   "version": 1,
   "nickname": "Hamburgerwow",
   "avatar": "",
-  "updatedAt": "2026-11-25T20:58:58.293Z",
+  "updatedAt": "2026-11-25T20:59:41.337Z",
   "data": {
     "bm:playlists": [],
     "bm:lx-sources": [
@@ -36,9 +36,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1089,
+      "plays": 1090,
       "sources": {
-        "netease": 1078,
+        "netease": 1079,
         "tencent": 1
       },
       "days": [
@@ -49,7 +49,7 @@
       "imports": 0,
       "quality": 0,
       "lyrics": 0,
-      "nights": 13,
+      "nights": 14,
       "mornings": 0
     },
     "bm:ach": {
@@ -60,6 +60,21 @@
     },
     "bm:favorites": [],
     "bm:history": [
+      {
+        "key": "netease:1927693793",
+        "at": 1795640355486,
+        "track": {
+          "id": "1927693793",
+          "source": "netease",
+          "name": "再等冬天(Memories)",
+          "artist": "h3R3",
+          "album": "故事商铺·上",
+          "cover": "https://p2.music.126.net/JBe7AwcGkYHhleOfQvY2hg==/109951169798343077.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1927693793",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1927693793",
+          "duration": 168
+        }
+      },
       {
         "key": "tencent:003Wir1t2wevOV",
         "at": 1795640273849,
@@ -493,21 +508,6 @@
           "url": "",
           "lrc": "",
           "duration": 233.882
-        }
-      },
-      {
-        "key": "netease:1969822728",
-        "at": 1795591053772,
-        "track": {
-          "id": "1969822728",
-          "source": "netease",
-          "name": "慢冷 (Live)",
-          "artist": "李荣浩",
-          "album": "2022中国好声音 第1期",
-          "cover": "https://p2.music.126.net/jElhQmMdFiVFtFPvWtVbFw==/109951167749864067.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 164.321
         }
       }
     ],
