@@ -1,0 +1,78 @@
+{
+  "v": 1,
+  "default": {
+    "id": "firefly-cmj",
+    "title": "萤火之森",
+    "uploader": "CMJ",
+    "url": "https://hamburgerwow.top/assets/music/firefly-cmj.mp3",
+    "size": 6148594,
+    "at": 0,
+    "default": true
+  },
+  "latest": {
+    "id": "mu-pank-----super-ky-mwviriod",
+    "title": "空白 - Pank、罗凯元（SUPER KY）",
+    "uploader": "汉堡wow",
+    "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-pank-----super-ky-mwviriod.mp3",
+    "size": 6899151,
+    "duration": 171,
+    "at": 1795574613325
+  },
+  "tracks": [
+    {
+      "id": "mu-pank-----super-ky-mwviriod",
+      "title": "空白 - Pank、罗凯元（SUPER KY）",
+      "uploader": "汉堡wow",
+      "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-pank-----super-ky-mwviriod.mp3",
+      "size": 6899151,
+      "duration": 171,
+      "at": 1795574613325
+    },
+    {
+      "id": "mu-lonely-lonely---true-mwvh7mbw",
+      "title": "Lonely Lonely - TrueShimo",
+      "uploader": "汉堡wow",
+      "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-lonely-lonely---true-mwvh7mbw.mp3",
+      "size": 2836229,
+      "duration": 70,
+      "at": 1795572005324
+    },
+    {
+      "id": "mu-die-for-you---the-we-mwv5j5xb",
+      "title": "Die For You - The Weeknd",
+      "uploader": "汉堡wow",
+      "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-die-for-you---the-we-mwv5j5xb.mp3",
+      "size": 10532569,
+      "duration": 260,
+      "at": 1795552388543
+    },
+    {
+      "id": "mu-china-x-mwuwvv8f",
+      "title": "China-X - 徐梦圆",
+      "uploader": "汉堡wow",
+      "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-china-x-mwuwvv8f.mp3",
+      "size": 9095426,
+      "duration": 226,
+      "at": 1795537864671
+    },
+    {
+      "id": "2122ff346aaf",
+      "title": "3 Strikes (Explicit) - Terror Jr",
+      "uploader": "Hamburger",
+      "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/2122ff346aaf.mp3",
+      "size": 7124875,
+      "at": 1795505480991,
+      "original": "3 Strikes (Explicit) - Terror Jr.mp3"
+    },
+    {
+      "id": "fb352e377807",
+      "title": "His Theme (From Undertale) - Sprightly、GameChops",
+      "uploader": "Hamburger",
+      "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/fb352e377807.mp3",
+      "size": 7092384,
+      "at": 1795535397011,
+      "original": "His Theme (From Undertale) - Sprightly、GameChops.mp3"
+    }
+  ],
+  "updatedAt": 1795535397011
+}
