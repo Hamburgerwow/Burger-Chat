@@ -1,0 +1,13 @@
+name = "burger-music-live"
+main = "worker.js"
+compatibility_date = "2026-11-23"
+
+routes = [
+  { pattern = "hamburgerwow.top/burger-music*", zone_name = "hamburgerwow.top" }
+]
+
+[assets]
+directory = "public"
+binding = "ASSETS"
+run_worker_first = ["/burger-music/api/*"]
+
