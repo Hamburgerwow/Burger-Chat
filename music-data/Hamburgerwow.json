@@ -1,0 +1,483 @@
+{
+  "version": 1,
+  "nickname": "Hamburgerwow",
+  "avatar": "",
+  "updatedAt": "2026-11-25T20:55:00.167Z",
+  "data": {
+    "bm:playlists": [],
+    "bm:stats": {
+      "plays": 1090,
+      "sources": {
+        "netease": 1080
+      },
+      "days": [
+        "2026-11-25",
+        "2026-11-26"
+      ],
+      "searches": 0,
+      "imports": 0,
+      "quality": 0,
+      "lyrics": 0,
+      "nights": 14,
+      "mornings": 0
+    },
+    "bm:ach": {
+      "first": 1795590420882,
+      "ten": 1795590604785,
+      "fifty": 1795590672859,
+      "night": 1795637797565
+    },
+    "bm:history": [
+      {
+        "key": "netease:1973665667",
+        "at": 1795640073156,
+        "track": {
+          "id": "1973665667",
+          "source": "netease",
+          "name": "海屿你",
+          "artist": "马也_Crabbit",
+          "album": "海屿你",
+          "cover": "https://p1.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
+          "duration": 295.940063
+        }
+      },
+      {
+        "key": "netease:1379918404",
+        "at": 1795637887426,
+        "track": {
+          "id": "1379918404",
+          "source": "netease",
+          "name": "time machine (feat. aren park)",
+          "artist": "mj apanay / aren park",
+          "album": "seen 11:23 pm",
+          "cover": "https://p1.music.126.net/b15pmn1qj28nyam8DdcCHA==/109951167480966719.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1379918404",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1379918404",
+          "duration": 225.933
+        }
+      },
+      {
+        "key": "netease:287398",
+        "at": 1795637797564,
+        "track": {
+          "id": "287398",
+          "source": "netease",
+          "name": "我不难过",
+          "artist": "孙燕姿",
+          "album": "未完成",
+          "cover": "https://p2.music.126.net/Pzxy6py26NgNmhJjYMf2RQ==/109951169724216323.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=287398",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=287398",
+          "duration": 30
+        }
+      },
+      {
+        "key": "netease:3461036786",
+        "at": 1795604916250,
+        "track": {
+          "id": "3461036786",
+          "source": "netease",
+          "name": "1000 winters",
+          "artist": "小北LinY",
+          "album": "1000 winters",
+          "cover": "https://p2.music.126.net/rt4KqGUE4GmU3mnBpj8Gdw==/109951174305908087.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 175.304
+        }
+      },
+      {
+        "key": "netease:298838",
+        "at": 1795604915331,
+        "track": {
+          "id": "298838",
+          "source": "netease",
+          "name": "传奇",
+          "artist": "王菲",
+          "album": "传奇",
+          "cover": "https://p2.music.126.net/ZPnVAoCKS9VbUZkOzrJHDw==/19157890602644480.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 296.124
+        }
+      },
+      {
+        "key": "netease:2157969686",
+        "at": 1795604914389,
+        "track": {
+          "id": "2157969686",
+          "source": "netease",
+          "name": "九张机",
+          "artist": "叶炫清",
+          "album": "九张机",
+          "cover": "https://p2.music.126.net/PLhn-O1sRgDrLK07m7bf2g==/109951169710790311.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 244.483
+        }
+      },
+      {
+        "key": "netease:1339481156",
+        "at": 1795604913428,
+        "track": {
+          "id": "1339481156",
+          "source": "netease",
+          "name": "I Wanted You",
+          "artist": "Ina Wroldsen",
+          "album": "Hot",
+          "cover": "https://p2.music.126.net/mpzMzX-uocZK9v4aNTrwJQ==/109951163791877840.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 228.075
+        }
+      },
+      {
+        "key": "netease:2659449974",
+        "at": 1795604912504,
+        "track": {
+          "id": "2659449974",
+          "source": "netease",
+          "name": "lonelyxmas",
+          "artist": "游客j6jsy",
+          "album": "lonelyxmas",
+          "cover": "https://p2.music.126.net/l220eqvJ5qyMfPrYl1enAw==/109951170301626589.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 201.333
+        }
+      },
+      {
+        "key": "netease:3454246134",
+        "at": 1795604911584,
+        "track": {
+          "id": "3454246134",
+          "source": "netease",
+          "name": "张桂珍（窗外的桂花开）",
+          "artist": "SUS.",
+          "album": "张桂珍（窗外的桂花开）",
+          "cover": "https://p2.music.126.net/msx-90dPtZK_29QHeubhVg==/109951174178688008.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 210.16
+        }
+      },
+      {
+        "key": "netease:554322674",
+        "at": 1795604910653,
+        "track": {
+          "id": "554322674",
+          "source": "netease",
+          "name": "偷心",
+          "artist": "SASIOVERLXRD / 连麻Swimming",
+          "album": "偷心",
+          "cover": "https://p2.music.126.net/QGz52525n-ZEqf9LENbZig==/109951163256839164.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 226.469
+        }
+      },
+      {
+        "key": "netease:3463361754",
+        "at": 1795604909724,
+        "track": {
+          "id": "3463361754",
+          "source": "netease",
+          "name": "季候风1997",
+          "artist": "曾舜晞",
+          "album": "季候风1997",
+          "cover": "https://p2.music.126.net/BEOCJfI9uiEkhEtVEv_kwg==/109951174318142472.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 228.465
+        }
+      },
+      {
+        "key": "netease:3430271737",
+        "at": 1795604908787,
+        "track": {
+          "id": "3430271737",
+          "source": "netease",
+          "name": "夜间飞行",
+          "artist": "80se",
+          "album": "ihatesingingluv3songs<",
+          "cover": "https://p2.music.126.net/J0I0jlaOxr9dn3OAeboTmQ==/109951173873888933.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 216
+        }
+      },
+      {
+        "key": "netease:3464380904",
+        "at": 1795604907862,
+        "track": {
+          "id": "3464380904",
+          "source": "netease",
+          "name": "我将奔向世界尽头爱你",
+          "artist": "张卓尔",
+          "album": "我将奔向世界尽头爱你",
+          "cover": "https://p2.music.126.net/mr-TEseggcI-j9mGmlY3eQ==/109951174329340502.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 300.575
+        }
+      },
+      {
+        "key": "netease:2032173388",
+        "at": 1795604906922,
+        "track": {
+          "id": "2032173388",
+          "source": "netease",
+          "name": "WE DON'T PLAY",
+          "artist": "范丞丞 / 马思唯",
+          "album": "WE DON'T PLAY",
+          "cover": "https://p2.music.126.net/SmuOfdJzNr6Fm3VHQGfLJQ==/109951168490400394.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 196.906
+        }
+      },
+      {
+        "key": "netease:3464724982",
+        "at": 1795604905995,
+        "track": {
+          "id": "3464724982",
+          "source": "netease",
+          "name": "无人知晓的我",
+          "artist": "周兴哲",
+          "album": "无人知晓的我",
+          "cover": "https://p2.music.126.net/8gKnFrcRpPJd08RVfd1_Ag==/109951174339429334.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 213.594
+        }
+      },
+      {
+        "key": "netease:1918576268",
+        "at": 1795604319910,
+        "track": {
+          "id": "1918576268",
+          "source": "netease",
+          "name": "红",
+          "artist": "罗言",
+          "album": "When the world is came，take it！",
+          "cover": "https://p2.music.126.net/G-inyKjA-jO5MuOuV3g7Pg==/109951167027986653.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 161.585
+        }
+      },
+      {
+        "key": "netease:2741144144",
+        "at": 1795604319416,
+        "track": {
+          "id": "2741144144",
+          "source": "netease",
+          "name": "99",
+          "artist": "TizzyT",
+          "album": "99",
+          "cover": "https://p1.music.126.net/D-kiZM7mbHrqdB6X8Yoi8Q==/109951171947326885.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 282.188
+        }
+      },
+      {
+        "key": "netease:1456890009",
+        "at": 1795604315637,
+        "track": {
+          "id": "1456890009",
+          "source": "netease",
+          "name": "罗生门（Follow）",
+          "artist": "梨冻紧 / Wiz_H张子豪",
+          "album": "罗生门（Follow）",
+          "cover": "https://p2.music.126.net/yN1ke1xYMJ718FiHaDWtYQ==/109951165076380471.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 243.754
+        }
+      },
+      {
+        "key": "netease:3382908505",
+        "at": 1795604314709,
+        "track": {
+          "id": "3382908505",
+          "source": "netease",
+          "name": "玻璃",
+          "artist": "Gareth.T",
+          "album": "玻璃",
+          "cover": "https://p1.music.126.net/MSKoQP60up7v3y1P1d3JIQ==/109951173234747322.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 185.04
+        }
+      },
+      {
+        "key": "netease:2600493765",
+        "at": 1795604313784,
+        "track": {
+          "id": "2600493765",
+          "source": "netease",
+          "name": "恋人",
+          "artist": "李荣浩",
+          "album": "黑马",
+          "cover": "https://p1.music.126.net/0bk3Iqe2OZGBH2Iuyx7RzA==/109951170045577565.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 275.912
+        }
+      },
+      {
+        "key": "netease:3460493895",
+        "at": 1795604312839,
+        "track": {
+          "id": "3460493895",
+          "source": "netease",
+          "name": "冬天又来临",
+          "artist": "罗言",
+          "album": "冬天又来临",
+          "cover": "https://p2.music.126.net/TnaPKtQVBg_kT3OOpxtH0Q==/109951174269909108.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 169.384
+        }
+      },
+      {
+        "key": "netease:167691",
+        "at": 1795604311920,
+        "track": {
+          "id": "167691",
+          "source": "netease",
+          "name": "天龙八部之宿敌",
+          "artist": "许嵩",
+          "album": "天龙八部之宿敌",
+          "cover": "https://p1.music.126.net/Ezo6K3rPFowvnkDtxf-w6Q==/109951172321459335.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 263.34
+        }
+      },
+      {
+        "key": "netease:3448039922",
+        "at": 1795604311002,
+        "track": {
+          "id": "3448039922",
+          "source": "netease",
+          "name": "茉茉",
+          "artist": "Nzwin 黄跃成",
+          "album": "茉茉",
+          "cover": "https://p2.music.126.net/x9H0NVxO5ha9wWCOvW1-eQ==/109951174106566868.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 120.169
+        }
+      },
+      {
+        "key": "netease:1851652156",
+        "at": 1795604310070,
+        "track": {
+          "id": "1851652156",
+          "source": "netease",
+          "name": "忘不掉的你",
+          "artist": "h3R3",
+          "album": "忘不掉的你",
+          "cover": "https://p2.music.126.net/4BCskpY6Rmm-QReHnY8W6Q==/109951166071009318.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 172.173
+        }
+      },
+      {
+        "key": "netease:3440961675",
+        "at": 1795597400431,
+        "track": {
+          "id": "3440961675",
+          "source": "netease",
+          "name": "睡前别想太多",
+          "artist": "李雨霏_晚饭",
+          "album": "睡前别想太多",
+          "cover": "https://p2.music.126.net/CdAZ76__lHkE_HcjXgR_4w==/109951173999807018.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 210.079
+        }
+      },
+      {
+        "key": "netease:4872687",
+        "at": 1795591057606,
+        "track": {
+          "id": "4872687",
+          "source": "netease",
+          "name": "同花顺",
+          "artist": "林倛玉",
+          "album": "12蓮花 原著電影原聲帶 (Original Motion Picture Soundtrack)",
+          "cover": "https://p2.music.126.net/qiHFF-c4a4ULDyUjWjo4MQ==/109951164606137385.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 237.96
+        }
+      },
+      {
+        "key": "netease:27955654",
+        "at": 1795591055732,
+        "track": {
+          "id": "27955654",
+          "source": "netease",
+          "name": "其实",
+          "artist": "薛之谦",
+          "album": "意外",
+          "cover": "https://p2.music.126.net/ywVjRpbu9KpcBQh9KJz2HA==/109951164499974026.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 242.146
+        }
+      },
+      {
+        "key": "netease:1420706073",
+        "at": 1795591054752,
+        "track": {
+          "id": "1420706073",
+          "source": "netease",
+          "name": "离开我的依赖",
+          "artist": "王艳薇",
+          "album": "离开我的依赖",
+          "cover": "https://p2.music.126.net/btYBbFLd5mf9w0lDpfNs6w==/109951171506809884.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 233.882
+        }
+      },
+      {
+        "key": "netease:1969822728",
+        "at": 1795591053772,
+        "track": {
+          "id": "1969822728",
+          "source": "netease",
+          "name": "慢冷 (Live)",
+          "artist": "李荣浩",
+          "album": "2022中国好声音 第1期",
+          "cover": "https://p2.music.126.net/jElhQmMdFiVFtFPvWtVbFw==/109951167749864067.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 164.321
+        }
+      },
+      {
+        "key": "netease:1890530891",
+        "at": 1795591052832,
+        "track": {
+          "id": "1890530891",
+          "source": "netease",
+          "name": "如果可以",
+          "artist": "韦礼安",
+          "album": "如果可以",
+          "cover": "https://p2.music.126.net/znTzn19zZvZ4IdlKEOhWRg==/109951166564931690.jpg?param=240y240",
+          "url": "",
+          "lrc": "",
+          "duration": 274.599
+        }
+      }
+    ]
+  }
+}
