@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f0a08">
+<title>插件商店 · Burger Chat</title>
+<meta name="description" content="Burger Chat 官方插件商店：浏览、筛选并下载聊天增强、工具、媒体与集成插件。">
+<link rel="icon" href="/assets/icon-192.png?v=050">
+<link rel="stylesheet" href="/assets/site-v4.css?v=27f">
+<link rel="stylesheet" href="/assets/plugin-store.css?v=2">
+<link rel="stylesheet" href="/assets/sub-music.css?v=2">
+</head>
+<body class="plugin-store lang-zh" data-fallback-version="0.40.53">
+<div id="progress" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/" aria-label="Burger Chat 首页">
+      <img src="/assets/icon-192.png?v=050" alt="" width="40" height="40">
+      <span class="brand-text"><strong>Burger Chat</strong><small>PLUGIN STORE</small></span>
+    </a>
+    <div class="top-actions">
+      <a class="bc-open top-bc" href="/developer">开发者中心 <span aria-hidden="true">↗</span></a>
+      <span class="ver-pill"><i></i>当前版本 <span data-version>0.40.53</span></span>
+      <a class="top-link" href="/">返回首页</a>
+    </div>
+  </div>
+</header>
+
+<div class="dock ps-dock" id="dock">
+  <a class="dock-brand" href="/">
+    <img src="/assets/icon-192.png?v=050" alt="" width="42" height="42">
+    <span><strong>Burger Chat</strong><span>PLUGIN STORE</span></span>
+  </a>
+  <nav class="dock-links" aria-label="站内导航">
+    <a href="/">首页</a>
+    <a href="/#about">软件介绍</a>
+    <a href="/#release">最新版本</a>
+    <a class="is-current" href="/plugins">插件商店</a>
+  </nav>
+  <div class="dock-right">
+    <span class="dock-ver">v<span data-version>0.40.53</span></span>
+    <a class="dock-dl" href="/developer">发布插件 <span aria-hidden="true">↗</span></a>
+  </div>
+</div>
+
+<main>
+<section class="hero ps-hero" id="top">
+  <div class="hero-wall" aria-hidden="true">
+    <video class="wall-landscape" src="/assets/wallpaper-horizontal.mp4?v=048" poster="/assets/wallpaper-horizontal-poster.jpg?v=048" muted loop playsinline preload="none" autoplay></video>
+  </div>
+  <div class="wrap hero-inner ps-hero-inner">
+    <div class="hero-copy ps-copy">
+      <span class="eyebrow"><i class="live-dot"></i>PLUGIN STORE · BCP v1</span>
+      <h1><span class="l1">插件商店</span><span class="l2">装进你的聊天</span></h1>
+      <p class="hero-lead">把按钮、面板和小工具放回聊天工作区。这里收录 Burger Chat 的公开插件，按分类找，按版本装，下载后从插件中心导入即可。</p>
+      <div class="ps-searchbox">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+        <input id="psSearch" type="search" placeholder="搜索插件、开发者或标签" autocomplete="off" aria-label="搜索插件">
+        <kbd>⌘ K</kbd>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong data-plugin-count>—</strong><span>个已收录插件</span></div>
+        <div class="stat"><strong id="psCategoryCount">—</strong><span>个分类</span></div>
+        <div class="stat"><strong id="psStoreVersion">v0.40.53</strong><span>兼容当前版本</span></div>
+      </div>
+    </div>
+    <aside class="ps-feature" aria-label="本周精选">
+      <div class="ps-feature-head"><span>WEEKLY PICKS</span><a href="#all">查看全部</a></div>
+      <div class="ps-feature-list" id="psFeatured"><span class="ps-loading">正在读取插件索引…</span></div>
+      <div class="ps-feature-foot"><i></i>官方索引实时读取 · 每 20 秒同步版本</div>
+    </aside>
+  </div>
+</section>
+
+<section class="section ps-section" id="all">
+  <div class="wrap">
+    <div class="section-head ps-head">
+      <div><span class="eyebrow">CATALOG · <span id="psCount">0</span></span><h2>挑一个插件，马上开始。</h2></div>
+      <p>按分类筛选，或直接搜索。每个插件都带有目标平台、最低版本和 SHA-256 校验值。</p>
+    </div>
+    <div class="ps-toolbar">
+      <div class="ps-filters" id="psFilters" role="group" aria-label="插件分类"></div>
+      <label class="ps-sort">排序
+        <select id="psSort">
+          <option value="weekly">本周精选</option>
+          <option value="rating">评分最高</option>
+          <option value="new">最近更新</option>
+          <option value="name">名称 A–Z</option>
+        </select>
+      </label>
+    </div>
+    <div class="ps-grid" id="psGrid" aria-live="polite"><div class="ps-loading">正在读取 registry.json…</div></div>
+    <div class="ps-empty" id="psEmpty" hidden>没有找到匹配的插件。换个关键词或分类试试。</div>
+  </div>
+</section>
+
+<section class="section ps-guide">
+  <div class="wrap">
+    <div class="section-head ps-head"><div><span class="eyebrow">HOW IT WORKS · 03</span><h2>下载、导入、启用。</h2></div><p>插件是单个 .bcp.json 文件，不经过应用商店，也不上传聊天内容。</p></div>
+    <div class="ps-steps">
+      <article><b>01</b><h3>下载插件</h3><p>点卡片右下角的“获取 .bcp”，保存到电脑或手机。</p></article>
+      <article><b>02</b><h3>插件中心导入</h3><p>打开 Burger Chat → 插件中心 → 导入文件，选择刚下载的 .bcp.json。</p></article>
+      <article><b>03</b><h3>检查权限并启用</h3><p>确认目标平台与最低版本，启用后按钮或面板会出现在对应位置。</p></article>
+    </div>
+    <div class="ps-dev-cta">
+      <div><span class="eyebrow">BUILD YOUR OWN</span><h3>会写 JavaScript，就能做插件。</h3><p>开发者中心提供清单编辑、AI 工坊、校验与发布流程。</p></div>
+      <a class="cta cta-primary" href="/developer">打开开发者中心 <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="/assets/icon-192.png?v=050" alt="" width="44" height="44">
+        <div><b>Burger Chat</b><p>手机与电脑在自家局域网里直连。插件、壁纸和成就都留在这个空间里。</p></div>
+      </div>
+      <div class="foot-col"><small>Store</small><a href="#all">全部插件</a><a href="/plugins/registry.json" target="_blank" rel="noopener">registry.json</a><a href="/developer">开发者中心</a></div>
+      <div class="foot-col"><small>Product</small><a href="/">官网首页</a><a href="/#release">最新版本</a><a href="/#plugins">插件生态</a></div>
+    </div>
+    <div class="foot-bottom"><span>© <span id="psYear">2026</span> Burger Chat</span><span class="sp"></span><span>插件商店 · v<span data-version>0.40.53</span></span><a href="/">返回首页</a></div>
+  </div>
+</footer>
+
+<div class="ps-modal" id="psModal" role="dialog" aria-modal="true" aria-hidden="true" inert>
+  <div class="ps-modal-scrim" data-ps-close></div>
+  <article class="ps-modal-card" tabindex="-1">
+    <button class="ps-modal-x" type="button" data-ps-close aria-label="关闭">✕</button>
+    <div class="ps-modal-body" id="psModalBody"></div>
+  </article>
+</div>
+
+<script src="/assets/plugin-store.js?v=2" defer></script>
+<script src="/assets/sub-music.js?v=1" defer></script>
+</body>
+</html>
