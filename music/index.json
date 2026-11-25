@@ -10,15 +10,24 @@
     "default": true
   },
   "latest": {
-    "id": "mu-die-for-you---the-we-mwv5j5xb",
-    "title": "Die For You - The Weeknd",
+    "id": "mu-lonely-lonely---true-mwvh7mbw",
+    "title": "Lonely Lonely - TrueShimo",
     "uploader": "汉堡wow",
-    "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-die-for-you---the-we-mwv5j5xb.mp3",
-    "size": 10532569,
-    "duration": 260,
-    "at": 1795552388543
+    "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-lonely-lonely---true-mwvh7mbw.mp3",
+    "size": 2836229,
+    "duration": 70,
+    "at": 1795572005324
   },
   "tracks": [
+    {
+      "id": "mu-lonely-lonely---true-mwvh7mbw",
+      "title": "Lonely Lonely - TrueShimo",
+      "uploader": "汉堡wow",
+      "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-lonely-lonely---true-mwvh7mbw.mp3",
+      "size": 2836229,
+      "duration": 70,
+      "at": 1795572005324
+    },
     {
       "id": "mu-die-for-you---the-we-mwv5j5xb",
       "title": "Die For You - The Weeknd",
