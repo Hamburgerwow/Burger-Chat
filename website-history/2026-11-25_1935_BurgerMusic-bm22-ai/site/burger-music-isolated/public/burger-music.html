@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta name="bc-build" content="20261125-burger-music22">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Burger music · 把歌单装进播放器</title>
+<meta name="description" content="Burger music 是 Burger Chat 的音乐子站：支持网易云、QQ 音乐、酷狗歌单导入，接入落雪音源，默认 / Burger music 双播放源，大卡片播放详情、Apple Music 风格歌词与流体云背景。">
+<meta name="theme-color" content="#08090d">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://hamburgerwow.top/burger-music">
+<link rel="icon" href="assets/favicon.ico?v=050" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png?v=050">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Burger music · 把歌单装进播放器">
+<meta property="og:description" content="网易云、QQ 音乐、酷狗歌单一键搬家。默认音源留在本地，Burger music 接管在线曲库。">
+<meta property="og:url" content="https://hamburgerwow.top/burger-music">
+<meta property="og:image" content="https://hamburgerwow.top/assets/hero-girl.png">
+<link rel="stylesheet" href="/burger-music/assets/burger-music.css?v=bm22-1">
+</head>
+<body data-mode="burger">
+<div class="bm-grain" aria-hidden="true"></div>
+<div class="bm-aurora a1" aria-hidden="true"></div>
+<div class="bm-aurora a2" aria-hidden="true"></div>
+
+<aside class="bm-side" id="bmSide">
+  <div class="side-top">
+    <a class="bm-brand" href="/" aria-label="Burger Chat 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><path d="M9 17h30c2.2 0 4 1.8 4 4v1H5v-1c0-2.2 1.8-4 4-4Z" fill="currentColor"/><path d="M7 24h34v5.5c0 2.5-2 4.5-4.5 4.5H11.5C9 34 7 32 7 29.5V24Z" fill="currentColor" opacity=".72"/><path d="M10 36h28c0 3.2-2.6 5.8-5.8 5.8H15.8C12.6 41.8 10 39.2 10 36Z" fill="currentColor" opacity=".42"/><path d="M13 12.8c1.6-3.2 4.1-4.8 7.5-4.8 1.8 0 3.2.6 4.4 1.7 1.2-1.1 2.6-1.7 4.4-1.7 3.4 0 5.9 1.6 7.5 4.8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="37" cy="10" r="2.4" fill="currentColor" opacity=".62"/></svg>
+      </span>
+      <span class="brand-copy"><strong>Burger music</strong><small>SOUND SYSTEM</small></span>
+    </a>
+    <button class="side-close" id="sideClose" type="button" aria-label="收起菜单">×</button>
+  </div>
+
+  <div class="side-core" id="sideCore">
+    <nav class="side-nav" aria-label="Burger music 导航">
+      <a href="#bmTop" class="is-active" data-nav="home" aria-label="首页" title="首页">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.8 12 3.4l8.5 7.4V20a1 1 0 0 1-1 1h-5.1v-5.7h-4.8V21H4.5a1 1 0 0 1-1-1v-9.2Z"/></svg>
+      </a>
+      <a href="#shelf" data-nav="shelf" aria-label="歌单" title="歌单">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6.5h14M5 12h14M5 17.5h14"/></svg>
+      </a>
+      <a href="#mine" data-nav="mine" aria-label="我的" title="我的">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M4.8 21c.7-4 3.6-6.2 7.2-6.2s6.5 2.2 7.2 6.2"/></svg>
+      </a>
+    </nav>
+
+    <div class="side-player" id="sidePlayer">
+      <button class="side-player-cover" id="sideCoverBtn" type="button" aria-label="打开迷你播放器" title="播放器">
+        <span class="cover-fallback" aria-hidden="true"><b>BM</b></span>
+        <img id="sideCoverImg" alt="">
+        <span class="side-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="side-library">
+    <div class="side-cap"><span>我的歌单</span><b id="libCount">0</b></div>
+    <div class="side-lib-list" id="sideLibrary">
+      <button class="side-lib-empty" type="button" data-open="import">导入第一张歌单 <span>＋</span></button>
+    </div>
+  </div>
+
+  <div class="side-lx" id="lxMini">
+    <span class="lx-orb" aria-hidden="true"></span>
+    <div><small>LX MUSIC API</small><b id="lxMiniState">未连接</b></div>
+    <button type="button" data-open="lx" aria-label="配置落雪音源">→</button>
+  </div>
+
+  <div class="side-foot"><span>v0.40.65</span><a href="/">hamburgerwow.top</a></div>
+</aside>
+
+<div class="side-scrim" id="sideScrim" aria-hidden="true"></div>
+
+<div class="side-mini" id="sideMini" aria-hidden="true">
+  <div class="mini-rail" aria-hidden="true"><span>BURGER MUSIC</span></div>
+  <button class="mini-expand" id="miniExpand" type="button" aria-label="打开播放详情" title="打开播放详情">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg>
+  </button>
+  <div class="mini-head">
+    <span class="mini-cover">
+      <span class="cover-fallback" aria-hidden="true"><b>BM</b></span>
+      <img id="miniCover" alt="">
+    </span>
+    <div class="mini-copy">
+      <small id="miniSource">BURGER MUSIC</small>
+      <b id="miniTitle">从一首歌开始</b>
+      <span id="miniArtist">导入歌单，或直接播放今日推荐</span>
+    </div>
+  </div>
+  <div class="mini-actions">
+    <button class="mini-play" id="miniPlay" type="button" aria-label="播放">
+      <svg class="ico-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      <svg class="ico-pause" viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+    </button>
+    <button class="mini-mode" id="miniMode" type="button" aria-label="播放模式：列表循环" title="播放模式">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 2l4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 0 1-3 3H3"/></svg>
+      <span id="miniModeText">循环</span>
+    </button>
+    <button class="mini-hide" id="miniHide" type="button" aria-label="隐藏播放卡片" title="隐藏播放卡片">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg>
+    </button>
+  </div>
+  <div class="mini-hint">悬停封面打开 · 右上角进入详情</div>
+</div>
+
+<main class="bm-main" id="bmTop">
+  <header class="bm-top">
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="打开菜单"><span></span><span></span></button>
+    <div class="crumb"><span>BURGER</span><i>/</i><b id="crumbNow">DISCOVER</b></div>
+    <div class="source-switch top-source" role="group" aria-label="选择播放源">
+      <span class="source-kicker">MUSIC SOURCE</span>
+      <div class="source-track">
+        <i class="source-thumb" aria-hidden="true"></i>
+        <button type="button" data-mode="default" aria-pressed="false">默认</button>
+        <button type="button" data-mode="burger" aria-pressed="true">Burger music</button>
+      </div>
+      <p id="sourceHint">在线曲库 · Meting + 落雪音源</p>
+    </div>
+    <div class="top-search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m15.2 15.2 4.3 4.3"/></svg>
+      <input id="searchInput" type="search" placeholder="搜索歌曲、歌手…" autocomplete="off" aria-label="搜索在线歌曲">
+      <select id="searchServer" aria-label="搜索平台">
+        <option value="netease">网易云</option>
+        <option value="tencent">QQ</option>
+        <option value="kugou">酷狗</option>
+      </select>
+      <kbd>ENTER</kbd>
+    </div>
+    <div class="top-actions">
+      <button class="ghost-btn" type="button" data-open="lx"><span class="dot"></span> LX</button>
+      <button class="import-btn" type="button" data-open="import">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14"/></svg>
+        导入歌单
+      </button>
+      <button class="settings-btn" type="button" data-open="sync" aria-label="同步音源设置">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.2"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="bm-hero" id="home">
+    <div class="hero-copy">
+      <span class="eyebrow"><i></i> BURGER MUSIC · SOUND SYSTEM</span>
+      <h1>把歌单，<br><em>装进播放器。</em></h1>
+      <p class="hero-lead">网易云、QQ 音乐、酷狗歌单一键搬家。<br>默认音源留在本地，<b>Burger music</b> 接管在线曲库。</p>
+      <div class="hero-actions">
+        <button class="primary-btn" type="button" id="heroPlay">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          播放今日推荐
+        </button>
+        <button class="line-btn" type="button" data-open="import">导入我的歌单 <span>↗</span></button>
+      </div>
+      <div class="hero-meta">
+        <span><b>03</b> 平台导入</span>
+        <span><b>字级</b> 歌词同步</span>
+        <span><b>LX</b> 音源就绪</span>
+      </div>
+    </div>
+
+    <div class="hero-vinyl" aria-hidden="true">
+      <div class="vinyl-shadow"></div>
+      <div class="vinyl-disc">
+        <span class="vinyl-ring r1"></span><span class="vinyl-ring r2"></span><span class="vinyl-ring r3"></span>
+        <div class="vinyl-cover" id="heroCover">
+          <div class="cover-fallback"><b>BM</b><small>PLAY IT LOUD</small></div>
+        </div>
+        <span class="vinyl-center"></span>
+      </div>
+      <div class="float-card fc-a"><span>NETEASE</span><b id="fcNet">网易云</b></div>
+      <div class="float-card fc-b"><span>QQ MUSIC</span><b>歌单直连</b></div>
+      <div class="float-card fc-c"><span>KUGOU</span><b>精选集</b></div>
+      <div class="hero-note">NOW SPINNING<b id="heroNow">热歌榜 · 001</b></div>
+    </div>
+  </section>
+
+  <section class="resume-section" aria-labelledby="resumeTitle">
+    <div class="section-head compact">
+      <div><span class="section-kicker">CONTINUE</span><h2 id="resumeTitle">接着听</h2></div>
+      <span class="section-side" id="resumeSide">LAST SESSION</span>
+    </div>
+    <article class="resume-card" id="resumeCard">
+      <div class="resume-cover"><div class="cover-fallback"><b>BM</b></div></div>
+      <div class="resume-copy">
+        <span class="resume-badge" id="resumeBadge">READY</span>
+        <b id="resumeName">从一首歌开始</b>
+        <span id="resumeMeta">导入歌单，或直接播放今日推荐</span>
+        <div class="resume-line"><i id="resumeBar"></i></div>
+      </div>
+      <button class="resume-play" id="resumePlay" type="button" aria-label="继续播放">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <div class="resume-stat"><span>QUEUE</span><b id="queueCount">0</b></div>
+    </article>
+  </section>
+
+  <section class="shelf-section" id="shelf" aria-labelledby="shelfTitle">
+    <div class="section-head">
+      <div><span class="section-kicker">CURATED · 01</span><h2 id="shelfTitle">今日歌单</h2></div>
+      <div class="section-tools">
+        <span class="tiny-status" id="homeStatus">正在连接曲库…</span>
+        <button class="refresh-btn" type="button" id="refreshHome" aria-label="刷新推荐">↻</button>
+      </div>
+    </div>
+    <div class="playlist-grid" id="playlistGrid"></div>
+    <button class="import-sleeve" type="button" data-open="import">
+      <span class="sleeve-plus">＋</span>
+      <span><b>把你的歌单放进来</b><small>网易云 / QQ / 酷狗 分享链接</small></span>
+      <i>IMPORT</i>
+    </button>
+  </section>
+
+  <section class="tracks-section" id="tracks" aria-labelledby="tracksTitle">
+    <div class="section-head">
+      <div><span class="section-kicker" id="tracksKicker">ONLINE · 02</span><h2 id="tracksTitle">在线热歌</h2></div>
+      <div class="section-tools">
+        <span class="track-context" id="trackContext">今日推荐队列</span>
+        <button class="clear-search" id="clearSearch" type="button" hidden>清除搜索</button>
+      </div>
+    </div>
+    <div class="track-list" id="trackList">
+      <div class="list-skeleton"><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <section class="archive-section" id="archive" aria-labelledby="archiveTitle">
+    <div class="section-head">
+      <div><span class="section-kicker">YOUR SHELF · 04</span><h2 id="archiveTitle">我的歌单</h2></div>
+      <span class="track-context" id="archiveCount">0 张</span>
+    </div>
+    <div class="archive-grid" id="archiveGrid">
+      <button class="archive-empty" type="button" data-open="import"><b>＋</b><span>还没有导入歌单<br><small>支持网易云 / QQ / 酷狗</small></span></button>
+    </div>
+  </section>
+
+  <section class="mine-section" id="mine" aria-labelledby="mineTitle">
+    <div class="section-head">
+      <div><span class="section-kicker">YOUR ROOM · 05</span><h2 id="mineTitle">我的</h2></div>
+      <span class="track-context" id="mineStatus">本机优先 · 不上传云端</span>
+    </div>
+    <div class="mine-grid">
+      <article class="mine-card mine-login" id="mineLoginCard">
+        <span class="mc-kicker">01 · ACCOUNT</span>
+        <div class="mine-login-row">
+          <span class="mine-avatar" id="mineAvatar" aria-hidden="true">B</span>
+          <div class="mine-login-copy">
+            <b id="mineLoginName">本机访客</b>
+            <small id="mineLoginSub">登录后可同步账号与歌单</small>
+          </div>
+          <a class="mine-login-btn" id="mineLoginBtn" href="/">登录</a>
+        </div>
+        <div class="mc-foot"><span id="mineLoginState">LOCAL SESSION</span><a href="/" id="mineAccountLink">账号中心 ↗</a></div>
+      </article>
+
+      <article class="mine-card mine-playlists">
+        <span class="mc-kicker">02 · PLAYLISTS</span>
+        <div class="mc-head"><b>我的歌单</b><span id="minePlaylistCount">0 张</span></div>
+        <div class="mine-mini-grid" id="minePlaylists"></div>
+        <div class="mc-foot"><button type="button" data-open="import">导入歌单 ＋</button><span>LOCAL SHELF</span></div>
+      </article>
+
+      <article class="mine-card mine-history">
+        <span class="mc-kicker">03 · HISTORY</span>
+        <div class="mc-head"><b>播放历史</b><button type="button" id="mineHistoryClear">清空</button></div>
+        <div class="mine-mini-grid" id="mineHistory"></div>
+        <div class="mc-foot"><span id="mineHistoryCount">0 首</span><span>最近 30 首</span></div>
+      </article>
+
+      <article class="mine-card mine-ach">
+        <span class="mc-kicker">04 · ACHIEVEMENTS</span>
+        <div class="mc-head"><b>成就</b><span id="mineAchCount">0 / 12</span></div>
+        <div class="ach-progress"><i id="mineAchBar"></i></div>
+        <div class="ach-grid" id="mineAchGrid"></div>
+        <div class="mc-foot"><span id="mineAchHint">听歌、收藏、导入歌单都会点亮徽章</span><span>ACHIEVEMENT SYSTEM</span></div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="bm-foot">
+    <span>Burger music · a small room for loud feelings.</span>
+    <div><a href="/">Burger Chat</a><a href="/developer">Fort Selector</a><button type="button" data-open="lx">LX 音源</button><button type="button" data-open="sync">同步音源设置</button></div>
+  </footer>
+</main>
+
+<div class="bm-player" id="player" aria-label="播放器">
+  <audio id="audio" preload="metadata" playsinline></audio>
+  <button class="pl-cover" id="playerCoverBtn" type="button" aria-label="打开播放详情">
+    <div class="cover-fallback" id="playerCoverFallback"><b>BM</b></div>
+    <img id="playerCover" alt="">
+    <span class="pl-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  </button>
+  <div class="pl-meta">
+    <span class="pl-source" id="playerSource">BURGER MUSIC</span>
+    <b id="playerTitle">从一首歌开始</b>
+    <span id="playerArtist">导入歌单，或直接播放今日推荐</span>
+  </div>
+  <div class="pl-controls">
+    <button class="icon-btn pl-prev" id="playerPrev" type="button" aria-label="上一首">
+      <svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM19 5v14L9 12z"/></svg>
+    </button>
+    <button class="pl-play" id="playerPlay" type="button" aria-label="播放">
+      <svg class="ico-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      <svg class="ico-pause" viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+    </button>
+    <button class="icon-btn pl-next" id="playerNext" type="button" aria-label="下一首">
+      <svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM5 5v14l10-7z"/></svg>
+    </button>
+  </div>
+  <div class="pl-progress">
+    <span id="playerTime">0:00</span>
+    <input id="playerProgress" type="range" min="0" max="1000" value="0" step="1" aria-label="播放进度">
+    <span id="playerDuration">0:00</span>
+  </div>
+  <div class="pl-tools">
+    <button class="icon-btn" id="playerMode" type="button" aria-label="播放模式：列表循环" title="播放模式">
+      <svg viewBox="0 0 24 24"><path d="M17 2l4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 0 1-3 3H3"/></svg>
+      <span id="modeText">循环</span>
+    </button>
+    <button class="icon-btn player-hide-btn" id="playerHide" type="button" aria-label="隐藏播放卡片，只显示封面" title="只显示封面">
+      <svg viewBox="0 0 24 24"><path d="M5 5h14v14H5z"/><path d="M9 12h6"/></svg>
+    </button>
+    <button class="icon-btn volume-btn" id="volumeBtn" type="button" aria-label="音量">
+      <svg viewBox="0 0 24 24"><path d="M4 10v4h4l5 4V6l-5 4H4Z"/><path d="M16 9.2c1.5 1.5 1.5 4.1 0 5.6M18.5 6.7c3 3 3 7.6 0 10.6"/></svg>
+      <input id="playerVolume" type="range" min="0" max="100" value="72" aria-label="音量">
+    </button>
+    <button class="lyrics-btn" id="playerLyrics" type="button" aria-label="打开歌词与播放详情">
+      <span class="eq-bars"><i></i><i></i><i></i></span>
+      歌词
+    </button>
+    <button class="icon-btn detail-btn" id="playerDetail" type="button" aria-label="打开播放详情">
+      <svg viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg>
+    </button>
+  </div>
+</div>
+
+<div class="bm-detail" id="detail" aria-hidden="true" role="dialog" aria-modal="true" aria-label="播放详情">
+  <div class="detail-bg" id="detailBg" aria-hidden="true"></div>
+  <div class="detail-shade" aria-hidden="true"></div>
+  <header class="detail-top">
+    <button class="detail-back" id="detailBack" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg>
+      BACK TO LIBRARY
+    </button>
+    <span class="detail-context">PLAYING FROM <b id="detailContext">BURGER MUSIC</b></span>
+    <div class="detail-top-actions">
+      <button class="icon-btn" id="detailFav" type="button" aria-label="收藏">♡</button>
+      <button class="icon-btn" id="detailClose" type="button" aria-label="关闭">×</button>
+    </div>
+  </header>
+
+  <div class="detail-stage">
+    <div class="detail-fluids" aria-hidden="true">
+      <i class="fluid f1"></i><i class="fluid f2"></i><i class="fluid f3"></i><i class="fluid f4"></i>
+    </div>
+    <div class="detail-card">
+  <div class="detail-grid">
+    <section class="detail-left">
+      <div class="detail-cover-wrap">
+        <div class="detail-cover" id="detailCover"><div class="cover-fallback"><b>BM</b><small>BURGER MUSIC</small></div></div>
+        <span class="cover-shadow"></span>
+      </div>
+      <div class="detail-info">
+        <span class="detail-badge" id="detailSource">BURGER MUSIC</span>
+        <h2 id="detailTitle">从一首歌开始</h2>
+        <p id="detailArtist">导入歌单，或直接播放今日推荐</p>
+        <div class="detail-tags"><span id="detailAlbum">ONLINE RADIO</span><span id="detailQuality">HQ · ONLINE</span></div>
+      </div>
+      <div class="detail-quality" id="detailQualityBar" role="group" aria-label="音质选择">
+        <span class="dq-now"><small>QUALITY</small><b id="detailQualityNow">标准</b></span>
+        <span class="dq-options">
+          <button class="dq-btn" type="button" data-quality="lossless" aria-pressed="false"><i></i>无损</button>
+          <button class="dq-btn is-on" type="button" data-quality="standard" aria-pressed="true"><i></i>标准</button>
+          <button class="dq-btn" type="button" data-quality="low" aria-pressed="false"><i></i>最低</button>
+        </span>
+      </div>
+      <button class="detail-ai" id="detailAiSrc" type="button" aria-label="AI 自动匹配音源"><b>AI 音源</b><i>AUTO MATCH</i></button>
+      <div class="detail-progress">
+        <span id="detailTime">0:00</span>
+        <input id="detailProgress" type="range" min="0" max="1000" value="0" step="1" aria-label="播放进度">
+        <span id="detailDuration">0:00</span>
+      </div>
+      <div class="detail-controls">
+        <button class="detail-mode" id="detailMode" type="button"><span id="detailModeText">列表循环</span><i>MODE</i></button>
+        <button class="big-step" id="detailPrev" type="button" aria-label="上一首"><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM19 5v14L9 12z"/></svg></button>
+        <button class="big-play" id="detailPlay" type="button" aria-label="播放"><svg class="ico-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><svg class="ico-pause" viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></button>
+        <button class="big-step" id="detailNext" type="button" aria-label="下一首"><svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM5 5v14l10-7z"/></svg></button>
+        <div class="vol-dock">
+          <button class="detail-fx" id="detailVolumeBtn" type="button" aria-label="音量" aria-expanded="false"><span>VOL</span><b id="detailVolText">72</b></button>
+          <div class="vol-pop" id="detailVolPop" hidden>
+            <div class="vol-head"><span>VOLUME</span><b id="detailVolPopText">72</b></div>
+            <input id="detailVolume" type="range" min="0" max="100" value="72" aria-label="音量">
+            <div class="vol-quick">
+              <button type="button" data-vol="0">静音</button>
+              <button type="button" data-vol="50">50</button>
+              <button type="button" data-vol="100">100</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="detail-upnext">
+        <div class="upnext-cap"><span>UP NEXT</span><b id="upnextCount">0 TRACKS</b></div>
+        <div id="upnextList"></div>
+      </div>
+    </section>
+
+    <section class="detail-right" id="detailLyricsPanel">
+      <div class="lyric-head">
+        <div><span>LYRICS</span><h2>歌词 <em>字级同步</em></h2></div>
+        <div class="lyric-tools">
+          <span class="sync-pill"><i></i> CHARACTER SYNC</span>
+          <button type="button" id="lyricTransBtn" class="lyric-trans-btn" aria-pressed="true" title="显示 / 隐藏歌词翻译">译文</button>
+          <button type="button" id="lyricJump" class="icon-btn" aria-label="回到当前歌词">◎</button>
+        </div>
+      </div>
+      <div class="lyric-scroll" id="lyricScroll">
+        <div class="lyric-list" id="lyricList"><div class="lyric-empty">正在获取歌词…</div></div>
+      </div>
+      <div class="lyric-foot"><span id="lyricState">LRC · ONLINE</span><span>轻点歌词跳转 · 字级高亮</span></div>
+    </section>
+  </div>
+    </div>
+    <button class="detail-lyrics-open" id="detailLyricsOpen" type="button" aria-expanded="false" aria-controls="detailLyricsPanel">
+      <span>打开歌词</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M4 12h7M4 17h5"/><path d="M16 18V8l4-1"/><circle cx="14" cy="18" r="2"/></svg>
+    </button>
+  </div>
+</div>
+
+<div class="bm-modal" id="importModal" aria-hidden="true">
+  <div class="modal-scrim" data-close-modal="import"></div>
+  <div class="modal-card import-card" role="dialog" aria-modal="true" aria-labelledby="importTitle">
+    <button class="modal-close" type="button" data-close-modal="import" aria-label="关闭">×</button>
+    <span class="modal-kicker">IMPORT A PLAYLIST</span>
+    <h2 id="importTitle">把歌单搬进来</h2>
+    <p class="modal-lead">粘贴公开歌单分享链接或歌单 ID。解析完成后会加入「我的歌单」，不会修改原平台数据。</p>
+    <div class="platform-tabs" role="tablist" aria-label="选择音乐平台">
+      <button type="button" data-platform="netease" class="is-on" role="tab" aria-selected="true"><i class="p-dot"></i>网易云音乐</button>
+      <button type="button" data-platform="tencent" role="tab" aria-selected="false"><i class="p-dot"></i>QQ 音乐</button>
+      <button type="button" data-platform="kugou" role="tab" aria-selected="false"><i class="p-dot"></i>酷狗音乐</button>
+    </div>
+    <label class="field-label" for="playlistUrl" id="playlistLabel">歌单链接 / ID</label>
+    <div class="url-field" id="playlistField">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a4 4 0 0 0 5.7 0l2.3-2.3a4 4 0 1 0-5.7-5.7L11 6.3"/><path d="M14 11a4 4 0 0 0-5.7 0L6 13.3a4 4 0 1 0 5.7 5.7l1.3-1.3"/></svg>
+      <input id="playlistUrl" type="text" placeholder="https://music.163.com/#/playlist?id=…" autocomplete="off">
+      <button id="importSubmit" type="button">解析并导入</button>
+    </div>
+    <div class="kg-code-note" id="kgCodeNote" hidden>
+      <span class="kg-code-badge">酷狗码</span>
+      <div><b>粘贴酷狗码，或酷狗分享链接</b><small>支持 <em>t.kugou.com/…</em> 分享链接、<em>id_123456</em>、纯数字歌单 ID。酷狗码有时效性，失效后请重新复制。</small></div>
+    </div>
+    <div class="import-example" id="importExample">示例：https://music.163.com/#/playlist?id=3778678</div>
+    <div class="import-status" id="importStatus" role="status" aria-live="polite"></div>
+    <div class="import-recent">
+      <div class="recent-cap"><span>RECENT IMPORTS</span><b id="recentCount">0</b></div>
+      <div id="importRecent" class="recent-list"><span class="muted">导入后会出现在这里</span></div>
+    </div>
+    <div class="modal-note"><b>小提示</b><span>仅支持公开歌单；私密歌单、付费专辑和部分版权曲目可能无法播放。歌单解析由公开接口提供，版权归原平台所有。</span></div>
+  </div>
+</div>
+
+<div class="bm-modal" id="lxModal" aria-hidden="true">
+  <div class="modal-scrim" data-close-modal="lx"></div>
+  <div class="modal-card lx-card" role="dialog" aria-modal="true" aria-labelledby="lxTitle">
+    <button class="modal-close" type="button" data-close-modal="lx" aria-label="关闭">×</button>
+    <span class="modal-kicker">LX MUSIC · SOURCE DESK</span>
+    <h2 id="lxTitle">落雪音源台</h2>
+    <p class="modal-lead">两条线：连接本机 LX Music 的开放 API；或导入社区音源脚本，作为在线播放的备用来源。</p>
+    <div class="lx-grid">
+      <section class="lx-panel">
+        <div class="panel-cap"><span>01</span><div><b>本机 LX Music API</b><small>LOCAL OPEN API</small></div></div>
+        <label class="field-label" for="lxBase">API 地址</label>
+        <div class="lx-field"><input id="lxBase" type="url" placeholder="http://127.0.0.1:23330"><button id="lxTest" type="button">测试连接</button></div>
+        <div class="lx-status" id="lxStatus"><i></i><span>尚未检测。请在 LX Music 设置中开启「开放 API」。</span></div>
+        <div class="lx-actions">
+          <button type="button" id="lxSync">读取播放状态</button>
+          <button type="button" id="lxOpen">打开 LX 官网 ↗</button>
+        </div>
+        <p class="panel-note">浏览器可能拦截 HTTPS 页面访问本机 HTTP 服务；若失败，可在桌面端放行或使用本机地址直接打开本站。</p>
+      </section>
+      <section class="lx-panel">
+        <div class="panel-cap"><span>02</span><div><b>导入落雪音源</b><small>CUSTOM SOURCE SCRIPT</small></div></div>
+        <label class="field-label" for="lxSourceUrl">音源脚本地址</label>
+        <div class="lx-field"><input id="lxSourceUrl" type="url" placeholder="https://…/latest.js"><button id="lxImportUrl" type="button">导入</button></div>
+        <div class="quick-source">
+          <button type="button" data-lx-url="https://raw.githubusercontent.com/pdone/lx-music-source/main/sixyin/latest.js">六音</button>
+          <button type="button" data-lx-url="https://raw.githubusercontent.com/pdone/lx-music-source/main/flower/latest.js">Flower</button>
+          <button type="button" data-lx-url="https://raw.githubusercontent.com/pdone/lx-music-source/main/huibq/latest.js">Huibq</button>
+          <button type="button" data-lx-url="https://raw.githubusercontent.com/pdone/lx-music-source/main/juhe/latest.js">JuheApi</button>
+        </div>
+        <label class="file-drop" for="lxFile"><input id="lxFile" type="file" accept=".js,text/javascript"><span>＋</span><b>选择本地 .js 音源</b><small>或把文件拖进来</small></label>
+        <div class="lx-source-list" id="lxSourceList"><span class="muted">还没有导入音源</span></div>
+        <p class="panel-note safe-note"><b>安全说明</b> 网页只读取脚本头部声明（名称 / 作者 / 版本 / 主页），不在浏览器里执行第三方脚本。实际播放由 LX 客户端或已配置的在线接口完成。</p>
+      </section>
+    </div>
+    <div class="modal-note"><b>关于落雪</b><span>LX Music 本身不内置音源。社区音源由第三方维护，可能随时失效；请从可信来源获取，仅用于个人学习与测试。</span></div>
+  </div>
+</div>
+
+<div class="bm-modal" id="syncModal" aria-hidden="true">
+  <div class="modal-scrim" data-close-modal="sync"></div>
+  <div class="modal-card sync-card" role="dialog" aria-modal="true" aria-labelledby="syncTitle">
+    <button class="modal-close" type="button" data-close-modal="sync" aria-label="关闭">×</button>
+    <span class="modal-kicker">SOURCE SYNC · DEVICE ONLY</span>
+    <h2 id="syncTitle">同步音源设置</h2>
+    <p class="modal-lead">只同步这台设备上的播放器配置：音源列表、导入歌单与播放偏好。不连接官方网站，也不需要登录账号。</p>
+    <div class="sync-grid">
+      <section class="sync-panel">
+        <span class="panel-cap"><b>自动同步</b><i>LOCAL SYNC</i></span>
+        <label class="sync-toggle"><input id="syncEnabled" type="checkbox" checked><span class="toggle-dot"></span><b>启用本机音源同步</b><small>切换设备时，优先沿用本机保存的音源与播放偏好。</small></label>
+      </section>
+      <section class="sync-panel">
+        <span class="panel-cap"><b>同步内容</b><i>WHAT TO KEEP</i></span>
+        <label class="sync-check"><input id="syncScopeSources" type="checkbox" checked><b>落雪音源列表</b><small>已导入脚本的名称、地址与启用状态</small></label>
+        <label class="sync-check"><input id="syncScopePlaylists" type="checkbox" checked><b>我的歌单</b><small>已导入歌单的标题、封面与歌曲列表</small></label>
+        <label class="sync-check"><input id="syncScopePrefs" type="checkbox" checked><b>播放偏好</b><small>音量、播放模式、上次播放进度</small></label>
+      </section>
+    </div>
+    <div class="sync-actions">
+      <button class="sync-btn primary" type="button" id="syncExport">导出同步配置</button>
+      <label class="sync-btn" for="syncFile">导入配置<input id="syncFile" type="file" accept=".json,application/json"></label>
+      <button class="sync-btn" type="button" id="syncReset">恢复默认</button>
+    </div>
+    <div class="import-status" id="syncStatus" role="status" aria-live="polite"></div>
+    <div class="modal-note"><b>本地优先</b><span>配置写入浏览器 localStorage，不会上传到官网账号或第三方服务器。清理浏览器数据会被一并清除。</span></div>
+  </div>
+</div>
+
+<div class="bm-toast" id="toast" role="status" aria-live="polite"><i></i><span id="toastText">已就绪</span></div>
+
+<script src="/burger-music/assets/burger-music.js?v=bm22-1" defer></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
