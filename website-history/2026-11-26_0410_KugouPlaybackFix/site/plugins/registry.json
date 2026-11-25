@@ -1,0 +1,131 @@
+{
+  "schema": "burger-plugin-store/v1",
+  "updated": 1795406876369,
+  "plugins": [
+    {
+      "id": "bcp.hamburgerwow.focus-note",
+      "name": "专注便签",
+      "version": "1.0.0",
+      "developer": "Hamburgerwow",
+      "target": "both",
+      "minApp": "0.40.31",
+      "maxApp": "0.40.99",
+      "apiVersion": 1,
+      "memoryMB": 3,
+      "category": "工具",
+      "description": "在插件中心放一张可保存的专注便签，用来记下当前要处理的事情，重启后仍会保留。",
+      "icon": "📝",
+      "download": "plugins/bcp.hamburgerwow.focus-note-1.0.0.bcp.json",
+      "sha256": "c188b1298e724a9b15c205f783fffe962ad5fe2590878ea9989683dfab8f60d5",
+      "updated": 1795368776646,
+      "rating": 0,
+      "ratingCount": 0,
+      "tags": [
+        "便签",
+        "专注",
+        "工具"
+      ]
+    },
+    {
+      "id": "bcp.hamburgerwow.hello",
+      "name": "快捷打招呼",
+      "version": "1.0.0",
+      "developer": "Hamburgerwow",
+      "target": "both",
+      "minApp": "0.40.31",
+      "maxApp": "0.40.99",
+      "apiVersion": 1,
+      "memoryMB": 4,
+      "category": "聊天增强",
+      "description": "在聊天页顶部加一个「打招呼」按钮，一键发送预设问候语，省去重复输入。",
+      "icon": "👋",
+      "download": "plugins/bcp.hamburgerwow.hello-1.0.0.bcp.json",
+      "sha256": "45d94c0afd10b49a6894269e1432a50cbe3f0b96099197939606c8a60fe4f33b",
+      "updated": 1795368776650,
+      "rating": 0,
+      "ratingCount": 0,
+      "tags": [
+        "快捷",
+        "聊天",
+        "问候"
+      ]
+    },
+    {
+      "id": "bcp.hamburgerwow.media-tip",
+      "name": "图片发送助手",
+      "version": "1.0.0",
+      "developer": "Hamburgerwow",
+      "target": "both",
+      "minApp": "0.40.31",
+      "maxApp": "0.40.99",
+      "apiVersion": 1,
+      "memoryMB": 2,
+      "category": "媒体",
+      "description": "在输入栏加一个图片快捷按钮，点一下提示如何从「图片/视频」入口选择并发送手机里的图片。",
+      "icon": "🖼️",
+      "download": "plugins/bcp.hamburgerwow.media-tip-1.0.0.bcp.json",
+      "sha256": "b0329f9584489a510ffab415f6f634a9233d35cc0f51611aa9582b177cfa7bfb",
+      "updated": 1795368776651,
+      "rating": 0,
+      "ratingCount": 0,
+      "tags": [
+        "图片",
+        "媒体",
+        "快捷"
+      ]
+    },
+    {
+      "id": "bcp.wow.new-plugin",
+      "name": "语音助手",
+      "version": "1.0.0",
+      "developer": "汉堡wow",
+      "target": "both",
+      "minApp": "0.40.0",
+      "maxApp": "0.40.99",
+      "apiVersion": 1,
+      "memoryMB": 8,
+      "category": "聊天增强",
+      "description": "一个简易的语音助手插件，支持在聊天窗口发送语音消息，并可在设置面板中配置语音合成参数。",
+      "icon": "🧩",
+      "download": "plugins/bcp.wow.new-plugin-1.0.0.bcp.json",
+      "sha256": "892eb664c9ff10465b5989362e109d51b09de0637fc6fa89330390f02f5efb1e",
+      "updated": 1795406876369,
+      "rating": 0,
+      "ratingCount": 0,
+      "tags": [
+        "语音",
+        "聊天",
+        "助手"
+      ]
+    },
+    {
+      "id": "bcp.wow.voiceassistant",
+      "name": "语音助手",
+      "version": "1.0.0",
+      "developer": "汉堡wow",
+      "target": "both",
+      "minApp": "0.40.0",
+      "maxApp": "0.40.99",
+      "apiVersion": 1,
+      "memoryMB": 16,
+      "category": "聊天增强",
+      "description": "本插件提供语音输入功能，用户可通过点击顶部或输入栏按钮录制语音，插件将语音转为文字后发送到聊天窗口。支持设置录音时长、语言识别等参数，提升聊天体验。",
+      "icon": "🧩",
+      "download": "plugins/bcp.wow.voiceassistant-1.0.0.bcp.json",
+      "sha256": "3ccdc3dae5e279ba79ebb68305c971487b1613e7058cf79d609598891b208153",
+      "updated": 1795406876369,
+      "rating": 0,
+      "ratingCount": 0,
+      "tags": []
+    }
+  ],
+  "weekly": {
+    "week": "2026-W48",
+    "top": [
+      "bcp.hamburgerwow.hello",
+      "bcp.hamburgerwow.focus-note",
+      "bcp.hamburgerwow.media-tip"
+    ],
+    "updated": 1795372735309
+  }
+}
