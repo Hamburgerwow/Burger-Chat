@@ -1,0 +1,46 @@
+{
+  "schema": "burger-chat-plugin/v1",
+  "id": "bcp.wow.new-plugin",
+  "name": "语音助手",
+  "version": "1.0.0",
+  "developer": "汉堡wow",
+  "target": "both",
+  "minApp": "0.40.0",
+  "maxApp": "0.40.99",
+  "apiVersion": 1,
+  "memoryMB": 8,
+  "category": "聊天增强",
+  "description": "一个简易的语音助手插件，支持在聊天窗口发送语音消息，并可在设置面板中配置语音合成参数。",
+  "icon": "🧩",
+  "tags": [
+    "语音",
+    "聊天",
+    "助手"
+  ],
+  "ui": [
+    {
+      "id": "btn-voice",
+      "slot": "compose",
+      "label": "语音",
+      "icon": "✨",
+      "order": 1
+    },
+    {
+      "id": "btn-voice-input",
+      "slot": "compose",
+      "label": "语音输入",
+      "icon": "✨",
+      "order": 2
+    },
+    {
+      "id": "settings-voice",
+      "slot": "settings",
+      "label": "语音设置",
+      "icon": "✨",
+      "order": 3
+    }
+  ],
+  "permissions": [],
+  "main": "api.ui.onButton('btn-voice', () => {\n  api.chat.sendText('这是语音消息示例');\n  api.toast('已发送语音消息');\n});\napi.ui.onButton('btn-voice-input', () => {\n  api.toast('语音输入功能尚未实现');\n});\napi.ui.addSettingsPanel({\n  title: '语音设置',\n  html: '<div style=\"font-size:12px;color:#8a90a0;padding:8px 0\">此处可配置语音合成参数</div>'\n});",
+  "homepage": ""
+}
