@@ -1,0 +1,826 @@
+{
+  "ok": true,
+  "app": "burger-pub",
+  "ver": "1.0",
+  "proto": "http+tcp",
+  "port": 54970,
+  "latest": {
+    "id": "gh-v0.40.53",
+    "ver": "0.40.53",
+    "notes": "0.40.53 更新：\n· 手机网页横屏保持手机布局，不再切成电脑网页\n· 电脑端支持把文件拖进窗口，背景模糊并弹出「发送到此设备」\n· 手机端文件改用系统下载，长按文件消息可保存到本地\n· 开发者中心新增动态壁纸横屏/竖屏上传与背景音乐上传\n· Windows EXE 0.40.53.0；Android 0.40.54 / versionCode 83（修复版本号、更新检测与 Android 14+ 安装）\n· Android 安装包已更新到 0.40.55 / versionCode 84",
+    "ts": 1795512437056,
+    "force": false,
+    "dl": true,
+    "apk": {
+      "name": "Burger.Chat-Android.apk",
+      "size": 1988019,
+      "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+      "ver": "0.40.55",
+      "notes": "0.40.55 手机端修复：\n· 登录、找回密码、连接账号登录的邮箱占位符按语言本地化\n· 修复设置页登录区域下方的英文占位提示\n· 官网歌词、小卡与子站语言同步更新\n· 电脑端保持 0.40.53",
+      "ts": 1795554921940,
+      "force": false,
+      "sha256": "EBBA9F224197A43FCA5AEB5554CFC241DB1ED23C37188D1434E135D6099B84A2"
+    },
+    "exe": {
+      "name": "Burger.Chat.exe",
+      "size": 89802240,
+      "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/latest/download/Burger.Chat.exe",
+      "ver": "0.40.53",
+      "ts": 1795512437056
+    },
+    "pc": "",
+    "mobile": {
+      "name": "Burger.Chat-Android.apk",
+      "size": 1988019,
+      "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+      "ver": "0.40.55",
+      "notes": "0.40.55 手机端修复：\n· 登录、找回密码、连接账号登录的邮箱占位符按语言本地化\n· 修复设置页登录区域下方的英文占位提示\n· 官网歌词、小卡与子站语言同步更新\n· 电脑端保持 0.40.53",
+      "ts": 1795554921940,
+      "force": false,
+      "sha256": "EBBA9F224197A43FCA5AEB5554CFC241DB1ED23C37188D1434E135D6099B84A2"
+    }
+  },
+  "versions": [
+    {
+      "id": "gh-v0.40.55-mobile",
+      "ver": "0.40.55",
+      "notes": "0.40.55 手机端修复：\n· 登录、找回密码、连接账号登录的邮箱占位符按语言本地化\n· 修复设置页登录区域下方的英文占位提示\n· 官网歌词、小卡与子站语言同步更新\n· 电脑端保持 0.40.53",
+      "ts": 1795554921940,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "name": "Burger.Chat-Android.apk",
+        "size": 1988019,
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "ver": "0.40.55",
+        "notes": "0.40.55 手机端修复：\n· 登录、找回密码、连接账号登录的邮箱占位符按语言本地化\n· 修复设置页登录区域下方的英文占位提示\n· 官网歌词、小卡与子站语言同步更新\n· 电脑端保持 0.40.53",
+        "ts": 1795554921940,
+        "force": false,
+        "sha256": "EBBA9F224197A43FCA5AEB5554CFC241DB1ED23C37188D1434E135D6099B84A2"
+      },
+      "mobile": {
+        "name": "Burger.Chat-Android.apk",
+        "size": 1988019,
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "ver": "0.40.55",
+        "notes": "0.40.55 手机端修复：\n· 登录、找回密码、连接账号登录的邮箱占位符按语言本地化\n· 修复设置页登录区域下方的英文占位提示\n· 官网歌词、小卡与子站语言同步更新\n· 电脑端保持 0.40.53",
+        "ts": 1795554921940,
+        "force": false,
+        "sha256": "EBBA9F224197A43FCA5AEB5554CFC241DB1ED23C37188D1434E135D6099B84A2"
+      },
+      "pc": "",
+      "exe": null
+    },
+    {
+      "id": "gh-v0.40.54-mobile",
+      "ver": "0.40.54",
+      "notes": "0.40.54 手机端修复：\n· 设置页与关于页版本号改为 0.40.54（versionCode 83），与实际安装包一致\n· 更新检测按手机端版本比较，修复安装后仍提示更新的问题\n· 补齐 minSdk 23 / targetSdk 33，修复 Android 14+ 因 targetSdk 过低拒绝安装的问题\n· 电脑端保持 0.40.53",
+      "ts": 1795532636135,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "name": "Burger.Chat-Android.apk",
+        "size": 2004403,
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "ver": "0.40.54",
+        "notes": "0.40.54 手机端修复：\n· 设置页与关于页版本号改为 0.40.54（versionCode 83），与实际安装包一致\n· 更新检测按手机端版本比较，修复安装后仍提示更新的问题\n· 补齐 minSdk 23 / targetSdk 33，修复 Android 14+ 因 targetSdk 过低拒绝安装的问题\n· 电脑端保持 0.40.53",
+        "ts": 1795532636135,
+        "force": false,
+        "sha256": "9DAE661DEF329827BC3A0EAF80DD44FD9792DA1A61F5C5B37048B8ED19D8E67F"
+      },
+      "mobile": {
+        "name": "Burger.Chat-Android.apk",
+        "size": 2004403,
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "ver": "0.40.54",
+        "notes": "0.40.54 手机端修复：\n· 设置页与关于页版本号改为 0.40.54（versionCode 83），与实际安装包一致\n· 更新检测按手机端版本比较，修复安装后仍提示更新的问题\n· 补齐 minSdk 23 / targetSdk 33，修复 Android 14+ 因 targetSdk 过低拒绝安装的问题\n· 电脑端保持 0.40.53",
+        "ts": 1795532636135,
+        "force": false,
+        "sha256": "9DAE661DEF329827BC3A0EAF80DD44FD9792DA1A61F5C5B37048B8ED19D8E67F"
+      },
+      "pc": "",
+      "exe": null
+    },
+    {
+      "id": "gh-v0.40.53",
+      "ver": "0.40.53",
+      "notes": "0.40.53 更新：\n· 手机网页横屏保持手机布局，不再切成电脑网页\n· 电脑端支持把文件拖进窗口，背景模糊并弹出「发送到此设备」\n· 手机端文件改用系统下载，长按文件消息可保存到本地\n· 开发者中心新增动态壁纸横屏/竖屏上传与背景音乐上传\n· Windows EXE 0.40.53.0；Android 0.40.54 / versionCode 83（修复版本号、更新检测与 Android 14+ 安装）",
+      "ts": 1795512437056,
+      "force": false,
+      "dl": true,
+      "apk": null,
+      "exe": {
+        "name": "Burger.Chat.exe",
+        "size": 89802240,
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/latest/download/Burger.Chat.exe",
+        "ver": "0.40.53",
+        "ts": 1795512437056
+      },
+      "pc": "",
+      "mobile": ""
+    },
+    {
+      "id": "gh-v0.40.52",
+      "ver": "0.40.52",
+      "notes": "0.40.52 更新：`n· 电脑端图片和视频消息右键新增「保存」「另存为」，设置 → 存储同步 可设置并打开默认存储目录`n· 官网进入时右下角显示背景音乐小弹窗，包含歌曲名、上传者和播放/暂停`n· 官网支持登录用户上传 MP3 背景音乐，保存到 GitHub，播放时显示上传者与音乐名`n· 上传入口在 Burger Chat → 设置 → 网站音乐，需要注册/登录邮箱账号并配置 GitHub 令牌`n· Windows EXE 0.40.52.0；Android 0.40.51 / versionCode 81",
+      "ts": 1795490240375,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "name": "Burger Chat-安卓.apk",
+        "size": 2078167,
+        "sha256": "6629E63BF0CCFAB305D8ACCF0ACA3AB940DCB7558FA2001B170D413E91498D0F",
+        "ver": "0.40.51",
+        "notes": "0.40.51 手机端更新：\n· 修复账号 / 登录入口下方与关于页底部的英文设备信息串，设置页不再显示原始型号和版本信息\n· Android 0.40.51 / versionCode 81；电脑端保持 0.40.52",
+        "force": false
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.52/Burger.Chat.exe",
+        "name": "Burger Chat.exe",
+        "size": 93245952,
+        "sha256": "15BE2CB65879B6C6D7C93B976FC9A295C344861BE9B98C2DCDB7FD089DF7F33D",
+        "ver": "0.40.52",
+        "notes": "0.40.52 更新：`n· 电脑端图片和视频消息右键新增「保存」「另存为」，设置 → 存储同步 可设置并打开默认存储目录`n· 官网进入时右下角显示背景音乐小弹窗，包含歌曲名、上传者和播放/暂停`n· 官网支持登录用户上传 MP3 背景音乐，保存到 GitHub，播放时显示上传者与音乐名`n· 上传入口在 Burger Chat → 设置 → 网站音乐，需要注册/登录邮箱账号并配置 GitHub 令牌`n· Windows EXE 0.40.52.0；Android 0.40.51 / versionCode 81",
+        "force": false
+      },
+      "pc": {
+        "ver": "0.40.52",
+        "notes": "0.40.52 更新：`n· 电脑端图片和视频消息右键新增「保存」「另存为」，设置 → 存储同步 可设置并打开默认存储目录`n· 官网进入时右下角显示背景音乐小弹窗，包含歌曲名、上传者和播放/暂停`n· 官网支持登录用户上传 MP3 背景音乐，保存到 GitHub，播放时显示上传者与音乐名`n· 上传入口在 Burger Chat → 设置 → 网站音乐，需要注册/登录邮箱账号并配置 GitHub 令牌`n· Windows EXE 0.40.52.0；Android 0.40.51 / versionCode 81",
+        "ts": 1795490240375,
+        "force": false,
+        "exe": {
+          "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.52/Burger.Chat.exe",
+          "name": "Burger Chat.exe",
+          "size": 93245952,
+          "sha256": "15BE2CB65879B6C6D7C93B976FC9A295C344861BE9B98C2DCDB7FD089DF7F33D",
+          "ver": "0.40.52",
+          "notes": "0.40.52 更新：`n· 电脑端图片和视频消息右键新增「保存」「另存为」，设置 → 存储同步 可设置并打开默认存储目录`n· 官网进入时右下角显示背景音乐小弹窗，包含歌曲名、上传者和播放/暂停`n· 官网支持登录用户上传 MP3 背景音乐，保存到 GitHub，播放时显示上传者与音乐名`n· 上传入口在 Burger Chat → 设置 → 网站音乐，需要注册/登录邮箱账号并配置 GitHub 令牌`n· Windows EXE 0.40.52.0；Android 0.40.51 / versionCode 81",
+          "force": false
+        }
+      },
+      "mobile": {
+        "ver": "0.40.51",
+        "notes": "0.40.51 手机端更新：\n· 修复账号 / 登录入口下方与关于页底部的英文设备信息串，设置页不再显示原始型号和版本信息\n· Android 0.40.51 / versionCode 81；电脑端保持 0.40.52",
+        "ts": 1795490240375,
+        "force": false,
+        "apk": {
+          "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.51/Burger.Chat-Android.apk",
+          "name": "Burger Chat-安卓.apk",
+          "size": 2078167,
+          "sha256": "6629E63BF0CCFAB305D8ACCF0ACA3AB940DCB7558FA2001B170D413E91498D0F",
+          "ver": "0.40.51",
+          "notes": "0.40.51 手机端更新：\n· 修复账号 / 登录入口下方与关于页底部的英文设备信息串，设置页不再显示原始型号和版本信息\n· Android 0.40.51 / versionCode 81；电脑端保持 0.40.52",
+          "force": false
+        },
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55"
+      }
+    },
+    {
+      "id": "gh-v0.40.51",
+      "ver": "0.40.51",
+      "notes": "0.40.51 更新：\n· 软件内标题栏、左侧栏和手机配对引导统一换成猫耳少女图标\n· Windows 运行窗口、任务栏和 Alt+Tab 图标改为 Burger Chat 自己的图标，不再显示 PowerShell 默认图标\n· 宿主 window-host 同步携带 app.ico，整合包和电脑端源码一起更新\n· Windows EXE 0.40.51.0；Android 0.40.51 / versionCode 81",
+      "ts": 1795486046460,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "name": "Burger Chat-安卓.apk",
+        "size": 2078167,
+        "sha256": "6629E63BF0CCFAB305D8ACCF0ACA3AB940DCB7558FA2001B170D413E91498D0F",
+        "ver": "0.40.51",
+        "notes": "0.40.51 手机端更新：\n· 修复账号 / 登录入口下方与关于页底部的英文设备信息串，设置页不再显示原始型号和版本信息\n· Android 0.40.51 / versionCode 81；电脑端保持 0.40.52",
+        "force": false
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.51/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 93215744,
+        "sha256": "060DE0223AD0D0D02E095FEB7BADFDAB9112BCE2E33A21BF22875017AEA2C0D1",
+        "ver": "0.40.51",
+        "notes": "0.40.51 更新：\n· 软件内标题栏、左侧栏和手机配对引导统一换成猫耳少女图标\n· Windows 运行窗口、任务栏和 Alt+Tab 图标改为 Burger Chat 自己的图标，不再显示 PowerShell 默认图标\n· 宿主 window-host 同步携带 app.ico，整合包和电脑端源码一起更新\n· Windows EXE 0.40.51.0；Android 0.40.51 / versionCode 81",
+        "force": false
+      },
+      "pc": {
+        "ver": "0.40.51",
+        "notes": "0.40.51 更新：\n· 软件内标题栏、左侧栏和手机配对引导统一换成猫耳少女图标\n· Windows 运行窗口、任务栏和 Alt+Tab 图标改为 Burger Chat 自己的图标，不再显示 PowerShell 默认图标\n· 宿主 window-host 同步携带 app.ico，整合包和电脑端源码一起更新\n· Windows EXE 0.40.51.0；Android 0.40.51 / versionCode 81",
+        "ts": 1795486046460,
+        "force": false,
+        "exe": {
+          "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.51/Burger.Chat-Windows.exe",
+          "name": "Burger Chat.exe",
+          "size": 93215744,
+          "sha256": "060DE0223AD0D0D02E095FEB7BADFDAB9112BCE2E33A21BF22875017AEA2C0D1",
+          "ver": "0.40.51",
+          "notes": "0.40.51 更新：\n· 软件内标题栏、左侧栏和手机配对引导统一换成猫耳少女图标\n· Windows 运行窗口、任务栏和 Alt+Tab 图标改为 Burger Chat 自己的图标，不再显示 PowerShell 默认图标\n· 宿主 window-host 同步携带 app.ico，整合包和电脑端源码一起更新\n· Windows EXE 0.40.51.0；Android 0.40.51 / versionCode 81",
+          "force": false
+        }
+      },
+      "mobile": {
+        "ver": "0.40.51",
+        "notes": "0.40.51 手机端更新：\n· 修复账号 / 登录入口下方与关于页底部的英文设备信息串，设置页不再显示原始型号和版本信息\n· Android 0.40.51 / versionCode 81；电脑端保持 0.40.52",
+        "ts": 1795486046460,
+        "force": false,
+        "apk": {
+          "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.51/Burger.Chat-Android.apk",
+          "name": "Burger Chat-安卓.apk",
+          "size": 2078167,
+          "sha256": "6629E63BF0CCFAB305D8ACCF0ACA3AB940DCB7558FA2001B170D413E91498D0F",
+          "ver": "0.40.51",
+          "notes": "0.40.51 手机端更新：\n· 修复账号 / 登录入口下方与关于页底部的英文设备信息串，设置页不再显示原始型号和版本信息\n· Android 0.40.51 / versionCode 81；电脑端保持 0.40.52",
+          "force": false
+        },
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55"
+      }
+    },
+    {
+      "id": "gh-v0.40.50",
+      "ver": "0.40.50",
+      "notes": "0.40.50 更新：\n· 电脑端、安卓端与官网统一换上新的猫耳少女图标\n· 官网首屏直接播放动态视频，移除模糊、滤镜和明暗渐变叠层\n· 鼠标静止 60 秒后自动隐藏全部界面，只显示动态背景；移动鼠标立即恢复\n· 移除「竖屏，横屏，都随你」壁纸专区及导航入口\n· 版本升到 0.40.50，Windows EXE 0.40.50.0，Android versionCode 80",
+      "ts": 1795482529349,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "name": "Burger Chat-安卓.apk",
+        "size": 2082227,
+        "sha256": "152ACF1E78433F672C0B41869D3A18DC566897CD1FBF3C09DE5ABA482B140B37",
+        "ver": "0.40.50",
+        "notes": "0.40.50 更新：\n· 电脑端、安卓端与官网统一换上新的猫耳少女图标\n· 官网首屏直接播放动态视频，移除模糊、滤镜和明暗渐变叠层\n· 鼠标静止 60 秒后自动隐藏全部界面，只显示动态背景；移动鼠标立即恢复\n· 移除「竖屏，横屏，都随你」壁纸专区及导航入口\n· 版本升到 0.40.50，Windows EXE 0.40.50.0，Android versionCode 80",
+        "force": false
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.50/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 93175296,
+        "sha256": "C832C0133F5C9AEBD9C5476BCBF1E73B7C39B63085CE518664BF48C5B65E635A",
+        "ver": "0.40.50",
+        "notes": "0.40.50 更新：\n· 电脑端、安卓端与官网统一换上新的猫耳少女图标\n· 官网首屏直接播放动态视频，移除模糊、滤镜和明暗渐变叠层\n· 鼠标静止 60 秒后自动隐藏全部界面，只显示动态背景；移动鼠标立即恢复\n· 移除「竖屏，横屏，都随你」壁纸专区及导航入口\n· 版本升到 0.40.50，Windows EXE 0.40.50.0，Android versionCode 80",
+        "force": false
+      },
+      "pc": {
+        "ver": "0.40.50",
+        "notes": "0.40.50 更新：\n· 电脑端、安卓端与官网统一换上新的猫耳少女图标\n· 官网首屏直接播放动态视频，移除模糊、滤镜和明暗渐变叠层\n· 鼠标静止 60 秒后自动隐藏全部界面，只显示动态背景；移动鼠标立即恢复\n· 移除「竖屏，横屏，都随你」壁纸专区及导航入口\n· 版本升到 0.40.50，Windows EXE 0.40.50.0，Android versionCode 80",
+        "ts": 1795482529349,
+        "force": false,
+        "exe": {
+          "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.50/Burger.Chat-Windows.exe",
+          "name": "Burger Chat.exe",
+          "size": 93175296,
+          "sha256": "C832C0133F5C9AEBD9C5476BCBF1E73B7C39B63085CE518664BF48C5B65E635A",
+          "ver": "0.40.50",
+          "notes": "0.40.50 更新：\n· 电脑端、安卓端与官网统一换上新的猫耳少女图标\n· 官网首屏直接播放动态视频，移除模糊、滤镜和明暗渐变叠层\n· 鼠标静止 60 秒后自动隐藏全部界面，只显示动态背景；移动鼠标立即恢复\n· 移除「竖屏，横屏，都随你」壁纸专区及导航入口\n· 版本升到 0.40.50，Windows EXE 0.40.50.0，Android versionCode 80",
+          "force": false
+        }
+      },
+      "mobile": {
+        "ver": "0.40.50",
+        "notes": "0.40.50 更新：\n· 电脑端、安卓端与官网统一换上新的猫耳少女图标\n· 官网首屏直接播放动态视频，移除模糊、滤镜和明暗渐变叠层\n· 鼠标静止 60 秒后自动隐藏全部界面，只显示动态背景；移动鼠标立即恢复\n· 移除「竖屏，横屏，都随你」壁纸专区及导航入口\n· 版本升到 0.40.50，Windows EXE 0.40.50.0，Android versionCode 80",
+        "ts": 1795482529349,
+        "force": false,
+        "apk": {
+          "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.50/Burger.Chat-Android.apk",
+          "name": "Burger Chat-安卓.apk",
+          "size": 2082227,
+          "sha256": "152ACF1E78433F672C0B41869D3A18DC566897CD1FBF3C09DE5ABA482B140B37",
+          "ver": "0.40.50",
+          "notes": "0.40.50 更新：\n· 电脑端、安卓端与官网统一换上新的猫耳少女图标\n· 官网首屏直接播放动态视频，移除模糊、滤镜和明暗渐变叠层\n· 鼠标静止 60 秒后自动隐藏全部界面，只显示动态背景；移动鼠标立即恢复\n· 移除「竖屏，横屏，都随你」壁纸专区及导航入口\n· 版本升到 0.40.50，Windows EXE 0.40.50.0，Android versionCode 80",
+          "force": false
+        },
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55"
+      }
+    },
+    {
+      "id": "gh-v0.40.49",
+      "ver": "0.40.49",
+      "notes": "0.40.49 更新：\n· 修复 Windows 客户端整窗四周约 6px 的深色/黑边，页面现在铺满客户区\n· 四边、四角仍可拖动缩放，最大化后自动贴合工作区\n· 窗口宿主改为 WS_THICKFRAME + 页面内 6px 透明命中条，保持无边框外观\n· 版本升到 0.40.49，电脑端 EXE 0.40.49.0；安卓沿用 0.40.48 / versionCode 79",
+      "ts": 1795480886719,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1160300,
+        "sha256": "50737EC5D2FF77260DA04AF0EA422F30E69448FAF808FFA8441A5622618F71C0",
+        "ver": "0.40.48",
+        "notes": "0.40.48 更新：\n· 修复无边框窗口不能拉伸：四周 6px 自绘命中边，四边和四角都能拖动缩放，最大化后自动收边不留黑条\n· 新增 Windows 窗口模糊调节：设置 → 外观与壁纸增加 0–40px 滑杆，标题栏和窗口浮层实时变化\n· 修复登录按钮点了没反应：进入账号页自动关掉欢迎遮罩，请求增加 15 秒超时，登录结束必释放按钮\n· 修复窗口拖动、最大化、还原后内容与边缘错位，WebView 重新贴合窗口\n· 版本升到 0.40.48，电脑端 EXE 0.40.48.0，安卓 versionCode 79",
+        "force": false
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.49/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 93174272,
+        "sha256": "CE142A24382F078E4B8085D76D0FB3945C05C72AE3A2D929DD390A5017667E27",
+        "ver": "0.40.49",
+        "notes": "0.40.49 更新：\n· 修复 Windows 客户端整窗四周约 6px 的深色/黑边，页面现在铺满客户区\n· 四边、四角仍可拖动缩放，最大化后自动贴合工作区\n· 窗口宿主改为 WS_THICKFRAME + 页面内 6px 透明命中条，保持无边框外观\n· 版本升到 0.40.49，电脑端 EXE 0.40.49.0；安卓沿用 0.40.48 / versionCode 79",
+        "force": false
+      },
+      "pc": {
+        "ver": "0.40.49",
+        "notes": "0.40.49 更新：\n· 修复 Windows 客户端整窗四周约 6px 的深色/黑边，页面现在铺满客户区\n· 四边、四角仍可拖动缩放，最大化后自动贴合工作区\n· 窗口宿主改为 WS_THICKFRAME + 页面内 6px 透明命中条，保持无边框外观\n· 版本升到 0.40.49，电脑端 EXE 0.40.49.0；安卓沿用 0.40.48 / versionCode 79",
+        "ts": 1795480886719,
+        "force": false,
+        "exe": {
+          "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.49/Burger.Chat-Windows.exe",
+          "name": "Burger Chat.exe",
+          "size": 93174272,
+          "sha256": "CE142A24382F078E4B8085D76D0FB3945C05C72AE3A2D929DD390A5017667E27",
+          "ver": "0.40.49",
+          "notes": "0.40.49 更新：\n· 修复 Windows 客户端整窗四周约 6px 的深色/黑边，页面现在铺满客户区\n· 四边、四角仍可拖动缩放，最大化后自动贴合工作区\n· 窗口宿主改为 WS_THICKFRAME + 页面内 6px 透明命中条，保持无边框外观\n· 版本升到 0.40.49，电脑端 EXE 0.40.49.0；安卓沿用 0.40.48 / versionCode 79",
+          "force": false
+        }
+      },
+      "mobile": {
+        "ver": "0.40.48",
+        "notes": "0.40.48 更新：\n· 修复无边框窗口不能拉伸：四周 6px 自绘命中边，四边和四角都能拖动缩放，最大化后自动收边不留黑条\n· 新增 Windows 窗口模糊调节：设置 → 外观与壁纸增加 0–40px 滑杆，标题栏和窗口浮层实时变化\n· 修复登录按钮点了没反应：进入账号页自动关掉欢迎遮罩，请求增加 15 秒超时，登录结束必释放按钮\n· 修复窗口拖动、最大化、还原后内容与边缘错位，WebView 重新贴合窗口\n· 版本升到 0.40.48，电脑端 EXE 0.40.48.0，安卓 versionCode 79",
+        "ts": 1795473488530,
+        "force": false,
+        "apk": {
+          "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.48/Burger.Chat-Android.apk",
+          "name": "Burger Chat-安卓.apk",
+          "size": 1160300,
+          "sha256": "50737EC5D2FF77260DA04AF0EA422F30E69448FAF808FFA8441A5622618F71C0",
+          "ver": "0.40.48",
+          "notes": "0.40.48 更新：\n· 修复无边框窗口不能拉伸：四周 6px 自绘命中边，四边和四角都能拖动缩放，最大化后自动收边不留黑条\n· 新增 Windows 窗口模糊调节：设置 → 外观与壁纸增加 0–40px 滑杆，标题栏和窗口浮层实时变化\n· 修复登录按钮点了没反应：进入账号页自动关掉欢迎遮罩，请求增加 15 秒超时，登录结束必释放按钮\n· 修复窗口拖动、最大化、还原后内容与边缘错位，WebView 重新贴合窗口\n· 版本升到 0.40.48，电脑端 EXE 0.40.48.0，安卓 versionCode 79",
+          "force": false
+        },
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55"
+      }
+    },
+    {
+      "id": "gh-v0.40.48",
+      "ver": "0.40.48",
+      "notes": "0.40.48 更新：\n· 修复无边框窗口不能拉伸：四周 6px 自绘命中边，四边和四角都能拖动缩放，最大化后自动收边不留黑条\n· 新增 Windows 窗口模糊调节：设置 → 外观与壁纸增加 0–40px 滑杆，标题栏和窗口浮层实时变化\n· 修复登录按钮点了没反应：进入账号页自动关掉欢迎遮罩，请求增加 15 秒超时，登录结束必释放按钮\n· 修复窗口拖动、最大化、还原后内容与边缘错位，WebView 重新贴合窗口\n· 版本升到 0.40.48，电脑端 EXE 0.40.48.0，安卓 versionCode 79",
+      "ts": 1795473488530,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1160300,
+        "sha256": "50737EC5D2FF77260DA04AF0EA422F30E69448FAF808FFA8441A5622618F71C0",
+        "ver": "0.40.48",
+        "notes": "0.40.48 更新：\n· 修复无边框窗口不能拉伸：四周 6px 自绘命中边，四边和四角都能拖动缩放，最大化后自动收边不留黑条\n· 新增 Windows 窗口模糊调节：设置 → 外观与壁纸增加 0–40px 滑杆，标题栏和窗口浮层实时变化\n· 修复登录按钮点了没反应：进入账号页自动关掉欢迎遮罩，请求增加 15 秒超时，登录结束必释放按钮\n· 修复窗口拖动、最大化、还原后内容与边缘错位，WebView 重新贴合窗口\n· 版本升到 0.40.48，电脑端 EXE 0.40.48.0，安卓 versionCode 79",
+        "force": false
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.48/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 93163008,
+        "sha256": "8AC447EA6A3869E03B8A74E0F5565782F0EA33CF7C41A6E62087C2D0EEFDCDD3",
+        "ver": "0.40.48",
+        "notes": "0.40.48 更新：\n· 修复无边框窗口不能拉伸：四周 6px 自绘命中边，四边和四角都能拖动缩放，最大化后自动收边不留黑条\n· 新增 Windows 窗口模糊调节：设置 → 外观与壁纸增加 0–40px 滑杆，标题栏和窗口浮层实时变化\n· 修复登录按钮点了没反应：进入账号页自动关掉欢迎遮罩，请求增加 15 秒超时，登录结束必释放按钮\n· 修复窗口拖动、最大化、还原后内容与边缘错位，WebView 重新贴合窗口\n· 版本升到 0.40.48，电脑端 EXE 0.40.48.0，安卓 versionCode 79",
+        "force": false
+      },
+      "pc": {
+        "ver": "0.40.48",
+        "notes": "0.40.48 更新：\n· 修复无边框窗口不能拉伸：四周 6px 自绘命中边，四边和四角都能拖动缩放，最大化后自动收边不留黑条\n· 新增 Windows 窗口模糊调节：设置 → 外观与壁纸增加 0–40px 滑杆，标题栏和窗口浮层实时变化\n· 修复登录按钮点了没反应：进入账号页自动关掉欢迎遮罩，请求增加 15 秒超时，登录结束必释放按钮\n· 修复窗口拖动、最大化、还原后内容与边缘错位，WebView 重新贴合窗口\n· 版本升到 0.40.48，电脑端 EXE 0.40.48.0，安卓 versionCode 79",
+        "ts": 1795473488530,
+        "force": false,
+        "exe": {
+          "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.48/Burger.Chat-Windows.exe",
+          "name": "Burger Chat.exe",
+          "size": 93163008,
+          "sha256": "8AC447EA6A3869E03B8A74E0F5565782F0EA33CF7C41A6E62087C2D0EEFDCDD3",
+          "ver": "0.40.48",
+          "notes": "0.40.48 更新：\n· 修复无边框窗口不能拉伸：四周 6px 自绘命中边，四边和四角都能拖动缩放，最大化后自动收边不留黑条\n· 新增 Windows 窗口模糊调节：设置 → 外观与壁纸增加 0–40px 滑杆，标题栏和窗口浮层实时变化\n· 修复登录按钮点了没反应：进入账号页自动关掉欢迎遮罩，请求增加 15 秒超时，登录结束必释放按钮\n· 修复窗口拖动、最大化、还原后内容与边缘错位，WebView 重新贴合窗口\n· 版本升到 0.40.48，电脑端 EXE 0.40.48.0，安卓 versionCode 79",
+          "force": false
+        }
+      },
+      "mobile": {
+        "ver": "0.40.48",
+        "notes": "0.40.48 更新：\n· 修复无边框窗口不能拉伸：四周 6px 自绘命中边，四边和四角都能拖动缩放，最大化后自动收边不留黑条\n· 新增 Windows 窗口模糊调节：设置 → 外观与壁纸增加 0–40px 滑杆，标题栏和窗口浮层实时变化\n· 修复登录按钮点了没反应：进入账号页自动关掉欢迎遮罩，请求增加 15 秒超时，登录结束必释放按钮\n· 修复窗口拖动、最大化、还原后内容与边缘错位，WebView 重新贴合窗口\n· 版本升到 0.40.48，电脑端 EXE 0.40.48.0，安卓 versionCode 79",
+        "ts": 1795473488530,
+        "force": false,
+        "apk": {
+          "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.48/Burger.Chat-Android.apk",
+          "name": "Burger Chat-安卓.apk",
+          "size": 1160300,
+          "sha256": "50737EC5D2FF77260DA04AF0EA422F30E69448FAF808FFA8441A5622618F71C0",
+          "ver": "0.40.48",
+          "notes": "0.40.48 更新：\n· 修复无边框窗口不能拉伸：四周 6px 自绘命中边，四边和四角都能拖动缩放，最大化后自动收边不留黑条\n· 新增 Windows 窗口模糊调节：设置 → 外观与壁纸增加 0–40px 滑杆，标题栏和窗口浮层实时变化\n· 修复登录按钮点了没反应：进入账号页自动关掉欢迎遮罩，请求增加 15 秒超时，登录结束必释放按钮\n· 修复窗口拖动、最大化、还原后内容与边缘错位，WebView 重新贴合窗口\n· 版本升到 0.40.48，电脑端 EXE 0.40.48.0，安卓 versionCode 79",
+          "force": false
+        },
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55"
+      }
+    },
+    {
+      "id": "gh-v0.40.47",
+      "ver": "0.40.47",
+      "notes": "0.40.47 更新：\n· 修复 Windows 窗口最大化时动态壁纸二次缩放：静态图、GIF、视频和网页壁纸在最大化、还原、拖动改变尺寸时直接按新窗口宽高重算\n· 移除 --wall-fluid 额外 transform 缩放与 260ms 延迟回落，最大化后四周不再露出模糊底衬\n· 继续沿用 0.40.46 全幅一体化磨砂窗口：44px 标题栏、1px 高光边、无深色外圈，不新增外围窗口\n· 版本升到 0.40.47，电脑端 EXE 0.40.47.0，安卓 versionCode 78",
+      "ts": 1795463624148,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1160300,
+        "sha256": "B26AF73FAA8C944F558CDDBA729505E6FE1B6BDF90EF0621D083D7271EF5C992",
+        "ver": "0.40.47",
+        "notes": "0.40.47 更新：\n· 修复 Windows 窗口最大化时动态壁纸二次缩放：静态图、GIF、视频和网页壁纸在最大化、还原、拖动改变尺寸时直接按新窗口宽高重算\n· 移除 --wall-fluid 额外 transform 缩放与 260ms 延迟回落，最大化后四周不再露出模糊底衬\n· 继续沿用 0.40.46 全幅一体化磨砂窗口：44px 标题栏、1px 高光边、无深色外圈，不新增外围窗口\n· 版本升到 0.40.47，电脑端 EXE 0.40.47.0，安卓 versionCode 78",
+        "ts": 1795463624148,
+        "force": false
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.47/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 93153280,
+        "sha256": "3CFC6E50DED407AC8180EC49360F9D2B3135EDBAA429AE4EC6AB3ABA1F9089A8",
+        "ver": "0.40.47",
+        "notes": "0.40.47 更新：\n· 修复 Windows 窗口最大化时动态壁纸二次缩放：静态图、GIF、视频和网页壁纸在最大化、还原、拖动改变尺寸时直接按新窗口宽高重算\n· 移除 --wall-fluid 额外 transform 缩放与 260ms 延迟回落，最大化后四周不再露出模糊底衬\n· 继续沿用 0.40.46 全幅一体化磨砂窗口：44px 标题栏、1px 高光边、无深色外圈，不新增外围窗口\n· 版本升到 0.40.47，电脑端 EXE 0.40.47.0，安卓 versionCode 78",
+        "ts": 1795463624148,
+        "force": false
+      },
+      "pc": {
+        "ver": "0.40.47",
+        "notes": "0.40.47 更新：\n· 修复 Windows 窗口最大化时动态壁纸二次缩放：静态图、GIF、视频和网页壁纸在最大化、还原、拖动改变尺寸时直接按新窗口宽高重算\n· 移除 --wall-fluid 额外 transform 缩放与 260ms 延迟回落，最大化后四周不再露出模糊底衬\n· 继续沿用 0.40.46 全幅一体化磨砂窗口：44px 标题栏、1px 高光边、无深色外圈，不新增外围窗口\n· 版本升到 0.40.47，电脑端 EXE 0.40.47.0，安卓 versionCode 78",
+        "ts": 1795463624148,
+        "force": false,
+        "exe": {
+          "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.47/Burger.Chat-Windows.exe",
+          "name": "Burger Chat.exe",
+          "size": 93153280,
+          "sha256": "3CFC6E50DED407AC8180EC49360F9D2B3135EDBAA429AE4EC6AB3ABA1F9089A8",
+          "ver": "0.40.47",
+          "notes": "0.40.47 更新：\n· 修复 Windows 窗口最大化时动态壁纸二次缩放：静态图、GIF、视频和网页壁纸在最大化、还原、拖动改变尺寸时直接按新窗口宽高重算\n· 移除 --wall-fluid 额外 transform 缩放与 260ms 延迟回落，最大化后四周不再露出模糊底衬\n· 继续沿用 0.40.46 全幅一体化磨砂窗口：44px 标题栏、1px 高光边、无深色外圈，不新增外围窗口\n· 版本升到 0.40.47，电脑端 EXE 0.40.47.0，安卓 versionCode 78",
+          "ts": 1795463624148,
+          "force": false
+        }
+      },
+      "mobile": {
+        "ver": "0.40.47",
+        "notes": "0.40.47 更新：\n· 修复 Windows 窗口最大化时动态壁纸二次缩放：静态图、GIF、视频和网页壁纸在最大化、还原、拖动改变尺寸时直接按新窗口宽高重算\n· 移除 --wall-fluid 额外 transform 缩放与 260ms 延迟回落，最大化后四周不再露出模糊底衬\n· 继续沿用 0.40.46 全幅一体化磨砂窗口：44px 标题栏、1px 高光边、无深色外圈，不新增外围窗口\n· 版本升到 0.40.47，电脑端 EXE 0.40.47.0，安卓 versionCode 78",
+        "ts": 1795463624148,
+        "force": false,
+        "apk": {
+          "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.47/Burger.Chat-Android.apk",
+          "name": "Burger Chat-安卓.apk",
+          "size": 1160300,
+          "sha256": "B26AF73FAA8C944F558CDDBA729505E6FE1B6BDF90EF0621D083D7271EF5C992",
+          "ver": "0.40.47",
+          "notes": "0.40.47 更新：\n· 修复 Windows 窗口最大化时动态壁纸二次缩放：静态图、GIF、视频和网页壁纸在最大化、还原、拖动改变尺寸时直接按新窗口宽高重算\n· 移除 --wall-fluid 额外 transform 缩放与 260ms 延迟回落，最大化后四周不再露出模糊底衬\n· 继续沿用 0.40.46 全幅一体化磨砂窗口：44px 标题栏、1px 高光边、无深色外圈，不新增外围窗口\n· 版本升到 0.40.47，电脑端 EXE 0.40.47.0，安卓 versionCode 78",
+          "ts": 1795463624148,
+          "force": false
+        },
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55"
+      }
+    },
+    {
+      "id": "gh-v0.40.46",
+      "ver": "0.40.46",
+      "notes": "0.40.46 更新：\n· 推送版本机制按平台分开：电脑端更新只推电脑端，手机端更新只推手机端，另一端不再弹出更新说明\n· Windows 窗口重新设计：去掉深色外圈，标题栏和软件壁纸 / 动态壁纸一起做一体化磨砂，窗口边缘只保留极细高光，拖动缩放不再闪黑\n· 手机端锁定页面大小：禁用双指缩放、双击缩放和系统字体放大，页面不能放大\n· 修复手机竖屏下软件商店无法滑动：插件列表占满剩余高度并自己滚动，手指滑动可以一直翻到底\n· 电脑端其他窗口沿用主窗口的标题栏与边框机制，设置、壁纸、成就等页面与主窗口保持同一套外观\n· 手机二三级菜单隐藏底部主导航：账号、设置子页、关于、更新历史、寻找设备等页面不再显示信息/成就/设置底栏\n· 修复电脑端邮箱账号页面不显示：切换分类时重置滚动位置并重新渲染账号卡，登录态和未登录态都正常显示\n· 版本升到 0.40.46，电脑端 EXE 0.40.46.0，安卓 versionCode 77",
+      "ts": 1795459758032,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1160300,
+        "sha256": "B8D1777DC4D6C6AAC85EB28A46019A6FDE63424C2C858FF53DF88165D12127BD",
+        "ver": "0.40.46",
+        "notes": "0.40.46 更新：\n· 推送版本机制按平台分开：电脑端更新只推电脑端，手机端更新只推手机端，另一端不再弹出更新说明\n· Windows 窗口重新设计：去掉深色外圈，标题栏和软件壁纸 / 动态壁纸一起做一体化磨砂，窗口边缘只保留极细高光，拖动缩放不再闪黑\n· 手机端锁定页面大小：禁用双指缩放、双击缩放和系统字体放大，页面不能放大\n· 修复手机竖屏下软件商店无法滑动：插件列表占满剩余高度并自己滚动，手指滑动可以一直翻到底\n· 电脑端其他窗口沿用主窗口的标题栏与边框机制，设置、壁纸、成就等页面与主窗口保持同一套外观\n· 手机二三级菜单隐藏底部主导航：账号、设置子页、关于、更新历史、寻找设备等页面不再显示信息/成就/设置底栏\n· 修复电脑端邮箱账号页面不显示：切换分类时重置滚动位置并重新渲染账号卡，登录态和未登录态都正常显示\n· 版本升到 0.40.46，电脑端 EXE 0.40.46.0，安卓 versionCode 77",
+        "ts": 1795459758032,
+        "force": false
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.46/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 93156864,
+        "sha256": "AE3DC91CB2BD4F1EAF1CE9C7989A920722A6E8F76F127709B8C2062E164118F4",
+        "ver": "0.40.46",
+        "notes": "0.40.46 更新：\n· 推送版本机制按平台分开：电脑端更新只推电脑端，手机端更新只推手机端，另一端不再弹出更新说明\n· Windows 窗口重新设计：去掉深色外圈，标题栏和软件壁纸 / 动态壁纸一起做一体化磨砂，窗口边缘只保留极细高光，拖动缩放不再闪黑\n· 手机端锁定页面大小：禁用双指缩放、双击缩放和系统字体放大，页面不能放大\n· 修复手机竖屏下软件商店无法滑动：插件列表占满剩余高度并自己滚动，手指滑动可以一直翻到底\n· 电脑端其他窗口沿用主窗口的标题栏与边框机制，设置、壁纸、成就等页面与主窗口保持同一套外观\n· 手机二三级菜单隐藏底部主导航：账号、设置子页、关于、更新历史、寻找设备等页面不再显示信息/成就/设置底栏\n· 修复电脑端邮箱账号页面不显示：切换分类时重置滚动位置并重新渲染账号卡，登录态和未登录态都正常显示\n· 版本升到 0.40.46，电脑端 EXE 0.40.46.0，安卓 versionCode 77",
+        "ts": 1795459758032,
+        "force": false
+      },
+      "pc": {
+        "ver": "0.40.46",
+        "notes": "0.40.46 更新：\n· 推送版本机制按平台分开：电脑端更新只推电脑端，手机端更新只推手机端，另一端不再弹出更新说明\n· Windows 窗口重新设计：去掉深色外圈，标题栏和软件壁纸 / 动态壁纸一起做一体化磨砂，窗口边缘只保留极细高光，拖动缩放不再闪黑\n· 手机端锁定页面大小：禁用双指缩放、双击缩放和系统字体放大，页面不能放大\n· 修复手机竖屏下软件商店无法滑动：插件列表占满剩余高度并自己滚动，手指滑动可以一直翻到底\n· 电脑端其他窗口沿用主窗口的标题栏与边框机制，设置、壁纸、成就等页面与主窗口保持同一套外观\n· 手机二三级菜单隐藏底部主导航：账号、设置子页、关于、更新历史、寻找设备等页面不再显示信息/成就/设置底栏\n· 修复电脑端邮箱账号页面不显示：切换分类时重置滚动位置并重新渲染账号卡，登录态和未登录态都正常显示\n· 版本升到 0.40.46，电脑端 EXE 0.40.46.0，安卓 versionCode 77",
+        "ts": 1795459758032,
+        "force": false,
+        "exe": {
+          "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.46/Burger.Chat-Windows.exe",
+          "name": "Burger Chat.exe",
+          "size": 93156864,
+          "sha256": "AE3DC91CB2BD4F1EAF1CE9C7989A920722A6E8F76F127709B8C2062E164118F4",
+          "ver": "0.40.46",
+          "notes": "0.40.46 更新：\n· 推送版本机制按平台分开：电脑端更新只推电脑端，手机端更新只推手机端，另一端不再弹出更新说明\n· Windows 窗口重新设计：去掉深色外圈，标题栏和软件壁纸 / 动态壁纸一起做一体化磨砂，窗口边缘只保留极细高光，拖动缩放不再闪黑\n· 手机端锁定页面大小：禁用双指缩放、双击缩放和系统字体放大，页面不能放大\n· 修复手机竖屏下软件商店无法滑动：插件列表占满剩余高度并自己滚动，手指滑动可以一直翻到底\n· 电脑端其他窗口沿用主窗口的标题栏与边框机制，设置、壁纸、成就等页面与主窗口保持同一套外观\n· 手机二三级菜单隐藏底部主导航：账号、设置子页、关于、更新历史、寻找设备等页面不再显示信息/成就/设置底栏\n· 修复电脑端邮箱账号页面不显示：切换分类时重置滚动位置并重新渲染账号卡，登录态和未登录态都正常显示\n· 版本升到 0.40.46，电脑端 EXE 0.40.46.0，安卓 versionCode 77",
+          "ts": 1795459758032,
+          "force": false
+        }
+      },
+      "mobile": {
+        "ver": "0.40.46",
+        "notes": "0.40.46 更新：\n· 推送版本机制按平台分开：电脑端更新只推电脑端，手机端更新只推手机端，另一端不再弹出更新说明\n· Windows 窗口重新设计：去掉深色外圈，标题栏和软件壁纸 / 动态壁纸一起做一体化磨砂，窗口边缘只保留极细高光，拖动缩放不再闪黑\n· 手机端锁定页面大小：禁用双指缩放、双击缩放和系统字体放大，页面不能放大\n· 修复手机竖屏下软件商店无法滑动：插件列表占满剩余高度并自己滚动，手指滑动可以一直翻到底\n· 电脑端其他窗口沿用主窗口的标题栏与边框机制，设置、壁纸、成就等页面与主窗口保持同一套外观\n· 手机二三级菜单隐藏底部主导航：账号、设置子页、关于、更新历史、寻找设备等页面不再显示信息/成就/设置底栏\n· 修复电脑端邮箱账号页面不显示：切换分类时重置滚动位置并重新渲染账号卡，登录态和未登录态都正常显示\n· 版本升到 0.40.46，电脑端 EXE 0.40.46.0，安卓 versionCode 77",
+        "ts": 1795459758032,
+        "force": false,
+        "apk": {
+          "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.46/Burger.Chat-Android.apk",
+          "name": "Burger Chat-安卓.apk",
+          "size": 1160300,
+          "sha256": "B8D1777DC4D6C6AAC85EB28A46019A6FDE63424C2C858FF53DF88165D12127BD",
+          "ver": "0.40.46",
+          "notes": "0.40.46 更新：\n· 推送版本机制按平台分开：电脑端更新只推电脑端，手机端更新只推手机端，另一端不再弹出更新说明\n· Windows 窗口重新设计：去掉深色外圈，标题栏和软件壁纸 / 动态壁纸一起做一体化磨砂，窗口边缘只保留极细高光，拖动缩放不再闪黑\n· 手机端锁定页面大小：禁用双指缩放、双击缩放和系统字体放大，页面不能放大\n· 修复手机竖屏下软件商店无法滑动：插件列表占满剩余高度并自己滚动，手指滑动可以一直翻到底\n· 电脑端其他窗口沿用主窗口的标题栏与边框机制，设置、壁纸、成就等页面与主窗口保持同一套外观\n· 手机二三级菜单隐藏底部主导航：账号、设置子页、关于、更新历史、寻找设备等页面不再显示信息/成就/设置底栏\n· 修复电脑端邮箱账号页面不显示：切换分类时重置滚动位置并重新渲染账号卡，登录态和未登录态都正常显示\n· 版本升到 0.40.46，电脑端 EXE 0.40.46.0，安卓 versionCode 77",
+          "ts": 1795459758032,
+          "force": false
+        },
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55"
+      }
+    },
+    {
+      "id": "gh-v0.40.45",
+      "ver": "0.40.45",
+      "notes": "0.40.45 更新：\n· 壁纸页新增「窗口 / 卡片外观」，可直接切换默认、融合壁纸和颜色边框\n· 旁边的齿轮按钮打开独立外观窗口，继续调整融合透明度、边框颜色与 1–6px 粗细\n· 融合和边框覆盖壁纸添加区：URL 输入、预览图、拖拽上传、剪贴板按钮、壁纸卡片与网页壁纸设置条一起变化\n· 自定义壁纸继续支持 URL 预览、拖拽图片、剪贴板粘贴；静态图、GIF、网页壁纸截图均可直接使用\n· 独立外观窗口在默认模式下内容不再被壁纸层盖住\n· 版本升到 0.40.45，电脑端 EXE 0.40.45.0，安卓 versionCode 76",
+      "ts": 1795457517411,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1156204,
+        "sha256": "C694000FF76DAFF8A86A6304F77FB70198C5C23FF20CDA6797A21550F330B52C"
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.45/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 93133312,
+        "sha256": "7D8C3008E21F001D22BD44B26C2E8A95DD0F428E7EFD91A38753B6ED38EE6EAE"
+      }
+    },
+    {
+      "id": "gh-v0.40.44",
+      "ver": "0.40.44",
+      "notes": "0.40.44 更新：\n· 窗口最大化、最小化和关闭动画更顺畅：去掉最大化过渡中重复设置窗口边框，最小化还原等系统过渡结束后再重建网页视图，关闭时先收拢再退出\n· 电脑端壁纸随窗口比例缩放：最大化、还原、拖动改变大小时按窗口面积自动计算缩放系数，静态图、GIF、视频和网页壁纸都跟随窗口，减少裁切和拉伸\n· 在线商店隐藏滚动条，仍可正常滚动\n· 账号同步改为官网保存：头像、名称、聊天记录和成就用 AES-256-GCM 加密后保存到 hamburgerwow.top，官网只存密文\n· 新增官网账号密钥：注册后生成 BC1 密钥，换电脑输入同一密钥即可验证登录并加载头像、名称、聊天记录和成就\n· 版本升到 0.40.44，电脑端 EXE 0.40.44.0，安卓 versionCode 75",
+      "ts": 1795456212143,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1156204,
+        "sha256": "023EBF8DFEB673D61241E5DA077F797B6ED88E270BA5F030D202717F77EA631B"
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.44/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 93113856,
+        "sha256": "65B6A16484D1E76CDD49D6C550EFFD3672FBE5CC974BFE6B48BD463C2C519551"
+      }
+    },
+    {
+      "id": "gh-v0.40.43",
+      "ver": "0.40.43",
+      "notes": "0.40.43 更新：\n· 修复电脑端最大化覆盖任务栏、底部白边：最大化贴合当前屏幕工作区\n· 修复设备右键菜单重复堆叠，连续右键始终保持单例，点击空白 / 滚动 / Esc 关闭\n· 修复无边框窗口无法拖动：标题栏按住即可拖动，最大化时按比例还原后继续拖动\n· 修复最小化还原后页面黑屏，恢复可见性并重绘\n· 最大化 / 还原 / 最小化改回 Windows 原生窗口状态与 DWM 过渡，保留系统动画\n· 版本升到 0.40.43，电脑端 EXE 0.40.43.0，安卓 versionCode 74",
+      "ts": 1795450474329,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1152108,
+        "sha256": "9CB0619B9A9AA5EC3F81FFB36EDE4286BB1834669443915097C980690E48C059"
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.43/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92984832,
+        "sha256": "FBA7A3774EF254FA0963FCD2F76CC887E28828D147E9A7F968F22451B8D45AA6"
+      }
+    },
+    {
+      "id": "gh-v0.40.42",
+      "ver": "0.40.42",
+      "notes": "0.40.42 更新：\n· 注册后自动生成加密账号密钥，登录时从 GitHub 密钥文件恢复账号、聊天与成就并继续同步\n· 手机端检查更新只访问官方网站，不再依赖电脑或局域网地址\n· 手机连接失败自动进入聊天主界面，保留本地缓存消息并显示重连提示\n· 连接页语言按钮移到屏幕下方居中，无边框，只显示当前语言\n· 电脑版插件商店改为右侧竖排纯图标导航，带平滑切换页动画\n· 电脑端 Windows 窗口重绘为无边框自绘标题栏，与软件紫色风格统一\n· 修复桌面端右键菜单点击空白处不关闭的问题\n· 版本升到 0.40.42，电脑端 EXE 0.40.42.0，安卓 versionCode 73",
+      "ts": 1795445030219,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1152108,
+        "sha256": "A8D4F7B1ABBEF9049153269808A27CFB26EB0D945BBCA40B9AAE686372BDC5DD"
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.42/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92980224,
+        "sha256": "245BE92DAA72098AAD8B1F7E9CBF4971B0127CDF76B4AEF7C6FABD2C5ACC2168"
+      }
+    },
+    {
+      "id": "gh-v0.40.41",
+      "ver": "0.40.41",
+      "notes": "0.40.41 更新：\n· 电脑端账号密码登录后同步聊天记录与成就，手机、电脑网页同一邮箱可同时在线\n· 账号资料支持上传自定义头像，聊天记录、成就与插件都按邮箱合并\n· 手机连接页新增邮箱账号登录 / 注册，未配对也能先登录\n· 取消二维码登录与数据目录入口，进入账号页不再自动跳到编辑页\n· 字体颜色只改文字不改菜单栏，二级菜单与标签页跟随文字颜色\n· 在线商店菜单移到盒子最外缘底部并居中固定\n· 新增 500 个成就，总计 515 个，官网实时展示并随版本继续追加\n· 电脑端设备右键支持设备详情、重新连接、断开连接和删除设备\n· 设备详情改成窗口卡片，显示设备 IP、端口、连接状态和重连按钮\n· 版本升到 0.40.41，电脑端 EXE 0.40.41.0，安卓 versionCode 72",
+      "ts": 1795420059000,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1148012
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.41/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92885504
+      }
+    },
+    {
+      "id": "gh-v0.40.40",
+      "ver": "0.40.40",
+      "notes": "0.40.40 更新：\n· 电脑端窗口全屏或大屏时，左侧导航图标自动垂直居中并固定，不再堆在顶部\n· 设置、插件、插件商店、壁纸库和聊天内容按窗口宽高自动伸展，插件商店高度跟随动态视口\n· 电脑端设置新增「邮箱账号」：邮箱验证码注册、密码登录、忘记密码、资料编辑与退出登录\n· 电脑端可与手机端共用账号，把已安装插件清单同步到账号并刷新云端清单\n· 五种语言电脑页面同步适配，简中 / 繁中 / English / 日本語 / 한국어\n· 版本升到 0.40.40，电脑端 EXE 0.40.40，安卓 versionCode 71",
+      "ts": 1795415676465,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1127532
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.40/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92634112
+      }
+    },
+    {
+      "id": "gh-v0.40.39",
+      "ver": "0.40.39",
+      "notes": "0.40.39 更新：\n· 邮箱注册接入 QQ 邮箱 SMTP，验证码 10 分钟内有效、最多尝试 5 次，同一邮箱 60 秒内只能发送一次\n· 新增邮箱找回密码：验证码通过后重设密码，旧账号会话全部失效并自动登录当前设备\n· 登录页新增「忘记密码？用邮箱找回」，注册页新增验证码输入与获取按钮，支持重新获取\n· SMTP 授权码只放服务端 data/mail.json 或环境变量，不写入页面、账号库和安装包\n· 未配置发信邮箱的电脑仍可直接注册；配置后注册必须完成邮箱验证码\n· 账号资料、头像、心情与插件清单同步保持不变，插件中心「我的」页继续可用\n· 版本升到 0.40.39，安卓 versionCode 70",
+      "ts": 1795414618533,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1127532
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.39/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92570112
+      }
+    },
+    {
+      "id": "gh-v0.40.38",
+      "ver": "0.40.38",
+      "notes": "0.40.38 更新：\n· 电脑端插件商店改为左右排版，导航固定在右侧并垂直居中，只保留图标\n· 修复电脑端插件商店分类打不开的问题，五类插件现在可以正常筛选\n· 插件商店与下载加入趣味动画，电脑端主要页面和插件商店统一使用过渡动画\n· 手机端设置页新增邮箱账号入口，支持注册与登录，点击账号可直接编辑头像、名称和心情\n· 账号资料与已安装插件同步到插件中心「我的」页，可同步本机、刷新云端清单并前往安装\n· 版本升到 0.40.38，安卓 versionCode 69",
+      "ts": 1795412635452,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1123436
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.38/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92532224
+      }
+    },
+    {
+      "id": "pmwst7php580884",
+      "ver": "0.40.37",
+      "notes": "0.40.37 更新：\n· 修复手机端新上传插件下载安装报错：商店强制刷新先秒回缓存，GitHub 扫描放到后台，不再等到 12 秒超时或 502\n· 插件包下载改为多源回退：本机同源代理、官网 HTTPS、GitHub raw，单个地址失败自动换下一个\n· 哈希校验同时支持原始字节和文本，避免 BOM / 换行导致「插件哈希校验失败，文件可能损坏」\n· 修正两个新插件调用不存在的 toast.show / ui.createPanel / 旧版 addSettingsPanel 参数，minApp 从 0.40.31 降到 0.40.0\n· 手机端 5 个语言页面全部接入新的多源下载与双哈希逻辑，版本升到 0.40.37，安卓 versionCode 68",
+      "ts": 1795410766285,
+      "force": false,
+      "dl": true,
+      "apk": {
+        "url": "https://hamburgerwow.top/dl/Burger.Chat-Android.apk?v=0.40.55",
+        "name": "Burger Chat-安卓.apk",
+        "size": 1090668
+      },
+      "exe": {
+        "url": "https://github.com/Hamburgerwow/Burger-Chat/releases/download/v0.40.37/Burger.Chat-Windows.exe",
+        "name": "Burger Chat.exe",
+        "size": 92349440
+      }
+    }
+  ],
+  "anns": [
+    {
+      "id": "ann-0.40.54-android-install",
+      "title": "0.40.54 安卓安装兼容修复",
+      "body": "修复 Android 14 / 15 无法安装更新：APK 补齐 minSdk 23、targetSdk 33，不再因 targetSdk 过低被系统拒绝；versionCode 83，证书与旧版一致，可直接覆盖安装。",
+      "ts": 1795532636135,
+      "pinned": true
+    },
+    {
+      "id": "ann-0.40.53",
+      "title": "0.40.53 横屏适配、拖拽上传与系统下载",
+      "body": "手机网页在横屏下保持手机布局；电脑端新增全窗口文件拖拽上传，背景模糊并提示发送到此设备；手机端文件改用系统下载，长按文件消息新增保存到本地；开发者中心新增动态壁纸横竖屏上传与背景音乐上传。Windows EXE 0.40.53.0；Android 0.40.53 / versionCode 82。",
+      "ts": 1795512437056,
+      "pinned": true
+    },
+    {
+      "id": "ann-0.40.52",
+      "title": "0.40.52 保存菜单、官网背景音乐与 MP3 上传",
+      "body": "电脑端图片和视频消息右键新增保存与另存为，设置 → 存储同步 增加默认存储目录；官网右下角新增背景音乐小弹窗，显示歌曲名、上传者和播放/暂停；官网支持登录用户上传 MP3 作为背景音乐，保存到 GitHub 并显示上传者与音乐名；上传入口位于 Burger Chat → 设置 → 网站音乐，需要注册/登录邮箱账号并配置 GitHub 令牌。Windows EXE 0.40.52.0；Android 0.40.51 / versionCode 81。",
+      "ts": 1795490240375,
+      "pinned": true
+    },
+    {
+      "id": "ann-0.40.51",
+      "title": "0.40.51 软件内图标与 Windows 运行图标",
+      "body": "；软件内标题栏、左侧栏和手机配对引导统一换成猫耳少女图标；Windows 运行窗口、任务栏和 Alt+Tab 图标改为 Burger Chat 自己的图标，不再显示 PowerShell 默认图标；宿主 window-host 同步携带 app.ico，整合包和电脑端源码一起更新；Windows EXE 0.40.51.0；Android 0.40.51 / versionCode 81",
+      "ts": 1795486046460,
+      "pinned": true
+    },
+    {
+      "id": "ann-0.40.50",
+      "title": "0.40.50 新图标、无遮罩动态背景与闲置隐藏",
+      "body": "电脑端、安卓端和官网统一换成新的猫耳少女图标。官网首屏直接播放动态视频，不再叠加模糊、滤镜或明暗渐变；鼠标静止 60 秒后自动隐藏全部界面，只保留动态背景，移动鼠标立即恢复；移除「竖屏，横屏，都随你」壁纸专区及导航入口。Windows EXE 0.40.50.0，Android versionCode 80。",
+      "ts": 1795482529349,
+      "pinned": false
+    },
+    {
+      "id": "ann-0.40.49",
+      "title": "0.40.49 修复 Windows 整窗黑边",
+      "body": "Windows 客户端恢复正常窗口时，页面铺满整个客户区，四周不再露出约 6px 的深色窗体底；无边框外观和四边、四角拖动缩放都保留，最大化后自动贴合工作区。窗口宿主改用 WS_THICKFRAME 与页面内 6px 透明命中条，WM_NCCALCSIZE 收掉系统非客户区。电脑端 EXE 0.40.49.0；安卓沿用 0.40.48 / versionCode 79。",
+      "ts": 1795480886719,
+      "pinned": false
+    },
+    {
+      "id": "ann-0.40.48",
+      "title": "0.40.48 窗口拉伸、窗口模糊调节与登录修复",
+      "body": "无边框窗口四周加入 6px 自绘命中边，四边和四角都能拖动缩放，最大化后自动收边；设置外观与壁纸新增 Windows 窗口模糊滑杆，0–40px 实时改变标题栏和浮层模糊；登录增加 15 秒超时并保证释放按钮，进入账号页自动关掉欢迎遮罩，修复点了登录没反应。安卓 versionCode 79，电脑端 EXE 0.40.48.0。",
+      "ts": 1795473488530,
+      "pinned": false
+    },
+    {
+      "id": "ann-0.40.47",
+      "title": "0.40.47 修复最大化动态壁纸二次缩放",
+      "body": "Windows 窗口最大化、还原和拖动改变尺寸时，静态图、GIF、视频与网页壁纸直接按新窗口宽高重算，不再叠加 --wall-fluid 的二次 transform，也不会在最大化后延迟 260ms 缩一圈，窗口四周不再露出模糊底衬。43px 附近的标题栏继续沿用 0.40.46 的全幅一体化磨砂外观：44px 标题栏、1px 高光边、无深色外圈，不新增外围窗口。安卓 versionCode 78，电脑端 EXE 0.40.47.0。",
+      "ts": 1795463624148,
+      "pinned": false
+    },
+    {
+      "id": "ann-0.40.46",
+      "title": "0.40.46 一体化磨砂窗口、平台独立更新与移动端锁定",
+      "body": "Windows 窗口改为无边框一体化磨砂，标题栏与软件壁纸、动态壁纸一起模糊，窗口边缘只保留极细高光；手机端锁定页面大小，双指和系统字体都不能放大；电脑端和手机端的推送版本彻底分开，一端更新不再让另一端弹更新说明；手机竖屏软件商店改为列表自身滚动，手指可以一直滑到底；电脑端设置、壁纸、成就等窗口沿用主窗口的标题栏与边框机制；手机二三级菜单隐藏底部主导航，账号、设置子页、关于、更新历史、寻找设备等页面更干净；电脑端邮箱账号页切换分类时重置滚动位置并重新渲染账号卡，登录态和未登录态都正常显示。安卓 versionCode 77，电脑端 EXE 0.40.46.0。",
+      "ts": 1795459758032,
+      "pinned": false
+    },
+    {
+      "id": "ann-0.40.45",
+      "title": "0.40.45 壁纸添加窗口融合与颜色边框",
+      "body": "壁纸页新增「窗口 / 卡片外观」，可直接选择默认、融合壁纸或颜色边框；旁边的齿轮打开独立外观窗口，继续调整融合透明度、边框颜色与 1–6px 粗细。融合和颜色边框现在覆盖 URL 输入、预览图、拖拽上传、剪贴板按钮、壁纸卡片和网页壁纸设置条，不再留下白色方块。独立外观窗口在默认模式下内容不再被壁纸层盖住。安卓 versionCode 76，电脑端 EXE 0.40.45.0。",
+      "ts": 1795457517411,
+      "pinned": false
+    },
+    {
+      "id": "ann-0.40.44",
+      "title": "0.40.44 窗口动画、壁纸缩放、商店滚动条与官网密钥登录",
+      "body": "窗口最大化、最小化和关闭动画更顺畅，最小化还原等系统过渡结束后再重建网页视图；电脑端壁纸按窗口面积自动缩放，最大化、还原和拖动时静态图、GIF、视频与网页壁纸都跟随窗口；在线商店隐藏滚动条但保留滚动；账号同步改为官网加密保存头像、名称、聊天记录和成就，注册后生成 BC1 密钥，换电脑输入同一密钥即可验证登录并加载这些资料。安卓 versionCode 75，电脑端 EXE 0.40.44.0。",
+      "ts": 1795456212143,
+      "pinned": false
+    },
+    {
+      "id": "ann-0.40.43",
+      "title": "0.40.43 修复桌面端最大化、右键菜单与窗口拖动",
+      "body": "电脑端最大化改为严格贴合当前屏幕工作区，不再盖住任务栏或在窗口下方留白；设备右键菜单连续触发时只保留一个，点击空白、滚动、失焦或按 Esc 即关闭。无边框窗口标题栏恢复按住拖动，最大化状态下按鼠标位置比例还原后继续拖；最小化还原后页面不再黑屏。最大化、还原与最小化改回 Windows 原生窗口状态并保留系统过渡动画。安卓 versionCode 74，电脑端 EXE 0.40.43.0。",
+      "ts": 1795450474329,
+      "pinned": false
+    },
+    {
+      "id": "ann-0.40.42",
+      "title": "0.40.42 加密密钥、手机离线主界面与 Windows 窗口重绘",
+      "body": "注册后生成加密账号密钥并上传 GitHub 官方公开仓库；登录先查本机密钥，再自动拉取 GitHub 密钥恢复账号、聊天与成就。手机端更新检查只连官方网站，连接失败自动进入聊天主界面并保留本地消息。连接页语言按钮改为屏幕下方居中的无边框按钮，只显示当前语言。电脑版插件商店使用右侧竖排纯图标导航与平滑切页动画；Windows 窗口改为无边框自绘标题栏，并修复右键菜单点击空白处不关闭。安卓 versionCode 73，电脑端 EXE 0.40.42.0。",
+      "ts": 1795445030219,
+      "pinned": false
+    },
+    {
+      "id": "ann-0.40.41",
+      "title": "0.40.41 账号同步、500 成就与设备详情",
+      "body": "电脑端账号密码登录后同步聊天记录与成就，同一邮箱可在手机、电脑网页同时在线；账号资料支持上传自定义头像。手机连接页新增邮箱账号登录 / 注册，未配对也能先登录；取消二维码登录与数据目录入口，进入账号页不再自动跳到编辑页。字体颜色只改文字不改菜单栏，二级菜单与标签页跟随文字颜色；在线商店菜单移到盒子最外缘并居中固定。新增 500 个成就，总计 515 个，官网从 /api/achievements 实时展示并在后续版本继续追加。电脑端设备右键支持详情、重连、断开和删除，详情为窗口卡片，显示 IP、端口和重连按钮。安卓 versionCode 72，电脑端 EXE 0.40.41.0。",
+      "ts": 1795420059000,
+      "pinned": false
+    },
+    {
+      "id": "ann-0.40.40",
+      "title": "0.40.40 电脑端全屏自适应与邮箱账号",
+      "body": "电脑端窗口全屏后，左侧导航图标会自动垂直居中，设置、插件、插件商店、壁纸库和聊天内容按窗口宽高伸展，插件商店不再被固定高度截断。设置页新增邮箱账号，和手机端共用同一套接口：邮箱验证码注册、密码登录、忘记密码重置、头像名称心情编辑、退出登录，以及把本机已安装插件清单同步到账号。五种语言页面同步更新。",
+      "ts": 1795415676465,
+      "pinned": false
+    },
+    {
+      "id": "ann-0.40.39",
+      "title": "0.40.39 邮箱验证码注册与找回密码",
+      "body": "这一版补齐邮箱验证码注册和找回密码：注册会向邮箱发 6 位验证码，10 分钟内有效、最多尝试 5 次；忘记密码可用验证码重置，旧账号会话全部失效并自动登录当前设备。登录页新增找回密码入口，注册页新增验证码输入与重新获取按钮。QQ 邮箱 SMTP 授权码只保存在电脑端服务端配置，不写入页面、账号库或安装包；没有配置发信邮箱的电脑仍可直接注册。",
+      "ts": 1795414618533,
+      "pinned": false
+    },
+    {
+      "id": "ann-0.40.37",
+      "title": "0.40.37 修复手机端新插件下载安装",
+      "body": "手机端插件商店强制刷新不再等 GitHub 扫描：先返回已有缓存，后台刷新再合并。新插件包下载改成本机代理、官网、GitHub raw 多源回退，单个地址失败自动换下一个；SHA256 同时校验原始字节和文本，避免 BOM / 换行误报文件损坏。两个新插件里不存在的 toast.show、createPanel 和旧版设置面板参数也已改正，minApp 降到 0.40.0。",
+      "ts": 1795410766285,
+      "pinned": false
+    }
+  ],
+  "count": {
+    "versions": 19,
+    "anns": 17
+  },
+  "updated": 1795554921940
+}
