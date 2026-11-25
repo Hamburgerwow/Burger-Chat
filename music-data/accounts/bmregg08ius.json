@@ -5,6 +5,9 @@
   "nick": "注册验收",
   "avatar": "",
   "createdAt": "2026-11-25T22:39:42.855Z",
-  "updatedAt": 1795646382855,
-  "data": {}
+  "updatedAt": 1795646392647,
+  "data": {
+    "bm:playlists": []
+  },
+  "__sha": "589f1fd5e7d244acb0166bec243a2e68caf15047"
 }
