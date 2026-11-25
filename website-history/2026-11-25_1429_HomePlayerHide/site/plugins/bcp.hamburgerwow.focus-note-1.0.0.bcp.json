@@ -1,0 +1,18 @@
+{
+  "schema": "burger-chat-plugin/v1",
+  "id": "bcp.hamburgerwow.focus-note",
+  "name": "专注便签",
+  "version": "1.0.0",
+  "developer": "Hamburgerwow",
+  "target": "both",
+  "minApp": "0.40.29",
+  "maxApp": "0.40.99",
+  "apiVersion": 1,
+  "memoryMB": 3,
+  "category": "工具",
+  "description": "在插件中心放一张可保存的专注便签，用来记下当前要处理的事情，重启后仍会保留。",
+  "icon": "📝",
+  "permissions": ["storage"],
+  "ui": [],
+  "main": "var KEY='note'; function draw(){ var v=api.storage.get(KEY,''); api.ui.addSettingsPanel({title:'专注便签',html:'<div class=\"bcp-note\" style=\"font-size:12px\">当前便签：<b>'+String(v||'（空）').replace(/</g,'&lt;')+'</b></div><div style=\"display:flex;gap:6px;margin-top:8px\"><input id=\"bcpFocusInput\" class=\"input\" style=\"flex:1;padding:7px 9px;border:1px solid #d8d4e4;border-radius:8px\" value=\"'+String(v||'').replace(/\"/g,'&quot;')+'\" placeholder=\"例如：先回复客户消息\"><button class=\"bcp-wide\" style=\"width:auto;height:32px;margin:0\" onclick=\"window.__bcpFocusSave()\">保存</button></div>'}); } window.__bcpFocusSave=function(){ var el=document.getElementById('bcpFocusInput'); api.storage.set(KEY, el?el.value:''); api.toast('便签已保存'); draw(); }; draw();"
+}
