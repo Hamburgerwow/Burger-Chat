@@ -2,13 +2,14 @@
   "version": 1,
   "nickname": "Hamburgerwow",
   "avatar": "",
-  "updatedAt": "2026-11-25T20:55:00.167Z",
+  "updatedAt": "2026-11-25T20:58:01.021Z",
   "data": {
     "bm:playlists": [],
     "bm:stats": {
-      "plays": 1090,
+      "plays": 1089,
       "sources": {
-        "netease": 1080
+        "netease": 1078,
+        "tencent": 1
       },
       "days": [
         "2026-11-25",
@@ -18,7 +19,7 @@
       "imports": 0,
       "quality": 0,
       "lyrics": 0,
-      "nights": 14,
+      "nights": 13,
       "mornings": 0
     },
     "bm:ach": {
@@ -29,8 +30,23 @@
     },
     "bm:history": [
       {
+        "key": "tencent:003Wir1t2wevOV",
+        "at": 1795640273849,
+        "track": {
+          "id": "003Wir1t2wevOV",
+          "source": "tencent",
+          "name": "放弃我是你的错",
+          "artist": "杨蔓",
+          "album": "听 好女人心",
+          "cover": "https://y.gtimg.cn/music/photo_new/T002R300x300M000000tUmjJ2gwH8t.jpg",
+          "url": "https://api.injahow.cn/meting/?server=tencent&type=url&id=003Wir1t2wevOV",
+          "lrc": "https://api.injahow.cn/meting/?server=tencent&type=lrc&id=003Wir1t2wevOV",
+          "duration": 276
+        }
+      },
+      {
         "key": "netease:1973665667",
-        "at": 1795640073156,
+        "at": 1795639957299,
         "track": {
           "id": "1973665667",
           "source": "netease",
@@ -461,21 +477,6 @@
           "url": "",
           "lrc": "",
           "duration": 164.321
-        }
-      },
-      {
-        "key": "netease:1890530891",
-        "at": 1795591052832,
-        "track": {
-          "id": "1890530891",
-          "source": "netease",
-          "name": "如果可以",
-          "artist": "韦礼安",
-          "album": "如果可以",
-          "cover": "https://p2.music.126.net/znTzn19zZvZ4IdlKEOhWRg==/109951166564931690.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 274.599
         }
       }
     ]
