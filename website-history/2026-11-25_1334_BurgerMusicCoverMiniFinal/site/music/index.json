@@ -1,0 +1,14 @@
+{
+  "v": 1,
+  "default": {
+    "id": "firefly-cmj",
+    "title": "萤火之森",
+    "uploader": "CMJ",
+    "url": "/assets/music/firefly-cmj.mp3?v=0.40.52r3",
+    "size": 6148594,
+    "at": 0,
+    "default": true
+  },
+  "latest": null,
+  "tracks": []
+}
