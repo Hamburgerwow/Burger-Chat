@@ -10,15 +10,24 @@
     "default": true
   },
   "latest": {
-    "id": "mu-pank-----super-ky-mwviriod",
-    "title": "空白 - Pank、罗凯元（SUPER KY）",
+    "id": "mu-plugin-mww7y5u2",
+    "title": "真英雄（若是真英雄怎会怕） - 姜姜",
     "uploader": "汉堡wow",
-    "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-pank-----super-ky-mwviriod.mp3",
-    "size": 6899151,
-    "duration": 171,
-    "at": 1795574613325
+    "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-plugin-mww7y5u2.mp3",
+    "size": 7991346,
+    "duration": 197,
+    "at": 1795616913674
   },
   "tracks": [
+    {
+      "id": "mu-plugin-mww7y5u2",
+      "title": "真英雄（若是真英雄怎会怕） - 姜姜",
+      "uploader": "汉堡wow",
+      "url": "https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/music/mu-plugin-mww7y5u2.mp3",
+      "size": 7991346,
+      "duration": 197,
+      "at": 1795616913674
+    },
     {
       "id": "mu-pank-----super-ky-mwviriod",
       "title": "空白 - Pank、罗凯元（SUPER KY）",
