@@ -1,0 +1,502 @@
+{
+  "version": "2026-11-26_0642_MusicAccountFix",
+  "createdAt": "2026-11-26T06:41:04+08:00",
+  "site": "https://hamburgerwow.top/",
+  "source": "D:\\app1\\官网",
+  "files": 97,
+  "bytes": 25131564.0,
+  "notes": [
+    "修复音乐站 /burger-music 无尾斜杠时脚本相对路径落到 /assets 旧副本，注册/登录请求发到 /api/account 返回 not_found",
+    "音乐站账号脚本改从 /burger-music/assets 加载并升到 bm37，API 固定为 /burger-music/api/account/",
+    "同步音乐站 site-shared.js 到最新版，登录卡片结构与账号入口一致",
+    "线上实测注册、退出、再次登录均成功，桌面与手机尺寸通过",
+    "Burger music Worker 58e6d5ed-dda2-4e3f-a2bf-f8d1a101ba05，页面 bm37，site-shared 32h"
+  ],
+  "fileList": [
+    {
+      "path": "_headers",
+      "bytes": 1264,
+      "sha256": "42e5afd976e549a2fbdce7bd98b56c68369dd6a5533cf9f096d54eaf09e27b56"
+    },
+    {
+      "path": "_redirects",
+      "bytes": 632,
+      "sha256": "660f2fe7a8d780e49b3ad36af28471bb0410cbd3af220e428ea77512d41fa6a5"
+    },
+    {
+      "path": "index.html",
+      "bytes": 40170,
+      "sha256": "ddb740d910ae0f70ca1052b445ce91c111c2e9e75832c39c59dc1fb6664190ae"
+    },
+    {
+      "path": "index-tw.html",
+      "bytes": 38801,
+      "sha256": "73b07086797225c09ca5f902ba93239c8bed60235d190c6acfb4be901505bc49"
+    },
+    {
+      "path": "index-en.html",
+      "bytes": 38881,
+      "sha256": "b95e231ef9e6622c9e0880083b71b8aa2bead112d2e38e063e2c7a4d83e7f315"
+    },
+    {
+      "path": "index-ja.html",
+      "bytes": 40053,
+      "sha256": "7537aa293ce79133f2129b956b9034e9f3971f5e9b9fe8f375a66f77d7b0c67f"
+    },
+    {
+      "path": "index-ko.html",
+      "bytes": 39559,
+      "sha256": "babef638c9d8d9e2f5c3bc64ddb91479a4e1e1052b49d8b2107befa861934bf4"
+    },
+    {
+      "path": "fort-selector.html",
+      "bytes": 38178,
+      "sha256": "8e1689322a39c67e09a98b2b5f0b253cca60b01e0452b571876d19a9b6f64a5a"
+    },
+    {
+      "path": "developer.html",
+      "bytes": 144320,
+      "sha256": "1b61dba208b43b90e8642e57a12901fafbfd01191837fa9218edc445adc856aa"
+    },
+    {
+      "path": "worker.js",
+      "bytes": 47666,
+      "sha256": "fe00a5b7622fe6a0d16fb70aca550ef8ba37e5f3e8affda704326c3b7716ef74"
+    },
+    {
+      "path": "burger-music.html",
+      "bytes": 41705,
+      "sha256": "5cc29c70a85b6732bc648c6f476d947106c5c78aa7ebc4f7b827c523984f31f4"
+    },
+    {
+      "path": "assets/apple-touch-icon.png",
+      "bytes": 49767,
+      "sha256": "4ca06c8d7d32af96f431069ba3e4efe69e358ab40aa0ccd28baaccf3a9df375b"
+    },
+    {
+      "path": "assets/browserconfig.xml",
+      "bytes": 349,
+      "sha256": "b47420b6abc078780680aee2e05420e794afefd80b5c4170e64b84a036536be5"
+    },
+    {
+      "path": "assets/burger-music-account.js",
+      "bytes": 16781,
+      "sha256": "d5b8744d5ad54fef555ae6814dbb58b7f24be328b65ecae6fece0007e0d74700"
+    },
+    {
+      "path": "assets/burger-music.css",
+      "bytes": 125472,
+      "sha256": "43be57c585229b0e2eb948dbbe9aedfcf6e1d8f164525ae85dee492e5fbb9595"
+    },
+    {
+      "path": "assets/burger-music.js",
+      "bytes": 131289,
+      "sha256": "2f456873770b3213abcf6d8df41530afb756f2df02378bcca5912d6a8dd74b54"
+    },
+    {
+      "path": "assets/developer-icon-128.png",
+      "bytes": 35061,
+      "sha256": "72d92b2bed7ad41873d8a930aa4690b0d42e273e5cedbc3fb93ab20cc94cfa18"
+    },
+    {
+      "path": "assets/developer-icon.png",
+      "bytes": 120164,
+      "sha256": "36d93c85c19eaa4e58512bb663b3e762a8d2bbea80d31e47c97bc62e17e1fd15"
+    },
+    {
+      "path": "assets/fort-selector-icon.png",
+      "bytes": 17800,
+      "sha256": "55176fbfef88e2bb71c1405d0697987d1efd49aef87116b5dfb5d668bec6c6cc"
+    },
+    {
+      "path": "assets/hero-girl.png",
+      "bytes": 1633776,
+      "sha256": "5ef39c734c9fbad3223f85f90f51047f5ff341540a8326c8344c7efc6b229e3b"
+    },
+    {
+      "path": "assets/icon-1024.png",
+      "bytes": 1075163,
+      "sha256": "5ad73da80f8a717695c32acdf4bb58d5fd7ce661e9bbe4bef254ca48bfc1250f"
+    },
+    {
+      "path": "assets/icon-16.png",
+      "bytes": 689,
+      "sha256": "a724b3f81a5f2f734fb1b6d4ae34b330a8416b2763b581a73a08237edb717278"
+    },
+    {
+      "path": "assets/icon-180.png",
+      "bytes": 49767,
+      "sha256": "4ca06c8d7d32af96f431069ba3e4efe69e358ab40aa0ccd28baaccf3a9df375b"
+    },
+    {
+      "path": "assets/icon-192.png",
+      "bytes": 56252,
+      "sha256": "27b5468c1d0a96cb81c6c59051ab2917d9d53ff44f5dd70fdac36cca1f750393"
+    },
+    {
+      "path": "assets/icon-32.png",
+      "bytes": 2199,
+      "sha256": "5391aecd5615749d2622c7a14e9201f5315d46bf0acba10de12186ed51b44bd3"
+    },
+    {
+      "path": "assets/icon-48.png",
+      "bytes": 4506,
+      "sha256": "a0033f4cc5a8a7ffe9a23ad52439f039ed8fd1a7517a26c17f1c4126802b42f1"
+    },
+    {
+      "path": "assets/icon-512.png",
+      "bytes": 339558,
+      "sha256": "94c795c2f29c284f86c918d4ba144da331aa04854bbe6ad9867180667b75ede7"
+    },
+    {
+      "path": "assets/icon-64.png",
+      "bytes": 7496,
+      "sha256": "3c09be6ae196388556a9b07ccda1976d9cead82ad1c2f4ff1589bc80bd909d97"
+    },
+    {
+      "path": "assets/pc-demo-achievements.webp",
+      "bytes": 22332,
+      "sha256": "f6664131eb81b3a1b7d9f8a054b4febc569bc87c109620832e30f41a25270645"
+    },
+    {
+      "path": "assets/pc-demo-chat.webp",
+      "bytes": 28182,
+      "sha256": "7d26e1df1797cc81224cd2d7a3b5923dfac41b273366ef1b555c2f1cdabc578d"
+    },
+    {
+      "path": "assets/pc-demo-look.webp",
+      "bytes": 51150,
+      "sha256": "e96f04e8a3dfc0f88cd0f2feef5733516c1e53ca7be4e31a17e712387a13d036"
+    },
+    {
+      "path": "assets/pc-demo-settings.webp",
+      "bytes": 28498,
+      "sha256": "e7c374dcea542b9cdb8bd72c967588a41e7a5fcc8a5f184c0254acc0788fa75f"
+    },
+    {
+      "path": "assets/pc-demo.html",
+      "bytes": 500271,
+      "sha256": "8f51f081f4eb795dc0d85bc9de100a9f560409755b563439657abd7b648f310d"
+    },
+    {
+      "path": "assets/plugin-store.css",
+      "bytes": 13062,
+      "sha256": "1c910a333610d13cf17753da5e6e49dacb9b61bd3eca014d5cc2079f42095ae7"
+    },
+    {
+      "path": "assets/plugin-store.js",
+      "bytes": 13764,
+      "sha256": "1d1a652428152603cbbf422d95bda94645c2a6d0e2c8f0a60c25fa9291fb54f9"
+    },
+    {
+      "path": "assets/qr-code.js",
+      "bytes": 56694,
+      "sha256": "79ec86f82856005b1c887905cfccfcfbec3821ca61c7fd5a952faa5f778f791c"
+    },
+    {
+      "path": "assets/site-069.js",
+      "bytes": 36604,
+      "sha256": "d6ed85cd99f88d20afaa603a8da4413e5d8384763bcac2af650f1bcb8b1d20e3"
+    },
+    {
+      "path": "assets/site-fix.css",
+      "bytes": 54771,
+      "sha256": "5c40139e518e2cf11037acf15011e7ab9c0706945a1c0cd017f673e7ca0464d2"
+    },
+    {
+      "path": "assets/site-fix.js",
+      "bytes": 39728,
+      "sha256": "84816f5e80a878c31b225930ff81183d52f666f7deee0ad1f1970a96bb302592"
+    },
+    {
+      "path": "assets/site-fix2.js",
+      "bytes": 41413,
+      "sha256": "40a62318a73d49ac1bd516f2dd49cf69974f7485847590f3ee17abcdd088ed34"
+    },
+    {
+      "path": "assets/site-mobile-2.js",
+      "bytes": 38420,
+      "sha256": "1746da13cd186610180504d75cfefb83716addcc2f339cfab23dd273d0f97e29"
+    },
+    {
+      "path": "assets/site-mobile-3.js",
+      "bytes": 40145,
+      "sha256": "33d95e042727efcc1908a4b91c807d5598deec5c1c33369cde0738d01fbdd4bf"
+    },
+    {
+      "path": "assets/site-mobile.css",
+      "bytes": 54408,
+      "sha256": "870d34a67d9a7edc2705a8fb57c6465cdc381cf2d9cd4651948ecd00d268e509"
+    },
+    {
+      "path": "assets/site-mobile.js",
+      "bytes": 37040,
+      "sha256": "be12ae370386aa474fb3785d2ca7c024390cb138ad49880e0cce794b58690bcf"
+    },
+    {
+      "path": "assets/site-shared.js",
+      "bytes": 21981,
+      "sha256": "6769727fb0a1cef8c9058dcdc671b8110dde034846475735410a52a1b263cfd7"
+    },
+    {
+      "path": "assets/site-theme.js",
+      "bytes": 5498,
+      "sha256": "b793102e17dd4e97a713f3bfad53d3369ade050bd168abc184b4d8b738ddb336"
+    },
+    {
+      "path": "assets/site-v4.css",
+      "bytes": 136525,
+      "sha256": "19ddb940cc76623dbc39ce97110c365eeb81dec9052f2cd46e186cb3cf976366"
+    },
+    {
+      "path": "assets/site-v4.js",
+      "bytes": 151387,
+      "sha256": "275cd31328a59baf8304de455e5cc5c3e0ccdf297c9e2dc78572fd1383f4fab2"
+    },
+    {
+      "path": "assets/site.css",
+      "bytes": 53697,
+      "sha256": "fbc41540ee47a554179cf660575c1e9495f44193bcb224289d49207b4b85e137"
+    },
+    {
+      "path": "assets/site.js",
+      "bytes": 39432,
+      "sha256": "1af56497a7619bc93a248eb6cc6293e4379cbcd6fb357bfc163a7b6a46729c5d"
+    },
+    {
+      "path": "assets/site.webmanifest",
+      "bytes": 621,
+      "sha256": "372e5958a9a59582e8c26e5a276eb3b358f428715b569b6283586a0c8b65e6c3"
+    },
+    {
+      "path": "assets/sub-i18n.js",
+      "bytes": 204071,
+      "sha256": "54343834a0cb7438f9247cbe70f727c646eb9fa41dfcb36c55df318702171799"
+    },
+    {
+      "path": "assets/sub-music.css",
+      "bytes": 2503,
+      "sha256": "215b474ebdd919c534fdff39518077affd2138a626027fce43280b5aeb907e59"
+    },
+    {
+      "path": "assets/sub-music.js",
+      "bytes": 7656,
+      "sha256": "05d9829a93c2f890d3544f6b03e82472f1c276105f82d9543416e276da09648f"
+    },
+    {
+      "path": "assets/wallpaper-horizontal-poster.jpg",
+      "bytes": 157755,
+      "sha256": "4a6f562bd1a084c20f43c5f0ab8ec74bc37da0ade796e0a18e60cd1a815cd593"
+    },
+    {
+      "path": "assets/wallpaper-horizontal.gif",
+      "bytes": 853267,
+      "sha256": "4c2f7191dd5edbaa3ce26d939ee09a3817490b66b131ad2a71c9ec69d6de9940"
+    },
+    {
+      "path": "assets/wallpaper-horizontal.mp4",
+      "bytes": 3933827,
+      "sha256": "0c70b488534b109ae338ac8e47ffa5febf5c9f57af4143eb7b21c2bc15fa028b"
+    },
+    {
+      "path": "assets/wallpaper-vertical-poster.jpg",
+      "bytes": 149497,
+      "sha256": "00dca81b0408ae301d25a337a12489cd307486e8f478c1fd30e634c61f1fd3be"
+    },
+    {
+      "path": "assets/wallpaper-vertical.jpg",
+      "bytes": 211116,
+      "sha256": "3c46ea1a1e16dbd6c7e971aad2d0fb3bce880c7c78115763b095baed17f9bf42"
+    },
+    {
+      "path": "assets/wallpaper-vertical.mp4",
+      "bytes": 4107801,
+      "sha256": "664205703877dbd4c41af5b22cc644a30302fd5a74d3e92306bd6f2de6874e6c"
+    },
+    {
+      "path": "assets/music/firefly-cmj.mp3",
+      "bytes": 6148594,
+      "sha256": "98fd6a641d0e423c4f294bca416edc148ace652c1c8771f1b2c227f9f1ea9493"
+    },
+    {
+      "path": "api/achievements",
+      "bytes": 71201,
+      "sha256": "b4cf524232c949efe6060eb1ceebe30ea7cd0e33742769700f487e19c6f11d20"
+    },
+    {
+      "path": "api/latest",
+      "bytes": 88911,
+      "sha256": "a143337e17618af7c7bd46db5f64c9686bc7105fafd02c46f516bbc2bfadb28a"
+    },
+    {
+      "path": "api/latest-v055",
+      "bytes": 70595,
+      "sha256": "e61c61d4aeb184fc99eb97c49dba432ef92dabae30a0c5966466890aabddc86d"
+    },
+    {
+      "path": "api/latest-v056",
+      "bytes": 72509,
+      "sha256": "a723c1f8234278fd0f5c16ad9afaba2c37589ab69aaea6ac310208b9e48b3094"
+    },
+    {
+      "path": "api/latest-v057",
+      "bytes": 74166,
+      "sha256": "7418378bd7fd730b5e667c86cb128a75e6fbbf94f7e131eb65426ec5e3972abb"
+    },
+    {
+      "path": "api/latest-v058",
+      "bytes": 75914,
+      "sha256": "932ce7e148509926fc5101571dd2e3395859dbb4977630748395a49f97b73713"
+    },
+    {
+      "path": "api/latest-v059",
+      "bytes": 77996,
+      "sha256": "6214b7bf27d1fda532cd66a440f90e04c1c71cfba1168a169c316ef58193f2e9"
+    },
+    {
+      "path": "api/latest-v060",
+      "bytes": 79909,
+      "sha256": "dbe4d24bce463c5fa99c9089e7a09e5670ca0b1b7af462142d54799a7d8597df"
+    },
+    {
+      "path": "api/latest-v061",
+      "bytes": 82025,
+      "sha256": "3552c42541bcb74e6405d8067e712569f029b47196d96458f526cf27f6867255"
+    },
+    {
+      "path": "api/latest-v062",
+      "bytes": 83737,
+      "sha256": "0da3a1a3f961052aa7f424a08d53143cb0295a07403d9bcf41c6dccd16563112"
+    },
+    {
+      "path": "api/latest-v063",
+      "bytes": 85421,
+      "sha256": "d5672ea1ac25419dfa07a2ed468a9575bdaca9c5ffe9c197b14c623c229b1162"
+    },
+    {
+      "path": "api/latest-v064",
+      "bytes": 87184,
+      "sha256": "6fe240160f4cd91e9d9b314f4a49a125950ef67e75903520ef5b32c6006165a7"
+    },
+    {
+      "path": "api/latest-v065",
+      "bytes": 88911,
+      "sha256": "a143337e17618af7c7bd46db5f64c9686bc7105fafd02c46f516bbc2bfadb28a"
+    },
+    {
+      "path": "api/music",
+      "bytes": 2611,
+      "sha256": "2674456a827a1763640b29f1556c056a85f08fd7f53759a90caa60f90f4d91b5"
+    },
+    {
+      "path": "dl/Burger.Chat-Android.apk",
+      "bytes": 2098682,
+      "sha256": "6603b97284129089ef20fc035c1fb5f7dfbe70b586300c67cbc5adb5c33e7731"
+    },
+    {
+      "path": "music/index.json",
+      "bytes": 2611,
+      "sha256": "2674456a827a1763640b29f1556c056a85f08fd7f53759a90caa60f90f4d91b5"
+    },
+    {
+      "path": "plugins/bcp.hamburgerwow.focus-note-1.0.0.bcp.json",
+      "bytes": 1305,
+      "sha256": "c188b1298e724a9b15c205f783fffe962ad5fe2590878ea9989683dfab8f60d5"
+    },
+    {
+      "path": "plugins/bcp.hamburgerwow.hello-1.0.0.bcp.json",
+      "bytes": 700,
+      "sha256": "45d94c0afd10b49a6894269e1432a50cbe3f0b96099197939606c8a60fe4f33b"
+    },
+    {
+      "path": "plugins/bcp.hamburgerwow.media-tip-1.0.0.bcp.json",
+      "bytes": 774,
+      "sha256": "b0329f9584489a510ffab415f6f634a9233d35cc0f51611aa9582b177cfa7bfb"
+    },
+    {
+      "path": "plugins/bcp.wow.new-plugin-1.0.0.bcp.json",
+      "bytes": 1412,
+      "sha256": "892eb664c9ff10465b5989362e109d51b09de0637fc6fa89330390f02f5efb1e"
+    },
+    {
+      "path": "plugins/bcp.wow.voiceassistant-1.0.0.bcp.json",
+      "bytes": 1471,
+      "sha256": "3ccdc3dae5e279ba79ebb68305c971487b1613e7058cf79d609598891b208153"
+    },
+    {
+      "path": "plugins/index.html",
+      "bytes": 7453,
+      "sha256": "27291575d941e6b2ab047d24214a85c0c28b124e4ca640610859e3a297c4654a"
+    },
+    {
+      "path": "plugins/registry.json",
+      "bytes": 4292,
+      "sha256": "766358c9f87d8fc81e10a1b9c798b63d0d7b45e6d68bfc56030781bc9b60e392"
+    },
+    {
+      "path": "wallpapers/index.json",
+      "bytes": 51,
+      "sha256": "243e6376855472ee39de54271b27768990d10809d080901bd849b418fdc8d3d6"
+    },
+    {
+      "path": "tools/build-site.js",
+      "bytes": 66978,
+      "sha256": "20f38f532ccfd31fa5d1854d387e36a22f8360e5bb22cb2101e65cab00dc8f41"
+    },
+    {
+      "path": "burger-music-isolated/account.js",
+      "bytes": 13721,
+      "sha256": "241a39bbda2849f880fccb9224d10df8ca5151bde652144f3da29bc713b3f97a"
+    },
+    {
+      "path": "burger-music-isolated/worker.js",
+      "bytes": 55523,
+      "sha256": "e61687f9cbb0e1d29339760e34f8cc8f83d021280c7976dd98161fd614155c38"
+    },
+    {
+      "path": "burger-music-isolated/wrangler.toml",
+      "bytes": 359,
+      "sha256": "4fe8304c0c588c9c682f79284e7c86c20918173cd6bd39db577e0e83208ff514"
+    },
+    {
+      "path": "burger-music-isolated/public/burger-music.html",
+      "bytes": 41705,
+      "sha256": "5cc29c70a85b6732bc648c6f476d947106c5c78aa7ebc4f7b827c523984f31f4"
+    },
+    {
+      "path": "burger-music-isolated/public/assets/burger-music-account.js",
+      "bytes": 16781,
+      "sha256": "d5b8744d5ad54fef555ae6814dbb58b7f24be328b65ecae6fece0007e0d74700"
+    },
+    {
+      "path": "burger-music-isolated/public/assets/burger-music.css",
+      "bytes": 125472,
+      "sha256": "43be57c585229b0e2eb948dbbe9aedfcf6e1d8f164525ae85dee492e5fbb9595"
+    },
+    {
+      "path": "burger-music-isolated/public/assets/burger-music.js",
+      "bytes": 131289,
+      "sha256": "2f456873770b3213abcf6d8df41530afb756f2df02378bcca5912d6a8dd74b54"
+    },
+    {
+      "path": "burger-music-isolated/public/assets/qr-code.js",
+      "bytes": 56694,
+      "sha256": "79ec86f82856005b1c887905cfccfcfbec3821ca61c7fd5a952faa5f778f791c"
+    },
+    {
+      "path": "burger-music-isolated/public/assets/site-shared.js",
+      "bytes": 21981,
+      "sha256": "6769727fb0a1cef8c9058dcdc671b8110dde034846475735410a52a1b263cfd7"
+    },
+    {
+      "path": "burger-music-isolated/public/assets/site-theme.js",
+      "bytes": 5498,
+      "sha256": "b793102e17dd4e97a713f3bfad53d3369ade050bd168abc184b4d8b738ddb336"
+    },
+    {
+      "path": "burger-music-isolated/public/vendor/qrcode.js",
+      "bytes": 56694,
+      "sha256": "18ae399f81182bc9de916e9c77b195df20cc58d6f2d55a62b085a299f1bf1780"
+    }
+  ]
+}
