@@ -3,6 +3,8 @@
   "localId": "gJnLcdaMa3gZnXq3G9fuqIubkbw1",
   "kind": "verify",
   "exp": 1795742090963,
-  "used": false,
-  "createdAt": 1795655690963
+  "used": true,
+  "createdAt": 1795655690963,
+  "__sha": "d1ce73b3bb77bee20e66327aa9ea6d94d3c84bda",
+  "usedAt": 1795655755729
 }
