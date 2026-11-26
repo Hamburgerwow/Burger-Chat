@@ -3,7 +3,7 @@
   "name": "hanwoshihanbao wow",
   "avatar": "",
   "createdAt": "2026-11-26T01:24:27.019Z",
-  "updatedAt": 1795659538442,
+  "updatedAt": 1795659587228,
   "firebaseUid": "shJrNV0OsGc5FvbyJr0TTVAbkbB3",
   "data": {
     "bm:playlists": [],
@@ -48,9 +48,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1127,
+      "plays": 1128,
       "sources": {
-        "netease": 1110,
+        "netease": 1111,
         "tencent": 2,
         "local": 2
       },
@@ -60,8 +60,8 @@
       ],
       "searches": 0,
       "imports": 0,
-      "quality": 2,
-      "lyrics": 10,
+      "quality": 4,
+      "lyrics": 12,
       "nights": 14,
       "mornings": 10
     },
@@ -71,13 +71,14 @@
       "fifty": 1795590672859,
       "night": 1795637797565,
       "morning": 1795643163348,
-      "lyric": 1795657330533
+      "lyric": 1795657330533,
+      "quality": 1795659583950
     },
     "bm:favorites": [],
     "bm:history": [
       {
         "key": "netease:1973665667",
-        "at": 1795659528584,
+        "at": 1795659550495,
         "track": {
           "id": "1973665667",
           "source": "netease",
@@ -529,5 +530,5 @@
     "bm:lyric-trans": 1,
     "bm:volume": 1
   },
-  "__sha": "7373d4993339947f28a1125200d47d7c5548f1cb"
+  "__sha": "084f8cf27bd33aebeb4adf7be8770c7f9fd6c4d2"
 }
