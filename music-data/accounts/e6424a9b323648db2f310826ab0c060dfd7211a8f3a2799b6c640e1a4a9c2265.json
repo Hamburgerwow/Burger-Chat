@@ -3,7 +3,7 @@
   "name": "ProfileTest",
   "avatar": "🙂",
   "createdAt": "2026-11-26T05:53:51.153Z",
-  "updatedAt": 1795672471476,
+  "updatedAt": 1795672473046,
   "firebaseUid": "OyGX9MCWZzVVUmlmxEfJJxi4nMY2",
   "data": {
     "bm:account-meta": {
@@ -12,6 +12,6 @@
       "avatar": "🙂"
     }
   },
-  "__sha": "db87bb3f77f16e2d253ed388d634118cb50f1ab8",
+  "__sha": "b6e4d4bab3b3a1e82e8fb863d18a611b8b69dcba",
   "mood": "端到端验收心情"
 }
