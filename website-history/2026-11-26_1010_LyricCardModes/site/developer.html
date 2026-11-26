@@ -1,0 +1,2408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="assets/favicon.ico?v=050" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png?v=050">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=050">
+<link rel="manifest" href="assets/site.webmanifest">
+<meta name="theme-color" content="#0f0a08">
+<title>Castle Developer · 插件工坊 · Director Bao</title>
+<style>
+:root{--ink:#16181d;--sub:#6d7382;--line:#e7e4ef;--brand:#6355e8;--brand2:#8b6cf6;--soft:#f6f4fb;--ok:#2f9e67;--bad:#c64b4b;--warn:#b57a15;--panel:#ffffff;--page-bg:#f2f0f7;--user-font:#16181d}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font:14px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--page-bg);-webkit-font-smoothing:antialiased}
+body.custom-font{--ink:var(--user-font);--sub:var(--user-font)}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+a{color:var(--brand);text-decoration:none}
+.hidden{display:none!important}
+
+/* 手机端闸门 */
+#gate{position:fixed;inset:0;background:radial-gradient(1200px 600px at 20% 0%,#ece9ff,#f7f6fb 55%,#fff);display:none;place-items:center;z-index:99;padding:26px}
+#gate .card{max-width:420px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 26px;box-shadow:0 30px 80px -40px rgba(30,20,80,.4);text-align:center}
+#gate .ico{width:58px;height:58px;margin:0 auto 14px;border-radius:17px;background:linear-gradient(145deg,#6f63f0,#9a7dff);display:grid;place-items:center;color:#fff;font-size:26px;box-shadow:0 12px 26px -12px rgba(99,85,232,.7)}
+#gate h1{font-size:20px;margin:0 0 8px}
+#gate p{font-size:12.5px;color:var(--sub);margin:0}
+
+/* 布局 */
+.shell{display:grid;grid-template-columns:252px minmax(0,1fr);min-height:100vh}
+.side{background:#171820;color:#fff;padding:22px 16px 18px;display:flex;flex-direction:column;gap:16px;position:sticky;top:0;height:100vh;overflow:auto}
+.brand{display:flex;align-items:center;gap:10px;padding:0 6px 4px}
+.brand .logo{width:36px;height:36px;border-radius:11px;background:linear-gradient(145deg,#7b6cf6,#a78bfa);display:grid;place-items:center;font-weight:800;font-size:13px;letter-spacing:.5px;box-shadow:0 8px 20px -8px rgba(124,106,255,.8)}
+.brand b{font-size:15px;letter-spacing:-.2px;display:block}
+.brand span{font-size:10px;color:rgba(255,255,255,.45);letter-spacing:1.2px;text-transform:uppercase}
+.profile{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:10px}
+.profile img{width:38px;height:38px;border-radius:12px;object-fit:cover;background:#2a2c3a}
+.profile .ph{width:38px;height:38px;border-radius:12px;background:linear-gradient(145deg,#3b3558,#2c293c);display:grid;place-items:center;font-size:18px}
+.profile b{font-size:12.5px;display:block;line-height:1.3}
+.profile span{font-size:10px;color:rgba(255,255,255,.5);display:block;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:130px}
+.nav{display:flex;flex-direction:column;gap:3px;margin-top:2px}
+.nav button{display:flex;align-items:center;gap:10px;height:40px;border:0;background:transparent;color:rgba(255,255,255,.62);border-radius:10px;padding:0 12px;font-size:12.5px;text-align:left;transition:.15s}
+.nav button i{font-style:normal;width:18px;text-align:center;font-size:14px;opacity:.8}
+.nav button:hover{background:rgba(255,255,255,.07);color:#fff}
+.nav button.on{background:linear-gradient(120deg,rgba(124,106,255,.22),rgba(124,106,255,.06));color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.09)}
+.nav button.on i{color:#c9c0ff}
+.sidefoot{margin-top:auto;padding:10px 8px 0;border-top:1px solid rgba(255,255,255,.08);font-size:10px;color:rgba(255,255,255,.38);display:flex;flex-direction:column;gap:6px}
+.sidefoot a{color:rgba(255,255,255,.62)}
+.main{padding:22px 28px 44px;min-width:0;max-width:1280px;width:100%}
+.topbar{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap;padding:2px 2px 18px}
+.crumb{font-size:11px;color:#9aa1ae;display:flex;gap:6px;align-items:center}
+.crumb b{color:#5d6270}
+.topbar h1{font-size:26px;line-height:1.2;letter-spacing:-.7px;margin:0;font-weight:760}
+.topbar .sp{flex:1}
+.topbar .stat{display:flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:99px;height:32px;padding:0 12px;font-size:11px;color:#69707e;box-shadow:0 4px 14px -12px rgba(40,30,80,.4)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(47,158,103,.13)}
+.section{display:block;animation:fade .18s ease}
+body.custom-font .main :is(h1,h2,h3,p,span,b,small,label,div,button,input,textarea,select,a){color:var(--user-font)!important}
+body.custom-font .main .codebox,body.custom-font .main .codebox *{color:#dcdff0!important}
+body.custom-font .main ::placeholder{color:var(--user-font);opacity:.55}
+body.dark-surface{background:color-mix(in srgb,var(--page-bg) 25%,#15121d)}
+body.custom-font:not(.dark-surface){background:color-mix(in srgb,var(--page-bg) 42%,#f2f0f7)}
+body.dark-surface .main{--panel:#241f33;--line:rgba(255,255,255,.16);--soft:rgba(255,255,255,.07);--sub:rgba(255,255,255,.65)}
+body.dark-bg:not(.custom-font):not(.dark-surface) .main .topbar .crumb,body.dark-bg:not(.custom-font):not(.dark-surface) .main .topbar h1,body.dark-bg:not(.custom-font):not(.dark-surface) .main .topbar .crumb :is(a,b,span){color:#f4f1ff!important}
+body.dark-surface .main .card{background:var(--panel);border-color:var(--line)}
+body.dark-surface .main .mini,body.dark-surface .main .prow,body.dark-surface .main .kv>div,body.dark-surface .main .notice,body.dark-surface .main .empty,body.dark-surface .main .statusline .s{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.14)}
+body.dark-surface .main .field input,body.dark-surface .main .field textarea,body.dark-surface .main .field select{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.2)}
+body.dark-surface .main .btn{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.2);color:var(--user-font)!important}
+body.dark-surface .main .btn.pri{background:linear-gradient(145deg,#6f63f0,#5b4ee0)!important;border-color:transparent!important;color:#fff!important}
+body.dark-surface .main .btn.bad{background:rgba(198,75,75,.16);border-color:rgba(198,75,75,.4)}
+body.dark-surface .main .pill{background:rgba(255,255,255,.1);color:var(--user-font)!important}
+body.dark-surface .main .pill.ok{background:rgba(47,158,103,.22);color:#9be7bd!important}
+body.dark-surface .main .pill.bad{background:rgba(198,75,75,.2);color:#ffaaa8!important}
+body.dark-surface .main .pill.warn{background:rgba(181,122,21,.2);color:#ffd28a!important}
+.field input[type=color]{height:38px;padding:4px 6px;cursor:pointer}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.grid{display:grid;gap:14px}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g2{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 18px 50px -42px rgba(30,20,80,.45)}
+.card-h{display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:13px}
+.card-h h2{font-size:15px;margin:0;font-weight:720;letter-spacing:-.2px}
+.card-h p{font-size:11px;color:var(--sub);margin:2px 0 0}
+.card-h .sp{flex:1}
+.mini{background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px 16px;position:relative;overflow:hidden}
+.mini .lbl{font-size:11px;color:var(--sub)}
+.mini .num{font-size:30px;font-weight:780;letter-spacing:-1px;line-height:1.1;margin-top:6px}
+.mini .num small{font-size:12px;font-weight:500;color:var(--sub);letter-spacing:0}
+.mini::after{content:'';position:absolute;right:-24px;bottom:-34px;width:96px;height:96px;border-radius:50%;background:radial-gradient(circle,rgba(124,106,255,.13),transparent 68%)}
+.mini .tag{position:absolute;right:13px;top:13px;font-size:9.5px;color:#6c5ce7;background:#f2efff;border-radius:99px;padding:2px 7px}
+.btn{height:36px;border-radius:10px;border:1px solid #ded9ec;background:#fff;color:#4e5462;padding:0 14px;font-size:12px;font-weight:600;transition:.15s;display:inline-flex;align-items:center;gap:6px;justify-content:center}
+.btn:hover{border-color:#b6aafa;color:#5d4fd1;background:#fbfaff}
+.btn.pri{background:linear-gradient(145deg,#6f63f0,#5b4ee0);border-color:transparent;color:#fff;box-shadow:0 8px 22px -10px rgba(91,78,224,.7)}
+.btn.pri:hover{filter:brightness(1.06);color:#fff}
+.btn.ghost{background:#f7f5fc;border-color:transparent;color:#6457c9}
+.btn.bad{color:#b84d4d;border-color:#ecd1d1}
+.btn.bad:hover{border-color:#d66;color:#b22;background:#fff7f7}
+.btn.sm{height:30px;font-size:11px;padding:0 10px;border-radius:8px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.rowlist{display:flex;flex-direction:column;gap:9px}
+.prow{display:flex;align-items:center;gap:11px;border:1px solid #ebe8f3;border-radius:13px;padding:11px 12px;background:#fdfdff}
+.pico{width:40px;height:40px;border-radius:11px;background:linear-gradient(150deg,#f0ecff,#e2dbff);display:grid;place-items:center;font-size:20px;flex:0 0 40px}
+.pmain{flex:1;min-width:0}
+.pname{font-weight:650;font-size:12.5px;display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.pname em{font-style:normal;font-size:10px;color:#9aa1ae;font-weight:400}
+.pmeta{font-size:10.5px;color:#969dab;margin-top:2px}
+.pdesc{font-size:11px;color:#68707e;margin-top:4px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.pacts{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.pill{font-size:9.5px;border-radius:99px;padding:2px 7px;background:#f1efff;color:#6b5ee0;font-weight:600}
+.pill.ok{background:#eaf7ef;color:#2f9e67}
+.pill.bad{background:#fdeeee;color:#c64b4b}
+.pill.warn{background:#fff6e5;color:#b57a15}
+.stars{color:#ffb531;font-size:12px;letter-spacing:-.5px}
+.stars i{color:#ded9e8;font-style:normal}
+.empty{border:1px dashed #ddd8ea;border-radius:14px;padding:26px 16px;text-align:center;font-size:11.5px;color:#8d94a2;background:#fbfaff}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.kv>div{background:#faf9fd;border:1px solid #eeebf5;border-radius:10px;padding:8px 10px}
+.kv b{display:block;font-size:9.5px;color:#9ba2b0;font-weight:500;margin-bottom:2px}
+.kv span{font-size:11.5px;color:#3f4451;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:10.5px;color:#7d8492}
+.field input,.field textarea,.field select{border:1px solid #ddd9e9;border-radius:9px;background:#fff;color:#363b47;padding:8px 10px;font-size:12px;outline:none;transition:.15s;min-width:0}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:#a79bfa;box-shadow:0 0 0 3px rgba(124,106,255,.11)}
+.field textarea{resize:vertical;line-height:1.6}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.formgrid .wide{grid-column:1/-1}
+.builder{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.block{border:1px solid #e7e3f1;border-radius:13px;padding:11px;background:#fdfdff;display:flex;flex-direction:column;gap:7px}
+.block .bh{display:flex;align-items:center;gap:8px}
+.block .bh input[type=checkbox]{width:16px;height:16px;accent-color:#6f63f0;margin:0}
+.block .bh b{font-size:11.5px;font-weight:650;color:#3f4451}
+.block .bh span{font-size:9.5px;color:#9aa1ae;margin-left:auto}
+.block .bf{display:flex;gap:6px;flex-wrap:wrap}
+.block .bf input{flex:1;min-width:80px;border:1px solid #e1ddec;border-radius:8px;padding:6px 8px;font-size:11px;background:#fff}
+.block .bf input:disabled,.block .bf textarea:disabled{background:#f5f4f8;color:#a5a9b6}
+.block textarea{width:100%;min-height:54px;border:1px solid #e1ddec;border-radius:8px;padding:6px 8px;font-size:11px;background:#fff;resize:vertical}
+.promptbox{position:relative}
+.promptbox textarea{width:100%;min-height:112px;border:1px solid #dcd7ea;border-radius:11px;padding:10px 11px;font-size:12px;line-height:1.65;outline:none;resize:vertical;background:#fff}
+.promptbox textarea:focus{border-color:#a79bfa;box-shadow:0 0 0 3px rgba(124,106,255,.11)}
+.promptbox .hint{font-size:10px;color:#9aa1ae;margin-top:5px}
+.codebox{border:1px solid #e0dceb;border-radius:12px;overflow:hidden;background:#1d1f2a}
+.codebox .ch{display:flex;align-items:center;gap:8px;background:#262936;padding:7px 11px;font-size:10px;color:#a9adc0}
+.codebox .ch b{color:#fff;font-weight:600;font-size:10.5px}
+.codebox .ch .sp{flex:1}
+.codebox textarea{width:100%;min-height:360px;border:0;outline:0;background:#1d1f2a;color:#dcdff0;padding:12px;font:11.5px/1.65 Consolas,"SFMono-Regular",Menlo,monospace;resize:vertical}
+.manifest{margin-top:9px;border:1px solid #e2deeb;border-radius:11px;background:#fbfaff;padding:9px 11px;font:10px/1.6 Consolas,Menlo,monospace;color:#5b6070;max-height:170px;overflow:auto;white-space:pre-wrap;word-break:break-all}
+.statusline{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin:0 0 10px}
+.statusline .s{display:flex;align-items:center;gap:5px;font-size:10.5px;color:#6d7382;background:#f7f5fc;border-radius:99px;padding:3px 9px}
+.statusline .s i{width:6px;height:6px;border-radius:50%;background:#a9aebd}
+.statusline .s.ok i{background:var(--ok)}
+.statusline .s.bad i{background:var(--bad)}
+.statusline .s.warn i{background:var(--warn)}
+.policy{display:grid;gap:8px}
+.rule{display:flex;gap:9px;align-items:flex-start;border:1px solid #ece9f4;border-radius:11px;padding:9px 10px;background:#fdfdff}
+.rule .n{width:22px;height:22px;border-radius:7px;background:#f1efff;color:#6b5ee0;display:grid;place-items:center;font-size:10px;font-weight:700;flex:0 0 22px}
+.rule b{font-size:11.5px;display:block;color:#3d4250}
+.rule span{font-size:10.5px;color:#8b92a1;display:block;margin-top:1px}
+.rule .st{margin-left:auto;font-size:9.5px;flex:0 0 auto}
+.auditlog{background:#fbfaff;border:1px solid #e6e2f0;border-radius:11px;padding:10px 12px;font:10.5px/1.7 Consolas,Menlo,monospace;color:#5b6070;max-height:220px;overflow:auto;white-space:pre-wrap}
+.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:6px}
+.calendar .d{height:28px;border-radius:6px;background:#f6f4fb;display:grid;place-items:center;font-size:9.5px;color:#9aa1ae}
+.calendar .d.on{background:#efeaff;color:#5d4fd1;font-weight:700}
+.calendar .d.top{background:#6f63f0;color:#fff}
+.notice{font-size:11px;line-height:1.6;color:#6f688f;background:#f6f4ff;border:1px solid #e4dfff;border-radius:11px;padding:9px 11px;margin:0 0 12px}
+.notice b{color:#5b51c9}
+.avatarrow{display:flex;align-items:center;gap:14px}
+.avatarbig{width:72px;height:72px;border-radius:22px;object-fit:cover;background:#f2efff;border:1px solid #e2dcf5;display:grid;place-items:center;font-size:30px}
+.avatarbig img{width:100%;height:100%;border-radius:22px;object-fit:cover}
+.avatarrow .col{flex:1}
+.avatarrow .col b{display:block;font-size:12px;margin-bottom:3px}
+.avatarrow .col span{display:block;font-size:10.5px;color:#8c93a2}
+/* 动态壁纸 / 背景音乐上传 */
+.asset-preview{position:relative;display:flex;align-items:center;justify-content:center;min-height:180px;margin:12px 0;border:1px dashed #dcd6ef;border-radius:15px;background:linear-gradient(135deg,#faf8ff,#f4f1fb);overflow:hidden}
+.asset-preview .ph{text-align:center;color:#9a91b6;font-size:11px;line-height:1.7;padding:24px}
+.asset-preview .ph b{display:block;font-size:26px;line-height:1;margin-bottom:8px;color:#b7add7}
+.asset-preview video,.asset-preview img{display:block;width:100%;max-height:280px;object-fit:contain;background:#17151e}
+.asset-preview audio{width:min(420px,100%)}
+.asset-meta{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}
+.asset-meta span{font-size:10px;padding:4px 8px;border-radius:99px;background:#f3f0fb;color:#756c93}
+.asset-list{display:grid;gap:7px}
+.asset-row{display:flex;gap:9px;align-items:center;border:1px solid #ece9f4;border-radius:11px;padding:8px 9px;background:#fdfdff}
+.asset-thumb{width:44px;height:32px;border-radius:7px;background:#201d2b;display:grid;place-items:center;color:#fff;font-size:13px;overflow:hidden;flex:0 0 auto}
+.asset-thumb img,.asset-thumb video{width:100%;height:100%;object-fit:cover}
+.asset-main{min-width:0;flex:1}
+.asset-main b{display:block;font-size:11.5px;color:#3d4250;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.asset-main span{display:block;font-size:10px;color:#8b92a1;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.asset-row .pill{flex:0 0 auto;font-size:9px}
+.asset-del{width:28px;height:28px;flex:0 0 auto;border:1px solid #eedede;border-radius:8px;background:#fff8f8;color:#c05a5a;font-size:15px;line-height:1;display:grid;place-items:center;cursor:pointer;transition:.15s}
+.asset-del:hover{background:#c65a5a;border-color:#c65a5a;color:#fff}
+.asset-del:disabled{opacity:.45;cursor:not-allowed}
+body.dark-surface .main .asset-del{background:rgba(198,75,75,.14);border-color:rgba(198,75,75,.35);color:#ffaaa8}
+body.dark-surface .main .asset-del:hover{background:#b94b4b;color:#fff}
+
+
+/* 弹窗 */
+.modal{position:fixed;inset:0;background:rgba(18,14,32,.5);backdrop-filter:blur(6px);z-index:90;display:grid;place-items:center;padding:26px}
+.modal .box{width:min(620px,94vw);max-height:92vh;overflow:auto;background:#fff;border-radius:22px;box-shadow:0 40px 100px -30px rgba(20,10,60,.55);padding:24px}
+.modal .box h2{font-size:20px;margin:4px 0 5px;letter-spacing:-.5px}
+.modal .box p.sub{font-size:11.5px;color:var(--sub);margin:0 0 18px}
+.steps{display:flex;gap:6px;margin:0 0 16px}
+.steps div{flex:1;height:4px;border-radius:99px;background:#ebe7f7}
+.steps div.on{background:linear-gradient(90deg,#7b6cf6,#a78bfa)}
+.emailbox{display:flex;gap:8px}
+.emailbox input{flex:1;min-width:0}
+.codehint{font-size:10.5px;color:#8b7bb8;background:#f6f1ff;border:1px solid #e4d9ff;border-radius:8px;padding:6px 8px;margin-top:7px;display:none}
+.modal .actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin-top:18px}
+.modal .actions .sp{flex:1}
+.toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,20px);background:#20222c;color:#fff;border-radius:99px;padding:9px 16px;font-size:11.5px;box-shadow:0 14px 36px -12px rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:.2s;z-index:120;max-width:80vw}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+/* 响应式闸门 */
+@media (max-width:1023px){#gate{display:grid}.shell{display:none}}
+@media (min-width:1024px) and (max-width:1180px){.shell{grid-template-columns:226px minmax(0,1fr)}.main{padding:20px}.g4{grid-template-columns:1fr 1fr}}
+</style>
+<link rel="stylesheet" href="assets/sub-music.css?v=2">
+</head>
+<body>
+
+<div id="gate">
+  <div class="card">
+    <div class="ico">🛠</div>
+    <h1>Castle Developer 只在电脑网页端开放</h1>
+    <p>插件编写、AI 工坊、审核与上架需要键盘和大屏。请用电脑浏览器打开 <b>hamburgerwow.top/developer</b>；手机端只负责安装、评分和使用插件。</p>
+  </div>
+</div>
+
+<div class="shell hidden" id="shell">
+  <aside class="side">
+    <div class="brand">
+      <div class="logo">FS</div>
+      <div><b>Director Bao</b><span>Castle Developer</span></div>
+    </div>
+    <div class="profile" id="sideProfile"></div>
+    <nav class="nav" id="nav">
+      <button class="on" data-view="overview"><i>◈</i>概览</button>
+      <button data-view="mine"><i>▦</i>我的插件</button>
+      <button data-view="wallpaper"><i>◐</i>动态壁纸</button>
+      <button data-view="music"><i>♫</i>背景音乐</button>
+      <button data-view="studio"><i>✦</i>AI 插件工坊</button>
+      <button data-view="audit"><i>◉</i>上架审核</button>
+      <button data-view="weekly"><i>★</i>本周精选</button>
+      <button data-view="settings"><i>⚙</i>设置</button>
+    </nav>
+    <div class="sidefoot">
+      <span>插件开发仅适配电脑网页端</span>
+      <a href="https://hamburgerwow.top/?welcome=enter" target="_blank">返回官网</a>
+      <a href="https://github.com/Hamburgerwow/Burger-Chat/tree/main/plugins" target="_blank">GitHub 插件目录</a>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <div class="crumb"><a href="https://hamburgerwow.top/">Director Bao</a><span>/</span><b id="crumb">Castle Developer</b></div>
+        <h1 id="pageTitle">概览</h1>
+      </div>
+      <div class="sp"></div>
+      <div class="stat"><span class="dot"></span><span id="syncText">商店连接中…</span></div>
+      <button class="btn sm" id="devLoginBtn" onclick="openDevLogin()">登录</button>
+      <button class="btn sm" onclick="reloadRegistry(true)">同步商店</button>
+    </div>
+
+    <section class="section" id="view-overview">
+      <div class="grid g4" id="statCards"></div>
+      <div class="grid g2" style="margin-top:14px">
+        <div class="card">
+          <div class="card-h"><div><h2>快速开始</h2><p>从提示词到上架，四步走完</p></div></div>
+          <div class="rowlist">
+            <div class="prow"><div class="pico">✦</div><div class="pmain"><div class="pname">用 AI 生成插件</div><div class="pmeta">描述功能，自动写代码并校验 API 规范</div></div><div class="pacts"><button class="btn sm pri" onclick="showView('studio')">打开工坊</button></div></div>
+            <div class="prow"><div class="pico">◉</div><div class="pmain"><div class="pname">提交上架审核</div><div class="pmeta">本地规则 + 开源模型双审，拦截暴力色情等违规内容</div></div><div class="pacts"><button class="btn sm" onclick="showView('audit')">去审核</button></div></div>
+            <div class="prow"><div class="pico">★</div><div class="pmain"><div class="pname">结算本周精选</div><div class="pmeta">按评分排序，选 3 个置顶到两端商店</div></div><div class="pacts"><button class="btn sm" onclick="showView('weekly')">去结算</button></div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-h"><div><h2>本周榜单</h2><p id="weekLabel">—</p></div><div class="sp"></div><span class="pill">TOP 3</span></div>
+          <div class="rowlist" id="weekPreview"><div class="empty">正在读取商店…</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hidden" id="view-mine">
+      <div class="card">
+        <div class="card-h"><div><h2>我的插件</h2><p>只显示当前开发者标识名下的插件</p></div><div class="sp"></div><button class="btn pri" onclick="newDraft()">新建插件</button></div>
+        <div class="rowlist" id="mineList"><div class="empty">正在读取商店…</div></div>
+      </div>
+    </section>
+
+    <section class="section hidden" id="view-wallpaper">
+      <div class="grid g2">
+        <div class="card">
+          <div class="card-h"><div><h2>上传动态壁纸</h2><p>先选横屏或竖屏尺寸，再上传视频 / GIF / 动态图</p></div><div class="sp"></div><span class="pill" id="wpState">未选择</span></div>
+          <div class="formgrid">
+            <div class="field"><label>壁纸名称</label><input id="wpTitle" maxlength="40" placeholder="例如：雨夜霓虹"></div>
+            <div class="field"><label>尺寸方向</label><select id="wpOrientation" onchange="wallpaperOrientationChanged()"><option value="horizontal">横屏 · 16:9</option><option value="vertical">竖屏 · 9:16</option></select></div>
+            <div class="field"><label>上传者</label><input id="wpUploader" maxlength="24" placeholder="开发者名称"></div>
+            <div class="field"><label>适配端</label><select id="wpTarget"><option value="both">电脑 + 手机</option><option value="pc">仅电脑</option><option value="phone">仅手机</option></select></div>
+            <div class="field wide"><label>动态壁纸文件（MP4 / WebM / GIF / WebP，最大 60 MB）</label><input id="wpFile" type="file" accept="video/mp4,video/webm,image/gif,image/webp,image/apng" onchange="wallpaperFileChanged(this)"></div>
+          </div>
+          <div class="asset-preview" id="wpPreview"><div class="ph"><b>◐</b>选中文件后在这里预览<br>会自动读出画面尺寸并校验横竖屏</div></div>
+          <div class="asset-meta" id="wpMeta"></div>
+          <div style="display:flex;gap:7px;flex-wrap:wrap">
+            <button class="btn pri" id="wpUploadBtn" onclick="uploadWallpaper()" disabled>⇧ 导入并发布</button>
+            <button class="btn" onclick="resetWallpaperForm()">清空</button>
+            <a class="btn" href="https://github.com/Hamburgerwow/Burger-Chat/upload/main/wallpapers" target="_blank" rel="noopener">打开 GitHub 壁纸目录</a>
+          </div>
+          <div class="notice" style="margin-top:12px"><b>导入方式：</b>已配置 GitHub 密钥时，点导入会直接把原文件和更新后的 <code>wallpapers/index.json</code> 写入仓库，旧壁纸条目全部保留；未配置密钥时导出原文件和 index，再打开 GitHub 上传页。</div>
+        </div>
+        <div class="card">
+          <div class="card-h"><div><h2>我的壁纸</h2><p>本机导出记录，可按横屏 / 竖屏筛选</p></div><div class="sp"></div><span class="pill" id="wpCount">0</span></div>
+          <div class="asset-meta"><button class="btn sm" onclick="renderWallpapers('')">全部</button><button class="btn sm" onclick="renderWallpapers('horizontal')">横屏</button><button class="btn sm" onclick="renderWallpapers('vertical')">竖屏</button></div>
+          <div class="asset-list" id="wpList"><div class="empty">还没有导出过壁纸</div></div>
+          <div class="notice" style="margin-top:12px"><b>尺寸规则：</b>横屏按宽高比 ≥ 1.2 校验，竖屏按宽高比 ≤ 0.85 校验；上传前会自动读取视频或图片的真实分辨率。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hidden" id="view-music">
+      <div class="grid g2">
+        <div class="card">
+          <div class="card-h"><div><h2>上传背景音乐</h2><p>选中 MP3 后自动上传到 GitHub</p></div><div class="sp"></div><span class="pill" id="muState">未选择</span></div>
+          <div class="formgrid">
+            <div class="field"><label>歌曲名称（可留空）</label><input id="muTitle" maxlength="40" placeholder="留空会自动使用文件名"></div>
+            <div class="field"><label>上传者</label><input id="muUploader" maxlength="24" placeholder="开发者名称"></div>
+            <div class="field wide"><label>MP3 文件（最大 16 MB）</label><input id="muFile" type="file" accept="audio/mpeg,.mp3" onchange="musicFileChanged(this)"></div>
+          </div>
+          <div class="asset-preview" id="muPreview"><div class="ph"><b>♫</b>选中 MP3 后会自动上传<br>不需要再手动打开 GitHub</div></div>
+          <div class="asset-meta" id="muMeta"></div>
+          <div style="display:flex;gap:7px;flex-wrap:wrap">
+            <button class="btn pri" id="muUploadBtn" onclick="uploadMusic()" disabled style="display:none">↻ 重试上传</button>
+            <button class="btn" onclick="resetMusicForm()">清空</button>
+          </div>
+          <div class="notice" style="margin-top:12px"><b>自动上传：</b>选中 MP3 后会直接写入 <code>music/</code> 并更新 <code>music/index.json</code>，旧曲目全部保留；标题留空会自动使用文件名。需要先在设置里配置 GitHub 密钥。</div>
+        </div>
+        <div class="card">
+          <div class="card-h"><div><h2>我的背景音乐</h2><p>已发布记录，可单独删除</p></div><div class="sp"></div><span class="pill" id="muCount">0</span></div>
+          <div class="asset-list" id="muList"><div class="empty">还没有发布过背景音乐</div></div>
+          <div class="notice" style="margin-top:12px"><b>播放规则：</b>官网优先读取 <code>music/index.json</code> 的 <code>latest</code>；没有新歌时回退到默认《萤火之森》。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hidden" id="view-studio">
+      <div class="grid g2">
+        <div class="card">
+          <div class="card-h"><div><h2>插件资料</h2><p>按 burger-chat-plugin/v1 规范填写</p></div><div class="sp"></div><span class="pill" id="draftState">草稿</span></div>
+          <div class="formgrid">
+            <div class="field"><label>插件 ID</label><input id="fId" placeholder="bcp.dev.hello" oninput="markDirty()"></div>
+            <div class="field"><label>插件名称</label><input id="fName" maxlength="32" placeholder="快捷打招呼" oninput="markDirty()"></div>
+            <div class="field"><label>版本号</label><input id="fVer" value="1.0.0" placeholder="1.0.0" oninput="markDirty()"></div>
+            <div class="field"><label>分类</label><select id="fCat" onchange="markDirty()"><option>聊天增强</option><option>媒体</option><option>工具</option><option>主题</option><option>集成</option></select></div>
+            <div class="field"><label>图标（一个 emoji）</label><input id="fIcon" value="🧩" maxlength="8" oninput="markDirty()"></div>
+            <div class="field"><label>需要内存 MB</label><input id="fMem" type="number" min="1" max="64" value="4" oninput="markDirty()"></div>
+            <div class="field"><label>最低适配版本</label><input id="fMin" value="0.40.31"></div>
+            <div class="field"><label>最高适配版本</label><input id="fMax" value="0.40.99"></div>
+            <div class="field wide"><label>插件介绍（8–300 字）</label><textarea id="fDesc" rows="3" maxlength="300" placeholder="说清楚这个插件解决什么问题、怎么用。" oninput="markDirty()"></textarea></div>
+            <div class="field wide"><label>标签（逗号分隔，最多 5 个）</label><input id="fTags" placeholder="快捷, 聊天, 问候" oninput="markDirty()"></div>
+          </div>
+
+          <div class="card-h" style="margin-top:18px"><div><h2>图形化功能编排</h2><p>勾选需要的模块，AI 或模板会按规范生成代码</p></div></div>
+          <div class="builder">
+            <div class="block">
+              <div class="bh"><input type="checkbox" id="bTop" checked><b>聊天页顶部按钮</b><span>header</span></div>
+              <div class="bf"><input id="bTopLabel" value="打招呼" maxlength="12" placeholder="按钮文字"><input id="bTopText" value="你好呀！" placeholder="点击后发送的文字"></div>
+            </div>
+            <div class="block">
+              <div class="bh"><input type="checkbox" id="bCompose" checked><b>输入栏快捷按钮</b><span>compose</span></div>
+              <div class="bf"><input id="bComposeLabel" value="快捷语" maxlength="12" placeholder="按钮文字"><input id="bComposeText" value="收到，马上处理。" placeholder="点击后发送的文字"></div>
+            </div>
+            <div class="block">
+              <div class="bh"><input type="checkbox" id="bMsg"><b>消息关键词自动回复</b><span>chat</span></div>
+              <div class="bf"><input id="bMsgKey" value="在吗" placeholder="关键词"><input id="bMsgReply" value="在的，你说。" placeholder="自动回复"></div>
+            </div>
+            <div class="block">
+              <div class="bh"><input type="checkbox" id="bSet" checked><b>插件设置面板</b><span>settings</span></div>
+              <div class="bf"><input id="bSetTitle" value="使用说明" placeholder="面板标题"><input id="bSetBody" value="在顶部按钮发送预设问候语。" placeholder="面板说明"></div>
+            </div>
+            <div class="block">
+              <div class="bh"><input type="checkbox" id="bNet"><b>网络请求按钮</b><span>net</span></div>
+              <div class="bf"><input id="bNetUrl" placeholder="https://… 返回文本" style="flex:1"></div>
+            </div>
+            <div class="block">
+              <div class="bh"><input type="checkbox" id="bStorage"><b>本地存储示例</b><span>storage</span></div>
+              <div class="bf"><input id="bStoreKey" value="clicks" placeholder="存储键"></div>
+            </div>
+          </div>
+
+          <div class="card-h" style="margin-top:18px"><div><h2>给 AI 的需求描述</h2><p>用自然语言讲清楚功能、按钮位置、交互和边界</p></div></div>
+          <div class="promptbox">
+            <textarea id="fPrompt" placeholder="例如：在聊天输入栏加一个「翻译」按钮，点击后把我输入框里的文字转成英文再发送；再在插件设置里放一个说明面板。"></textarea>
+            <div class="hint">AI 会输出完整 manifest + main 代码；没有连接模型时，用图形化模板直接生成可编译的插件。</div>
+          </div>
+
+          <div class="card-h" style="margin-top:18px"><div><h2>开源模型设置</h2><p>默认在线开源模型（GPT-OSS 20B，免 Key）；也可切到本地 Ollama 或其他在线服务</p></div></div>
+          <div class="formgrid">
+            <div class="field wide"><label>模型来源</label><select id="fAiPreset" onchange="applyAiPreset('f')"></select></div>
+            <div class="field wide"><label>接口地址</label><input id="fAiEndpoint" list="aiEndpointList" placeholder="https://text.pollinations.ai/openai"></div>
+            <div class="field"><label>模型名</label><input id="fAiModel" list="aiModelList" placeholder="openai"></div>
+            <div class="field"><label>API Key（在线免 Key 模型可留空）</label><input id="fAiKey" type="password" placeholder="sk-…（只存在本机 localStorage）"></div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px">
+            <button class="btn sm" onclick="pullOnlineModels('f')">↻ 拉取在线模型</button>
+            <span class="codehint" id="fAiModelState" style="display:block;margin:0">默认在线免 Key；调用失败会自动回退图形化模板。</span>
+          </div>
+
+          <div class="card-h" style="margin-top:18px"><div><h2>编译与发布</h2><p>先编译测试，再审核；审核通过后自动导出并打开 GitHub 上传页</p></div></div>
+          <div class="statusline" id="compileStatus"><span class="s"><i></i>未编译</span></div>
+          <div style="display:flex;gap:7px;flex-wrap:wrap">
+            <input type="file" id="importPluginFile" accept=".json,application/json" style="display:none" onchange="importDraft(this)">
+            <button class="btn" onclick="document.getElementById('importPluginFile').click()">⇧ 导入 .bcp.json</button>
+            <button class="btn pri" onclick="generateDraft()">✦ 生成并编译</button>
+            <button class="btn" onclick="compileDraft(true)">仅重新编译</button>
+            <button class="btn ghost" onclick="showView('audit')">去审核</button>
+            <button class="btn" onclick="publishDraft()" id="pubBtn" title="导出 .bcp.json 并打开 GitHub 上传页，无需 Token">导出并发布</button>
+            <button class="btn" onclick="downloadDraft()">导出 .bcp.json</button>
+            <a class="btn" id="uploadFallback" href="https://github.com/Hamburgerwow/Burger-Chat/upload/main/plugins" target="_blank" rel="noopener" style="display:none">打开 GitHub 上传页</a>
+          </div>
+          <div class="notice" style="margin-top:12px"><b>发布前置条件：</b>编译通过 + 审核通过。审核通过后会自动导出 <code>.bcp.json</code> 并打开 GitHub 上传页；已配置代发后端时可直接写入 <code>plugins/</code>，不需要填写 Token。</div>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><div><h2>代码预览</h2><p>发布前可手动修正，仍会重新校验</p></div><div class="sp"></div><span class="pill" id="codeLines">0 行</span></div>
+          <div class="codebox">
+            <div class="ch"><b>main.js</b><span class="sp"></span><span>Burger Chat Plugin API v1</span></div>
+            <textarea id="codeOut" spellcheck="false" oninput="onCodeEdit()"></textarea>
+          </div>
+          <div class="manifest" id="manifestOut">manifest 预览</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hidden" id="view-audit">
+      <div class="grid g2">
+        <div class="card">
+          <div class="card-h"><div><h2>上架审核</h2><p>先跑本地规则，再交给开源模型复核</p></div><div class="sp"></div><span class="pill" id="auditBadge">未审核</span></div>
+          <div class="notice">审核范围：暴力血腥、色情低俗、未成年人性化、违法危险、赌博毒品、仇恨歧视、诈骗与恶意代码。命中任一项即拒绝上架。</div>
+          <div class="statusline" id="auditStatus"><span class="s"><i></i>等待审核</span></div>
+          <div class="card" style="box-shadow:none;padding:12px;background:#fbfaff">
+            <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+              <button class="btn pri" onclick="runAudit()">◉ 运行 AI 审核</button>
+              <button class="btn" onclick="localAuditOnly()">仅本地规则审核</button>
+              <span style="font-size:10.5px;color:#8c93a2" id="auditModel">模型：未配置</span>
+            </div>
+          </div>
+          <div class="auditlog" id="auditLog">尚未运行审核。\n当前草稿：—</div>
+        </div>
+        <div class="card">
+          <div class="card-h"><div><h2>审核规则</h2><p>客户端安装前还会做平台、版本、内存和哈希校验</p></div></div>
+          <div class="policy">
+            <div class="rule"><div class="n">01</div><div><b>暴力与血腥</b><span>不得宣传、教唆或展示伤害、武器制作、爆炸物等</span></div><span class="st pill">拒绝</span></div>
+            <div class="rule"><div class="n">02</div><div><b>色情与低俗</b><span>不得包含色情、性暗示、性交易或未成年人性化内容</span></div><span class="st pill">拒绝</span></div>
+            <div class="rule"><div class="n">03</div><div><b>违法与危险</b><span>不得涉及毒品、赌博、诈骗、黑客攻击、隐私窃取</span></div><span class="st pill">拒绝</span></div>
+            <div class="rule"><div class="n">04</div><div><b>代码安全</b><span>禁止 eval、动态 Function、直接读写 cookie、外链脚本注入</span></div><span class="st pill">拒绝</span></div>
+            <div class="rule"><div class="n">05</div><div><b>平台与版本</b><span>只允许 PC / both；手机端不能作为新插件唯一目标</span></div><span class="st pill warn">校验</span></div>
+            <div class="rule"><div class="n">06</div><div><b>内容质量</b><span>名称、介绍、按钮文案需清楚，不得堆砌关键词</span></div><span class="st pill warn">人工</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hidden" id="view-weekly">
+      <div class="grid g2">
+        <div class="card">
+          <div class="card-h"><div><h2>本周精选</h2><p>按评分与评分人数排序，最多置顶 3 个</p></div><div class="sp"></div><span class="pill" id="weeklyWeek">—</span></div>
+          <div class="notice">客户端商店会把 TOP1–3 固定在最上方，并显示「本周精选」徽章。已取消 GitHub Token 直写；点「导出本周精选 registry」会生成新的 <code>registry.json</code> 并打开 GitHub 上传页，上传覆盖后由 Cloudflare 构建生效。</div>
+          <div class="rowlist" id="weeklyList"><div class="empty">正在读取商店…</div></div>
+          <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:12px">
+            <button class="btn pri" onclick="saveWeekly()">导出本周精选 registry</button>
+            <button class="btn" onclick="autoPickWeekly()">按评分自动选 TOP3</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-h"><div><h2>榜单说明</h2><p>周编号按 ISO 周计算，跨周自动换榜</p></div></div>
+          <div class="kv">
+            <div><b>当前周</b><span id="isoWeek">—</span></div>
+            <div><b>已收录插件</b><span id="pluginCount">—</span></div>
+            <div><b>有评分插件</b><span id="ratedCount">—</span></div>
+            <div><b>精选位数</b><span>TOP 3</span></div>
+          </div>
+          <div class="calendar" id="weekCalendar"></div>
+          <div class="notice" style="margin-top:12px"><b>评分聚合：</b>registry 的 <code>rating</code> 与 <code>ratingCount</code> 是榜单字段。客户端评分先本机保存；需要跨设备汇总时，在 registry 配置 <code>rateApi</code> 后由客户端上报。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hidden" id="view-settings">
+      <div class="grid g2">
+        <div class="card">
+          <div class="card-h"><div><h2>账号与发布</h2><p>开发者资料只保存在本机 localStorage；GitHub 密钥在下方独立配置</p></div></div>
+          <div class="formgrid">
+            <div class="field"><label>开发者名称</label><input id="sName"></div>
+            <div class="field"><label>注册邮箱</label><input id="sEmail" type="email" placeholder="you@example.com" readonly style="background:#f7f6fb;color:#6f6885"></div>
+            <div class="field wide"><label>开发者标识</label><input id="sDevId" placeholder="小写字母、数字、短横线"></div>
+            <div class="field wide"><label>开发心情</label><select id="sMood"><option>开心</option><option>专注</option><option>灵感爆棚</option><option>摸鱼</option><option>深夜赶工</option><option>佛系</option></select></div>
+            <div class="field wide"><label>头像</label><input id="sAvatarFile" type="file" accept="image/*"></div>
+          </div>
+          <div class="notice" style="margin-top:12px"><b>发布方式：</b>配置 GitHub 密钥后，审核通过会直接写入仓库 <code>plugins/</code>；没有密钥时仍会导出文件并打开 GitHub 上传页。</div>
+          <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:12px"><button class="btn pri" onclick="saveSettings()">保存设置</button><button class="btn bad" onclick="resetProfile()">清除本地资料</button></div>
+        </div>
+        <div class="card" style="grid-column:1/-1">
+          <div class="card-h"><div><h2>GitHub 密钥</h2><p>用于直接写入 Hamburgerwow/Burger-Chat，仅保存在这台电脑的 localStorage</p></div></div>
+          <div class="formgrid">
+            <div class="field wide"><label>Personal Access Token</label><input id="sGhToken" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_… 或 ghp_…"></div>
+            <div class="field"><label>目标仓库</label><input value="Hamburgerwow/Burger-Chat" readonly style="background:#f7f6fb;color:#6f6885"></div>
+            <div class="field"><label>需要权限</label><input value="Contents: Read & Write" readonly style="background:#f7f6fb;color:#6f6885"></div>
+          </div>
+          <div style="display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-top:10px">
+            <button class="btn pri" onclick="verifyGhToken()">验证密钥</button>
+            <button class="btn" onclick="saveSettings()">保存密钥</button>
+            <button class="btn bad" onclick="clearGhToken()">清除密钥</button>
+            <span class="codehint" id="ghTokenState" style="display:block;margin:0">未保存</span>
+          </div>
+          <div class="notice" style="margin-top:12px"><b>建议用 fine-grained token：</b>只授权 <code>Hamburgerwow/Burger-Chat</code> 仓库的 <code>Contents: Read and write</code>。密钥不会上传到服务器；验证会请求 GitHub <code>/user</code> 与仓库信息。提交插件时会直接写入 <code>plugins/&lt;id&gt;-&lt;version&gt;.bcp.json</code>，失败则自动回退到导出上传。</div>
+        </div>
+        <div class="card">
+          <div class="card-h"><div><h2>开源模型</h2><p>默认在线开源模型，用于生成插件代码和内容审核</p></div></div>
+          <div class="formgrid">
+            <div class="field wide"><label>模型来源</label><select id="sAiPreset" onchange="applyAiPreset('s')"></select></div>
+            <div class="field wide"><label>接口地址</label><input id="sAiEndpoint" list="aiEndpointList" placeholder="https://text.pollinations.ai/openai"></div>
+            <div class="field"><label>模型名</label><input id="sAiModel" list="aiModelList" placeholder="openai"></div>
+            <div class="field"><label>API Key</label><input id="sAiKey" type="password" placeholder="在线免 Key 模型可留空"></div>
+            <div class="field wide"><label>邮件网关（默认本机）</label><input id="sMail" placeholder="http://127.0.0.1:8787/email/send"></div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px">
+            <button class="btn sm" onclick="pullOnlineModels('s')">↻ 拉取在线模型</button>
+            <span class="codehint" id="sAiModelState" style="display:block;margin:0">默认在线免 Key；也可填硅基流动、OpenRouter、Hugging Face 或本地 Ollama。</span>
+          </div>
+          <div class="notice" style="margin-top:12px"><b>在线开源模型：</b>默认使用 Pollinations 的 GPT-OSS 20B（免 Key，OpenAI 兼容）；也可切到硅基流动 Qwen2.5、OpenRouter Llama 3.3、Hugging Face Qwen2.5，或本机 Ollama。在线接口需要能访问对应域名；本地 Ollama 接口通常是 <code>http://127.0.0.1:11434/v1/chat/completions</code>。</div>
+        </div>
+        <div class="card">
+          <div class="card-h"><div><h2>网页外观</h2><p>自定义 Castle Developer 的背景颜色和字体颜色</p></div></div>
+          <div class="formgrid">
+            <div class="field"><label>背景颜色</label><input id="sBgColor" type="color" value="#f2f0f7" oninput="previewAppearance()"></div>
+            <div class="field"><label>字体颜色</label><input id="sFontColor" type="color" value="#16181d" oninput="previewAppearance()"></div>
+          </div>
+          <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:12px">
+            <button class="btn pri" onclick="saveAppearance()">应用并保存颜色</button>
+            <button class="btn" onclick="resetAppearance()">恢复默认</button>
+          </div>
+          <div class="notice" style="margin-top:12px"><b>只影响这台电脑的 Castle Developer：</b>颜色保存在本机 localStorage，不会改插件、不会写到 GitHub；换浏览器或清缓存后需要重新设置。字体颜色会应用到主内容区，深色背景建议配浅色字。</div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="modal hidden" id="onboard">
+  <div class="box">
+    <div class="steps"><div class="on"></div><div class="on" id="step2"></div></div>
+    <h2>成为 Burger Chat 插件开发者</h2>
+    <p class="sub">首次进入需要建立开发者名片。资料只保存在本机；邮箱只用于接收验证码。</p>
+    <div class="avatarrow">
+      <div class="avatarbig" id="avatarPreview">🙂</div>
+      <div class="col">
+        <b>设置头像</b>
+        <span>支持 JPG / PNG，自动裁剪成方形，存为本地 dataURL。</span>
+        <div style="margin-top:7px"><input id="avatarFile" type="file" accept="image/*" style="font-size:11px"></div>
+      </div>
+    </div>
+    <div class="formgrid" style="margin-top:16px">
+      <div class="field"><label>开发者名称</label><input id="oName" maxlength="20" placeholder="例如 Hamburgerwow"></div>
+      <div class="field"><label>开发者标识（用于插件 ID）</label><input id="oDevId" maxlength="24" placeholder="hamburgerwow" oninput="this.value=this.value.toLowerCase().replace(/[^a-z0-9-]/g,'')"></div>
+      <div class="field wide"><label>开发心情</label><select id="oMood"><option>开心</option><option>专注</option><option>灵感爆棚</option><option>摸鱼</option><option>深夜赶工</option><option>佛系</option></select></div>
+      <div class="field wide"><label>邮箱</label><div class="emailbox"><input id="oEmail" type="email" maxlength="80" placeholder="you@example.com" autocomplete="email"><button class="btn" onclick="sendCode()">发送验证码</button></div></div>
+      <div class="field wide"><label>邮箱验证码</label><input id="oCode" maxlength="6" placeholder="6 位验证码" oninput="this.value=this.value.replace(/\D/g,'')"><div class="codehint" id="codeHint"></div></div>
+    </div>
+    <div class="actions">
+      <a href="https://hamburgerwow.top/" style="font-size:11px;color:#8c93a2;align-self:center">先随便看看</a>
+      <button class="btn sm" onclick="openDevLogin()" style="margin-left:12px">已有账号密钥？登录</button>
+      <div class="sp"></div>
+      <button class="btn pri" onclick="saveProfile()">完成注册并进入</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal hidden" id="devLogin">
+  <div class="box" style="max-width:460px">
+    <h2>登录开发者账号</h2>
+    <p class="sub">输入官网账号的 BC1 同步密钥，读回加密备份里的名称、头像和邮箱。密钥不会保存在本机。</p>
+    <div id="devLoginState" class="notice" style="display:none;margin-bottom:14px"></div>
+    <div class="formgrid">
+      <div class="field wide"><label>账号密钥</label><input id="loginKey" maxlength="64" autocomplete="off" spellcheck="false" placeholder="BC1-XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX"></div>
+      <div class="field wide"><label>开发者标识（首次登录时用于插件 ID）</label><input id="loginDevId" maxlength="24" placeholder="hamburgerwow" oninput="this.value=this.value.toLowerCase().replace(/[^a-z0-9-]/g,'')"></div>
+    </div>
+    <div class="actions">
+      <button class="btn" onclick="closeDevLogin()">取消</button>
+      <div class="sp"></div>
+      <button class="btn pri" id="devLoginGo" onclick="loginByKey()">验证并登录</button>
+    </div>
+  </div>
+</div>
+
+<datalist id="aiEndpointList">
+  <option value="https://text.pollinations.ai/openai"></option>
+  <option value="https://api.siliconflow.cn/v1/chat/completions"></option>
+  <option value="https://openrouter.ai/api/v1/chat/completions"></option>
+  <option value="https://router.huggingface.co/v1/chat/completions"></option>
+  <option value="http://127.0.0.1:11434/v1/chat/completions"></option>
+</datalist>
+<datalist id="aiModelList"></datalist>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+var REPO = 'Hamburgerwow/Burger-Chat';
+var REPO_URL = 'https://github.com/' + REPO;
+/* 可选：后端代发地址；为空时审核通过后自动导出并打开 GitHub 上传页 */
+var PUBLISH_API = '';
+var REG_URLS = ['https://hamburgerwow.top/plugins/registry.json', 'http://hamburgerwow.top/plugins/registry.json'];
+var CATS = ['聊天增强','媒体','工具','主题','集成'];
+var LS_PROFILE = 'bcp.dev.profile.v1';
+var LS_SETTINGS = 'bcp.dev.settings.v1';
+var LS_DRAFT = 'bcp.dev.draft.v1';
+
+var profile = loadJSON(LS_PROFILE, null);
+var settings = loadJSON(LS_SETTINGS, {});
+if(!settings || typeof settings !== 'object') settings = {};
+settings.ghToken = String(settings.ghToken || '');
+var registry = null;
+var registryErr = '';
+var draft = loadJSON(LS_DRAFT, null) || emptyDraft();
+var compiled = false;
+var compileMsg = '';
+var audit = null;
+var mailCode = '';
+var mailExp = 0;
+var mailSentTo = '';
+var DEFAULT_MAIL_ENDPOINT = 'http://127.0.0.1:8787/email/send';
+var AI_PRESETS = [
+  { id:'pollinations', label:'在线开源 · GPT-OSS 20B（免 Key）', endpoint:'https://text.pollinations.ai/openai', model:'openai', key:'', note:'免 Key，OpenAI 兼容；国内可直连。' },
+  { id:'siliconflow', label:'硅基流动 · Qwen2.5（需 Key）', endpoint:'https://api.siliconflow.cn/v1/chat/completions', model:'Qwen/Qwen2.5-7B-Instruct', key:'', note:'国内节点，注册后填 API Key。' },
+  { id:'openrouter', label:'OpenRouter · Llama 3.3 免费模型（需 Key）', endpoint:'https://openrouter.ai/api/v1/chat/completions', model:'meta-llama/llama-3.3-70b-instruct:free', key:'', note:'免费模型可能限流，可在拉取列表后换模型。' },
+  { id:'huggingface', label:'Hugging Face · Qwen2.5（需 Token）', endpoint:'https://router.huggingface.co/v1/chat/completions', model:'Qwen/Qwen2.5-7B-Instruct', key:'', note:'需要 Hugging Face Token，网络需可访问。' },
+  { id:'ollama', label:'本机 Ollama · Qwen2.5（本地）', endpoint:'http://127.0.0.1:11434/v1/chat/completions', model:'qwen2.5:7b', key:'', note:'需要本机已启动 Ollama 并拉取模型。' }
+];
+var DEFAULT_AI = AI_PRESETS[0];
+var AI_MIN_INTERVAL = 46000;
+var aiLastCallAt = 0;
+var dirty = false;
+var devLoginHadOnboard = false;
+
+function loadJSON(k, d){ try{ var v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); }catch(e){ return d; } }
+function saveJSON(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+function h(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function num(n){ n = Number(n); return Number.isFinite(n) ? n : 0; }
+function toast(t){
+  var el = document.getElementById('toast');
+  el.textContent = String(t || '');
+  el.classList.add('on');
+  clearTimeout(toast._t);
+  toast._t = setTimeout(function(){ el.classList.remove('on'); }, 2600);
+}
+function semver(v){ return /^\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(String(v||'')); }
+function vcmp(a,b){
+  var x = String(a||'0.0.0').split('.').map(Number), y = String(b||'0.0.0').split('.').map(Number);
+  for(var i=0;i<3;i++){ var d=(x[i]||0)-(y[i]||0); if(d) return d>0?1:-1; }
+  return 0;
+}
+function weekKey(d){
+  d = d || new Date();
+  var t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  var day = t.getUTCDay() || 7;
+  t.setUTCDate(t.getUTCDate() + 4 - day);
+  var y = t.getUTCFullYear();
+  var start = new Date(Date.UTC(y,0,1));
+  var week = Math.ceil((((t - start) / 86400000) + 1) / 7);
+  return y + '-W' + (week < 10 ? '0' + week : week);
+}
+function slug(s){ return String(s||'').toLowerCase().replace(/[^a-z0-9-]/g,'-').replace(/^-+|-+$/g,'').slice(0,20) || 'plugin'; }
+function stars(avg){
+  var n = Math.round(num(avg) * 2) / 2;
+  var out = '';
+  for(var i=1;i<=5;i++) out += '<i class="' + (n >= i ? 'on' : '') + '" style="color:' + (n >= i ? '#ffb531' : '#ded9e8') + '">★</i>';
+  return out;
+}
+function fmtTime(ts){
+  if(!ts) return '—';
+  try{ var d = new Date(ts); return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }catch(e){ return '—'; }
+}
+
+function emptyDraft(){
+  return { id:'', name:'', version:'1.0.0', developer: profile ? profile.name : '', target:'both',
+    minApp:'0.40.31', maxApp:'0.40.99', apiVersion:1, memoryMB:4, category:'聊天增强',
+    description:'', icon:'🧩', tags:[], ui:[], main:'', homepage:'' };
+}
+
+/* —— 首次资料 —— */
+function needOnboard(){ return !profile || !profile.name || !profile.devId || !profile.email || !profile.verified || !profile.avatar; }
+function showOnboard(){
+  document.getElementById('onboard').classList.remove('hidden');
+  if(profile){
+    document.getElementById('oName').value = profile.name || '';
+    document.getElementById('oDevId').value = profile.devId || '';
+    document.getElementById('oMood').value = profile.mood || '开心';
+    document.getElementById('oEmail').value = profile.email || '';
+    if(profile.avatar){
+      document.getElementById('avatarPreview').innerHTML = /^(data:|https?:|\/)/.test(String(profile.avatar))
+        ? '<img src="' + h(profile.avatar) + '" alt="avatar">'
+        : h(profile.avatar);
+    }
+  }
+}
+function pickAvatar(input, cb){
+  var f = input.files && input.files[0];
+  if(!f) return;
+  var fr = new FileReader();
+  fr.onload = function(){
+    var img = new Image();
+    img.onload = function(){
+      var s = Math.min(img.width, img.height);
+      var c = document.createElement('canvas');
+      c.width = 128; c.height = 128;
+      var ctx = c.getContext('2d');
+      ctx.drawImage(img, (img.width-s)/2, (img.height-s)/2, s, s, 0, 0, 128, 128);
+      cb(c.toDataURL('image/jpeg', 0.86));
+    };
+    img.src = fr.result;
+  };
+  fr.readAsDataURL(f);
+}
+document.getElementById('avatarFile').addEventListener('change', function(){
+  pickAvatar(this, function(url){
+    document.getElementById('avatarPreview').innerHTML = '<img src="' + url + '" alt="avatar">';
+    window.__avatar = url;
+  });
+});
+function validEmail(v){ return /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,24}$/.test(String(v||'')); }
+function sendCode(){
+  var email = document.getElementById('oEmail').value.trim();
+  if(!validEmail(email)){ toast('请输入正确的邮箱地址'); return; }
+  mailCode = String(Math.floor(100000 + Math.random() * 900000));
+  mailExp = Date.now() + 5 * 60 * 1000;
+  mailSentTo = email;
+  var hint = document.getElementById('codeHint');
+  hint.style.display = 'block';
+  var ep = String(settings.mailEndpoint || DEFAULT_MAIL_ENDPOINT).trim();
+  if(ep){
+    hint.textContent = '正在发送验证码邮件…';
+    fetch(ep, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ email:email, code:mailCode, scene:'bcp-dev', name:document.getElementById('oName').value.trim() })
+    })
+      .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json().catch(function(){ return {}; }); })
+      .then(function(o){
+        if(o && o.code){ mailCode = String(o.code); }
+        hint.textContent = '验证码已发送至 ' + email + '，5 分钟内有效。';
+        toast('验证码已发送至邮箱');
+      })
+      .catch(function(e){
+        hint.textContent = '邮件网关未接通（' + (e.message || e) + '），本地验证码：' + mailCode + '（5 分钟有效）';
+        toast('邮件发送失败，已改用本地验证码');
+      });
+  } else {
+    hint.textContent = '未配置邮件网关，无法真实发送邮件。本地验证码：' + mailCode + '（5 分钟有效）。请在设置里填写邮件网关。';
+    toast('未配置邮件网关，本地验证码：' + mailCode);
+  }
+}
+function saveProfile(){
+  var name = document.getElementById('oName').value.trim();
+  var devId = document.getElementById('oDevId').value.trim().toLowerCase();
+  var mood = document.getElementById('oMood').value;
+  var email = document.getElementById('oEmail').value.trim();
+  var code = document.getElementById('oCode').value.trim();
+  if(name.length < 2) return toast('开发者名称至少 2 个字');
+  if(!/^[a-z0-9][a-z0-9-]{1,23}$/.test(devId)) return toast('开发者标识需小写字母/数字/短横线，2–24 位');
+  if(!validEmail(email)) return toast('邮箱格式不对');
+  if(mailSentTo !== email) return toast('请先向这个邮箱发送验证码');
+  if(!mailCode || Date.now() > mailExp) return toast('验证码已过期，请重新发送');
+  if(code !== mailCode) return toast('验证码不正确');
+  var avatar = window.__avatar || (profile && profile.avatar) || '';
+  if(!avatar) return toast('请先上传并设置开发者头像');
+  profile = {
+    name: name, devId: devId, mood: mood, email: email, verified: true,
+    avatar: avatar,
+    createdAt: (profile && profile.createdAt) || Date.now()
+  };
+  saveJSON(LS_PROFILE, profile);
+  if(!draft.developer || draft.developer === '') draft.developer = name;
+  saveJSON(LS_DRAFT, draft);
+  document.getElementById('onboard').classList.add('hidden');
+  boot();
+  toast('开发者名片已保存');
+}
+
+/* —— 开发者登录：用官网 BC1 账号密钥读回加密资料 —— */
+function devKeyNorm(v){
+  var s = String(v == null ? '' : v).toUpperCase().replace(/[^A-Z0-9]/g,'');
+  return /^BC1[0-9A-F]{48}$/.test(s) ? s : '';
+}
+function devHexBytes(hex){
+  hex = String(hex || '');
+  if(hex.length % 2) throw new Error('密钥数据长度不对');
+  var out = new Uint8Array(hex.length / 2);
+  for(var i=0;i<out.length;i++) out[i] = parseInt(hex.substr(i*2,2),16);
+  return out;
+}
+function devB64Bytes(b64){
+  var s = atob(String(b64 || ''));
+  var out = new Uint8Array(s.length);
+  for(var i=0;i<s.length;i++) out[i] = s.charCodeAt(i);
+  return out;
+}
+function devIdFromName(name, email){
+  var s = String(name || '').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,24);
+  if(s.length < 2){
+    s = String(email || '').split('@')[0].toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,24);
+  }
+  return s;
+}
+function devRenderLoginBtn(){
+  var btn = document.getElementById('devLoginBtn');
+  if(!btn) return;
+  btn.textContent = profile ? '账号' : '登录';
+  btn.title = profile ? ('已登录：' + profile.name) : '使用官网账号密钥登录';
+}
+function openDevLogin(){
+  var modal = document.getElementById('devLogin');
+  var state = document.getElementById('devLoginState');
+  var onb = document.getElementById('onboard');
+  devLoginHadOnboard = !!(onb && !onb.classList.contains('hidden'));
+  if(devLoginHadOnboard) onb.classList.add('hidden');
+  document.getElementById('loginKey').value = '';
+  document.getElementById('loginDevId').value = profile ? (profile.devId || '') : '';
+  if(profile){
+    state.style.display = 'block';
+    state.innerHTML = '<b>当前已登录：' + h(profile.name) + '</b><br><span style="font-size:11px;color:#6d7382">' + h(profile.email || '') + ' · ' + h(profile.devId || '') + '</span><div style="margin-top:9px"><button class="btn sm" onclick="logoutDev()">退出登录</button></div>';
+  } else {
+    state.style.display = 'none';
+    state.innerHTML = '';
+  }
+  modal.classList.remove('hidden');
+  setTimeout(function(){ document.getElementById('loginKey').focus(); }, 30);
+}
+function closeDevLogin(){
+  document.getElementById('devLogin').classList.add('hidden');
+  if(devLoginHadOnboard && !profile){
+    document.getElementById('onboard').classList.remove('hidden');
+  }
+  devLoginHadOnboard = false;
+}
+function logoutDev(){
+  if(!confirm('退出后会回到首次注册界面，本机开发者资料将被清除。继续退出？')) return;
+  profile = null;
+  try{ localStorage.removeItem(LS_PROFILE); }catch(e){}
+  closeDevLogin();
+  boot();
+  devRenderLoginBtn();
+  toast('已退出开发者账号');
+}
+async function loginByKey(){
+  var keyNorm = devKeyNorm(document.getElementById('loginKey').value);
+  var devId = document.getElementById('loginDevId').value.trim().toLowerCase();
+  var go = document.getElementById('devLoginGo');
+  if(!keyNorm){ toast('账号密钥格式不对，应为 BC1 加 48 位十六进制'); return; }
+  if(devId && !/^[a-z0-9][a-z0-9-]{1,23}$/.test(devId)){ toast('开发者标识需小写字母/数字/短横线，2–24 位'); return; }
+  if(!window.crypto || !crypto.subtle){ toast('当前浏览器不支持安全解密，请换新版浏览器'); return; }
+  go.disabled = true;
+  go.textContent = '验证中…';
+  try{
+    var enc = new TextEncoder();
+    var idBuf = await crypto.subtle.digest('SHA-256', enc.encode('burger-chat-site-id-v1:' + keyNorm));
+    var id = Array.prototype.map.call(new Uint8Array(idBuf), function(b){ return ('0' + b.toString(16)).slice(-2); }).join('');
+    var r = await fetch('/api/account/blob?id=' + encodeURIComponent(id), { cache:'no-store' });
+    if(r.status === 404) throw new Error('这个密钥还没有官网备份，请先在电脑端上传一次');
+    if(!r.ok) throw new Error('官网返回 HTTP ' + r.status);
+    var j = await r.json();
+    if(!j || !j.ok || !j.blob) throw new Error('官网没有读到密钥备份');
+    var env = typeof j.blob === 'string' ? JSON.parse(j.blob) : j.blob;
+    if(!env || env.v !== 1 || env.type !== 'burger-chat-site' || !env.iv || !env.tag || !env.data) throw new Error('备份格式不对');
+    var aesBuf = await crypto.subtle.digest('SHA-256', enc.encode('burger-chat-site-aes-v1:' + keyNorm));
+    var aes = await crypto.subtle.importKey('raw', aesBuf, { name:'AES-GCM' }, false, ['decrypt']);
+    var data = devB64Bytes(env.data), tag = devHexBytes(env.tag);
+    var all = new Uint8Array(data.length + tag.length);
+    all.set(data); all.set(tag, data.length);
+    var plain = await crypto.subtle.decrypt({
+      name:'AES-GCM',
+      iv:devHexBytes(env.iv),
+      additionalData:enc.encode('burger-chat-site-v1'),
+      tagLength:128
+    }, aes, all);
+    var payload = JSON.parse(new TextDecoder().decode(plain));
+    var acc = payload && payload.account;
+    if(!acc || !acc.email) throw new Error('备份里没有账号资料');
+    var name = String(acc.name || '').trim();
+    if(name.length < 2) throw new Error('账号名称为空，请先到官网补全名称');
+    if(!devId) devId = devIdFromName(name, acc.email);
+    if(!/^[a-z0-9][a-z0-9-]{1,23}$/.test(devId)) throw new Error('无法自动生成开发者标识，请在输入框填写');
+    profile = {
+      name:name,
+      devId:devId,
+      mood:String(acc.mood || '专注'),
+      email:String(acc.email),
+      verified:true,
+      avatar:String(acc.avatar || '🙂'),
+      createdAt:(profile && profile.createdAt) || Number(acc.createdAt) || Date.now()
+    };
+    saveJSON(LS_PROFILE, profile);
+    if(!draft.developer) { draft.developer = name; saveJSON(LS_DRAFT, draft); }
+    closeDevLogin();
+    boot();
+    devRenderLoginBtn();
+    toast('已登录：' + name);
+  }catch(e){
+    toast(String((e && e.message) || '登录失败，请检查密钥'));
+  }finally{
+    go.disabled = false;
+    go.textContent = '验证并登录';
+  }
+}
+
+/* —— 商店 —— */
+async function reloadRegistry(force){
+  document.getElementById('syncText').textContent = '商店同步中…';
+  registryErr = '';
+  for(var i=0;i<REG_URLS.length;i++){
+    try{
+      var r = await fetch(REG_URLS[i] + (REG_URLS[i].indexOf('?') < 0 ? ('?t=' + Date.now()) : ''), { cache:'no-store' });
+      if(!r.ok) throw new Error('HTTP ' + r.status);
+      var o = await r.json();
+      if(!o || o.schema !== 'burger-plugin-store/v1' || !Array.isArray(o.plugins)) throw new Error('商店数据格式不对');
+      registry = o;
+      for(var j=0;j<registry.plugins.length;j++){
+        if(registry.plugins[j].rating == null) registry.plugins[j].rating = 0;
+        if(registry.plugins[j].ratingCount == null) registry.plugins[j].ratingCount = 0;
+      }
+      document.getElementById('syncText').textContent = '商店已连接 · ' + fmtTime(registry.updated || Date.now());
+      renderAll();
+      if(force) toast('商店已同步');
+      return;
+    }catch(e){ registryErr = String(e.message || e); }
+  }
+  document.getElementById('syncText').textContent = '商店连接失败';
+  renderAll();
+  if(force) toast('商店读取失败：' + registryErr);
+}
+function pluginList(){ return registry && Array.isArray(registry.plugins) ? registry.plugins : []; }
+function isMine(p){
+  if(!profile) return false;
+  return String(p.developer || '') === String(profile.name || '') || String(p.id || '').indexOf('bcp.' + profile.devId + '.') === 0;
+}
+
+/* —— 渲染 —— */
+function renderAll(){
+  devRenderLoginBtn();
+  renderProfileChip();
+  renderStats();
+  renderMine();
+  renderWeekly();
+  renderOverviewWeek();
+  document.getElementById('pluginCount').textContent = pluginList().length;
+  document.getElementById('ratedCount').textContent = pluginList().filter(function(p){ return num(p.rating) > 0; }).length;
+  document.getElementById('isoWeek').textContent = weekKey();
+  renderCalendar();
+  renderSettings();
+  renderStudioMeta();
+}
+function renderProfileChip(){
+  var el = document.getElementById('sideProfile');
+  if(!profile) return;
+  var av = /^(data:|https?:|\/)/.test(String(profile.avatar || ''))
+    ? '<img src="' + h(profile.avatar) + '" alt="avatar">'
+    : '<div class="ph">' + h(profile.avatar || '🙂') + '</div>';
+  el.innerHTML = av + '<div><b>' + h(profile.name) + '</b><span>' + h(profile.mood || '专注') + ' · ' + h(profile.devId) + '</span></div>';
+}
+function renderStats(){
+  var mine = pluginList().filter(isMine);
+  var avg = mine.length ? mine.reduce(function(a,p){ return a + num(p.rating); }, 0) / mine.length : 0;
+  var top = weeklyIds().length;
+  var rated = mine.filter(function(p){ return num(p.rating) > 0; }).length;
+  var cards = [
+    { lbl:'已上架插件', num:mine.length, sub:'个', tag:'MINE' },
+    { lbl:'平均评分', num:(avg ? avg.toFixed(1) : '—'), sub:avg ? ' / 5' : '', tag:'RATING' },
+    { lbl:'本周精选', num:top, sub:' / 3', tag:'WEEKLY' },
+    { lbl:'有评分插件', num:rated, sub:' 个', tag:'FEEDBACK' }
+  ];
+  document.getElementById('statCards').innerHTML = cards.map(function(c){
+    return '<div class="mini"><span class="tag">' + c.tag + '</span><div class="lbl">' + c.lbl + '</div><div class="num">' + c.num + '<small>' + c.sub + '</small></div></div>';
+  }).join('');
+}
+function renderMine(){
+  var el = document.getElementById('mineList');
+  if(!profile){ el.innerHTML = '<div class="empty">先完成开发者注册</div>'; return; }
+  var list = pluginList().filter(isMine);
+  if(!list.length){ el.innerHTML = '<div class="empty">名下还没有插件。点「新建插件」或用 AI 工坊生成第一个。</div>'; return; }
+  el.innerHTML = list.map(function(p){
+    return '<div class="prow"><div class="pico">' + h(p.icon || '🧩') + '</div><div class="pmain">' +
+      '<div class="pname">' + h(p.name) + ' <em>v' + h(p.version) + '</em><span class="pill ok">已上架</span></div>' +
+      '<div class="pmeta">' + h(p.category) + ' · ' + num(p.memoryMB) + ' MB · 更新 ' + fmtTime(p.updated) + '</div>' +
+      '<div class="pdesc">' + h(p.description) + '</div>' +
+      '<div style="display:flex;gap:7px;align-items:center;margin-top:4px"><span class="stars">' + stars(p.rating) + '</span><span style="font-size:10px;color:#9aa1ae">' + (num(p.rating) ? num(p.rating).toFixed(1) : '暂无评分') + ' · ' + num(p.ratingCount) + ' 人</span></div></div>' +
+      '<div class="pacts"><button class="btn sm" onclick="editPlugin(\'' + h(p.id) + '\')">编辑</button><button class="btn sm" onclick="viewInStore(\'' + h(p.id) + '\')">查看</button><a class="btn sm" href="' + REPO_URL + '/blob/main/' + h(p.download || 'plugins/') + '" target="_blank">源文件</a></div></div>';
+  }).join('');
+}
+function weeklyIds(){
+  if(registry && registry.weekly && Array.isArray(registry.weekly.top)) return registry.weekly.top.slice(0,3);
+  return [];
+}
+function renderOverviewWeek(){
+  var el = document.getElementById('weekPreview');
+  var ids = weeklyIds();
+  var list = ids.map(function(id){ return pluginList().filter(function(p){ return p.id === id; })[0]; }).filter(Boolean);
+  if(!list.length){
+    list = pluginList().slice().sort(function(a,b){ return (num(b.rating) - num(a.rating)) || (num(b.ratingCount) - num(a.ratingCount)); }).slice(0,3);
+  }
+  document.getElementById('weekLabel').textContent = (registry && registry.weekly && registry.weekly.week ? registry.weekly.week : weekKey()) + ' · TOP ' + list.length;
+  el.innerHTML = list.length ? list.map(function(p,i){
+    return '<div class="prow"><div class="pico">' + h(p.icon||'🧩') + '</div><div class="pmain"><div class="pname">' + h(p.name) + ' <span class="pill">TOP' + (i+1) + '</span></div><div class="pmeta">' + h(p.developer) + ' · ' + h(p.category) + '</div><div class="pdesc">' + h(p.description) + '</div></div><div class="stars">' + stars(p.rating) + '</div></div>';
+  }).join('') : '<div class="empty">商店里还没有插件</div>';
+}
+function renderWeekly(){
+  var el = document.getElementById('weeklyList');
+  var list = pluginList().slice().sort(function(a,b){ return (num(b.rating) - num(a.rating)) || (num(b.ratingCount) - num(a.ratingCount)) || a.name.localeCompare(b.name); });
+  var ids = weeklyIds();
+  document.getElementById('weeklyWeek').textContent = (registry && registry.weekly && registry.weekly.week) || weekKey();
+  if(!list.length){ el.innerHTML = '<div class="empty">商店里还没有插件</div>'; return; }
+  el.innerHTML = list.map(function(p){
+    var on = ids.indexOf(p.id) >= 0;
+    return '<label class="prow" style="cursor:pointer"><input type="checkbox" class="wk" value="' + h(p.id) + '" ' + (on?'checked':'') + ' style="width:16px;height:16px;accent-color:#6f63f0;flex:0 0 16px">' +
+      '<div class="pico">' + h(p.icon||'🧩') + '</div><div class="pmain"><div class="pname">' + h(p.name) + ' <em>v' + h(p.version) + '</em></div>' +
+      '<div class="pmeta">' + h(p.developer) + ' · ' + h(p.category) + ' · ' + num(p.ratingCount) + ' 人评分</div>' +
+      '<div style="display:flex;gap:6px;align-items:center;margin-top:3px"><span class="stars">' + stars(p.rating) + '</span><b style="font-size:12px">' + (num(p.rating) ? num(p.rating).toFixed(1) : '—') + '</b></div></div></label>';
+  }).join('');
+  el.addEventListener('change', function(e){
+    if(!e.target.classList.contains('wk')) return;
+    var checked = [].slice.call(document.querySelectorAll('.wk:checked'));
+    if(checked.length > 3){ e.target.checked = false; toast('本周精选最多 3 个'); }
+  });
+}
+function renderCalendar(){
+  var el = document.getElementById('weekCalendar');
+  var d = new Date();
+  var day = d.getDay() || 7;
+  var monday = new Date(d); monday.setDate(d.getDate() - day + 1);
+  var html = '';
+  for(var i=0;i<7;i++){
+    var x = new Date(monday); x.setDate(monday.getDate() + i);
+    var cls = i === day - 1 ? 'top' : 'on';
+    html += '<div class="' + cls + '">' + (i+1) + '</div>';
+  }
+  el.innerHTML = html;
+}
+
+/* —— 设置 —— */
+function renderSettings(){
+  if(!profile) return;
+  document.getElementById('sName').value = profile.name || '';
+  document.getElementById('sDevId').value = profile.devId || '';
+  document.getElementById('sMood').value = profile.mood || '专注';
+  document.getElementById('sAiEndpoint').value = settings.aiEndpoint || '';
+  document.getElementById('sAiModel').value = settings.aiModel || '';
+  document.getElementById('sAiKey').value = settings.aiKey || '';
+  document.getElementById('sEmail').value = profile.email || '';
+  document.getElementById('sMail').value = settings.mailEndpoint || '';
+  var gh = document.getElementById('sGhToken');
+  if(gh) gh.value = settings.ghToken || '';
+  renderGhState();
+  var bg = document.getElementById('sBgColor');
+  var fc = document.getElementById('sFontColor');
+  if(bg) bg.value = colorOr(settings.bgColor, '#f2f0f7');
+  if(fc) fc.value = colorOr(settings.fontColor, '#16181d');
+}
+function saveSettings(){
+  settings.aiEndpoint = document.getElementById('sAiEndpoint').value.trim().replace(/\/+$/,'');
+  settings.aiModel = document.getElementById('sAiModel').value.trim();
+  settings.aiKey = document.getElementById('sAiKey').value.trim();
+  settings.mailEndpoint = document.getElementById('sMail').value.trim().replace(/\/+$/,'');
+  var ghEl = document.getElementById('sGhToken');
+  if(ghEl){
+    var newGh = ghEl.value.trim();
+    if(newGh !== String(settings.ghToken || '')){ settings.ghVerifiedAt = 0; settings.ghLogin = ''; }
+    settings.ghToken = newGh;
+  }
+  var bgEl = document.getElementById('sBgColor');
+  var fcEl = document.getElementById('sFontColor');
+  if(bgEl) settings.bgColor = colorOr(bgEl.value, '#f2f0f7');
+  if(fcEl) settings.fontColor = colorOr(fcEl.value, '#16181d');
+  if(profile){
+    profile.name = document.getElementById('sName').value.trim() || profile.name;
+    profile.devId = (document.getElementById('sDevId').value.trim() || profile.devId).toLowerCase().replace(/[^a-z0-9-]/g,'');
+    profile.mood = document.getElementById('sMood').value;
+  }
+  saveJSON(LS_SETTINGS, settings);
+  saveJSON(LS_PROFILE, profile);
+  var f = document.getElementById('sAvatarFile');
+  if(f && f.files && f.files[0]){
+    pickAvatar(f, function(url){ profile.avatar = url; saveJSON(LS_PROFILE, profile); renderProfileChip(); toast('头像已更新'); });
+  }
+  syncModelFields();
+  renderProfileChip();
+  applyAppearance(settings.bgColor, settings.fontColor);
+  renderGhState();
+  toast('设置已保存');
+}
+function resetProfile(){
+  if(!confirm('清除本机开发者名片、设置与当前草稿？商店里的插件不会删除。')) return;
+  [LS_PROFILE, LS_SETTINGS, LS_DRAFT].forEach(function(k){ try{ localStorage.removeItem(k); }catch(e){} });
+  location.reload();
+}
+function ghToken(){
+  var el = document.getElementById('sGhToken');
+  var typed = el ? String(el.value || '').trim() : '';
+  return typed || String(settings.ghToken || '').trim();
+}
+function ghHeaders(token){
+  return {
+    'Authorization': 'Bearer ' + token,
+    'Accept': 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28'
+  };
+}
+function renderGhState(override, ok){
+  var el = document.getElementById('ghTokenState');
+  if(!el) return;
+  if(override){ el.textContent = override; el.style.color = ok ? '#217a4d' : '#b23b3b'; return; }
+  if(settings.ghToken && settings.ghVerifiedAt && settings.ghLogin){
+    el.textContent = '已验证 · @' + settings.ghLogin;
+    el.style.color = '#217a4d';
+  } else if(settings.ghToken){
+    el.textContent = '已保存 · 未验证';
+    el.style.color = '#6f6885';
+  } else {
+    el.textContent = '未保存';
+    el.style.color = '#6f6885';
+  }
+}
+async function verifyGhToken(){
+  var token = ghToken();
+  if(!token){ renderGhState('请先填写 GitHub 密钥', false); toast('请先填写 GitHub 密钥'); return; }
+  renderGhState('验证中…', true);
+  try{
+    var h = ghHeaders(token);
+    var rr = await fetch('https://api.github.com/repos/' + REPO, { headers:h });
+    if(!rr.ok) throw new Error(rr.status === 404 ? '密钥没有该仓库权限' : ('仓库检查 HTTP ' + rr.status));
+    var repo = await rr.json();
+    var user = null;
+    try{
+      var ur = await fetch('https://api.github.com/user', { headers:h });
+      if(ur.ok) user = await ur.json();
+    }catch(e0){}
+    var login = (user && user.login) || (repo.owner && repo.owner.login) || '';
+    settings.ghToken = token;
+    settings.ghLogin = login;
+    settings.ghVerifiedAt = Date.now();
+    saveJSON(LS_SETTINGS, settings);
+    var el = document.getElementById('sGhToken');
+    if(el) el.value = token;
+    renderGhState('已验证 · @' + login, true);
+    toast('GitHub 密钥有效：@' + login + ' · ' + (repo.full_name || REPO));
+  }catch(e){
+    renderGhState('验证失败：' + (e.message || e), false);
+    toast('GitHub 密钥验证失败：' + (e.message || e));
+  }
+}
+function clearGhToken(){
+  settings.ghToken = '';
+  settings.ghLogin = '';
+  settings.ghVerifiedAt = 0;
+  saveJSON(LS_SETTINGS, settings);
+  var el = document.getElementById('sGhToken');
+  if(el) el.value = '';
+  renderGhState();
+  toast('已清除本机 GitHub 密钥');
+}
+function b64utf8(text){
+  var s = String(text);
+  if(window.TextEncoder){
+    var bytes = new TextEncoder().encode(s), bin = '';
+    for(var i=0;i<bytes.length;i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin);
+  }
+  return btoa(unescape(encodeURIComponent(s)));
+}
+async function ghPutFile(path, obj, message){
+  var token = ghToken();
+  if(!token) throw new Error('未配置 GitHub 密钥');
+  var api = 'https://api.github.com/repos/' + REPO + '/contents/' + path.split('/').map(encodeURIComponent).join('/');
+  var headers = ghHeaders(token);
+  headers['Content-Type'] = 'application/json';
+  var sha = '';
+  var r = await fetch(api, { headers:headers });
+  if(r.ok){
+    var old = await r.json().catch(function(){ return {}; });
+    if(old && old.sha) sha = old.sha;
+  }else if(r.status !== 404){
+    var e1 = await r.json().catch(function(){ return {}; });
+    throw new Error(e1.message || ('读取文件 HTTP ' + r.status));
+  }
+  var body = {
+    message: message || ('chore: publish ' + path),
+    content: b64utf8(JSON.stringify(obj, null, 2)),
+    branch: 'main'
+  };
+  if(sha) body.sha = sha;
+  var w = await fetch(api, { method:'PUT', headers:headers, body:JSON.stringify(body) });
+  if(!w.ok){
+    var e2 = await w.json().catch(function(){ return {}; });
+    throw new Error(e2.message || ('写入文件 HTTP ' + w.status));
+  }
+  return await w.json().catch(function(){ return {}; });
+}
+function fileToB64(file){
+  return new Promise(function(resolve, reject){
+    var fr = new FileReader();
+    fr.onload = function(){
+      var s = String(fr.result || ''), comma = s.indexOf(',');
+      resolve(comma >= 0 ? s.slice(comma + 1) : s);
+    };
+    fr.onerror = function(){ reject(fr.error || new Error('读取本地文件失败')); };
+    fr.readAsDataURL(file);
+  });
+}
+async function ghDeleteFile(path, message){
+  var token = ghToken();
+  if(!token) throw new Error('未配置 GitHub 密钥');
+  var api = 'https://api.github.com/repos/' + REPO + '/contents/' + path.split('/').map(encodeURIComponent).join('/');
+  var headers = ghHeaders(token);
+  var r = await fetch(api, { headers:headers });
+  if(r.status === 404) return false;
+  if(!r.ok){
+    var e1 = await r.json().catch(function(){ return {}; });
+    throw new Error(e1.message || ('读取文件 HTTP ' + r.status));
+  }
+  var old = await r.json().catch(function(){ return {}; });
+  if(!old || !old.sha) throw new Error('找不到要删除的文件版本');
+  headers['Content-Type'] = 'application/json';
+  var w = await fetch(api, {
+    method:'DELETE',
+    headers:headers,
+    body:JSON.stringify({ message:message || ('chore: delete ' + path), branch:'main', sha:old.sha })
+  });
+  if(!w.ok){
+    var e2 = await w.json().catch(function(){ return {}; });
+    throw new Error(e2.message || ('删除文件 HTTP ' + w.status));
+  }
+  return true;
+}
+async function ghGetJson(path){
+  var token = ghToken();
+  if(!token) return null;
+  var api = 'https://api.github.com/repos/' + REPO + '/contents/' + path.split('/').map(encodeURIComponent).join('/');
+  var r = await fetch(api, { headers:ghHeaders(token) });
+  if(r.status === 404) return null;
+  if(!r.ok) throw new Error('读取 GitHub 文件 HTTP ' + r.status);
+  var o = await r.json().catch(function(){ return {}; });
+  var raw = String(o.content || '').replace(/\s/g, '');
+  if(!raw) return null;
+  var bin = atob(raw), bytes = new Uint8Array(bin.length);
+  for(var i=0;i<bin.length;i++) bytes[i] = bin.charCodeAt(i);
+  return JSON.parse(new TextDecoder().decode(bytes));
+}
+async function ghPutBinary(path, file, message){
+  var token = ghToken();
+  if(!token) throw new Error('未配置 GitHub 密钥');
+  var api = 'https://api.github.com/repos/' + REPO + '/contents/' + path.split('/').map(encodeURIComponent).join('/');
+  var headers = ghHeaders(token);
+  headers['Content-Type'] = 'application/json';
+  var sha = '';
+  var r = await fetch(api, { headers:headers });
+  if(r.ok){
+    var old = await r.json().catch(function(){ return {}; });
+    if(old && old.sha) sha = old.sha;
+  }else if(r.status !== 404){
+    var e1 = await r.json().catch(function(){ return {}; });
+    throw new Error(e1.message || ('读取文件 HTTP ' + r.status));
+  }
+  var body = {
+    message: message || ('chore: upload ' + path),
+    content: await fileToB64(file),
+    branch: 'main'
+  };
+  if(sha) body.sha = sha;
+  var w = await fetch(api, { method:'PUT', headers:headers, body:JSON.stringify(body) });
+  if(!w.ok){
+    var e2 = await w.json().catch(function(){ return {}; });
+    throw new Error(e2.message || ('写入文件 HTTP ' + w.status));
+  }
+  return await w.json().catch(function(){ return {}; });
+}
+async function ghPublishPackage(pkg){
+  return ghPutFile('plugins/' + pkg.id + '-' + pkg.version + '.bcp.json', pkg, 'feat(plugin): ' + pkg.id + ' v' + pkg.version);
+}
+function colorOr(v,d){ v = String(v || ''); return /^#[0-9a-f]{6}$/i.test(v) ? v : d; }
+function isLightColor(hex){
+  var m = /^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(String(hex || ''));
+  if(!m) return false;
+  var r = parseInt(m[1],16), g = parseInt(m[2],16), b = parseInt(m[3],16);
+  return (0.2126 * r + 0.7152 * g + 0.0722 * b) > 150;
+}
+function applyAppearance(bg, fc){
+  bg = colorOr(bg, '#f2f0f7');
+  fc = colorOr(fc, '#16181d');
+  document.documentElement.style.setProperty('--page-bg', bg);
+  document.documentElement.style.setProperty('--user-font', fc);
+  document.body.classList.toggle('custom-font', fc !== '#16181d');
+  document.body.classList.toggle('dark-surface', isLightColor(fc));
+  document.body.classList.toggle('dark-bg', bg !== '#f2f0f7' && !isLightColor(bg));
+}
+function previewAppearance(){
+  var bg = document.getElementById('sBgColor');
+  var fc = document.getElementById('sFontColor');
+  applyAppearance(bg ? bg.value : '', fc ? fc.value : '');
+}
+function saveAppearance(){
+  var bg = document.getElementById('sBgColor');
+  var fc = document.getElementById('sFontColor');
+  settings.bgColor = colorOr(bg && bg.value, '#f2f0f7');
+  settings.fontColor = colorOr(fc && fc.value, '#16181d');
+  saveJSON(LS_SETTINGS, settings);
+  applyAppearance(settings.bgColor, settings.fontColor);
+  toast('网页颜色已保存');
+}
+function resetAppearance(){
+  settings.bgColor = '';
+  settings.fontColor = '';
+  saveJSON(LS_SETTINGS, settings);
+  applyAppearance('', '');
+  renderSettings();
+  toast('已恢复默认背景和字体颜色');
+}
+function aiPresetById(id){
+  for(var i=0;i<AI_PRESETS.length;i++) if(AI_PRESETS[i].id === id) return AI_PRESETS[i];
+  return null;
+}
+function matchAiPreset(ep){
+  for(var i=0;i<AI_PRESETS.length;i++) if(AI_PRESETS[i].endpoint === ep) return AI_PRESETS[i];
+  return null;
+}
+function fillPresetSelects(){
+  var html = AI_PRESETS.map(function(p){ return '<option value="' + h(p.id) + '">' + h(p.label) + '</option>'; }).join('') + '<option value="custom">自定义接口</option>';
+  ['fAiPreset','sAiPreset'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.innerHTML = html;
+  });
+}
+function applyAiPreset(scope){
+  var pre = scope === 's' ? 's' : 'f';
+  var sel = document.getElementById(pre + 'AiPreset');
+  var p = aiPresetById(sel ? sel.value : '');
+  if(!p) return;
+  document.getElementById(pre + 'AiEndpoint').value = p.endpoint;
+  document.getElementById(pre + 'AiModel').value = p.model;
+  if(p.id === 'pollinations' || p.id === 'ollama') document.getElementById(pre + 'AiKey').value = '';
+  else document.getElementById(pre + 'AiKey').value = p.key || '';
+  var am = document.getElementById('auditModel');
+  if(am) am.textContent = '模型：' + p.model;
+  toast('已选择 ' + p.label + (p.note ? '：' + p.note : ''));
+}
+async function pullOnlineModels(scope){
+  var pre = scope === 's' ? 's' : 'f';
+  var state = document.getElementById(pre + 'AiModelState');
+  var ep = String(document.getElementById(pre + 'AiEndpoint').value || '').trim() || DEFAULT_AI.endpoint;
+  var key = String(document.getElementById(pre + 'AiKey').value || '').trim();
+  var url;
+  if(/text\.pollinations\.ai/i.test(ep)){
+    url = 'https://text.pollinations.ai/models';
+  } else {
+    var base = ep.replace(/\/chat\/completions\/?$/i,'').replace(/\/+$/,'');
+    url = base + '/models';
+  }
+  if(state) state.textContent = '正在拉取 ' + url + ' …';
+  try{
+    var headers = {};
+    if(key) headers.Authorization = 'Bearer ' + key;
+    var r = await fetch(url, { headers:headers, cache:'no-store' });
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+    var o = await r.json();
+    var raw = Array.isArray(o) ? o : (o.data || o.models || ((o.id || o.name) ? [o] : []));
+    var names = [];
+    raw.forEach(function(x){
+      var list = [];
+      if(typeof x === 'string') list = [x];
+      else if(x){ list = [x.id, x.name].concat(Array.isArray(x.aliases) ? x.aliases : []); }
+      list.forEach(function(n){ if(n && names.indexOf(String(n)) < 0) names.push(String(n)); });
+    });
+    if(!names.length) throw new Error('接口没有返回模型列表');
+    names = names.slice(0,300);
+    var dl = document.getElementById('aiModelList');
+    if(dl) dl.innerHTML = names.map(function(n){ return '<option value="' + h(n) + '"></option>'; }).join('');
+    var mel = document.getElementById(pre + 'AiModel');
+    if(mel && (!mel.value || names.indexOf(mel.value) < 0)) mel.value = names[0];
+    if(state) state.textContent = '已拉取 ' + names.length + ' 个模型，点模型名可切换。';
+    toast('在线模型列表已更新');
+  }catch(e){
+    if(state) state.textContent = '拉取失败：' + (e.message || e);
+    toast('模型列表拉取失败：' + (e.message || e));
+  }
+}
+function syncModelFields(){
+  fillPresetSelects();
+  var ep = String(settings.aiEndpoint || '').trim() || DEFAULT_AI.endpoint;
+  var model = String(settings.aiModel || '').trim() || DEFAULT_AI.model;
+  var key = settings.aiKey || '';
+  ['f','s'].forEach(function(pre){
+    var epEl = document.getElementById(pre + 'AiEndpoint');
+    var mEl = document.getElementById(pre + 'AiModel');
+    var kEl = document.getElementById(pre + 'AiKey');
+    var sel = document.getElementById(pre + 'AiPreset');
+    if(epEl) epEl.value = ep;
+    if(mEl) mEl.value = model;
+    if(kEl) kEl.value = key;
+    if(sel){ var p = matchAiPreset(ep); sel.value = p ? p.id : 'custom'; }
+  });
+  var am = document.getElementById('auditModel');
+  if(am) am.textContent = '模型：' + (model || '未配置');
+}
+
+/* —— 草稿与工坊 —— */
+function loadDraft(){
+  document.getElementById('fId').value = draft.id || '';
+  document.getElementById('fName').value = draft.name || '';
+  document.getElementById('fVer').value = draft.version || '1.0.0';
+  document.getElementById('fCat').value = draft.category || '聊天增强';
+  document.getElementById('fIcon').value = draft.icon || '🧩';
+  document.getElementById('fMem').value = draft.memoryMB || 4;
+  document.getElementById('fMin').value = draft.minApp || '0.40.31';
+  document.getElementById('fMax').value = draft.maxApp || '0.40.99';
+  document.getElementById('fDesc').value = draft.description || '';
+  document.getElementById('fTags').value = (draft.tags || []).join(', ');
+  document.getElementById('codeOut').value = draft.main || '';
+  document.getElementById('fPrompt').value = draft.prompt || '';
+  syncModelFields();
+  renderManifest();
+  updateLineCount();
+}
+function renderStudioMeta(){ loadDraft(); }
+function newDraft(){
+  draft = emptyDraft();
+  draft.id = 'bcp.' + (profile ? profile.devId : 'dev') + '.new-plugin';
+  saveJSON(LS_DRAFT, draft);
+  loadDraft();
+  showView('studio');
+  toast('已新建草稿');
+}
+function markDirty(){ dirty = true; compiled = false; audit = null; updateCompileStatus(); renderManifest(); }
+function onCodeEdit(){ draft.main = document.getElementById('codeOut').value; dirty = true; compiled = false; audit = null; updateCompileStatus(); updateLineCount(); }
+function updateLineCount(){
+  var n = (document.getElementById('codeOut').value || '').split('\n').length;
+  document.getElementById('codeLines').textContent = n + ' 行';
+}
+function collectDraft(){
+  draft.id = document.getElementById('fId').value.trim();
+  draft.name = document.getElementById('fName').value.trim();
+  draft.version = document.getElementById('fVer').value.trim();
+  draft.category = document.getElementById('fCat').value;
+  draft.icon = document.getElementById('fIcon').value.trim() || '🧩';
+  draft.memoryMB = num(document.getElementById('fMem').value) || 4;
+  draft.minApp = document.getElementById('fMin').value.trim() || '0.40.31';
+  draft.maxApp = document.getElementById('fMax').value.trim() || '0.40.99';
+  draft.description = document.getElementById('fDesc').value.trim();
+  draft.tags = document.getElementById('fTags').value.split(',').map(function(x){ return x.trim(); }).filter(Boolean).slice(0,5);
+  draft.prompt = document.getElementById('fPrompt').value.trim();
+  draft.main = document.getElementById('codeOut').value;
+  draft.developer = profile ? profile.name : '';
+  return draft;
+}
+function renderManifest(){
+  collectDraft();
+  var m = {
+    schema:'burger-chat-plugin/v1', id:draft.id, name:draft.name, version:draft.version,
+    developer:draft.developer, target:draft.target, minApp:draft.minApp, maxApp:draft.maxApp,
+    apiVersion:1, memoryMB:num(draft.memoryMB), category:draft.category, description:draft.description,
+    icon:draft.icon, tags:draft.tags, ui:draft.ui || [], permissions:[], main:'/* code */'
+  };
+  document.getElementById('manifestOut').textContent = JSON.stringify(m, null, 2);
+  saveJSON(LS_DRAFT, draft);
+}
+function updateCompileStatus(){
+  var el = document.getElementById('compileStatus');
+  if(compiled) el.innerHTML = '<span class="s ok"><i></i>编译通过</span><span class="s">' + h(compileMsg) + '</span>';
+  else if(compileMsg) el.innerHTML = '<span class="s bad"><i></i>' + h(compileMsg) + '</span>';
+  else el.innerHTML = '<span class="s"><i></i>未编译</span>';
+}
+function jsStr(s){ return JSON.stringify(String(s == null ? '' : s)); }
+function genId(prefix){
+  return 'bcp.' + (profile ? profile.devId : 'dev') + '.' + slug(prefix);
+}
+function builtinGenerate(){
+  collectDraft();
+  var topOn = document.getElementById('bTop').checked;
+  var composeOn = document.getElementById('bCompose').checked;
+  var msgOn = document.getElementById('bMsg').checked;
+  var setOn = document.getElementById('bSet').checked;
+  var netOn = document.getElementById('bNet').checked;
+  var storageOn = document.getElementById('bStorage').checked;
+  var ui = [];
+  var code = '(function(){\n  \'use strict\';\n';
+  if(topOn){
+    var tl = document.getElementById('bTopLabel').value.trim().slice(0,12) || '快捷按钮';
+    var tt = document.getElementById('bTopText').value.trim();
+    ui.push({ id:'top-action', slot:'header', label:tl, icon:'✨', order:1 });
+    code += '  api.ui.onButton(\'top-action\', function(){\n    api.chat.sendText(' + jsStr(tt) + ');\n  });\n';
+  }
+  if(composeOn){
+    var cl = document.getElementById('bComposeLabel').value.trim().slice(0,12) || '快捷语';
+    var ct = document.getElementById('bComposeText').value.trim();
+    ui.push({ id:'compose-action', slot:'compose', label:cl, icon:'💬', order:2 });
+    code += '  api.ui.onButton(\'compose-action\', function(){\n    api.chat.sendText(' + jsStr(ct) + ');\n  });\n';
+  }
+  if(msgOn){
+    var mk = document.getElementById('bMsgKey').value.trim();
+    var mr = document.getElementById('bMsgReply').value.trim();
+    code += '  api.chat.onMessage(function(msg){\n    var t = String((msg && (msg.text || msg.content)) || \'\');\n    if(' + jsStr(mk) + ' && t.indexOf(' + jsStr(mk) + ') >= 0) api.chat.sendText(' + jsStr(mr) + ');\n  });\n';
+  }
+  if(setOn){
+    var st = document.getElementById('bSetTitle').value.trim() || '使用说明';
+    var sb = document.getElementById('bSetBody').value.trim();
+    code += '  api.ui.addSettingsPanel({ title:' + jsStr(st) + ', html:\'<div style="font-size:12px;line-height:1.65;color:#5b6070">\' + ' + jsStr(sb) + ' + \'</div>\' });\n';
+  }
+  if(netOn){
+    var nu = document.getElementById('bNetUrl').value.trim();
+    ui.push({ id:'net-action', slot:'header', label:'获取内容', icon:'🌐', order:3 });
+    code += '  api.ui.onButton(\'net-action\', async function(){\n    try{\n      var t = await api.net.get(' + jsStr(nu) + ');\n      api.toast(String(t).slice(0, 80));\n    }catch(e){ api.toast(\'请求失败\'); }\n  });\n';
+  }
+  if(storageOn){
+    var sk = document.getElementById('bStoreKey').value.trim() || 'clicks';
+    code += '  var n = api.storage.get(' + jsStr(sk) + ', 0);\n  api.storage.set(' + jsStr(sk) + ', n + 1);\n';
+  }
+  code += '})();\n';
+  draft.main = code;
+  draft.ui = ui;
+  if(!draft.name){
+    var p = draft.prompt || '';
+    draft.name = p ? p.slice(0, 12) : '我的插件';
+  }
+  if(!draft.id) draft.id = genId(draft.name);
+  if(!draft.description) draft.description = draft.prompt || '由 Burger Chat 图形化插件工坊生成。';
+  if(!document.getElementById('fName').value) document.getElementById('fName').value = draft.name;
+  if(!document.getElementById('fId').value) document.getElementById('fId').value = draft.id;
+  if(!document.getElementById('fDesc').value) document.getElementById('fDesc').value = draft.description;
+  document.getElementById('codeOut').value = draft.main;
+  saveJSON(LS_DRAFT, draft);
+  renderManifest();
+  updateLineCount();
+  compileDraft();
+}
+async function callAI(messages, maxTokens){
+  settings.aiEndpoint = String(document.getElementById('fAiEndpoint').value || '').trim().replace(/\/+$/,'') || DEFAULT_AI.endpoint;
+  settings.aiModel = String(document.getElementById('fAiModel').value || '').trim() || DEFAULT_AI.model;
+  settings.aiKey = String(document.getElementById('fAiKey').value || '').trim();
+  saveJSON(LS_SETTINGS, settings);
+  var url = settings.aiEndpoint;
+  // Pollinations 的 /openai 本身就是完整 OpenAI 兼容端点，不能补 /v1。
+  if(!/text\.pollinations\.ai/i.test(url) && !/\/chat\/completions$/i.test(url)){
+    url = url.replace(/\/v1$/,'') + '/v1/chat/completions';
+  }
+  var headers = { 'Content-Type':'application/json' };
+  if(settings.aiKey) headers['Authorization'] = 'Bearer ' + settings.aiKey;
+  var body = JSON.stringify({
+    model: settings.aiModel || DEFAULT_AI.model,
+    messages: messages,
+    temperature: 0.2,
+    max_tokens: maxTokens || 1200
+  });
+  var controller = new AbortController();
+  var timer = setTimeout(function(){ controller.abort(); }, 180000);
+  try{
+    var isPollinations = /text\.pollinations\.ai/i.test(url);
+    if(isPollinations){
+      var wait = AI_MIN_INTERVAL - (Date.now() - aiLastCallAt);
+      if(wait > 1000){
+        toast('在线模型额度冷却中，等待 ' + Math.ceil(wait / 1000) + ' 秒…');
+        await new Promise(function(resolve){ setTimeout(resolve, wait); });
+      }
+      aiLastCallAt = Date.now();
+    }
+    var r = await fetch(url, { method:'POST', headers:headers, body:body, signal:controller.signal });
+    if(isPollinations && r.status === 402){
+      toast('在线模型免费额度已用完，46 秒后自动重试…');
+      await new Promise(function(resolve){ setTimeout(resolve, 46000); });
+      aiLastCallAt = Date.now();
+      r = await fetch(url, { method:'POST', headers:headers, body:body, signal:controller.signal });
+    } else if(!r.ok && (r.status === 429 || r.status >= 500)){
+      await new Promise(function(resolve){ setTimeout(resolve, 1800); });
+      r = await fetch(url, { method:'POST', headers:headers, body:body, signal:controller.signal });
+    }
+    if(!r.ok) throw new Error('模型接口 HTTP ' + r.status);
+    var o = await r.json();
+    var txt = o && o.choices && o.choices[0] && o.choices[0].message ? o.choices[0].message.content : (o && o.response) || '';
+    if(!txt) throw new Error('模型没有返回内容');
+    return String(txt);
+  }catch(e){
+    if(e && e.name === 'AbortError') throw new Error('模型接口 180 秒未响应');
+    throw e;
+  }finally{
+    clearTimeout(timer);
+  }
+}
+function parseAIJSON(txt){
+  var s = String(txt || '').trim();
+  s = s.replace(/^```(?:json)?/i,'').replace(/```$/,'').trim();
+  var a = s.indexOf('{'), b = s.lastIndexOf('}');
+  if(a >= 0 && b > a) s = s.slice(a, b+1);
+  return JSON.parse(s);
+}
+function normalizeAIUI(list){
+  if(!Array.isArray(list)) return null;
+  var slots = ['compose','header','settings'];
+  var seen = {};
+  return list.slice(0,8).map(function(x, i){
+    var rawSlot = String((x && x.slot) || 'header').toLowerCase();
+    var slot = rawSlot.indexOf('compose') >= 0 ? 'compose' : (rawSlot.indexOf('settings') >= 0 ? 'settings' : 'header');
+    var rawId = String((x && x.id) || ('ai-action-' + (i+1))).toLowerCase().replace(/[^a-z0-9-]/g,'').slice(0,24) || ('ai-action-' + (i+1));
+    var id = rawId;
+    while(seen[id]) id = (rawId + '-' + (i+1)).slice(0,24);
+    seen[id] = true;
+    return {
+      id: id,
+      slot: slots.indexOf(slot) >= 0 ? slot : 'header',
+      label: String((x && x.label) || 'AI 按钮').slice(0,12),
+      icon: String((x && x.icon) || '✨').slice(0,8),
+      order: Number.isFinite(Number(x && x.order)) ? Number(x.order) : (i+1)
+    };
+  });
+}
+async function generateDraft(){
+  collectDraft();
+  document.getElementById('draftState').textContent = '生成中…';
+  try{
+    toast('正在调用在线开源模型生成插件…');
+    var sys = '你是 Burger Chat 插件开发助手。只输出 JSON，不要解释。插件必须符合 burger-chat-plugin/v1：schema 固定；id 形如 bcp.<开发者标识>.<插件名>（小写字母数字短横线）；version x.y.z；name 2-32 字；developer 2-40 字；target 只能是 pc 或 both；minApp "0.40.31"；maxApp "0.40.99"；apiVersion 1；memoryMB 1-64 整数；category 只能是 聊天增强/媒体/工具/主题/集成；description 8-300 字；ui 最多 8 项，每项 id 小写字母数字短横线、slot 只能是 compose/header/settings、label 1-12 字；main 是纯 JavaScript 代码，使用注入的 api 对象，可用 api.chat.sendText、api.chat.onMessage、api.ui.onButton、api.ui.addSettingsPanel、api.storage、api.net、api.toast；禁止 eval、new Function、document.cookie、localStorage、XMLHttpRequest、WebSocket。输出字段：id,name,version,developer,target,minApp,maxApp,apiVersion,memoryMB,category,description,icon,tags,ui,main。';
+    var user = '开发者：' + (profile ? profile.name : '') + '（标识 ' + (profile ? profile.devId : '') + '）\n需求：' + (document.getElementById('fPrompt').value.trim() || '做一个简单的聊天增强插件') + '\n当前表单：' + JSON.stringify({ id:document.getElementById('fId').value.trim(), name:document.getElementById('fName').value.trim(), category:document.getElementById('fCat').value, icon:document.getElementById('fIcon').value }) + '\n图形化模块：顶部按钮=' + document.getElementById('bTop').checked + '，输入栏按钮=' + document.getElementById('bCompose').checked + '，消息监听=' + document.getElementById('bMsg').checked + '，设置面板=' + document.getElementById('bSet').checked;
+    var txt = await callAI([{ role:'system', content:sys }, { role:'user', content:user }], 1600);
+    var o = parseAIJSON(txt);
+    draft = Object.assign({}, draft, o);
+    draft.developer = profile ? profile.name : o.developer;
+    draft.target = o.target === 'phone' ? 'pc' : (o.target || 'pc');
+    draft.tags = Array.isArray(o.tags) ? o.tags.slice(0,5) : draft.tags;
+    draft.ui = normalizeAIUI(o.ui) || draft.ui;
+    saveJSON(LS_DRAFT, draft);
+    loadDraft();
+    compileDraft();
+    document.getElementById('draftState').textContent = 'AI 生成';
+    toast('AI 已生成插件，已自动编译');
+  }catch(e){
+    document.getElementById('draftState').textContent = '在线模型失败，改用模板';
+    try{
+      builtinGenerate();
+      toast('在线模型调用失败：' + (e.message || e) + '；已改用图形化模板');
+    }catch(e2){
+      document.getElementById('draftState').textContent = '生成失败';
+      toast('生成失败：' + (e2.message || e2));
+    }
+  }
+}
+function localValidate(d){
+  if(!/^bcp\.[a-z0-9][a-z0-9-]{1,23}\.[a-z0-9][a-z0-9-]{1,23}$/.test(String(d.id||''))) return '插件 ID 不符合规范：bcp.<开发者>.<插件名>';
+  if(!semver(d.version)) return '版本号必须是 x.y.z';
+  if(String(d.name||'').length < 2 || String(d.name||'').length > 32) return '插件名称需要 2–32 个字';
+  if(!d.developer || String(d.developer).length < 2) return '缺少开发者名称';
+  if(!['pc','phone','both'].includes(d.target)) return 'target 必须是 pc / phone / both';
+  if(d.target === 'phone') return '插件开发只适配电脑网页端，新插件不能只面向手机端';
+  if(!semver(d.minApp) || !semver(d.maxApp)) return 'minApp / maxApp 必须是 x.y.z';
+  if(vcmp(d.minApp, d.maxApp) > 0) return 'minApp 不能高于 maxApp';
+  if(!Number.isInteger(num(d.memoryMB)) || num(d.memoryMB) < 1 || num(d.memoryMB) > 64) return '内存需要 1–64 的整数';
+  if(CATS.indexOf(d.category) < 0) return '分类不在允许范围';
+  if(String(d.description||'').length < 8 || String(d.description||'').length > 300) return '插件介绍需要 8–300 个字';
+  if(!d.main || !String(d.main).trim()) return '插件代码不能为空';
+  if(String(d.main).length > 200000) return '插件代码超过 200KB';
+  if((d.ui || []).length > 8) return 'ui 最多 8 项';
+  var uiSlots = ['compose','header','settings'];
+  for(var ui=0; ui<(d.ui || []).length; ui++){
+    var item = d.ui[ui] || {};
+    if(!/^[a-z0-9][a-z0-9-]{0,23}$/.test(String(item.id || ''))) return 'ui.id 只能是小写字母/数字/短横线，1–24 位';
+    if(uiSlots.indexOf(String(item.slot || '')) < 0) return 'ui.slot 只能是 compose / header / settings';
+    if(!item.label || String(item.label).length > 12) return 'ui.label 需要 1–12 个字';
+  }
+  return '';
+}
+function codeRisk(code){
+  var rules = [
+    { re:/document\s*\.\s*cookie/i, msg:'禁止直接读取 document.cookie' },
+    { re:/localStorage|sessionStorage/i, msg:'禁止直接访问 localStorage / sessionStorage，请用 api.storage' },
+    { re:/\beval\s*\(/, msg:'禁止使用 eval' },
+    { re:/new\s+Function\s*\(/, msg:'禁止动态创建 Function' },
+    { re:/\bimport\s*\(/, msg:'禁止动态 import' },
+    { re:/XMLHttpRequest|WebSocket/i, msg:'禁止直接使用 XMLHttpRequest / WebSocket' },
+    { re:/top\.location|window\.open\s*\(/i, msg:'禁止控制外部窗口或顶层跳转' }
+  ];
+  for(var i=0;i<rules.length;i++) if(rules[i].re.test(String(code||''))) return rules[i].msg;
+  return '';
+}
+function compileDraft(silent){
+  collectDraft();
+  var err = localValidate(draft);
+  if(err){ compiled = false; compileMsg = err; updateCompileStatus(); if(!silent) toast('编译失败：' + err); return false; }
+  try{ new Function('api', '"use strict";' + draft.main); }
+  catch(e){ compiled = false; compileMsg = '代码语法错误：' + (e.message || e); updateCompileStatus(); if(!silent) toast(compileMsg); return false; }
+  var risk = codeRisk(draft.main);
+  if(risk){ compiled = false; compileMsg = risk; updateCompileStatus(); if(!silent) toast(risk); return false; }
+  var mock = {
+    apiVersion:1, app:{version:'0.40.31',platform:'pc',platformName:'桌面端'},
+    plugin:{id:draft.id,name:draft.name,version:draft.version}, log:function(){}, toast:function(){},
+    storage:{get:function(k,d){return d;},set:function(){return true;},remove:function(){}},
+    chat:{sendText:function(){return true;},currentPeer:function(){return '';},onMessage:function(){}},
+    ui:{onButton:function(id,fn){ if(typeof fn==='function') handlersMock[id]=fn; },addButton:function(){},addSettingsPanel:function(){},refresh:function(){}},
+    net:{get:async function(){return '';},post:async function(){return '';}},
+    events:{on:function(){},emit:function(){}}
+  };
+  var handlersMock = {};
+  try{ new Function('api', '"use strict";' + draft.main)(mock); }
+  catch(e){ compiled = false; compileMsg = '运行测试失败：' + (e.message || e); updateCompileStatus(); if(!silent) toast(compileMsg); return false; }
+  compiled = true; compileMsg = '语法/API/安全规则通过 · ' + (draft.ui.length) + ' 个界面入口';
+  document.getElementById('draftState').textContent = '已编译';
+  updateCompileStatus();
+  renderManifest();
+  if(!silent) toast('编译通过');
+  return true;
+}
+function buildPackage(){
+  collectDraft();
+  return {
+    schema:'burger-chat-plugin/v1', id:draft.id, name:draft.name, version:draft.version,
+    developer:draft.developer, target:draft.target, minApp:draft.minApp, maxApp:draft.maxApp,
+    apiVersion:1, memoryMB:num(draft.memoryMB), category:draft.category, description:draft.description,
+    icon:draft.icon, tags:draft.tags, ui:draft.ui || [], permissions:[], main:draft.main,
+    homepage:String(draft.homepage || '')
+  };
+}
+function downloadText(name, text){
+  var blob = new Blob([text], { type:'application/json;charset=utf-8' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+}
+function downloadDraft(){
+  var pkg = buildPackage();
+  var name = pkg.id + '-' + pkg.version + '.bcp.json';
+  downloadText(name, JSON.stringify(pkg, null, 2));
+}
+/* 导入已有的 .bcp.json（buildPackage/downloadDraft 导出的包） */
+function importDraft(input){
+  var file = input && input.files && input.files[0];
+  if(!file) return;
+  var reader = new FileReader();
+  reader.onload = function(){
+    try{
+      var raw = JSON.parse(String(reader.result || ''));
+      var p = raw && raw.plugin && !raw.schema ? raw.plugin : raw;
+      if(!p || typeof p !== 'object') throw new Error('不是有效的 JSON 对象');
+      if(p.schema && p.schema !== 'burger-chat-plugin/v1') throw new Error('schema 不是 burger-chat-plugin/v1');
+      if(!p.id || !p.main) throw new Error('缺少 id 或 main');
+      draft = Object.assign(emptyDraft(), p);
+      draft.id = String(draft.id || '').trim();
+      draft.name = String(draft.name || '').trim();
+      draft.version = String(draft.version || '1.0.0').trim();
+      draft.main = String(draft.main || '');
+      draft.ui = normalizeAIUI(p.ui || []) || [];
+      draft.tags = Array.isArray(p.tags) ? p.tags : [];
+      draft.prompt = String(p.prompt || '');
+      if(!draft.developer || typeof draft.developer !== 'string') draft.developer = profile ? profile.name : '';
+      saveJSON(LS_DRAFT, draft);
+      loadDraft();
+      showView('studio');
+      document.getElementById('draftState').textContent = '已导入';
+      toast('已导入 ' + draft.name + ' v' + draft.version);
+      setTimeout(function(){ compileDraft(true); }, 0);
+    }catch(e){ toast('导入失败：' + (e.message || e)); }
+    input.value = '';
+  };
+  reader.onerror = function(){ toast('读取文件失败'); input.value = ''; };
+  reader.readAsText(file, 'utf-8');
+}
+
+/* —— 审核 —— */
+function localAudit(d){
+  var items = [];
+  var text = [d.name, d.description, d.prompt, d.main].join('\n');
+  var rules = [
+    { cat:'色情低俗', re:/色情|成人视频|裸聊|约炮|性交易|未成年.{0,4}性|偷拍裙底/i },
+    { cat:'暴力血腥', re:/杀人|砍人|自制炸弹|炸药配方|枪支制作|血腥|虐杀/i },
+    { cat:'违法危险', re:/制毒|冰毒|毒品交易|赌博平台|洗钱|诈骗话术|黑客入侵|盗号|木马/i },
+    { cat:'仇恨歧视', re:/地域黑|种族仇恨|歧视.{0,4}(性别|民族|宗教)|灭绝/i },
+    { cat:'隐私窃取', re:/盗取.{0,6}(密码|通讯录)|窃听|定位跟踪|开房记录/i }
+  ];
+  for(var i=0;i<rules.length;i++){
+    if(rules[i].re.test(text)) items.push({ cat:rules[i].cat, ok:false, msg:'命中本地规则，禁止上架' });
+  }
+  var cr = codeRisk(d.main);
+  if(cr) items.push({ cat:'代码安全', ok:false, msg:cr });
+  if(!items.length) items.push({ cat:'本地规则', ok:true, msg:'未命中暴力、色情、违法、隐私窃取关键词' });
+  return {
+    pass: items.every(function(x){ return x.ok; }),
+    items: items,
+    mode:'local',
+    at: Date.now(),
+    codeHash: hashString(d.main)
+  };
+}
+function hashString(s){
+  var h1 = 0x811c9dc5, h2 = 0x1000193;
+  s = String(s||'');
+  for(var i=0;i<s.length;i++){
+    var c = s.charCodeAt(i);
+    h1 ^= c; h1 = (h1 * 0x01000193) >>> 0;
+    h2 = ((h2 ^ c) * 0x85ebca6b) >>> 0;
+  }
+  return (h1.toString(16) + h2.toString(16)).slice(0,24);
+}
+function renderAudit(status, log){
+  var badge = document.getElementById('auditBadge');
+  var st = document.getElementById('auditStatus');
+  if(!audit){ badge.textContent = '未审核'; badge.className = 'pill'; st.innerHTML = '<span class="s"><i></i>等待审核</span>'; }
+  else if(audit.pass){ badge.textContent = '审核通过'; badge.className = 'pill ok'; st.innerHTML = '<span class="s ok"><i></i>审核通过</span><span class="s">' + h(audit.mode === 'ai' ? '本地规则 + 开源模型' : '仅本地规则') + '</span>'; }
+  else { badge.textContent = '审核拒绝'; badge.className = 'pill bad'; st.innerHTML = '<span class="s bad"><i></i>审核拒绝</span>'; }
+  if(status || log) document.getElementById('auditLog').textContent = log || status;
+  syncModelFields();
+}
+async function runAudit(){
+  collectDraft();
+  if(!compileDraft(true)){ renderAudit('', '编译未通过，无法审核：\n' + compileMsg); toast('先修复编译错误'); return; }
+  var local = localAudit(draft);
+  document.getElementById('auditLog').textContent = '本地规则检查：\n' + local.items.map(function(x){ return (x.ok?'✓ ':'✗ ') + x.cat + ' · ' + x.msg; }).join('\n') + '\n\n正在调用开源模型复核…';
+  audit = local;
+  if(!local.pass){ renderAudit(); toast('本地规则已拒绝，不能上架'); return; }
+  try{
+    var sys = '你是 Burger Chat 插件商店的内容安全审核员。审核范围：暴力血腥、色情低俗、未成年人性化、违法危险（毒品/赌博/诈骗/黑客）、仇恨歧视、隐私窃取、恶意代码。只输出 JSON：{"pass":true|false,"categories":["..."],"reason":"简短理由","score":0-100}。不要复述违规内容。';
+    var user = '插件名称：' + draft.name + '\n介绍：' + draft.description + '\n需求描述：' + draft.prompt + '\n代码（截断 6000 字）：\n' + String(draft.main).slice(0, 6000);
+    var txt = await callAI([{ role:'system', content:sys }, { role:'user', content:user }], 500);
+    var o = parseAIJSON(txt);
+    var aiItems = [{ cat:'开源模型复核', ok:!!o.pass, msg:(o.reason || '模型未给出理由') + (o.categories && o.categories.length ? ' · ' + o.categories.join(' / ') : '') }];
+    audit = { pass: !!o.pass, items: local.items.concat(aiItems), mode:'ai', at:Date.now(), codeHash:hashString(draft.main) };
+    renderAudit('', document.getElementById('auditLog').textContent + '\n\n模型结论：' + (o.pass ? '通过' : '拒绝') + '\n' + (o.reason || '') + (o.categories && o.categories.length ? '\n分类：' + o.categories.join(' / ') : '') + '\n评分：' + (o.score == null ? '—' : o.score));
+    toast(o.pass ? '审核通过' : '审核拒绝：' + (o.reason || ''));
+    if(o.pass) setTimeout(autoPublishAfterAudit, 0);
+  }catch(e){
+    audit = { pass:false, items:local.items, mode:'ai-error', at:Date.now(), codeHash:hashString(draft.main) };
+    renderAudit('', document.getElementById('auditLog').textContent + '\n\n模型调用失败：' + (e.message || e) + '\n未获得 AI 结论，暂不能发布。');
+    toast('模型调用失败：' + (e.message || e));
+  }
+}
+function localAuditOnly(){
+  collectDraft();
+  if(!compileDraft(true)){ toast('先通过编译'); return; }
+  audit = localAudit(draft);
+  audit.mode = 'local';
+  renderAudit('', '仅本地规则审核\n' + audit.items.map(function(x){ return (x.ok?'✓ ':'✗ ') + x.cat + ' · ' + x.msg; }).join('\n') + (audit.pass ? '\n\n本地规则通过。未连接 AI 模型，发布前请人工复核。' : '\n\n存在违规项，禁止上架。'));
+  toast(audit.pass ? '本地规则通过' : '存在违规内容');
+  if(audit.pass) setTimeout(autoPublishAfterAudit, 0);
+}
+function auditValid(){
+  if(!audit || !audit.pass) return false;
+  if(!compileDraft(true)) return false;
+  return audit.codeHash === hashString(draft.main);
+}
+
+/* —— 导出发布（不再直接写 GitHub） —— */
+function openUploadPage(){
+  var el = document.getElementById('uploadFallback');
+  if(el) el.style.display = 'inline-flex';
+  var w = window.open('https://github.com/Hamburgerwow/Burger-Chat/upload/main/plugins', '_blank');
+  return w;
+}
+async function publishDraft(){
+  collectDraft();
+  if(!compiled && !compileDraft(true)){ toast('编译未通过：' + compileMsg); return; }
+  if(!auditValid()){ toast('请先在上架审核里通过审核，且审核后代码未改动'); showView('audit'); return; }
+  var pkg = buildPackage();
+  if(ghToken()){
+    try{
+      await ghPublishPackage(pkg);
+      toast('已通过 GitHub 密钥直接上传：' + pkg.id + ' v' + pkg.version);
+      return;
+    }catch(e){
+      toast('GitHub 直传失败：' + (e.message || e) + '；改为导出并打开上传页');
+    }
+  }
+  openUploadPage();
+  downloadDraft();
+  toast('已导出 ' + pkg.id + '-' + pkg.version + '.bcp.json，并打开 GitHub 上传页；把包拖入 plugins/ 提交即可');
+}
+var autoPublishing = false;
+async function autoPublishAfterAudit(){
+  if(autoPublishing) return;
+  if(!auditValid()) return;
+  autoPublishing = true;
+  try{
+    var pkg = buildPackage();
+    if(ghToken()){
+      try{
+        await ghPublishPackage(pkg);
+        toast('审核通过，已通过 GitHub 密钥直接上传：' + pkg.id + ' v' + pkg.version);
+        return;
+      }catch(e){
+        toast('GitHub 直传失败：' + (e.message || e) + '；改为导出上传');
+      }
+    }
+    if(PUBLISH_API){
+      var r = await fetch(PUBLISH_API, {
+        method:'POST',
+        headers:{ 'Content-Type':'application/json' },
+        body:JSON.stringify({ package:pkg })
+      });
+      var o = await r.json().catch(function(){ return {}; });
+      if(!r.ok || !o.ok) throw new Error(o.error || ('HTTP ' + r.status));
+      toast('审核通过，已自动上传到 GitHub：' + pkg.id + ' v' + pkg.version);
+      return;
+    }
+    downloadDraft();
+    var w = openUploadPage();
+    toast(w ? ('审核通过，已自动导出 ' + pkg.id + '-' + pkg.version + '.bcp.json，并打开 GitHub 上传页')
+            : '审核通过，包已自动导出；点「打开 GitHub 上传页」完成提交');
+  }catch(e){
+    downloadDraft();
+    openUploadPage();
+    toast('自动上传失败：' + (e.message || e) + '；已导出包并打开上传页');
+  }finally{
+    autoPublishing = false;
+  }
+}
+
+/* —— 本周精选 —— */
+function autoPickWeekly(){
+  var top = pluginList().slice().sort(function(a,b){ return (num(b.rating)-num(a.rating)) || (num(b.ratingCount)-num(a.ratingCount)); }).slice(0,3).map(function(p){ return p.id; });
+  document.querySelectorAll('.wk').forEach(function(el){ el.checked = top.indexOf(el.value) >= 0; });
+  toast('已按评分选出 TOP3');
+}
+async function publicRegistry(){
+  if(registry && Array.isArray(registry.plugins)) return JSON.parse(JSON.stringify(registry));
+  var urls = [
+    'https://raw.githubusercontent.com/' + REPO + '/main/plugins/registry.json?t=' + Date.now(),
+    'https://hamburgerwow.top/plugins/registry.json?t=' + Date.now()
+  ];
+  for(var i=0;i<urls.length;i++){
+    try{
+      var r = await fetch(urls[i], { cache:'no-store' });
+      if(!r.ok) continue;
+      var o = await r.json();
+      if(o && o.schema === 'burger-plugin-store/v1' && Array.isArray(o.plugins)) return o;
+    }catch(e){}
+  }
+  return null;
+}
+async function saveWeekly(){
+  var ids = [].slice.call(document.querySelectorAll('.wk:checked')).map(function(el){ return el.value; }).slice(0,3);
+  if(!ids.length){ toast('至少选 1 个插件'); return; }
+  openUploadPage();
+  try{
+    var reg = await publicRegistry();
+    if(!reg){ toast('读取 registry.json 失败，请先刷新商店再试'); return; }
+    reg.weekly = { week:weekKey(), top:ids, updated:Date.now() };
+    reg.updated = Date.now();
+    downloadText('registry.json', JSON.stringify(reg, null, 2));
+    toast('已导出 registry.json，并打开 GitHub 上传页；覆盖 plugins/registry.json 后提交即可');
+  }catch(e){ toast('导出失败：' + (e.message || e)); }
+}
+
+/* —— 动态壁纸 / 背景音乐上传 —— */
+var LS_WALLPAPERS = 'bcp.dev.wallpapers.v1';
+var LS_MUSIC = 'bcp.dev.music.v1';
+var wpPick = null;       /* {file,url,w,h,mime,ext} */
+var muPick = null;       /* {file,url,duration,size} */
+var muUploading = false;
+var muAutoTimer = 0;
+var wpFilter = '';
+var WP_MAX = 60 * 1024 * 1024;
+var MU_MAX = 16 * 1024 * 1024;
+var ASSET_RAW = 'https://raw.githubusercontent.com/Hamburgerwow/Burger-Chat/main/';
+
+function readLocalList(key){
+  try{ var v = JSON.parse(localStorage.getItem(key) || '[]'); return Array.isArray(v) ? v : []; }catch(e){ return []; }
+}
+function writeLocalList(key, list){
+  try{ localStorage.setItem(key, JSON.stringify((list || []).slice(0, 40))); }catch(e){}
+}
+function fmtBytes(n){
+  n = Number(n) || 0;
+  if(n >= 1048576) return (n / 1048576).toFixed(n >= 10485760 ? 0 : 1) + ' MB';
+  if(n >= 1024) return Math.round(n / 1024) + ' KB';
+  return n + ' B';
+}
+function assetExt(name, mime){
+  var m = /\.([a-z0-9]+)$/i.exec(String(name || ''));
+  if(m) return m[1].toLowerCase();
+  if(/mp4/.test(mime || '')) return 'mp4';
+  if(/webm/.test(mime || '')) return 'webm';
+  if(/gif/.test(mime || '')) return 'gif';
+  if(/webp/.test(mime || '')) return 'webp';
+  if(/mpeg|mp3/.test(mime || '')) return 'mp3';
+  return 'bin';
+}
+function downloadBlob(name, blob){
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = name;
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(function(){ try{ URL.revokeObjectURL(a.href); a.remove(); }catch(e){} }, 1800);
+}
+function openGithubUpload(path){
+  window.open('https://github.com/Hamburgerwow/Burger-Chat/upload/main/' + path, '_blank');
+}
+
+function wallpaperOrientationChanged(userAction){
+  if(!wpPick || !wpPick.w || !wpPick.h) return;
+  var sel = document.getElementById('wpOrientation');
+  var want = sel ? sel.value : 'horizontal';
+  var ratio = wpPick.w / wpPick.h;
+  var matched = want === 'horizontal' ? ratio >= 1.2 : ratio <= 0.85;
+  var meta = document.getElementById('wpMeta');
+  if(meta){
+    meta.innerHTML = '<span>' + wpPick.w + ' × ' + wpPick.h + '</span>'
+      + '<span>' + (want === 'horizontal' ? '横屏 16:9' : '竖屏 9:16') + '</span>'
+      + '<span style="' + (matched ? '' : 'background:#fff1f1;color:#b14b4b') + '">'
+      + (matched ? '尺寸匹配' : '尺寸与所选方向不一致') + '</span>';
+  }
+  var state = document.getElementById('wpState');
+  if(state) state.textContent = matched ? '待上传' : '尺寸不符';
+  if(userAction && !matched) toast('当前画面是 ' + (ratio >= 1 ? '横向' : '竖向') + '的，和所选方向不一致，请确认后再上传');
+}
+function wallpaperFileChanged(inp){
+  var f = inp && inp.files && inp.files[0];
+  if(wpPick && wpPick.url){ try{ URL.revokeObjectURL(wpPick.url); }catch(e){} }
+  wpPick = null;
+  var btn = document.getElementById('wpUploadBtn');
+  if(btn) btn.disabled = true;
+  var pv = document.getElementById('wpPreview');
+  var meta = document.getElementById('wpMeta');
+  if(!f){
+    if(pv) pv.innerHTML = '<div class="ph"><b>◐</b>选中文件后在这里预览<br>会自动读出画面尺寸并校验横竖屏</div>';
+    if(meta) meta.innerHTML = '';
+    return;
+  }
+  if(f.size > WP_MAX){ toast('壁纸不能超过 60 MB'); inp.value = ''; return; }
+  var mime = f.type || '';
+  if(!/^(video\/|image\/)/.test(mime)){ toast('只支持视频或动态图片文件'); inp.value = ''; return; }
+  var url = URL.createObjectURL(f);
+  wpPick = { file:f, url:url, mime:mime, ext:assetExt(f.name, mime), w:0, h:0 };
+  if(pv){
+    pv.innerHTML = /^video\//.test(mime)
+      ? '<video src="' + url + '" muted loop autoplay playsinline></video>'
+      : '<img src="' + url + '" alt="壁纸预览">';
+  }
+  if(meta) meta.innerHTML = '<span>' + fmtBytes(f.size) + '</span><span>' + (mime || '未知格式') + '</span><span>读取尺寸…</span>';
+  var state = document.getElementById('wpState'); if(state) state.textContent = '已选择';
+  if(/^video\//.test(mime)){
+    var v = pv ? pv.querySelector('video') : null;
+    if(v){
+      v.addEventListener('loadedmetadata', function(){
+        wpPick.w = v.videoWidth || 0; wpPick.h = v.videoHeight || 0;
+        wallpaperOrientationChanged(false);
+        if(btn) btn.disabled = false;
+      }, { once:true });
+      v.addEventListener('error', function(){ toast('这个视频无法预览，换 MP4 / WebM 再试'); }, { once:true });
+    }
+  }else{
+    var im = new Image();
+    im.onload = function(){
+      wpPick.w = im.naturalWidth || 0; wpPick.h = im.naturalHeight || 0;
+      wallpaperOrientationChanged(false);
+      if(btn) btn.disabled = false;
+    };
+    im.onerror = function(){ toast('这个图片无法预览'); };
+    im.src = url;
+  }
+  if(/^video\//.test(mime) && !(pv && pv.querySelector('video'))){ if(btn) btn.disabled = false; }
+}
+function resetWallpaperForm(){
+  if(wpPick && wpPick.url){ try{ URL.revokeObjectURL(wpPick.url); }catch(e){} }
+  wpPick = null;
+  ['wpTitle','wpFile'].forEach(function(id){ var el=document.getElementById(id); if(el) el.value=''; });
+  var btn = document.getElementById('wpUploadBtn'); if(btn) btn.disabled = true;
+  var pv = document.getElementById('wpPreview');
+  if(pv) pv.innerHTML = '<div class="ph"><b>◐</b>选中文件后在这里预览<br>会自动读出画面尺寸并校验横竖屏</div>';
+  var meta = document.getElementById('wpMeta'); if(meta) meta.innerHTML = '';
+  var state = document.getElementById('wpState'); if(state) state.textContent = '未选择';
+}
+async function uploadWallpaper(){
+  if(!wpPick || !wpPick.file){ toast('先选一个动态壁纸文件'); return; }
+  var title = (document.getElementById('wpTitle').value || '').trim();
+  if(!title){ toast('给壁纸起个名字'); return; }
+  var orientation = document.getElementById('wpOrientation').value === 'vertical' ? 'vertical' : 'horizontal';
+  var target = document.getElementById('wpTarget').value || 'both';
+  var uploader = (document.getElementById('wpUploader').value || '').trim() || (profile ? profile.name : '') || '匿名开发者';
+  var id = 'wp-' + slug(title) + '-' + Date.now().toString(36);
+  var filename = id + '.' + wpPick.ext;
+  var entry = {
+    id:id, title:title, uploader:uploader, orientation:orientation, target:target,
+    width:wpPick.w || 0, height:wpPick.h || 0,
+    ratio:(wpPick.w && wpPick.h) ? Number((wpPick.w / wpPick.h).toFixed(3)) : 0,
+    mime:wpPick.mime || '', size:wpPick.file.size || 0, file:filename,
+    url:ASSET_RAW + 'wallpapers/' + filename, at:Date.now()
+  };
+  var reg = { v:1, wallpapers:[] };
+  if(ghToken()){
+    try{
+      var ghReg = await ghGetJson('wallpapers/index.json');
+      if(ghReg && typeof ghReg === 'object') reg = ghReg;
+      if(!Array.isArray(reg.wallpapers)) reg.wallpapers = [];
+      reg.wallpapers = [entry].concat(reg.wallpapers.filter(function(x){ return x && x.id !== id; }));
+      reg.latest = entry;
+      reg.v = 1;
+      var stateEl = document.getElementById('wpState'); if(stateEl) stateEl.textContent = '正在写入 GitHub…';
+      await ghPutBinary('wallpapers/' + filename, wpPick.file, 'feat(wallpaper): ' + title);
+      await ghPutFile('wallpapers/index.json', reg, 'feat(wallpaper): update wallpaper index');
+      var list = readLocalList(LS_WALLPAPERS).filter(function(x){ return x && x.id !== id; });
+      list.unshift({ id:id, title:title, orientation:orientation, size:entry.size, mime:entry.mime, at:entry.at, file:filename });
+      writeLocalList(LS_WALLPAPERS, list);
+      renderWallpapers(wpFilter);
+      if(stateEl) stateEl.textContent = '已上传 GitHub';
+      toast('壁纸已直接上传 GitHub；部署网站资源后会出现在首页');
+      return;
+    }catch(e){
+      var stateErr = document.getElementById('wpState'); if(stateErr) stateErr.textContent = 'GitHub 直传失败，已回退导出';
+      toast('GitHub 直传失败：' + (e.message || e) + '；改为导出上传');
+    }
+  }
+  try{
+    var r = await fetch(ASSET_RAW + 'wallpapers/index.json?t=' + Date.now(), { cache:'no-store' });
+    if(r.ok) reg = await r.json();
+    else throw new Error('HTTP ' + r.status);
+  }catch(e){
+    try{
+      var r2 = await fetch('/wallpapers/index.json?t=' + Date.now(), { cache:'no-store' });
+      if(r2.ok) reg = await r2.json();
+    }catch(e2){}
+  }
+  if(!reg || typeof reg !== 'object') reg = { v:1, wallpapers:[] };
+  if(!Array.isArray(reg.wallpapers)) reg.wallpapers = [];
+  reg.wallpapers = [entry].concat(reg.wallpapers.filter(function(x){ return x && x.id !== id; }));
+  reg.latest = entry;
+  reg.v = 1;
+  downloadBlob(filename, wpPick.file);
+  setTimeout(function(){ downloadText('wallpapers-index.json', JSON.stringify(reg, null, 2)); }, 350);
+  var list = readLocalList(LS_WALLPAPERS).filter(function(x){ return x && x.id !== id; });
+  list.unshift({ id:id, title:title, orientation:orientation, size:entry.size, mime:entry.mime, at:entry.at, file:filename });
+  writeLocalList(LS_WALLPAPERS, list);
+  renderWallpapers(wpFilter);
+  var state = document.getElementById('wpState'); if(state) state.textContent = '已导出';
+  toast('未配置 GitHub 密钥，已导出壁纸和 index.json，正在打开 GitHub 上传页');
+  setTimeout(function(){ openGithubUpload('wallpapers'); }, 900);
+}
+function renderWallpapers(filter){
+  wpFilter = filter || '';
+  var list = readLocalList(LS_WALLPAPERS).filter(function(x){ return !wpFilter || x.orientation === wpFilter; });
+  var box = document.getElementById('wpList');
+  var count = document.getElementById('wpCount');
+  if(count) count.textContent = String(list.length);
+  if(!box) return;
+  if(!list.length){ box.innerHTML = '<div class="empty">还没有' + (wpFilter ? (wpFilter === 'horizontal' ? '横屏' : '竖屏') : '') + '壁纸导出记录</div>'; return; }
+  box.innerHTML = list.map(function(x){
+    return '<div class="asset-row"><div class="asset-thumb">◐</div><div class="asset-main"><b>'
+      + h(x.title) + '</b><span>' + (x.orientation === 'horizontal' ? '横屏' : '竖屏') + ' · '
+      + fmtBytes(x.size) + ' · ' + new Date(x.at || Date.now()).toLocaleDateString() + '</span></div>'
+      + '<span class="pill">' + (x.orientation === 'horizontal' ? '横屏' : '竖屏') + '</span></div>';
+  }).join('');
+}
+
+function musicTitleFromFile(name){
+  var s = String(name || '').replace(/\.mp3$/i, '').replace(/_/g, ' ').trim();
+  return s || '未命名背景音乐';
+}
+function musicFilename(x){
+  if(!x) return '';
+  if(x.file) return String(x.file);
+  var m = /\/music\/([^/?#]+)$/.exec(String(x.url || ''));
+  return m ? decodeURIComponent(m[1]) : '';
+}
+function setMusicState(text, tone){
+  var el = document.getElementById('muState');
+  if(!el) return;
+  el.className = 'pill' + (tone ? ' ' + tone : '');
+  el.textContent = text;
+}
+function showMusicRetry(show){
+  var btn = document.getElementById('muUploadBtn');
+  if(!btn) return;
+  btn.style.display = show ? 'inline-flex' : 'none';
+  btn.disabled = !show;
+}
+function scheduleMusicAutoUpload(){
+  clearTimeout(muAutoTimer);
+  muAutoTimer = setTimeout(function(){ uploadMusic(); }, 350);
+}
+function musicFileChanged(inp){
+  clearTimeout(muAutoTimer);
+  var f = inp && inp.files && inp.files[0];
+  if(muPick && muPick.url){ try{ URL.revokeObjectURL(muPick.url); }catch(e){} }
+  muPick = null;
+  showMusicRetry(false);
+  var pv = document.getElementById('muPreview');
+  var meta = document.getElementById('muMeta');
+  if(!f){
+    if(pv) pv.innerHTML = '<div class="ph"><b>♫</b>选中 MP3 后会自动上传<br>不需要再手动打开 GitHub</div>';
+    if(meta) meta.innerHTML = '';
+    setMusicState('未选择');
+    return;
+  }
+  if(f.size > MU_MAX){ toast('MP3 不能超过 16 MB'); inp.value = ''; return; }
+  if(!/audio\/mpeg|\.mp3$/i.test((f.type || '') + f.name)){ toast('只支持 MP3 文件'); inp.value = ''; return; }
+  var titleEl = document.getElementById('muTitle');
+  if(titleEl && !titleEl.value.trim()) titleEl.value = musicTitleFromFile(f.name);
+  var url = URL.createObjectURL(f);
+  muPick = { file:f, url:url, size:f.size, duration:0 };
+  if(pv) pv.innerHTML = '<audio controls preload="metadata" src="' + url + '"></audio>';
+  if(meta) meta.innerHTML = '<span>' + fmtBytes(f.size) + '</span><span>audio/mpeg</span><span>读取时长…</span>';
+  setMusicState('准备自动上传');
+  var au = pv ? pv.querySelector('audio') : null;
+  if(au){
+    au.addEventListener('loadedmetadata', function(){
+      if(!muPick) return;
+      muPick.duration = au.duration || 0;
+      if(meta) meta.innerHTML = '<span>' + fmtBytes(f.size) + '</span><span>audio/mpeg</span><span>'
+        + (muPick.duration ? (Math.floor(muPick.duration / 60) + ':' + String(Math.round(muPick.duration % 60)).padStart(2, '0')) : '时长未知') + '</span>';
+      scheduleMusicAutoUpload();
+    }, { once:true });
+    au.addEventListener('error', function(){
+      setMusicState('无法试听，仍尝试上传', 'warn');
+      scheduleMusicAutoUpload();
+    }, { once:true });
+    setTimeout(function(){ if(muPick && muPick.file === f) scheduleMusicAutoUpload(); }, 1800);
+  }else{
+    scheduleMusicAutoUpload();
+  }
+}
+function resetMusicForm(){
+  clearTimeout(muAutoTimer);
+  if(muPick && muPick.url){ try{ URL.revokeObjectURL(muPick.url); }catch(e){} }
+  muPick = null;
+  ['muTitle','muFile'].forEach(function(id){ var el=document.getElementById(id); if(el) el.value=''; });
+  var pv=document.getElementById('muPreview');
+  if(pv) pv.innerHTML='<div class="ph"><b>♫</b>选中 MP3 后会自动上传<br>不需要再手动打开 GitHub</div>';
+  var meta=document.getElementById('muMeta'); if(meta) meta.innerHTML='';
+  showMusicRetry(false);
+  setMusicState('未选择');
+}
+async function uploadMusic(){
+  if(muUploading) return;
+  if(!muPick || !muPick.file){ toast('先选一个 MP3 文件'); return; }
+  if(!ghToken()){
+    setMusicState('需要 GitHub 密钥', 'warn');
+    showMusicRetry(true);
+    toast('请先在设置里配置 GitHub 密钥，配置后会自动上传');
+    return;
+  }
+  var titleEl = document.getElementById('muTitle');
+  var title = (titleEl ? titleEl.value : '').trim() || musicTitleFromFile(muPick.file.name);
+  if(titleEl && !titleEl.value.trim()) titleEl.value = title;
+  var uploader = (document.getElementById('muUploader').value || '').trim() || (profile ? profile.name : '') || '匿名开发者';
+  var id = 'mu-' + slug(title) + '-' + Date.now().toString(36);
+  var filename = id + '.mp3';
+  var track = {
+    id:id, title:title, uploader:uploader, url:ASSET_RAW + 'music/' + filename,
+    size:muPick.size || 0, duration:Math.round(muPick.duration || 0), at:Date.now()
+  };
+  muUploading = true;
+  showMusicRetry(false);
+  setMusicState('自动上传中…');
+  try{
+    var reg = await ghGetJson('music/index.json');
+    if(!reg || typeof reg !== 'object') reg = { v:1, default:null, latest:null, tracks:[] };
+    if(!Array.isArray(reg.tracks)) reg.tracks = [];
+    reg.tracks = [track].concat(reg.tracks.filter(function(x){ return x && x.id !== id; }));
+    reg.latest = track;
+    reg.v = 1;
+    await ghPutBinary('music/' + filename, muPick.file, 'feat(music): ' + title);
+    await ghPutFile('music/index.json', reg, 'feat(music): update music index');
+    var list = readLocalList(LS_MUSIC).filter(function(x){ return x && x.id !== id; });
+    list.unshift({ id:id, title:title, uploader:uploader, size:track.size, at:track.at, file:filename });
+    writeLocalList(LS_MUSIC, list);
+    renderMusic();
+    setMusicState('已自动上传', 'ok');
+    try { localStorage.setItem('bcMusicUpdatedAt', String(Date.now())); } catch (e) {}
+    toast('背景音乐已自动上传并更新播放列表');
+  }catch(e){
+    setMusicState('自动上传失败', 'bad');
+    showMusicRetry(true);
+    toast('自动上传失败：' + (e.message || e));
+  }finally{
+    muUploading = false;
+  }
+}
+async function deleteMusic(id){
+  id = String(id || '');
+  var list = readLocalList(LS_MUSIC);
+  var item = list.filter(function(x){ return x && String(x.id) === id; })[0];
+  if(!item) return;
+  var token = ghToken();
+  var ask = token
+    ? '删除《' + item.title + '》？会同时从 GitHub 播放列表移除，并删除源文件。'
+    : '删除《' + item.title + '》？当前未配置 GitHub 密钥，只会删除本机记录，线上文件不会改动。';
+  if(!confirm(ask)) return;
+  var btn = document.querySelector('.asset-del[data-id="' + id + '"]');
+  if(btn) btn.disabled = true;
+  if(!token){
+    writeLocalList(LS_MUSIC, list.filter(function(x){ return x && String(x.id) !== id; }));
+    renderMusic();
+    setMusicState('已删除本机记录', 'warn');
+    try { localStorage.setItem('bcMusicUpdatedAt', String(Date.now())); } catch (e) {}
+    toast('未配置 GitHub 密钥，仅删除本机记录；线上音乐未改动');
+    return;
+  }
+  var file = musicFilename(item);
+  var fileError = '';
+  setMusicState('正在删除…');
+  try{
+    var reg = await ghGetJson('music/index.json');
+    if(reg && Array.isArray(reg.tracks)){
+      var before = reg.tracks.length;
+      reg.tracks = reg.tracks.filter(function(x){ return x && String(x.id) !== id && musicFilename(x) !== file; });
+      if(reg.latest && (String(reg.latest.id) === id || musicFilename(reg.latest) === file)) reg.latest = reg.tracks[0] || null;
+      if(reg.default && (String(reg.default.id) === id || musicFilename(reg.default) === file)) reg.default = reg.tracks[0] || null;
+      if(reg.tracks.length !== before){
+        reg.v = reg.v || 1;
+        await ghPutFile('music/index.json', reg, 'feat(music): remove ' + item.title);
+      }
+    }
+    if(file){
+      try{ await ghDeleteFile('music/' + file, 'feat(music): delete ' + item.title); }
+      catch(e){ fileError = e.message || String(e); }
+    }
+    writeLocalList(LS_MUSIC, list.filter(function(x){ return x && String(x.id) !== id; }));
+    renderMusic();
+    setMusicState('已删除', 'ok');
+    try { localStorage.setItem('bcMusicUpdatedAt', String(Date.now())); } catch (e) {}
+    toast(fileError ? ('已从播放列表移除，但源文件删除失败：' + fileError) : '背景音乐已从播放列表和仓库删除');
+  }catch(e){
+    if(btn) btn.disabled = false;
+    setMusicState('删除失败', 'bad');
+    toast('删除失败：' + (e.message || e));
+  }
+}
+function renderMusic(){
+  var list = readLocalList(LS_MUSIC);
+  var box = document.getElementById('muList');
+  var count = document.getElementById('muCount');
+  if(count) count.textContent = String(list.length);
+  if(!box) return;
+  if(!list.length){ box.innerHTML = '<div class="empty">还没有发布过背景音乐</div>'; return; }
+  box.innerHTML = list.map(function(x){
+    var mid = String(x.id || '').replace(/[^a-z0-9-]/gi, '');
+    return '<div class="asset-row" data-music-id="' + mid + '"><div class="asset-thumb">♫</div><div class="asset-main"><b>'
+      + h(x.title) + '</b><span>' + h(x.uploader || '匿名') + ' · ' + fmtBytes(x.size) + ' · '
+      + new Date(x.at || Date.now()).toLocaleDateString() + '</span></div><span class="pill">MP3</span>'
+      + '<button class="asset-del" type="button" data-id="' + mid + '" onclick="deleteMusic(\'' + mid + '\')" title="删除" aria-label="删除《' + h(x.title) + '》">×</button></div>';
+  }).join('');
+}
+
+/* —— 导航 / 启动 —— */
+var VIEWS = { overview:['概览','概览'], mine:['我的插件','我的插件'], wallpaper:['动态壁纸','动态壁纸'], music:['背景音乐','背景音乐'], studio:['AI 插件工坊','AI 插件工坊'], audit:['上架审核','上架审核'], weekly:['本周精选','本周精选'], settings:['设置','设置'] };
+function showView(v){
+  Object.keys(VIEWS).forEach(function(k){
+    var sec = document.getElementById('view-' + k);
+    if(sec) sec.classList.toggle('hidden', k !== v);
+  });
+  document.querySelectorAll('#nav button').forEach(function(b){ b.classList.toggle('on', b.dataset.view === v); });
+  var info = VIEWS[v] || ['Castle Developer','Castle Developer'];
+  document.getElementById('pageTitle').textContent = info[0];
+  document.getElementById('crumb').textContent = info[1];
+  if(v === 'settings'){ renderSettings(); syncModelFields(); }
+  if(v === 'studio'){ loadDraft(); }
+  if(v === 'wallpaper'){
+    var wu = document.getElementById('wpUploader');
+    if(wu && !wu.value && profile) wu.value = profile.name || '';
+    renderWallpapers(wpFilter);
+  }
+  if(v === 'music'){
+    var mu = document.getElementById('muUploader');
+    if(mu && !mu.value && profile) mu.value = profile.name || '';
+    renderMusic();
+  }
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+document.querySelectorAll('#nav button').forEach(function(b){ b.addEventListener('click', function(){ showView(b.dataset.view); }); });
+document.getElementById('draftState').textContent = '草稿';
+document.getElementById('avatarFile').addEventListener('change', function(){});
+function editPlugin(id){
+  var p = pluginList().filter(function(x){ return x.id === id; })[0];
+  if(!p){ toast('商店里没有这个插件'); return; }
+  draft = Object.assign({}, p, { prompt:'', prompt:'' });
+  draft.main = '';
+  draft.ui = p.ui || [];
+  saveJSON(LS_DRAFT, draft);
+  loadDraft();
+  showView('studio');
+  toast('已载入插件资料；源码请从 GitHub 文件或重新生成');
+}
+function viewInStore(id){
+  window.open('https://hamburgerwow.top/#dl', '_blank');
+}
+function boot(){
+  applyAppearance(settings.bgColor, settings.fontColor);
+  devRenderLoginBtn();
+  if(needOnboard()){ showOnboard(); return; }
+  document.getElementById('shell').classList.remove('hidden');
+  renderProfileChip();
+  renderSettings();
+  syncModelFields();
+  loadDraft();
+  reloadRegistry(false);
+}
+window.addEventListener('resize', function(){
+  if(window.innerWidth < 1024){ document.getElementById('gate').style.display = 'grid'; document.getElementById('shell').classList.add('hidden'); }
+  else { document.getElementById('gate').style.display = 'none'; if(profile) document.getElementById('shell').classList.remove('hidden'); }
+});
+window.addEventListener('beforeunload', function(){ try{ collectDraft(); saveJSON(LS_DRAFT, draft); }catch(e){} });
+boot();
+</script>
+<script src="assets/sub-i18n.js?v=5"></script>
+<script src="assets/sub-music.js?v=1" defer></script>
+<script src="assets/site-shared.js?v=fb3" defer></script>
+</body>
+</html>
+
+
