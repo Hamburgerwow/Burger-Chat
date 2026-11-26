@@ -3,7 +3,7 @@
   "name": "hanwoshihanbao wow",
   "avatar": "",
   "createdAt": "2026-11-26T01:24:27.019Z",
-  "updatedAt": 1795659379670,
+  "updatedAt": 1795659529751,
   "firebaseUid": "shJrNV0OsGc5FvbyJr0TTVAbkbB3",
   "data": {
     "bm:playlists": [],
@@ -48,11 +48,11 @@
       }
     ],
     "bm:stats": {
-      "plays": 1122,
+      "plays": 1127,
       "sources": {
-        "netease": 1106,
+        "netease": 1109,
         "tencent": 2,
-        "local": 1
+        "local": 2
       },
       "days": [
         "2026-11-25",
@@ -61,7 +61,7 @@
       "searches": 0,
       "imports": 0,
       "quality": 2,
-      "lyrics": 6,
+      "lyrics": 9,
       "nights": 14,
       "mornings": 10
     },
@@ -75,6 +75,50 @@
     },
     "bm:favorites": [],
     "bm:history": [
+      {
+        "key": "netease:1973665667",
+        "at": 1795659528584,
+        "track": {
+          "id": "1973665667",
+          "source": "netease",
+          "name": "海屿你",
+          "artist": "马也_Crabbit",
+          "album": "海屿你",
+          "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
+          "duration": 295.940062
+        }
+      },
+      {
+        "key": "netease:1456890009",
+        "at": 1795659524200,
+        "track": {
+          "id": "1456890009",
+          "source": "netease",
+          "name": "罗生门（Follow）",
+          "artist": "梨冻紧 / Wiz_H张子豪",
+          "album": "罗生门（Follow）",
+          "cover": "https://p2.music.126.net/yN1ke1xYMJ718FiHaDWtYQ==/109951165076380471.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1456890009",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1456890009",
+          "duration": 243.754
+        }
+      },
+      {
+        "key": "local:firefly-cmj",
+        "at": 1795659492811,
+        "track": {
+          "id": "firefly-cmj",
+          "source": "local",
+          "name": "萤火之森",
+          "artist": "CMJ",
+          "album": "BURGER CHAT · LOCAL",
+          "cover": "",
+          "url": "/assets/music/firefly-cmj.mp3?v=0.40.52r3",
+          "duration": 152.5625
+        }
+      },
       {
         "key": "netease:3453304463",
         "at": 1795659378886,
@@ -91,20 +135,6 @@
         }
       },
       {
-        "key": "local:firefly-cmj",
-        "at": 1795659375095,
-        "track": {
-          "id": "firefly-cmj",
-          "source": "local",
-          "name": "萤火之森",
-          "artist": "CMJ",
-          "album": "BURGER CHAT · LOCAL",
-          "cover": "",
-          "url": "/assets/music/firefly-cmj.mp3?v=0.40.52r3",
-          "duration": 0
-        }
-      },
-      {
         "key": "netease:488249475",
         "at": 1795659333953,
         "track": {
@@ -117,21 +147,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=488249475",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=488249475",
           "duration": 222.683356
-        }
-      },
-      {
-        "key": "netease:1973665667",
-        "at": 1795657643810,
-        "track": {
-          "id": "1973665667",
-          "source": "netease",
-          "name": "海屿你",
-          "artist": "马也_Crabbit",
-          "album": "海屿你",
-          "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
-          "duration": 295.94
         }
       },
       {
@@ -480,21 +495,6 @@
         }
       },
       {
-        "key": "netease:1456890009",
-        "at": 1795604315637,
-        "track": {
-          "id": "1456890009",
-          "source": "netease",
-          "name": "罗生门（Follow）",
-          "artist": "梨冻紧 / Wiz_H张子豪",
-          "album": "罗生门（Follow）",
-          "cover": "https://p2.music.126.net/yN1ke1xYMJ718FiHaDWtYQ==/109951165076380471.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 243.754
-        }
-      },
-      {
         "key": "netease:3382908505",
         "at": 1795604314709,
         "track": {
@@ -529,5 +529,5 @@
     "bm:lyric-trans": 1,
     "bm:volume": 1
   },
-  "__sha": "755b764429dc4237194713f47a8b884d81f6e398"
+  "__sha": "19929560cdbaee171debcbad3c79710c828452bc"
 }
