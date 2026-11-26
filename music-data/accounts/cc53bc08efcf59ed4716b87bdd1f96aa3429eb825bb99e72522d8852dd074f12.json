@@ -3,7 +3,7 @@
   "name": "hanwoshihanbao wow",
   "avatar": "",
   "createdAt": "2026-11-26T01:24:27.019Z",
-  "updatedAt": 1795657657534,
+  "updatedAt": 1795657666734,
   "firebaseUid": "shJrNV0OsGc5FvbyJr0TTVAbkbB3",
   "data": {
     "bm:playlists": [],
@@ -527,7 +527,7 @@
     ],
     "bm:quality": "lossless",
     "bm:lyric-trans": 1,
-    "bm:volume": 0.55
+    "bm:volume": 1
   },
-  "__sha": "1332db74b16f3cf1fc00f923ba6d49cffadcc2ee"
+  "__sha": "467aab6554665bb3a672b105b9d36ebbecc88f52"
 }
