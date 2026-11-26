@@ -3,7 +3,7 @@
   "name": "hanwoshihanbao wow",
   "avatar": "",
   "createdAt": "2026-11-26T01:24:27.019Z",
-  "updatedAt": 1795656341790,
+  "updatedAt": 1795656782939,
   "firebaseUid": "shJrNV0OsGc5FvbyJr0TTVAbkbB3",
   "data": {
     "bm:playlists": [],
@@ -48,9 +48,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1102,
+      "plays": 1103,
       "sources": {
-        "netease": 1089,
+        "netease": 1090,
         "tencent": 1
       },
       "days": [
@@ -73,6 +73,21 @@
     },
     "bm:favorites": [],
     "bm:history": [
+      {
+        "key": "netease:3453304463",
+        "at": 1795656779697,
+        "track": {
+          "id": "3453304463",
+          "source": "netease",
+          "name": "降温",
+          "artist": "Zzh",
+          "album": "降温",
+          "cover": "https://p2.music.126.net/pbHcu5WSuWqOYOMdpkKaPg==/109951174163337450.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3453304463",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3453304463",
+          "duration": 199.229
+        }
+      },
       {
         "key": "netease:554322674",
         "at": 1795656328732,
@@ -507,26 +522,11 @@
           "lrc": "",
           "duration": 242.146
         }
-      },
-      {
-        "key": "netease:1420706073",
-        "at": 1795591054752,
-        "track": {
-          "id": "1420706073",
-          "source": "netease",
-          "name": "离开我的依赖",
-          "artist": "王艳薇",
-          "album": "离开我的依赖",
-          "cover": "https://p2.music.126.net/btYBbFLd5mf9w0lDpfNs6w==/109951171506809884.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 233.882
-        }
       }
     ],
     "bm:quality": "lossless",
     "bm:lyric-trans": 1,
     "bm:volume": 1
   },
-  "__sha": "fe217c4ecd569eaace4024505a2a394c3d22a58d"
+  "__sha": "c89b144bc020ae3246d494238506190a3e282535"
 }
