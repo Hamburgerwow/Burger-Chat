@@ -3,7 +3,7 @@
   "name": "hanwoshihanbao wow",
   "avatar": "",
   "createdAt": "2026-11-26T01:24:27.019Z",
-  "updatedAt": 1795658766401,
+  "updatedAt": 1795659379670,
   "firebaseUid": "shJrNV0OsGc5FvbyJr0TTVAbkbB3",
   "data": {
     "bm:playlists": [],
@@ -48,10 +48,11 @@
       }
     ],
     "bm:stats": {
-      "plays": 1118,
+      "plays": 1122,
       "sources": {
-        "netease": 1104,
-        "tencent": 2
+        "netease": 1106,
+        "tencent": 2,
+        "local": 1
       },
       "days": [
         "2026-11-25",
@@ -75,6 +76,50 @@
     "bm:favorites": [],
     "bm:history": [
       {
+        "key": "netease:3453304463",
+        "at": 1795659378886,
+        "track": {
+          "id": "3453304463",
+          "source": "netease",
+          "name": "降温",
+          "artist": "Zzh",
+          "album": "降温",
+          "cover": "https://p2.music.126.net/pbHcu5WSuWqOYOMdpkKaPg==/109951174163337450.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3453304463",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3453304463",
+          "duration": 199.229
+        }
+      },
+      {
+        "key": "local:firefly-cmj",
+        "at": 1795659375095,
+        "track": {
+          "id": "firefly-cmj",
+          "source": "local",
+          "name": "萤火之森",
+          "artist": "CMJ",
+          "album": "BURGER CHAT · LOCAL",
+          "cover": "",
+          "url": "/assets/music/firefly-cmj.mp3?v=0.40.52r3",
+          "duration": 0
+        }
+      },
+      {
+        "key": "netease:488249475",
+        "at": 1795659333953,
+        "track": {
+          "id": "488249475",
+          "source": "netease",
+          "name": "哪里都是你",
+          "artist": "队长",
+          "album": "哪里都是你",
+          "cover": "https://p1.music.126.net/lnOnBbP_H-052Hv5ls-QjA==/109951162964628408.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=488249475",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=488249475",
+          "duration": 222.683356
+        }
+      },
+      {
         "key": "netease:1973665667",
         "at": 1795657643810,
         "track": {
@@ -87,21 +132,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
           "duration": 295.94
-        }
-      },
-      {
-        "key": "netease:3453304463",
-        "at": 1795657642075,
-        "track": {
-          "id": "3453304463",
-          "source": "netease",
-          "name": "降温",
-          "artist": "Zzh",
-          "album": "降温",
-          "cover": "https://p1.music.126.net/pbHcu5WSuWqOYOMdpkKaPg==/109951174163337450.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3453304463",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3453304463",
-          "duration": 199.229416
         }
       },
       {
@@ -493,41 +523,11 @@
           "lrc": "",
           "duration": 275.912
         }
-      },
-      {
-        "key": "netease:3460493895",
-        "at": 1795604312839,
-        "track": {
-          "id": "3460493895",
-          "source": "netease",
-          "name": "冬天又来临",
-          "artist": "罗言",
-          "album": "冬天又来临",
-          "cover": "https://p2.music.126.net/TnaPKtQVBg_kT3OOpxtH0Q==/109951174269909108.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 169.384
-        }
-      },
-      {
-        "key": "netease:167691",
-        "at": 1795604311920,
-        "track": {
-          "id": "167691",
-          "source": "netease",
-          "name": "天龙八部之宿敌",
-          "artist": "许嵩",
-          "album": "天龙八部之宿敌",
-          "cover": "https://p1.music.126.net/Ezo6K3rPFowvnkDtxf-w6Q==/109951172321459335.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 263.34
-        }
       }
     ],
     "bm:quality": "lossless",
     "bm:lyric-trans": 1,
     "bm:volume": 1
   },
-  "__sha": "163607d8821f4c9f837b0ac564657a4aa1490b4d"
+  "__sha": "755b764429dc4237194713f47a8b884d81f6e398"
 }
