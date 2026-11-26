@@ -1,10 +1,17 @@
 {
   "email": "bcprofiletest@example.com",
   "name": "ProfileTest",
-  "avatar": "",
+  "avatar": "🙂",
   "createdAt": "2026-11-26T05:53:51.153Z",
-  "updatedAt": 1795672466070,
+  "updatedAt": 1795672471476,
   "firebaseUid": "OyGX9MCWZzVVUmlmxEfJJxi4nMY2",
-  "data": {},
-  "__sha": "f79e28f238e002b662d94e3c09ecc7eb0570ed62"
+  "data": {
+    "bm:account-meta": {
+      "mood": "端到端验收心情",
+      "name": "ProfileTest",
+      "avatar": "🙂"
+    }
+  },
+  "__sha": "db87bb3f77f16e2d253ed388d634118cb50f1ab8",
+  "mood": "端到端验收心情"
 }
