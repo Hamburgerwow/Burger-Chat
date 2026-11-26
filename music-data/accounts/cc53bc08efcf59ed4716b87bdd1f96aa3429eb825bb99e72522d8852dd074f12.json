@@ -3,7 +3,7 @@
   "name": "hanwoshihanbao wow",
   "avatar": "",
   "createdAt": "2026-11-26T01:24:27.019Z",
-  "updatedAt": 1795657432142,
+  "updatedAt": 1795657630313,
   "firebaseUid": "shJrNV0OsGc5FvbyJr0TTVAbkbB3",
   "data": {
     "bm:playlists": [],
@@ -48,9 +48,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1114,
+      "plays": 1116,
       "sources": {
-        "netease": 1102,
+        "netease": 1103,
         "tencent": 1
       },
       "days": [
@@ -60,7 +60,7 @@
       "searches": 0,
       "imports": 0,
       "quality": 2,
-      "lyrics": 5,
+      "lyrics": 6,
       "nights": 14,
       "mornings": 10
     },
@@ -74,6 +74,36 @@
     },
     "bm:favorites": [],
     "bm:history": [
+      {
+        "key": "tencent:003Wir1t2wevOV",
+        "at": 1795657627930,
+        "track": {
+          "id": "003Wir1t2wevOV",
+          "source": "tencent",
+          "name": "放弃我是你的错",
+          "artist": "杨蔓",
+          "album": "听 好女人心",
+          "cover": "https://y.gtimg.cn/music/photo_new/T002R300x300M000000tUmjJ2gwH8t.jpg",
+          "url": "https://api.injahow.cn/meting/?server=tencent&type=url&id=003Wir1t2wevOV",
+          "lrc": "https://api.injahow.cn/meting/?server=tencent&type=lrc&id=003Wir1t2wevOV",
+          "duration": 276
+        }
+      },
+      {
+        "key": "netease:3453304463",
+        "at": 1795657623235,
+        "track": {
+          "id": "3453304463",
+          "source": "netease",
+          "name": "降温",
+          "artist": "Zzh",
+          "album": "降温",
+          "cover": "https://p1.music.126.net/pbHcu5WSuWqOYOMdpkKaPg==/109951174163337450.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3453304463",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3453304463",
+          "duration": 199.229
+        }
+      },
       {
         "key": "netease:1379918404",
         "at": 1795657324520,
@@ -150,21 +180,6 @@
         }
       },
       {
-        "key": "netease:3453304463",
-        "at": 1795656833564,
-        "track": {
-          "id": "3453304463",
-          "source": "netease",
-          "name": "降温",
-          "artist": "Zzh",
-          "album": "降温",
-          "cover": "https://p2.music.126.net/pbHcu5WSuWqOYOMdpkKaPg==/109951174163337450.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3453304463",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3453304463",
-          "duration": 199.229416
-        }
-      },
-      {
         "key": "netease:3448039922",
         "at": 1795656820146,
         "track": {
@@ -207,21 +222,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1927693793",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1927693793",
           "duration": 168
-        }
-      },
-      {
-        "key": "tencent:003Wir1t2wevOV",
-        "at": 1795640273849,
-        "track": {
-          "id": "003Wir1t2wevOV",
-          "source": "tencent",
-          "name": "放弃我是你的错",
-          "artist": "杨蔓",
-          "album": "听 好女人心",
-          "cover": "https://y.gtimg.cn/music/photo_new/T002R300x300M000000tUmjJ2gwH8t.jpg",
-          "url": "https://api.injahow.cn/meting/?server=tencent&type=url&id=003Wir1t2wevOV",
-          "lrc": "https://api.injahow.cn/meting/?server=tencent&type=lrc&id=003Wir1t2wevOV",
-          "duration": 276
         }
       },
       {
@@ -529,5 +529,5 @@
     "bm:lyric-trans": 1,
     "bm:volume": 1
   },
-  "__sha": "7c48bc646f8465438dc866bf85fbd20fb61ef335"
+  "__sha": "8d49afba055351bf1159e887f6f01434bf219d48"
 }
