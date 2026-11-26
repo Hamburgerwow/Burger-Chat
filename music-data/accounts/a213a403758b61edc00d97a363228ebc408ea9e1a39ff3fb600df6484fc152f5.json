@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795720611200,
+  "updatedAt": 1795720890442,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -520,8 +520,13 @@
     ],
     "bm:quality": "lossless",
     "bm:lyric-trans": 1,
-    "bm:volume": 1
+    "bm:volume": 1,
+    "bm:account-meta": {
+      "nickname": "Hamburger",
+      "avatar": "",
+      "mood": ""
+    }
   },
-  "__sha": "7a470bfbeb41764a61e9f13a6696a978e5042306",
+  "__sha": "4497d3ba04d9aa91c56ccc83bf8455b0a60d5c09",
   "mood": ""
 }
