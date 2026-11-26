@@ -3,7 +3,7 @@
   "name": "hanwoshihanbao wow",
   "avatar": "",
   "createdAt": "2026-11-26T01:24:27.019Z",
-  "updatedAt": 1795657630313,
+  "updatedAt": 1795657649330,
   "firebaseUid": "shJrNV0OsGc5FvbyJr0TTVAbkbB3",
   "data": {
     "bm:playlists": [],
@@ -48,10 +48,10 @@
       }
     ],
     "bm:stats": {
-      "plays": 1116,
+      "plays": 1118,
       "sources": {
-        "netease": 1103,
-        "tencent": 1
+        "netease": 1104,
+        "tencent": 2
       },
       "days": [
         "2026-11-25",
@@ -75,6 +75,36 @@
     "bm:favorites": [],
     "bm:history": [
       {
+        "key": "netease:1973665667",
+        "at": 1795657643810,
+        "track": {
+          "id": "1973665667",
+          "source": "netease",
+          "name": "海屿你",
+          "artist": "马也_Crabbit",
+          "album": "海屿你",
+          "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
+          "duration": 295.94
+        }
+      },
+      {
+        "key": "netease:3453304463",
+        "at": 1795657642075,
+        "track": {
+          "id": "3453304463",
+          "source": "netease",
+          "name": "降温",
+          "artist": "Zzh",
+          "album": "降温",
+          "cover": "https://p1.music.126.net/pbHcu5WSuWqOYOMdpkKaPg==/109951174163337450.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3453304463",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3453304463",
+          "duration": 199.229416
+        }
+      },
+      {
         "key": "tencent:003Wir1t2wevOV",
         "at": 1795657627930,
         "track": {
@@ -87,21 +117,6 @@
           "url": "https://api.injahow.cn/meting/?server=tencent&type=url&id=003Wir1t2wevOV",
           "lrc": "https://api.injahow.cn/meting/?server=tencent&type=lrc&id=003Wir1t2wevOV",
           "duration": 276
-        }
-      },
-      {
-        "key": "netease:3453304463",
-        "at": 1795657623235,
-        "track": {
-          "id": "3453304463",
-          "source": "netease",
-          "name": "降温",
-          "artist": "Zzh",
-          "album": "降温",
-          "cover": "https://p1.music.126.net/pbHcu5WSuWqOYOMdpkKaPg==/109951174163337450.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3453304463",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3453304463",
-          "duration": 199.229
         }
       },
       {
@@ -222,21 +237,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1927693793",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1927693793",
           "duration": 168
-        }
-      },
-      {
-        "key": "netease:1973665667",
-        "at": 1795639957299,
-        "track": {
-          "id": "1973665667",
-          "source": "netease",
-          "name": "海屿你",
-          "artist": "马也_Crabbit",
-          "album": "海屿你",
-          "cover": "https://p1.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
-          "duration": 295.940063
         }
       },
       {
@@ -529,5 +529,5 @@
     "bm:lyric-trans": 1,
     "bm:volume": 1
   },
-  "__sha": "8d49afba055351bf1159e887f6f01434bf219d48"
+  "__sha": "d4a5ce9a1e4bf34f54b4b3d76888fd43755c95fa"
 }
