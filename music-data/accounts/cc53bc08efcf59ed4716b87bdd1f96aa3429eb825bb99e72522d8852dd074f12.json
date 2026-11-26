@@ -3,7 +3,7 @@
   "name": "hanwoshihanbao wow",
   "avatar": "",
   "createdAt": "2026-11-26T01:24:27.019Z",
-  "updatedAt": 1795657153015,
+  "updatedAt": 1795657161602,
   "firebaseUid": "shJrNV0OsGc5FvbyJr0TTVAbkbB3",
   "data": {
     "bm:playlists": [],
@@ -48,9 +48,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1109,
+      "plays": 1111,
       "sources": {
-        "netease": 1096,
+        "netease": 1098,
         "tencent": 1
       },
       "days": [
@@ -75,7 +75,7 @@
     "bm:history": [
       {
         "key": "netease:3451961424",
-        "at": 1795657149087,
+        "at": 1795657153801,
         "track": {
           "id": "3451961424",
           "source": "netease",
@@ -85,7 +85,22 @@
           "cover": "https://p2.music.126.net/4t7sE3F8_59UTs1gbLwVdA==/109951174144789308.jpg?param=240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3451961424",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3451961424",
-          "duration": 186.046
+          "duration": 186.04652
+        }
+      },
+      {
+        "key": "netease:2740858325",
+        "at": 1795657152735,
+        "track": {
+          "id": "2740858325",
+          "source": "netease",
+          "name": "Star Crossing Night (feat. GALI)",
+          "artist": "徐明浩 / GALI",
+          "album": "Star Crossing Night (feat. GALI)",
+          "cover": "https://p2.music.126.net/fsz6GAKO1-khteFArDidjA==/109951171942679749.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2740858325",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2740858325",
+          "duration": 205
         }
       },
       {
@@ -507,26 +522,11 @@
           "lrc": "",
           "duration": 172.173
         }
-      },
-      {
-        "key": "netease:3440961675",
-        "at": 1795597400431,
-        "track": {
-          "id": "3440961675",
-          "source": "netease",
-          "name": "睡前别想太多",
-          "artist": "李雨霏_晚饭",
-          "album": "睡前别想太多",
-          "cover": "https://p2.music.126.net/CdAZ76__lHkE_HcjXgR_4w==/109951173999807018.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 210.079
-        }
       }
     ],
     "bm:quality": "lossless",
     "bm:lyric-trans": 1,
     "bm:volume": 1
   },
-  "__sha": "079a45a88c002ed1eacbf44a77a7f89fe408c50c"
+  "__sha": "37861f934fdf623099f8bf0950c040bf86bdb941"
 }
