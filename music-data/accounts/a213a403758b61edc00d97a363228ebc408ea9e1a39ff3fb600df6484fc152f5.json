@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795720890442,
+  "updatedAt": 1795721699500,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,10 +38,10 @@
       }
     ],
     "bm:stats": {
-      "plays": 1145,
+      "plays": 1147,
       "sources": {
-        "netease": 1115,
-        "tencent": 2,
+        "netease": 1116,
+        "tencent": 3,
         "local": 2
       },
       "days": [
@@ -53,7 +53,7 @@
       "imports": 0,
       "quality": 10,
       "lyrics": 18,
-      "nights": 15,
+      "nights": 17,
       "mornings": 10
     },
     "bm:ach": {
@@ -70,17 +70,32 @@
     "bm:history": [
       {
         "key": "netease:1973665667",
-        "at": 1795720610179,
+        "at": 1795721693614,
         "track": {
           "id": "1973665667",
           "source": "netease",
           "name": "海屿你",
           "artist": "马也_Crabbit",
           "album": "海屿你",
-          "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
+          "cover": "https://p1.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
-          "duration": 295.940062
+          "duration": 295.94
+        }
+      },
+      {
+        "key": "tencent:0026Mz8z1ReUvu",
+        "at": 1795721689986,
+        "track": {
+          "id": "0026Mz8z1ReUvu",
+          "source": "tencent",
+          "name": "海韵",
+          "artist": "邓丽君",
+          "album": "",
+          "cover": "https://api.injahow.cn/meting/?server=tencent&type=pic&id=0033hbr10Rk3iD",
+          "url": "https://api.injahow.cn/meting/?server=tencent&type=url&id=0026Mz8z1ReUvu",
+          "lrc": "https://api.injahow.cn/meting/?server=tencent&type=lrc&id=0026Mz8z1ReUvu",
+          "duration": 191.906666
         }
       },
       {
@@ -501,21 +516,6 @@
           "lrc": "",
           "duration": 185.04
         }
-      },
-      {
-        "key": "netease:2600493765",
-        "at": 1795604313784,
-        "track": {
-          "id": "2600493765",
-          "source": "netease",
-          "name": "恋人",
-          "artist": "李荣浩",
-          "album": "黑马",
-          "cover": "https://p1.music.126.net/0bk3Iqe2OZGBH2Iuyx7RzA==/109951170045577565.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 275.912
-        }
       }
     ],
     "bm:quality": "lossless",
@@ -527,6 +527,6 @@
       "mood": ""
     }
   },
-  "__sha": "4497d3ba04d9aa91c56ccc83bf8455b0a60d5c09",
+  "__sha": "c3f48a683ca3955cea0a3ee3a2c0349cf330c058",
   "mood": ""
 }
