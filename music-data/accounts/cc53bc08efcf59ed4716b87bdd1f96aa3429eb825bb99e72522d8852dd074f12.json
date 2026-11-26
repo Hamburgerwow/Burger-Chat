@@ -3,7 +3,7 @@
   "name": "hanwoshihanbao wow",
   "avatar": "",
   "createdAt": "2026-11-26T01:24:27.019Z",
-  "updatedAt": 1795656782939,
+  "updatedAt": 1795656828286,
   "firebaseUid": "shJrNV0OsGc5FvbyJr0TTVAbkbB3",
   "data": {
     "bm:playlists": [],
@@ -48,9 +48,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1103,
+      "plays": 1105,
       "sources": {
-        "netease": 1090,
+        "netease": 1092,
         "tencent": 1
       },
       "days": [
@@ -59,8 +59,8 @@
       ],
       "searches": 0,
       "imports": 0,
-      "quality": 0,
-      "lyrics": 1,
+      "quality": 2,
+      "lyrics": 2,
       "nights": 14,
       "mornings": 10
     },
@@ -73,6 +73,36 @@
     },
     "bm:favorites": [],
     "bm:history": [
+      {
+        "key": "netease:3448039922",
+        "at": 1795656820146,
+        "track": {
+          "id": "3448039922",
+          "source": "netease",
+          "name": "茉茉",
+          "artist": "Nzwin 黄跃成",
+          "album": "茉茉",
+          "cover": "https://p2.music.126.net/x9H0NVxO5ha9wWCOvW1-eQ==/109951174106566868.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3448039922",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3448039922",
+          "duration": 120.169
+        }
+      },
+      {
+        "key": "netease:1379918404",
+        "at": 1795656783475,
+        "track": {
+          "id": "1379918404",
+          "source": "netease",
+          "name": "time machine (feat. aren park)",
+          "artist": "mj apanay / aren park",
+          "album": "seen 11:23 pm",
+          "cover": "https://p2.music.126.net/b15pmn1qj28nyam8DdcCHA==/109951167480966719.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1379918404",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1379918404",
+          "duration": 225.933
+        }
+      },
       {
         "key": "netease:3453304463",
         "at": 1795656779697,
@@ -146,21 +176,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
           "duration": 295.940063
-        }
-      },
-      {
-        "key": "netease:1379918404",
-        "at": 1795637887426,
-        "track": {
-          "id": "1379918404",
-          "source": "netease",
-          "name": "time machine (feat. aren park)",
-          "artist": "mj apanay / aren park",
-          "album": "seen 11:23 pm",
-          "cover": "https://p1.music.126.net/b15pmn1qj28nyam8DdcCHA==/109951167480966719.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1379918404",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1379918404",
-          "duration": 225.933
         }
       },
       {
@@ -449,21 +464,6 @@
         }
       },
       {
-        "key": "netease:3448039922",
-        "at": 1795604311002,
-        "track": {
-          "id": "3448039922",
-          "source": "netease",
-          "name": "茉茉",
-          "artist": "Nzwin 黄跃成",
-          "album": "茉茉",
-          "cover": "https://p2.music.126.net/x9H0NVxO5ha9wWCOvW1-eQ==/109951174106566868.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 120.169
-        }
-      },
-      {
         "key": "netease:1851652156",
         "at": 1795604310070,
         "track": {
@@ -528,5 +528,5 @@
     "bm:lyric-trans": 1,
     "bm:volume": 1
   },
-  "__sha": "c89b144bc020ae3246d494238506190a3e282535"
+  "__sha": "e9a2a17c091681905efbb62c9075319e10f8a1a6"
 }
