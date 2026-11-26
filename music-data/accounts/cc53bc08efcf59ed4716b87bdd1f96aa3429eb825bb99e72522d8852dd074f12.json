@@ -3,7 +3,7 @@
   "name": "hanwoshihanbao wow",
   "avatar": "",
   "createdAt": "2026-11-26T01:24:27.019Z",
-  "updatedAt": 1795657161602,
+  "updatedAt": 1795657432142,
   "firebaseUid": "shJrNV0OsGc5FvbyJr0TTVAbkbB3",
   "data": {
     "bm:playlists": [],
@@ -48,9 +48,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1111,
+      "plays": 1114,
       "sources": {
-        "netease": 1098,
+        "netease": 1102,
         "tencent": 1
       },
       "days": [
@@ -60,7 +60,7 @@
       "searches": 0,
       "imports": 0,
       "quality": 2,
-      "lyrics": 3,
+      "lyrics": 5,
       "nights": 14,
       "mornings": 10
     },
@@ -69,10 +69,41 @@
       "ten": 1795590604785,
       "fifty": 1795590672859,
       "night": 1795637797565,
-      "morning": 1795643163348
+      "morning": 1795643163348,
+      "lyric": 1795657330533
     },
     "bm:favorites": [],
     "bm:history": [
+      {
+        "key": "netease:1379918404",
+        "at": 1795657324520,
+        "track": {
+          "id": "1379918404",
+          "source": "netease",
+          "name": "time machine (feat. aren park)",
+          "artist": "mj apanay / aren park",
+          "album": "seen 11:23 pm",
+          "cover": "https://p2.music.126.net/b15pmn1qj28nyam8DdcCHA==/109951167480966719.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1379918404",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1379918404",
+          "duration": 225.933061
+        }
+      },
+      {
+        "key": "netease:3333988321",
+        "at": 1795657322957,
+        "track": {
+          "id": "3333988321",
+          "source": "netease",
+          "name": "一半一半",
+          "artist": "Top Barry / INDEcompany",
+          "album": "一半一半",
+          "cover": "https://p2.music.126.net/EgbPD3CwVQojZ4OWse4YrA==/109951172511748152.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3333988321",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3333988321",
+          "duration": 235.285
+        }
+      },
       {
         "key": "netease:3451961424",
         "at": 1795657153801,
@@ -116,21 +147,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=287719",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=287719",
           "duration": 271.493
-        }
-      },
-      {
-        "key": "netease:1379918404",
-        "at": 1795656835527,
-        "track": {
-          "id": "1379918404",
-          "source": "netease",
-          "name": "time machine (feat. aren park)",
-          "artist": "mj apanay / aren park",
-          "album": "seen 11:23 pm",
-          "cover": "https://p2.music.126.net/b15pmn1qj28nyam8DdcCHA==/109951167480966719.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1379918404",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1379918404",
-          "duration": 225.933061
         }
       },
       {
@@ -507,26 +523,11 @@
           "lrc": "",
           "duration": 263.34
         }
-      },
-      {
-        "key": "netease:1851652156",
-        "at": 1795604310070,
-        "track": {
-          "id": "1851652156",
-          "source": "netease",
-          "name": "忘不掉的你",
-          "artist": "h3R3",
-          "album": "忘不掉的你",
-          "cover": "https://p2.music.126.net/4BCskpY6Rmm-QReHnY8W6Q==/109951166071009318.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 172.173
-        }
       }
     ],
     "bm:quality": "lossless",
     "bm:lyric-trans": 1,
     "bm:volume": 1
   },
-  "__sha": "37861f934fdf623099f8bf0950c040bf86bdb941"
+  "__sha": "7c48bc646f8465438dc866bf85fbd20fb61ef335"
 }
