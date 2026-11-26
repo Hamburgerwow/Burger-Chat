@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795720491893,
+  "updatedAt": 1795720611200,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,21 +38,22 @@
       }
     ],
     "bm:stats": {
-      "plays": 1144,
+      "plays": 1145,
       "sources": {
-        "netease": 1114,
+        "netease": 1115,
         "tencent": 2,
         "local": 2
       },
       "days": [
         "2026-11-25",
-        "2026-11-26"
+        "2026-11-26",
+        "2026-11-27"
       ],
       "searches": 1,
       "imports": 0,
       "quality": 10,
       "lyrics": 18,
-      "nights": 14,
+      "nights": 15,
       "mornings": 10
     },
     "bm:ach": {
@@ -62,13 +63,14 @@
       "night": 1795637797565,
       "morning": 1795643163348,
       "lyric": 1795657330533,
-      "quality": 1795659583950
+      "quality": 1795659583950,
+      "days3": 1795720610181
     },
     "bm:favorites": [],
     "bm:history": [
       {
         "key": "netease:1973665667",
-        "at": 1795674718553,
+        "at": 1795720610179,
         "track": {
           "id": "1973665667",
           "source": "netease",
@@ -520,6 +522,6 @@
     "bm:lyric-trans": 1,
     "bm:volume": 1
   },
-  "__sha": "00564b51ec6035b375a7d76815fd225bc108ab80",
+  "__sha": "7a470bfbeb41764a61e9f13a6696a978e5042306",
   "mood": ""
 }
