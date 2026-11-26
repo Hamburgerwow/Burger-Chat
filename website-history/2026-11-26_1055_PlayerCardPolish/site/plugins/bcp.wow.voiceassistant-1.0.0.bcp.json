@@ -1,0 +1,42 @@
+{
+  "schema": "burger-chat-plugin/v1",
+  "id": "bcp.wow.voiceassistant",
+  "name": "语音助手",
+  "version": "1.0.0",
+  "developer": "汉堡wow",
+  "target": "both",
+  "minApp": "0.40.0",
+  "maxApp": "0.40.99",
+  "apiVersion": 1,
+  "memoryMB": 16,
+  "category": "聊天增强",
+  "description": "本插件提供语音输入功能，用户可通过点击顶部或输入栏按钮录制语音，插件将语音转为文字后发送到聊天窗口。支持设置录音时长、语言识别等参数，提升聊天体验。",
+  "icon": "🧩",
+  "tags": [],
+  "ui": [
+    {
+      "id": "btn-top",
+      "slot": "header",
+      "label": "语音",
+      "icon": "✨",
+      "order": 1
+    },
+    {
+      "id": "btn-input",
+      "slot": "compose",
+      "label": "录音",
+      "icon": "✨",
+      "order": 2
+    },
+    {
+      "id": "panel-settings",
+      "slot": "settings",
+      "label": "设置",
+      "icon": "✨",
+      "order": 3
+    }
+  ],
+  "permissions": [],
+  "main": "api.ui.onButton('btn-top', () => {\n  api.toast('开始录音...');\n  api.chat.sendText('录制的文字内容');\n});\napi.ui.onButton('btn-input', () => {\n  api.toast('开始录音...');\n  api.chat.sendText('录制的文字内容');\n});\napi.ui.addSettingsPanel({\n  title: '语音助手设置',\n  html: '<div style=\"font-size:12px;color:#8a90a0;padding:8px 0\">录音时长 30 秒 · 识别语言 中文</div>'\n});",
+  "homepage": ""
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "burger-chat-plugin/v1",
+  "id": "bcp.hamburgerwow.hello",
+  "name": "快捷打招呼",
+  "version": "1.0.0",
+  "developer": "Hamburgerwow",
+  "target": "both",
+  "minApp": "0.40.29",
+  "maxApp": "0.40.99",
+  "apiVersion": 1,
+  "memoryMB": 4,
+  "category": "聊天增强",
+  "description": "在聊天页顶部加一个「打招呼」按钮，一键发送预设问候语，省去重复输入。",
+  "icon": "👋",
+  "permissions": [],
+  "ui": [
+    {
+      "id": "hello",
+      "slot": "header",
+      "label": "打招呼",
+      "icon": "👋",
+      "order": 10
+    }
+  ],
+  "main": "api.ui.onButton('hello', function(){ api.chat.sendText('在的，有什么可以帮你？'); });"
+}
