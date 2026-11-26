@@ -3,21 +3,11 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795701618449,
+  "updatedAt": 1795720491893,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
     "bm:lx-sources": [
-      {
-        "name": "真英雄（若是真英雄怎会怕）",
-        "author": "LOCAL OPEN API",
-        "version": "",
-        "homepage": "http://127.0.0.1:23330",
-        "url": "http://127.0.0.1:23330",
-        "type": "api",
-        "enabled": true,
-        "importedAt": 1795663401407
-      },
       {
         "name": "长青SVIP音源",
         "description": "音源更新，关注微信公众号: 元力菌",
@@ -530,6 +520,6 @@
     "bm:lyric-trans": 1,
     "bm:volume": 1
   },
-  "__sha": "2be4576bce7e9c1956ff4f8372937f3262080b29",
+  "__sha": "00564b51ec6035b375a7d76815fd225bc108ab80",
   "mood": ""
 }
