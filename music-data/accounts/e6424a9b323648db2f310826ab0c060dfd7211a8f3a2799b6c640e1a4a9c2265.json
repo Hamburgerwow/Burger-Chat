@@ -3,7 +3,7 @@
   "name": "ProfileTest",
   "avatar": "🙂",
   "createdAt": "2026-11-26T05:53:51.153Z",
-  "updatedAt": 1795673730853,
+  "updatedAt": 1795673733019,
   "firebaseUid": "OyGX9MCWZzVVUmlmxEfJJxi4nMY2",
   "data": {
     "bm:account-meta": {
@@ -25,7 +25,7 @@
       }
     ],
     "bm:stats": {
-      "plays": 1117,
+      "plays": 1118,
       "sources": {
         "netease": 1095,
         "tencent": 6,
@@ -54,7 +54,7 @@
     "bm:history": [
       {
         "key": "netease:1973665667",
-        "at": 1795673728311,
+        "at": 1795673731959,
         "track": {
           "id": "1973665667",
           "source": "netease",
@@ -505,6 +505,6 @@
     ],
     "bm:quality": "lossless"
   },
-  "__sha": "77fc5f388df24ca730f14aa5f182178bf4853071",
+  "__sha": "9390f37dccfc2e25e2d904ecec76b584c12d92bd",
   "mood": "三端资料同步已验收"
 }
