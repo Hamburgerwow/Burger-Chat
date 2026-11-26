@@ -1,0 +1,26 @@
+{
+  "schema": "burger-chat-plugin/v1",
+  "id": "bcp.hamburgerwow.media-tip",
+  "name": "图片发送助手",
+  "version": "1.0.0",
+  "developer": "Hamburgerwow",
+  "target": "both",
+  "minApp": "0.40.29",
+  "maxApp": "0.40.99",
+  "apiVersion": 1,
+  "memoryMB": 2,
+  "category": "媒体",
+  "description": "在输入栏加一个图片快捷按钮，点一下提示如何从「图片/视频」入口选择并发送手机里的图片。",
+  "icon": "🖼️",
+  "permissions": [],
+  "ui": [
+    {
+      "id": "media-tip",
+      "slot": "compose",
+      "label": "图片",
+      "icon": "🖼️",
+      "order": 20
+    }
+  ],
+  "main": "api.ui.onButton('media-tip', function(){ api.toast('点输入栏的「+」，选择「图片/视频」即可发送图片或视频'); });"
+}
