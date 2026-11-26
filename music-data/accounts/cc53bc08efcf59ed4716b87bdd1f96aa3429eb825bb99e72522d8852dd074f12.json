@@ -3,7 +3,7 @@
   "name": "hanwoshihanbao wow",
   "avatar": "",
   "createdAt": "2026-11-26T01:24:27.019Z",
-  "updatedAt": 1795656846319,
+  "updatedAt": 1795657153015,
   "firebaseUid": "shJrNV0OsGc5FvbyJr0TTVAbkbB3",
   "data": {
     "bm:playlists": [],
@@ -48,9 +48,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1108,
+      "plays": 1109,
       "sources": {
-        "netease": 1095,
+        "netease": 1096,
         "tencent": 1
       },
       "days": [
@@ -60,7 +60,7 @@
       "searches": 0,
       "imports": 0,
       "quality": 2,
-      "lyrics": 2,
+      "lyrics": 3,
       "nights": 14,
       "mornings": 10
     },
@@ -73,6 +73,21 @@
     },
     "bm:favorites": [],
     "bm:history": [
+      {
+        "key": "netease:3451961424",
+        "at": 1795657149087,
+        "track": {
+          "id": "3451961424",
+          "source": "netease",
+          "name": "慌啥子嘛",
+          "artist": "村口吴老二",
+          "album": "慌啥子嘛",
+          "cover": "https://p2.music.126.net/4t7sE3F8_59UTs1gbLwVdA==/109951174144789308.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3451961424",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3451961424",
+          "duration": 186.046
+        }
+      },
       {
         "key": "netease:287719",
         "at": 1795656837621,
@@ -507,26 +522,11 @@
           "lrc": "",
           "duration": 210.079
         }
-      },
-      {
-        "key": "netease:4872687",
-        "at": 1795591057606,
-        "track": {
-          "id": "4872687",
-          "source": "netease",
-          "name": "同花顺",
-          "artist": "林倛玉",
-          "album": "12蓮花 原著電影原聲帶 (Original Motion Picture Soundtrack)",
-          "cover": "https://p2.music.126.net/qiHFF-c4a4ULDyUjWjo4MQ==/109951164606137385.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 237.96
-        }
       }
     ],
     "bm:quality": "lossless",
     "bm:lyric-trans": 1,
     "bm:volume": 1
   },
-  "__sha": "96cce5020cd23268c52bcf8ee2216cce40d418f2"
+  "__sha": "079a45a88c002ed1eacbf44a77a7f89fe408c50c"
 }
