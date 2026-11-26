@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795721699500,
+  "updatedAt": 1795721717517,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1147,
+      "plays": 1148,
       "sources": {
-        "netease": 1116,
+        "netease": 1117,
         "tencent": 3,
         "local": 2
       },
@@ -52,8 +52,8 @@
       "searches": 1,
       "imports": 0,
       "quality": 10,
-      "lyrics": 18,
-      "nights": 17,
+      "lyrics": 19,
+      "nights": 18,
       "mornings": 10
     },
     "bm:ach": {
@@ -70,7 +70,7 @@
     "bm:history": [
       {
         "key": "netease:1973665667",
-        "at": 1795721693614,
+        "at": 1795721709808,
         "track": {
           "id": "1973665667",
           "source": "netease",
@@ -80,7 +80,7 @@
           "cover": "https://p1.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
-          "duration": 295.94
+          "duration": 191.906666
         }
       },
       {
@@ -527,6 +527,6 @@
       "mood": ""
     }
   },
-  "__sha": "c3f48a683ca3955cea0a3ee3a2c0349cf330c058",
+  "__sha": "df8c947904f92ea5e01b373643acdb7ac0008b27",
   "mood": ""
 }
