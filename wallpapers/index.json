@@ -1,0 +1,37 @@
+{
+  "v": 1,
+  "wallpapers": [
+    {
+      "id": "wp-test-wall-mwy5gaaq",
+      "title": "test wall",
+      "uploader": "最终联调",
+      "orientation": "horizontal",
+      "target": "both",
+      "type": "mpkg",
+      "width": 0,
+      "height": 0,
+      "ratio": 0,
+      "mime": "application/mpkg",
+      "size": 22,
+      "file": "wp-test-wall-mwy5gaaq.mpkg",
+      "url": "/api/gh-asset/wallpapers/wp-test-wall-mwy5gaaq.mpkg",
+      "at": 1795733652770
+    }
+  ],
+  "latest": {
+    "id": "wp-test-wall-mwy5gaaq",
+    "title": "test wall",
+    "uploader": "最终联调",
+    "orientation": "horizontal",
+    "target": "both",
+    "type": "mpkg",
+    "width": 0,
+    "height": 0,
+    "ratio": 0,
+    "mime": "application/mpkg",
+    "size": 22,
+    "file": "wp-test-wall-mwy5gaaq.mpkg",
+    "url": "/api/gh-asset/wallpapers/wp-test-wall-mwy5gaaq.mpkg",
+    "at": 1795733652770
+  }
+}
