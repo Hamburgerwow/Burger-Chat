@@ -3,7 +3,7 @@
   "name": "hanwoshihanbao wow",
   "avatar": "",
   "createdAt": "2026-11-26T01:24:27.019Z",
-  "updatedAt": 1795656837307,
+  "updatedAt": 1795656846319,
   "firebaseUid": "shJrNV0OsGc5FvbyJr0TTVAbkbB3",
   "data": {
     "bm:playlists": [],
@@ -48,9 +48,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1107,
+      "plays": 1108,
       "sources": {
-        "netease": 1094,
+        "netease": 1095,
         "tencent": 1
       },
       "days": [
@@ -73,6 +73,21 @@
     },
     "bm:favorites": [],
     "bm:history": [
+      {
+        "key": "netease:287719",
+        "at": 1795656837621,
+        "track": {
+          "id": "287719",
+          "source": "netease",
+          "name": "开始懂了",
+          "artist": "孙燕姿",
+          "album": "我要的幸福",
+          "cover": "https://p2.music.126.net/1HJILQwc62AfvcXkGgVJHQ==/109951165549820772.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=287719",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=287719",
+          "duration": 271.493
+        }
+      },
       {
         "key": "netease:1379918404",
         "at": 1795656835527,
@@ -507,26 +522,11 @@
           "lrc": "",
           "duration": 237.96
         }
-      },
-      {
-        "key": "netease:27955654",
-        "at": 1795591055732,
-        "track": {
-          "id": "27955654",
-          "source": "netease",
-          "name": "其实",
-          "artist": "薛之谦",
-          "album": "意外",
-          "cover": "https://p2.music.126.net/ywVjRpbu9KpcBQh9KJz2HA==/109951164499974026.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 242.146
-        }
       }
     ],
     "bm:quality": "lossless",
     "bm:lyric-trans": 1,
     "bm:volume": 1
   },
-  "__sha": "715fdaee2821c6d7adef5e4cf3b9d20910ea1fd9"
+  "__sha": "96cce5020cd23268c52bcf8ee2216cce40d418f2"
 }
