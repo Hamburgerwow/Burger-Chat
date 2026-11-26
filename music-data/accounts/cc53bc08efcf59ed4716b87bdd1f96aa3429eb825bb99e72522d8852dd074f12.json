@@ -3,7 +3,7 @@
   "name": "hanwoshihanbao wow",
   "avatar": "",
   "createdAt": "2026-11-26T01:24:27.019Z",
-  "updatedAt": 1795659529751,
+  "updatedAt": 1795659538442,
   "firebaseUid": "shJrNV0OsGc5FvbyJr0TTVAbkbB3",
   "data": {
     "bm:playlists": [],
@@ -50,7 +50,7 @@
     "bm:stats": {
       "plays": 1127,
       "sources": {
-        "netease": 1109,
+        "netease": 1110,
         "tencent": 2,
         "local": 2
       },
@@ -61,7 +61,7 @@
       "searches": 0,
       "imports": 0,
       "quality": 2,
-      "lyrics": 9,
+      "lyrics": 10,
       "nights": 14,
       "mornings": 10
     },
@@ -529,5 +529,5 @@
     "bm:lyric-trans": 1,
     "bm:volume": 1
   },
-  "__sha": "19929560cdbaee171debcbad3c79710c828452bc"
+  "__sha": "7373d4993339947f28a1125200d47d7c5548f1cb"
 }
