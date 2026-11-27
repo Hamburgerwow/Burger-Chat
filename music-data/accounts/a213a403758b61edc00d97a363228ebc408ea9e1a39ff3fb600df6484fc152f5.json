@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795774366733,
+  "updatedAt": 1795775047548,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1212,
+      "plays": 1214,
       "sources": {
-        "netease": 1151,
+        "netease": 1152,
         "tencent": 5,
         "local": 3,
         "kugou": 18
@@ -74,23 +74,8 @@
     ],
     "bm:history": [
       {
-        "key": "netease:3465658178",
-        "at": 1795774366625,
-        "track": {
-          "id": "3465658178",
-          "source": "netease",
-          "name": "隐藏结局",
-          "artist": "南瓜",
-          "album": "您好，已封号",
-          "cover": "https://p1.music.126.net/D1kE8hsGt4D8N4SmdlcKcQ==/109951174346305566.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3465658178",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3465658178",
-          "duration": 307
-        }
-      },
-      {
         "key": "netease:2161222939",
-        "at": 1795774285831,
+        "at": 1795775046326,
         "track": {
           "id": "2161222939",
           "source": "netease",
@@ -99,6 +84,19 @@
           "cover": "/api/bm/image?url=https%3A%2F%2Fp1.music.126.net%2Fctib5R--oR68W2IrOk765w%3D%3D%2F109951169635716223.jpg%3Fparam%3D240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2161222939",
           "duration": 183.770708
+        }
+      },
+      {
+        "key": "netease:3465658178",
+        "at": 1795775042278,
+        "track": {
+          "id": "3465658178",
+          "source": "netease",
+          "name": "隐藏结局",
+          "artist": "南瓜",
+          "cover": "/api/bm/image?url=https%3A%2F%2Fp1.music.126.net%2FD1kE8hsGt4D8N4SmdlcKcQ%3D%3D%2F109951174346305566.jpg%3Fparam%3D240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3465658178",
+          "duration": 307.014895
         }
       },
       {
