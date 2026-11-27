@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795750933368,
+  "updatedAt": 1795750942365,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1151,
+      "plays": 1153,
       "sources": {
-        "netease": 1119,
+        "netease": 1121,
         "tencent": 3,
         "local": 2
       },
@@ -70,7 +70,7 @@
     "bm:history": [
       {
         "key": "netease:1379918404",
-        "at": 1795750929874,
+        "at": 1795750936061,
         "track": {
           "id": "1379918404",
           "source": "netease",
@@ -80,7 +80,22 @@
           "cover": "https://p1.music.126.net/b15pmn1qj28nyam8DdcCHA==/109951167480966719.jpg?param=240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1379918404",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1379918404",
-          "duration": 225.933
+          "duration": 225.933061
+        }
+      },
+      {
+        "key": "netease:3382908505",
+        "at": 1795750934706,
+        "track": {
+          "id": "3382908505",
+          "source": "netease",
+          "name": "玻璃",
+          "artist": "Gareth.T",
+          "album": "玻璃",
+          "cover": "https://p2.music.126.net/MSKoQP60up7v3y1P1d3JIQ==/109951173234747322.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3382908505",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3382908505",
+          "duration": 185.04
         }
       },
       {
@@ -498,21 +513,6 @@
           "url": "",
           "lrc": "",
           "duration": 161.585
-        }
-      },
-      {
-        "key": "netease:2741144144",
-        "at": 1795604319416,
-        "track": {
-          "id": "2741144144",
-          "source": "netease",
-          "name": "99",
-          "artist": "TizzyT",
-          "album": "99",
-          "cover": "https://p1.music.126.net/D-kiZM7mbHrqdB6X8Yoi8Q==/109951171947326885.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 282.188
         }
       }
     ],
