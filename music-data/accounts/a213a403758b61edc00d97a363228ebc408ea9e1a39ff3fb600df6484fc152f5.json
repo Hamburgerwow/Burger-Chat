@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795759758712,
+  "updatedAt": 1795759996751,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,12 +38,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1176,
+      "plays": 1179,
       "sources": {
-        "netease": 1134,
+        "netease": 1135,
         "tencent": 3,
         "local": 2,
-        "kugou": 7
+        "kugou": 8
       },
       "days": [
         "2026-11-25",
@@ -53,7 +53,7 @@
       "searches": 3,
       "imports": 0,
       "quality": 22,
-      "lyrics": 26,
+      "lyrics": 30,
       "nights": 18,
       "mornings": 10
     },
@@ -73,18 +73,46 @@
     ],
     "bm:history": [
       {
+        "key": "netease:1973665667",
+        "at": 1795759995399,
+        "track": {
+          "id": "1973665667",
+          "source": "netease",
+          "name": "海屿你",
+          "artist": "马也_Crabbit",
+          "album": "海屿你",
+          "cover": "https://p1.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
+          "duration": 295.94
+        }
+      },
+      {
+        "key": "kugou:1E74D5C0745E2865D3D2638B3F5B8A4D",
+        "at": 1795759989021,
+        "track": {
+          "id": "1E74D5C0745E2865D3D2638B3F5B8A4D",
+          "source": "kugou",
+          "name": "爱情不是身份",
+          "artist": "杨友友",
+          "album": "",
+          "cover": "https://imge.kugou.com/stdmusic/400/20261123/20261123163248900275.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=1E74D5C0745E2865D3D2638B3F5B8A4D&album_id=216079216",
+          "lrc": "",
+          "duration": 212
+        }
+      },
+      {
         "key": "netease:3465658178",
-        "at": 1795759751883,
+        "at": 1795759879309,
         "track": {
           "id": "3465658178",
           "source": "netease",
           "name": "隐藏结局",
           "artist": "南瓜",
-          "album": "您好，已封号",
-          "cover": "https://p2.music.126.net/D1kE8hsGt4D8N4SmdlcKcQ==/109951174346305566.jpg?param=240y240",
+          "cover": "/api/bm/image?url=https%3A%2F%2Fp2.music.126.net%2FD1kE8hsGt4D8N4SmdlcKcQ%3D%3D%2F109951174346305566.jpg%3Fparam%3D240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3465658178",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3465658178",
-          "duration": 307
+          "duration": 307.014895
         }
       },
       {
@@ -203,36 +231,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1456890009",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1456890009",
           "duration": 243.754
-        }
-      },
-      {
-        "key": "netease:1973665667",
-        "at": 1795755410502,
-        "track": {
-          "id": "1973665667",
-          "source": "netease",
-          "name": "海屿你",
-          "artist": "马也_Crabbit",
-          "album": "海屿你",
-          "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
-          "duration": 295.94
-        }
-      },
-      {
-        "key": "kugou:1E74D5C0745E2865D3D2638B3F5B8A4D",
-        "at": 1795755325563,
-        "track": {
-          "id": "1E74D5C0745E2865D3D2638B3F5B8A4D",
-          "source": "kugou",
-          "name": "爱情不是身份",
-          "artist": "杨友友",
-          "album": "",
-          "cover": "https://imge.kugou.com/stdmusic/400/20261123/20261123163248900275.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=1E74D5C0745E2865D3D2638B3F5B8A4D&album_id=216079216",
-          "lrc": "",
-          "duration": 212
         }
       },
       {
