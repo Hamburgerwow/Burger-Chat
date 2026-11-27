@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795760824683,
+  "updatedAt": 1795760860684,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,19 +38,19 @@
       }
     ],
     "bm:stats": {
-      "plays": 1195,
+      "plays": 1197,
       "sources": {
         "netease": 1143,
         "tencent": 5,
         "local": 3,
-        "kugou": 12
+        "kugou": 14
       },
       "days": [
         "2026-11-25",
         "2026-11-26",
         "2026-11-27"
       ],
-      "searches": 16,
+      "searches": 17,
       "imports": 0,
       "quality": 22,
       "lyrics": 39,
@@ -73,6 +73,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:99B4B643E4E0E39D49A1B64FE10B7D22",
+        "at": 1795760857786,
+        "track": {
+          "id": "99B4B643E4E0E39D49A1B64FE10B7D22",
+          "source": "kugou",
+          "name": "เมื่อได้พบเธอ (泰版晚风告白)",
+          "artist": "Serious Bacon",
+          "album": "เมื่อได้พบเธอ（泰版晚风告白）",
+          "cover": "https://imge.kugou.com/stdmusic/400/20250427/20250427155231603540.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=99B4B643E4E0E39D49A1B64FE10B7D22&album_id=145760979",
+          "lrc": "",
+          "duration": 211
+        }
+      },
       {
         "key": "kugou:BA6D5C534A9FE2AF6DCB91F4CE834C94",
         "at": 1795760818689,
@@ -499,21 +514,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3453304463",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3453304463",
           "duration": 199.229
-        }
-      },
-      {
-        "key": "netease:488249475",
-        "at": 1795659333953,
-        "track": {
-          "id": "488249475",
-          "source": "netease",
-          "name": "哪里都是你",
-          "artist": "队长",
-          "album": "哪里都是你",
-          "cover": "https://p1.music.126.net/lnOnBbP_H-052Hv5ls-QjA==/109951162964628408.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=488249475",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=488249475",
-          "duration": 222.683356
         }
       }
     ],
