@@ -1,0 +1,38 @@
+{
+  "v": 1,
+  "latest": "dynamic-horizontal",
+  "wallpapers": [
+    {
+      "id": "dynamic-horizontal",
+      "kind": "video",
+      "title": "横向动态壁纸",
+      "uploader": "Burger Chat",
+      "orientation": "horizontal",
+      "file": "wallpaper-horizontal.mp4",
+      "url": "https://hamburgerwow.top/api/gh-asset/dynamic-wallpapers/wallpaper-horizontal.mp4",
+      "poster": "https://hamburgerwow.top/api/gh-asset/dynamic-wallpapers/wallpaper-horizontal-poster.jpg",
+      "thumb": "https://hamburgerwow.top/api/gh-asset/dynamic-wallpapers/wallpaper-horizontal-poster.jpg"
+    },
+    {
+      "id": "dynamic-vertical",
+      "kind": "video",
+      "title": "竖向动态壁纸",
+      "uploader": "Burger Chat",
+      "orientation": "vertical",
+      "file": "wallpaper-vertical.mp4",
+      "url": "https://hamburgerwow.top/api/gh-asset/dynamic-wallpapers/wallpaper-vertical.mp4",
+      "poster": "https://hamburgerwow.top/api/gh-asset/dynamic-wallpapers/wallpaper-vertical-poster.jpg",
+      "thumb": "https://hamburgerwow.top/api/gh-asset/dynamic-wallpapers/wallpaper-vertical-poster.jpg"
+    },
+    {
+      "id": "dynamic-gif",
+      "kind": "image",
+      "title": "横向动态 GIF",
+      "uploader": "Burger Chat",
+      "orientation": "horizontal",
+      "file": "wallpaper-horizontal.gif",
+      "url": "https://hamburgerwow.top/api/gh-asset/dynamic-wallpapers/wallpaper-horizontal.gif",
+      "thumb": "https://hamburgerwow.top/api/gh-asset/dynamic-wallpapers/wallpaper-horizontal.gif"
+    }
+  ]
+}
