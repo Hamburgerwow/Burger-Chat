@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795760140963,
+  "updatedAt": 1795760230986,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1181,
+      "plays": 1183,
       "sources": {
-        "netease": 1137,
+        "netease": 1139,
         "tencent": 3,
         "local": 2,
         "kugou": 8
@@ -73,8 +73,23 @@
     ],
     "bm:history": [
       {
+        "key": "netease:1379918404",
+        "at": 1795760226112,
+        "track": {
+          "id": "1379918404",
+          "source": "netease",
+          "name": "time machine (feat. aren park)",
+          "artist": "mj apanay / aren park",
+          "album": "seen 11:23 pm",
+          "cover": "https://p2.music.126.net/b15pmn1qj28nyam8DdcCHA==/109951167480966719.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1379918404",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1379918404",
+          "duration": 225.933
+        }
+      },
+      {
         "key": "netease:1973665667",
-        "at": 1795760138281,
+        "at": 1795760219075,
         "track": {
           "id": "1973665667",
           "source": "netease",
@@ -203,19 +218,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=D6E45FF72D84903325BADCC20AD27189&album_id=190695363",
           "lrc": "",
           "duration": 166
-        }
-      },
-      {
-        "key": "netease:1379918404",
-        "at": 1795759587516,
-        "track": {
-          "id": "1379918404",
-          "source": "netease",
-          "name": "time machine (feat. aren park)",
-          "artist": "mj apanay / aren park",
-          "cover": "/api/bm/image?url=https%3A%2F%2Fp1.music.126.net%2Fb15pmn1qj28nyam8DdcCHA%3D%3D%2F109951167480966719.jpg%3Fparam%3D240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1379918404",
-          "duration": 225.933061
         }
       },
       {
