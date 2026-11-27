@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795761022997,
+  "updatedAt": 1795763002231,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,12 +38,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1200,
+      "plays": 1203,
       "sources": {
         "netease": 1144,
         "tencent": 5,
         "local": 3,
-        "kugou": 16
+        "kugou": 18
       },
       "days": [
         "2026-11-25",
@@ -52,8 +52,8 @@
       ],
       "searches": 21,
       "imports": 0,
-      "quality": 22,
-      "lyrics": 41,
+      "quality": 24,
+      "lyrics": 43,
       "nights": 18,
       "mornings": 10
     },
@@ -74,18 +74,46 @@
     ],
     "bm:history": [
       {
+        "key": "netease:1973665667",
+        "at": 1795762998282,
+        "track": {
+          "id": "1973665667",
+          "source": "netease",
+          "name": "海屿你",
+          "artist": "马也_Crabbit",
+          "album": "海屿你",
+          "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
+          "duration": 295.94
+        }
+      },
+      {
+        "key": "kugou:1E74D5C0745E2865D3D2638B3F5B8A4D",
+        "at": 1795762992098,
+        "track": {
+          "id": "1E74D5C0745E2865D3D2638B3F5B8A4D",
+          "source": "kugou",
+          "name": "爱情不是身份",
+          "artist": "杨友友",
+          "album": "",
+          "cover": "https://imge.kugou.com/stdmusic/400/20261123/20261123163248900275.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=1E74D5C0745E2865D3D2638B3F5B8A4D&album_id=216079216",
+          "lrc": "",
+          "duration": 212
+        }
+      },
+      {
         "key": "kugou:3B2442F938DEB7466523D12D94F322CD",
-        "at": 1795761015052,
+        "at": 1795762803583,
         "track": {
           "id": "3B2442F938DEB7466523D12D94F322CD",
           "source": "kugou",
           "name": "กอดอุ่น (温暖的拥抱)",
           "artist": "Butterbear",
-          "album": "กอดอุ่น(温暖的拥抱)",
-          "cover": "https://imge.kugou.com/stdmusic/400/20250314/20250314181602265699.jpg",
+          "cover": "/api/bm/image?url=https%3A%2F%2Fimge.kugou.com%2Fstdmusic%2F400%2F20250314%2F20250314181602265699.jpg",
           "url": "/burger-music/api/bm/kugou-stream?hash=3B2442F938DEB7466523D12D94F322CD&album_id=140791357",
-          "lrc": "",
-          "duration": 190
+          "duration": 190.2
         }
       },
       {
@@ -298,21 +326,6 @@
         }
       },
       {
-        "key": "netease:1973665667",
-        "at": 1795760219075,
-        "track": {
-          "id": "1973665667",
-          "source": "netease",
-          "name": "海屿你",
-          "artist": "马也_Crabbit",
-          "album": "海屿你",
-          "cover": "https://p1.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
-          "duration": 295.940062
-        }
-      },
-      {
         "key": "netease:442867526",
         "at": 1795760002414,
         "track": {
@@ -325,21 +338,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=442867526",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=442867526",
           "duration": 260.253
-        }
-      },
-      {
-        "key": "kugou:1E74D5C0745E2865D3D2638B3F5B8A4D",
-        "at": 1795759989021,
-        "track": {
-          "id": "1E74D5C0745E2865D3D2638B3F5B8A4D",
-          "source": "kugou",
-          "name": "爱情不是身份",
-          "artist": "杨友友",
-          "album": "",
-          "cover": "https://imge.kugou.com/stdmusic/400/20261123/20261123163248900275.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=1E74D5C0745E2865D3D2638B3F5B8A4D&album_id=216079216",
-          "lrc": "",
-          "duration": 212
         }
       },
       {
