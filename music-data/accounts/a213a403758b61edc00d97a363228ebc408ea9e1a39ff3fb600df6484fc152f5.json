@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795760860684,
+  "updatedAt": 1795760923926,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,22 +38,22 @@
       }
     ],
     "bm:stats": {
-      "plays": 1197,
+      "plays": 1198,
       "sources": {
         "netease": 1143,
         "tencent": 5,
         "local": 3,
-        "kugou": 14
+        "kugou": 15
       },
       "days": [
         "2026-11-25",
         "2026-11-26",
         "2026-11-27"
       ],
-      "searches": 17,
+      "searches": 18,
       "imports": 0,
       "quality": 22,
-      "lyrics": 39,
+      "lyrics": 41,
       "nights": 18,
       "mornings": 10
     },
@@ -73,6 +73,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:FCD10B6AA5B9AFAB1913B45C2495BA06",
+        "at": 1795760917749,
+        "track": {
+          "id": "FCD10B6AA5B9AFAB1913B45C2495BA06",
+          "source": "kugou",
+          "name": "晚风告白",
+          "artist": "星野",
+          "album": "晚风告白",
+          "cover": "https://imge.kugou.com/stdmusic/400/20221109/20221109200205763516.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=FCD10B6AA5B9AFAB1913B45C2495BA06&album_id=62388963",
+          "lrc": "",
+          "duration": 235
+        }
+      },
       {
         "key": "kugou:99B4B643E4E0E39D49A1B64FE10B7D22",
         "at": 1795760857786,
@@ -499,21 +514,6 @@
           "url": "https://api.injahow.cn/meting/?server=tencent&type=url&id=0026Mz8z1ReUvu",
           "lrc": "https://api.injahow.cn/meting/?server=tencent&type=lrc&id=0026Mz8z1ReUvu",
           "duration": 191.906666
-        }
-      },
-      {
-        "key": "netease:3453304463",
-        "at": 1795659378886,
-        "track": {
-          "id": "3453304463",
-          "source": "netease",
-          "name": "降温",
-          "artist": "Zzh",
-          "album": "降温",
-          "cover": "https://p2.music.126.net/pbHcu5WSuWqOYOMdpkKaPg==/109951174163337450.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3453304463",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3453304463",
-          "duration": 199.229
         }
       }
     ],
