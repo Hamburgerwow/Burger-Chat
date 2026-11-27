@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795760005519,
+  "updatedAt": 1795760140963,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1180,
+      "plays": 1181,
       "sources": {
-        "netease": 1136,
+        "netease": 1137,
         "tencent": 3,
         "local": 2,
         "kugou": 8
@@ -53,7 +53,7 @@
       "searches": 3,
       "imports": 0,
       "quality": 22,
-      "lyrics": 30,
+      "lyrics": 32,
       "nights": 18,
       "mornings": 10
     },
@@ -73,6 +73,21 @@
     ],
     "bm:history": [
       {
+        "key": "netease:1973665667",
+        "at": 1795760138281,
+        "track": {
+          "id": "1973665667",
+          "source": "netease",
+          "name": "海屿你",
+          "artist": "马也_Crabbit",
+          "album": "海屿你",
+          "cover": "https://p1.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
+          "duration": 295.940062
+        }
+      },
+      {
         "key": "netease:442867526",
         "at": 1795760002414,
         "track": {
@@ -85,21 +100,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=442867526",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=442867526",
           "duration": 260.253
-        }
-      },
-      {
-        "key": "netease:1973665667",
-        "at": 1795759995399,
-        "track": {
-          "id": "1973665667",
-          "source": "netease",
-          "name": "海屿你",
-          "artist": "马也_Crabbit",
-          "album": "海屿你",
-          "cover": "https://p1.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
-          "duration": 295.94
         }
       },
       {
