@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795759721554,
+  "updatedAt": 1795759749700,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,12 +38,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1173,
+      "plays": 1175,
       "sources": {
         "netease": 1133,
         "tencent": 3,
         "local": 2,
-        "kugou": 6
+        "kugou": 7
       },
       "days": [
         "2026-11-25",
@@ -72,6 +72,36 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "netease:3461036786",
+        "at": 1795759747019,
+        "track": {
+          "id": "3461036786",
+          "source": "netease",
+          "name": "1000 winters",
+          "artist": "小北LinY",
+          "album": "1000 winters",
+          "cover": "https://p1.music.126.net/rt4KqGUE4GmU3mnBpj8Gdw==/109951174305908087.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3461036786",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3461036786",
+          "duration": 175.304
+        }
+      },
+      {
+        "key": "kugou:F90BE042DC7EB01D61B0815D64328769",
+        "at": 1795759731658,
+        "track": {
+          "id": "F90BE042DC7EB01D61B0815D64328769",
+          "source": "kugou",
+          "name": "隐藏结局",
+          "artist": "南瓜造梦局",
+          "album": "您好，已封号",
+          "cover": "https://imge.kugou.com/stdmusic/400/20261107/20261107174039105138.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=F90BE042DC7EB01D61B0815D64328769&album_id=214204169",
+          "lrc": "",
+          "duration": 307.014897
+        }
+      },
       {
         "key": "kugou:ECFDFABB9ADF1D09ECF97EE48824BC5D",
         "at": 1795759718174,
@@ -115,21 +145,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=D6E45FF72D84903325BADCC20AD27189&album_id=190695363",
           "lrc": "",
           "duration": 166
-        }
-      },
-      {
-        "key": "kugou:F90BE042DC7EB01D61B0815D64328769",
-        "at": 1795759612888,
-        "track": {
-          "id": "F90BE042DC7EB01D61B0815D64328769",
-          "source": "kugou",
-          "name": "隐藏结局",
-          "artist": "南瓜造梦局",
-          "album": "您好，已封号",
-          "cover": "https://imge.kugou.com/stdmusic/400/20261107/20261107174039105138.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=F90BE042DC7EB01D61B0815D64328769&album_id=214204169",
-          "lrc": "",
-          "duration": 307
         }
       },
       {
@@ -483,21 +498,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=287398",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=287398",
           "duration": 30
-        }
-      },
-      {
-        "key": "netease:3461036786",
-        "at": 1795604916250,
-        "track": {
-          "id": "3461036786",
-          "source": "netease",
-          "name": "1000 winters",
-          "artist": "小北LinY",
-          "album": "1000 winters",
-          "cover": "https://p2.music.126.net/rt4KqGUE4GmU3mnBpj8Gdw==/109951174305908087.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 175.304
         }
       },
       {
