@@ -1,9 +1,9 @@
 {
   "v": 1,
   "latest": {
-    "id": "wp-plugin-mwywc8av",
-    "title": "星空少女复测",
-    "uploader": "最终联调",
+    "id": "wp-plugin-mwyuse52",
+    "title": "星空と少女",
+    "uploader": "Hamburgerwow",
     "orientation": "horizontal",
     "target": "both",
     "type": "mpkg",
@@ -12,27 +12,11 @@
     "ratio": 0,
     "mime": "application/mpkg",
     "size": 23290728,
-    "file": "wp-plugin-mwywc8av.mpkg",
-    "url": "/api/gh-asset/dynamic-wallpapers/wp-plugin-mwywc8av.mpkg",
-    "at": 1795778813191
+    "file": "wp-plugin-mwyuse52.mpkg",
+    "url": "/api/gh-asset/dynamic-wallpapers/wp-plugin-mwyuse52.mpkg",
+    "at": 1795776208022
   },
   "wallpapers": [
-    {
-      "id": "wp-plugin-mwywc8av",
-      "title": "星空少女复测",
-      "uploader": "最终联调",
-      "orientation": "horizontal",
-      "target": "both",
-      "type": "mpkg",
-      "width": 0,
-      "height": 0,
-      "ratio": 0,
-      "mime": "application/mpkg",
-      "size": 23290728,
-      "file": "wp-plugin-mwywc8av.mpkg",
-      "url": "/api/gh-asset/dynamic-wallpapers/wp-plugin-mwywc8av.mpkg",
-      "at": 1795778813191
-    },
     {
       "id": "wp-plugin-mwyuse52",
       "title": "星空と少女",
