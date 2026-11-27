@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795759614494,
+  "updatedAt": 1795759721554,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,12 +38,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1168,
+      "plays": 1173,
       "sources": {
         "netease": 1133,
         "tencent": 3,
         "local": 2,
-        "kugou": 1
+        "kugou": 6
       },
       "days": [
         "2026-11-25",
@@ -53,7 +53,7 @@
       "searches": 2,
       "imports": 0,
       "quality": 22,
-      "lyrics": 25,
+      "lyrics": 26,
       "nights": 18,
       "mornings": 10
     },
@@ -72,6 +72,51 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:ECFDFABB9ADF1D09ECF97EE48824BC5D",
+        "at": 1795759718174,
+        "track": {
+          "id": "ECFDFABB9ADF1D09ECF97EE48824BC5D",
+          "source": "kugou",
+          "name": "睡前故事",
+          "artist": "汪苏泷",
+          "album": "登陆计划",
+          "cover": "https://imge.kugou.com/stdmusic/400/20240229/20240229155551800951.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=ECFDFABB9ADF1D09ECF97EE48824BC5D&album_id=554244",
+          "lrc": "",
+          "duration": 214
+        }
+      },
+      {
+        "key": "kugou:32C2919189194EA228BA1F02E2A72B10",
+        "at": 1795759717974,
+        "track": {
+          "id": "32C2919189194EA228BA1F02E2A72B10",
+          "source": "kugou",
+          "name": "今生只为你守望",
+          "artist": "蔡疏影·",
+          "album": "情愿守着这份孤独",
+          "cover": "https://imge.kugou.com/stdmusic/400/20260429/20260429125705774248.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=32C2919189194EA228BA1F02E2A72B10&album_id=186265064",
+          "lrc": "",
+          "duration": 177
+        }
+      },
+      {
+        "key": "kugou:D6E45FF72D84903325BADCC20AD27189",
+        "at": 1795759716475,
+        "track": {
+          "id": "D6E45FF72D84903325BADCC20AD27189",
+          "source": "kugou",
+          "name": "只剩心伤",
+          "artist": "蔡疏影",
+          "album": "只能选择假装洒脱",
+          "cover": "https://imge.kugou.com/stdmusic/400/20260512/20260512160533960614.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=D6E45FF72D84903325BADCC20AD27189&album_id=190695363",
+          "lrc": "",
+          "duration": 166
+        }
+      },
       {
         "key": "kugou:F90BE042DC7EB01D61B0815D64328769",
         "at": 1795759612888,
@@ -468,51 +513,6 @@
           "url": "",
           "lrc": "",
           "duration": 296.124
-        }
-      },
-      {
-        "key": "netease:2157969686",
-        "at": 1795604914389,
-        "track": {
-          "id": "2157969686",
-          "source": "netease",
-          "name": "九张机",
-          "artist": "叶炫清",
-          "album": "九张机",
-          "cover": "https://p2.music.126.net/PLhn-O1sRgDrLK07m7bf2g==/109951169710790311.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 244.483
-        }
-      },
-      {
-        "key": "netease:1339481156",
-        "at": 1795604913428,
-        "track": {
-          "id": "1339481156",
-          "source": "netease",
-          "name": "I Wanted You",
-          "artist": "Ina Wroldsen",
-          "album": "Hot",
-          "cover": "https://p2.music.126.net/mpzMzX-uocZK9v4aNTrwJQ==/109951163791877840.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 228.075
-        }
-      },
-      {
-        "key": "netease:2659449974",
-        "at": 1795604912504,
-        "track": {
-          "id": "2659449974",
-          "source": "netease",
-          "name": "lonelyxmas",
-          "artist": "游客j6jsy",
-          "album": "lonelyxmas",
-          "cover": "https://p2.music.126.net/l220eqvJ5qyMfPrYl1enAw==/109951170301626589.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 201.333
         }
       }
     ],
