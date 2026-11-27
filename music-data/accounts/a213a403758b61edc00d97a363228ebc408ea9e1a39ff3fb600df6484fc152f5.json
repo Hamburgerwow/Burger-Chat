@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795760419604,
+  "updatedAt": 1795760428395,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,11 +38,11 @@
       }
     ],
     "bm:stats": {
-      "plays": 1187,
+      "plays": 1190,
       "sources": {
-        "netease": 1140,
+        "netease": 1142,
         "tencent": 5,
-        "local": 2,
+        "local": 3,
         "kugou": 8
       },
       "days": [
@@ -73,6 +73,51 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "netease:3461036786",
+        "at": 1795760425473,
+        "track": {
+          "id": "3461036786",
+          "source": "netease",
+          "name": "1000 winters",
+          "artist": "小北LinY",
+          "album": "1000 winters",
+          "cover": "https://p2.music.126.net/rt4KqGUE4GmU3mnBpj8Gdw==/109951174305908087.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3461036786",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3461036786",
+          "duration": 175.304
+        }
+      },
+      {
+        "key": "netease:2613047624",
+        "at": 1795760423118,
+        "track": {
+          "id": "2613047624",
+          "source": "netease",
+          "name": "不明不白",
+          "artist": "Dove鸽子 / Top Barry",
+          "album": "不明不白",
+          "cover": "https://p2.music.126.net/EIGBiTvzS6sWUDGF774KlQ==/109951169855099824.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2613047624",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2613047624",
+          "duration": 153.358
+        }
+      },
+      {
+        "key": "netease:3465504604",
+        "at": 1795760421535,
+        "track": {
+          "id": "3465504604",
+          "source": "netease",
+          "name": "Broken Melody",
+          "artist": "ljz329 / 王以太 / 饺子",
+          "album": "Broken Melody",
+          "cover": "https://p2.music.126.net/TtiAzWK14J6AoLiXaQh_eQ==/109951174344846934.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3465504604",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3465504604",
+          "duration": 182.424
+        }
+      },
       {
         "key": "local:firefly-cmj",
         "at": 1795760418871,
@@ -173,21 +218,6 @@
           "cover": "/api/bm/image?url=https%3A%2F%2Fp2.music.126.net%2FD1kE8hsGt4D8N4SmdlcKcQ%3D%3D%2F109951174346305566.jpg%3Fparam%3D240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3465658178",
           "duration": 307.014895
-        }
-      },
-      {
-        "key": "netease:3461036786",
-        "at": 1795759747019,
-        "track": {
-          "id": "3461036786",
-          "source": "netease",
-          "name": "1000 winters",
-          "artist": "小北LinY",
-          "album": "1000 winters",
-          "cover": "https://p1.music.126.net/rt4KqGUE4GmU3mnBpj8Gdw==/109951174305908087.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3461036786",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3461036786",
-          "duration": 175.304
         }
       },
       {
@@ -293,21 +323,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2161222939",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2161222939",
           "duration": 183.77
-        }
-      },
-      {
-        "key": "netease:3465504604",
-        "at": 1795755187156,
-        "track": {
-          "id": "3465504604",
-          "source": "netease",
-          "name": "Broken Melody",
-          "artist": "ljz329 / 王以太 / 饺子",
-          "album": "Broken Melody",
-          "cover": "https://p2.music.126.net/TtiAzWK14J6AoLiXaQh_eQ==/109951174344846934.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3465504604",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3465504604",
-          "duration": 182.424
         }
       },
       {
@@ -499,21 +514,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3448039922",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3448039922",
           "duration": 120.169
-        }
-      },
-      {
-        "key": "netease:554322674",
-        "at": 1795656328732,
-        "track": {
-          "id": "554322674",
-          "source": "netease",
-          "name": "偷心",
-          "artist": "SASIOVERLXRD / 连麻Swimming",
-          "album": "偷心",
-          "cover": "https://p2.music.126.net/QGz52525n-ZEqf9LENbZig==/109951163256839164.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 226.469
         }
       }
     ],
