@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795763002231,
+  "updatedAt": 1795763029212,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1203,
+      "plays": 1205,
       "sources": {
-        "netease": 1144,
+        "netease": 1147,
         "tencent": 5,
         "local": 3,
         "kugou": 18
@@ -52,7 +52,7 @@
       ],
       "searches": 21,
       "imports": 0,
-      "quality": 24,
+      "quality": 25,
       "lyrics": 43,
       "nights": 18,
       "mornings": 10
@@ -73,6 +73,36 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "netease:2161222939",
+        "at": 1795763009847,
+        "track": {
+          "id": "2161222939",
+          "source": "netease",
+          "name": "沦陷",
+          "artist": "贾格JuggShots",
+          "album": "沦陷",
+          "cover": "https://p1.music.126.net/ctib5R--oR68W2IrOk765w==/109951169635716223.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2161222939",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2161222939",
+          "duration": 183.77
+        }
+      },
+      {
+        "key": "netease:316100",
+        "at": 1795763005666,
+        "track": {
+          "id": "316100",
+          "source": "netease",
+          "name": "雨爱",
+          "artist": "杨丞琳",
+          "album": "雨爱",
+          "cover": "https://p2.music.126.net/Qt6sfLxRCscFZVXhbQ4bfg==/109951172020385959.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=316100",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=316100",
+          "duration": 260.48
+        }
+      },
       {
         "key": "netease:1973665667",
         "at": 1795762998282,
@@ -444,21 +474,6 @@
         }
       },
       {
-        "key": "netease:2161222939",
-        "at": 1795755194255,
-        "track": {
-          "id": "2161222939",
-          "source": "netease",
-          "name": "沦陷",
-          "artist": "贾格JuggShots",
-          "album": "沦陷",
-          "cover": "https://p1.music.126.net/ctib5R--oR68W2IrOk765w==/109951169635716223.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2161222939",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2161222939",
-          "duration": 183.77
-        }
-      },
-      {
         "key": "netease:3460996188",
         "at": 1795755182569,
         "track": {
@@ -500,24 +515,9 @@
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2041026502",
           "duration": 231.586
         }
-      },
-      {
-        "key": "netease:3382908505",
-        "at": 1795750934706,
-        "track": {
-          "id": "3382908505",
-          "source": "netease",
-          "name": "玻璃",
-          "artist": "Gareth.T",
-          "album": "玻璃",
-          "cover": "https://p2.music.126.net/MSKoQP60up7v3y1P1d3JIQ==/109951173234747322.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3382908505",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3382908505",
-          "duration": 185.04
-        }
       }
     ],
-    "bm:quality": "lossless",
+    "bm:quality": "standard",
     "bm:lyric-trans": 1,
     "bm:volume": 1,
     "bm:account-meta": {
