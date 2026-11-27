@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795751234511,
+  "updatedAt": 1795755187895,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1156,
+      "plays": 1159,
       "sources": {
-        "netease": 1123,
+        "netease": 1125,
         "tencent": 3,
         "local": 2
       },
@@ -68,6 +68,49 @@
     },
     "bm:favorites": [],
     "bm:history": [
+      {
+        "key": "netease:3465504604",
+        "at": 1795755187156,
+        "track": {
+          "id": "3465504604",
+          "source": "netease",
+          "name": "Broken Melody",
+          "artist": "ljz329 / 王以太 / 饺子",
+          "album": "Broken Melody",
+          "cover": "https://p2.music.126.net/TtiAzWK14J6AoLiXaQh_eQ==/109951174344846934.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3465504604",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3465504604",
+          "duration": 182.424
+        }
+      },
+      {
+        "key": "netease:3460996188",
+        "at": 1795755182569,
+        "track": {
+          "id": "3460996188",
+          "source": "netease",
+          "name": "day after day",
+          "artist": "Venoflame",
+          "album": "day after day",
+          "cover": "https://p2.music.126.net/yaqDu7UvysfEH2qPunVFLA==/109951174276455483.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3460996188",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3460996188",
+          "duration": 132.571
+        }
+      },
+      {
+        "key": "netease:287719",
+        "at": 1795755178999,
+        "track": {
+          "id": "287719",
+          "source": "netease",
+          "name": "开始懂了",
+          "artist": "孙燕姿",
+          "cover": "/api/bm/image?url=https%3A%2F%2Fp2.music.126.net%2F1HJILQwc62AfvcXkGgVJHQ%3D%3D%2F109951165549820772.jpg%3Fparam%3D240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=287719",
+          "duration": 271.493333
+        }
+      },
       {
         "key": "netease:1379918404",
         "at": 1795751230507,
@@ -276,21 +319,6 @@
         }
       },
       {
-        "key": "netease:287719",
-        "at": 1795656837621,
-        "track": {
-          "id": "287719",
-          "source": "netease",
-          "name": "开始懂了",
-          "artist": "孙燕姿",
-          "album": "我要的幸福",
-          "cover": "https://p2.music.126.net/1HJILQwc62AfvcXkGgVJHQ==/109951165549820772.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=287719",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=287719",
-          "duration": 271.493
-        }
-      },
-      {
         "key": "netease:3448039922",
         "at": 1795656820146,
         "track": {
@@ -483,36 +511,6 @@
           "url": "",
           "lrc": "",
           "duration": 300.575
-        }
-      },
-      {
-        "key": "netease:2032173388",
-        "at": 1795604906922,
-        "track": {
-          "id": "2032173388",
-          "source": "netease",
-          "name": "WE DON'T PLAY",
-          "artist": "范丞丞 / 马思唯",
-          "album": "WE DON'T PLAY",
-          "cover": "https://p2.music.126.net/SmuOfdJzNr6Fm3VHQGfLJQ==/109951168490400394.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 196.906
-        }
-      },
-      {
-        "key": "netease:3464724982",
-        "at": 1795604905995,
-        "track": {
-          "id": "3464724982",
-          "source": "netease",
-          "name": "无人知晓的我",
-          "artist": "周兴哲",
-          "album": "无人知晓的我",
-          "cover": "https://p2.music.126.net/8gKnFrcRpPJd08RVfd1_Ag==/109951174339429334.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 213.594
         }
       }
     ],
