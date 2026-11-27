@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795760491481,
+  "updatedAt": 1795760590755,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,7 +38,7 @@
       }
     ],
     "bm:stats": {
-      "plays": 1191,
+      "plays": 1192,
       "sources": {
         "netease": 1143,
         "tencent": 5,
@@ -50,10 +50,10 @@
         "2026-11-26",
         "2026-11-27"
       ],
-      "searches": 10,
+      "searches": 11,
       "imports": 0,
       "quality": 22,
-      "lyrics": 36,
+      "lyrics": 37,
       "nights": 18,
       "mornings": 10
     },
@@ -73,6 +73,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:7D2731B4BE3D79602E19DF76409099F6",
+        "at": 1795760588365,
+        "track": {
+          "id": "7D2731B4BE3D79602E19DF76409099F6",
+          "source": "kugou",
+          "name": "氹我",
+          "artist": "JW",
+          "album": "That`s Me",
+          "cover": "https://imge.kugou.com/stdmusic/400/20250125/20250125121724771447.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=7D2731B4BE3D79602E19DF76409099F6&album_id=963016",
+          "lrc": "",
+          "duration": 215
+        }
+      },
       {
         "key": "kugou:464C607C5BAEF1831267DB77A06EFEAA",
         "at": 1795760484000,
@@ -499,21 +514,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3451961424",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3451961424",
           "duration": 186.04652
-        }
-      },
-      {
-        "key": "netease:2740858325",
-        "at": 1795657152735,
-        "track": {
-          "id": "2740858325",
-          "source": "netease",
-          "name": "Star Crossing Night (feat. GALI)",
-          "artist": "徐明浩 / GALI",
-          "album": "Star Crossing Night (feat. GALI)",
-          "cover": "https://p2.music.126.net/fsz6GAKO1-khteFArDidjA==/109951171942679749.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2740858325",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2740858325",
-          "duration": 205
         }
       }
     ],
