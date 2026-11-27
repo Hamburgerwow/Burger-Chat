@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795759749700,
+  "updatedAt": 1795759758712,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1175,
+      "plays": 1176,
       "sources": {
-        "netease": 1133,
+        "netease": 1134,
         "tencent": 3,
         "local": 2,
         "kugou": 7
@@ -50,7 +50,7 @@
         "2026-11-26",
         "2026-11-27"
       ],
-      "searches": 2,
+      "searches": 3,
       "imports": 0,
       "quality": 22,
       "lyrics": 26,
@@ -72,6 +72,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "netease:3465658178",
+        "at": 1795759751883,
+        "track": {
+          "id": "3465658178",
+          "source": "netease",
+          "name": "隐藏结局",
+          "artist": "南瓜",
+          "album": "您好，已封号",
+          "cover": "https://p2.music.126.net/D1kE8hsGt4D8N4SmdlcKcQ==/109951174346305566.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3465658178",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3465658178",
+          "duration": 307
+        }
+      },
       {
         "key": "netease:3461036786",
         "at": 1795759747019,
@@ -498,21 +513,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=287398",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=287398",
           "duration": 30
-        }
-      },
-      {
-        "key": "netease:298838",
-        "at": 1795604915331,
-        "track": {
-          "id": "298838",
-          "source": "netease",
-          "name": "传奇",
-          "artist": "王菲",
-          "album": "传奇",
-          "cover": "https://p2.music.126.net/ZPnVAoCKS9VbUZkOzrJHDw==/19157890602644480.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 296.124
         }
       }
     ],
