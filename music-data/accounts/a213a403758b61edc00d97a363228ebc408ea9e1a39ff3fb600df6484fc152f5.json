@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795760473399,
+  "updatedAt": 1795760491481,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,12 +38,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1190,
+      "plays": 1191,
       "sources": {
         "netease": 1143,
         "tencent": 5,
         "local": 3,
-        "kugou": 8
+        "kugou": 9
       },
       "days": [
         "2026-11-25",
@@ -53,7 +53,7 @@
       "searches": 10,
       "imports": 0,
       "quality": 22,
-      "lyrics": 35,
+      "lyrics": 36,
       "nights": 18,
       "mornings": 10
     },
@@ -73,6 +73,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:464C607C5BAEF1831267DB77A06EFEAA",
+        "at": 1795760484000,
+        "track": {
+          "id": "464C607C5BAEF1831267DB77A06EFEAA",
+          "source": "kugou",
+          "name": "Secret",
+          "artist": "茶太",
+          "album": "eclipse 改",
+          "cover": "https://imge.kugou.com/stdmusic/400/20250101/20250101074627273338.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=464C607C5BAEF1831267DB77A06EFEAA&album_id=1595020",
+          "lrc": "",
+          "duration": 275
+        }
+      },
       {
         "key": "netease:3461036786",
         "at": 1795760425473,
@@ -499,21 +514,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2740858325",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2740858325",
           "duration": 205
-        }
-      },
-      {
-        "key": "netease:3448039922",
-        "at": 1795656820146,
-        "track": {
-          "id": "3448039922",
-          "source": "netease",
-          "name": "茉茉",
-          "artist": "Nzwin 黄跃成",
-          "album": "茉茉",
-          "cover": "https://p2.music.126.net/x9H0NVxO5ha9wWCOvW1-eQ==/109951174106566868.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3448039922",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3448039922",
-          "duration": 120.169
         }
       }
     ],
