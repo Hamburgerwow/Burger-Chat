@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795750924551,
+  "updatedAt": 1795750933368,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1150,
+      "plays": 1151,
       "sources": {
-        "netease": 1118,
+        "netease": 1119,
         "tencent": 3,
         "local": 2
       },
@@ -68,6 +68,21 @@
     },
     "bm:favorites": [],
     "bm:history": [
+      {
+        "key": "netease:1379918404",
+        "at": 1795750929874,
+        "track": {
+          "id": "1379918404",
+          "source": "netease",
+          "name": "time machine (feat. aren park)",
+          "artist": "mj apanay / aren park",
+          "album": "seen 11:23 pm",
+          "cover": "https://p1.music.126.net/b15pmn1qj28nyam8DdcCHA==/109951167480966719.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1379918404",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1379918404",
+          "duration": 225.933
+        }
+      },
       {
         "key": "netease:1973665667",
         "at": 1795750924271,
@@ -183,21 +198,6 @@
           "url": "https://api.injahow.cn/meting/?server=tencent&type=url&id=003Wir1t2wevOV",
           "lrc": "https://api.injahow.cn/meting/?server=tencent&type=lrc&id=003Wir1t2wevOV",
           "duration": 276
-        }
-      },
-      {
-        "key": "netease:1379918404",
-        "at": 1795657324520,
-        "track": {
-          "id": "1379918404",
-          "source": "netease",
-          "name": "time machine (feat. aren park)",
-          "artist": "mj apanay / aren park",
-          "album": "seen 11:23 pm",
-          "cover": "https://p2.music.126.net/b15pmn1qj28nyam8DdcCHA==/109951167480966719.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1379918404",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1379918404",
-          "duration": 225.933061
         }
       },
       {
