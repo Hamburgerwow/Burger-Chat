@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795755187895,
+  "updatedAt": 1795755196894,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1159,
+      "plays": 1161,
       "sources": {
-        "netease": 1125,
+        "netease": 1127,
         "tencent": 3,
         "local": 2
       },
@@ -68,6 +68,36 @@
     },
     "bm:favorites": [],
     "bm:history": [
+      {
+        "key": "netease:2161222939",
+        "at": 1795755194255,
+        "track": {
+          "id": "2161222939",
+          "source": "netease",
+          "name": "沦陷",
+          "artist": "贾格JuggShots",
+          "album": "沦陷",
+          "cover": "https://p1.music.126.net/ctib5R--oR68W2IrOk765w==/109951169635716223.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2161222939",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2161222939",
+          "duration": 183.77
+        }
+      },
+      {
+        "key": "netease:1973665667",
+        "at": 1795755189448,
+        "track": {
+          "id": "1973665667",
+          "source": "netease",
+          "name": "海屿你",
+          "artist": "马也_Crabbit",
+          "album": "海屿你",
+          "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
+          "duration": 295.94
+        }
+      },
       {
         "key": "netease:3465504604",
         "at": 1795755187156,
@@ -154,21 +184,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3382908505",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3382908505",
           "duration": 185.04
-        }
-      },
-      {
-        "key": "netease:1973665667",
-        "at": 1795750924271,
-        "track": {
-          "id": "1973665667",
-          "source": "netease",
-          "name": "海屿你",
-          "artist": "马也_Crabbit",
-          "album": "海屿你",
-          "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
-          "duration": 295.94
         }
       },
       {
@@ -496,21 +511,6 @@
           "url": "",
           "lrc": "",
           "duration": 216
-        }
-      },
-      {
-        "key": "netease:3464380904",
-        "at": 1795604907862,
-        "track": {
-          "id": "3464380904",
-          "source": "netease",
-          "name": "我将奔向世界尽头爱你",
-          "artist": "张卓尔",
-          "album": "我将奔向世界尽头爱你",
-          "cover": "https://p2.music.126.net/mr-TEseggcI-j9mGmlY3eQ==/109951174329340502.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 300.575
         }
       }
     ],
