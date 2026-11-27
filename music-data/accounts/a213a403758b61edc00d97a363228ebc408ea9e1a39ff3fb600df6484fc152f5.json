@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795760923926,
+  "updatedAt": 1795760950743,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,19 +38,19 @@
       }
     ],
     "bm:stats": {
-      "plays": 1198,
+      "plays": 1199,
       "sources": {
         "netease": 1143,
         "tencent": 5,
         "local": 3,
-        "kugou": 15
+        "kugou": 16
       },
       "days": [
         "2026-11-25",
         "2026-11-26",
         "2026-11-27"
       ],
-      "searches": 18,
+      "searches": 19,
       "imports": 0,
       "quality": 22,
       "lyrics": 41,
@@ -73,6 +73,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "netease:3427602198",
+        "at": 1795760942625,
+        "track": {
+          "id": "3427602198",
+          "source": "netease",
+          "name": "晚风告白（我遇见很多人）",
+          "artist": "池袋西口",
+          "album": "晚风告白（我遇见很多人）",
+          "cover": "https://p1.music.126.net/WzH6ylcudULYWbuyMX8Dig==/109951173847037464.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3427602198",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3427602198",
+          "duration": 229
+        }
+      },
       {
         "key": "kugou:FCD10B6AA5B9AFAB1913B45C2495BA06",
         "at": 1795760917749,
@@ -499,21 +514,6 @@
           "cover": "/api/bm/image?url=https%3A%2F%2Fp1.music.126.net%2FzjSzQ70gDJrneldAwvLBOg%3D%3D%2F109951173971284858.jpg%3Fparam%3D240y240",
           "url": "https://hamburgerwow.top/api/bm/stream?url=https%3A%2F%2Fapi.injahow.cn%2Fmeting%2F%3Fserver%3Dnetease%26type%3Durl%26id%3D108485",
           "duration": 225.013356
-        }
-      },
-      {
-        "key": "tencent:0026Mz8z1ReUvu",
-        "at": 1795721689986,
-        "track": {
-          "id": "0026Mz8z1ReUvu",
-          "source": "tencent",
-          "name": "海韵",
-          "artist": "邓丽君",
-          "album": "",
-          "cover": "https://api.injahow.cn/meting/?server=tencent&type=pic&id=0033hbr10Rk3iD",
-          "url": "https://api.injahow.cn/meting/?server=tencent&type=url&id=0026Mz8z1ReUvu",
-          "lrc": "https://api.injahow.cn/meting/?server=tencent&type=lrc&id=0026Mz8z1ReUvu",
-          "duration": 191.906666
         }
       }
     ],
