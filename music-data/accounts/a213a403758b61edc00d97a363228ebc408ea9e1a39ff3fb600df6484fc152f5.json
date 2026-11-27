@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795755413427,
+  "updatedAt": 1795755422250,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1164,
+      "plays": 1165,
       "sources": {
-        "netease": 1129,
+        "netease": 1130,
         "tencent": 3,
         "local": 2,
         "kugou": 1
@@ -70,6 +70,21 @@
     },
     "bm:favorites": [],
     "bm:history": [
+      {
+        "key": "netease:28403111",
+        "at": 1795755414886,
+        "track": {
+          "id": "28403111",
+          "source": "netease",
+          "name": "特别的人",
+          "artist": "方大同",
+          "album": "危险世界",
+          "cover": "https://p2.music.126.net/3Y0A55OzEnqKNiH5ODA54A==/109951172683046522.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=28403111",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=28403111",
+          "duration": 259.064
+        }
+      },
       {
         "key": "netease:1456890009",
         "at": 1795755411094,
@@ -498,21 +513,6 @@
           "url": "",
           "lrc": "",
           "duration": 210.16
-        }
-      },
-      {
-        "key": "netease:3463361754",
-        "at": 1795604909724,
-        "track": {
-          "id": "3463361754",
-          "source": "netease",
-          "name": "季候风1997",
-          "artist": "曾舜晞",
-          "album": "季候风1997",
-          "cover": "https://p2.music.126.net/BEOCJfI9uiEkhEtVEv_kwg==/109951174318142472.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 228.465
         }
       }
     ],
