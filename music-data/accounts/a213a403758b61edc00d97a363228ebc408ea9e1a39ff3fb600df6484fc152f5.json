@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795760608564,
+  "updatedAt": 1795760779835,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,7 +38,7 @@
       }
     ],
     "bm:stats": {
-      "plays": 1192,
+      "plays": 1193,
       "sources": {
         "netease": 1143,
         "tencent": 5,
@@ -50,7 +50,7 @@
         "2026-11-26",
         "2026-11-27"
       ],
-      "searches": 11,
+      "searches": 15,
       "imports": 0,
       "quality": 22,
       "lyrics": 38,
@@ -73,6 +73,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:B485731B58AA6ECD9D23715A9A587E00",
+        "at": 1795760770844,
+        "track": {
+          "id": "B485731B58AA6ECD9D23715A9A587E00",
+          "source": "kugou",
+          "name": "Demons",
+          "artist": "Hayley Kiyoko",
+          "album": "I'm Too Sensitive For This **** (Explicit)",
+          "cover": "https://imge.kugou.com/stdmusic/400/20260115/20260115081511172457.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=B485731B58AA6ECD9D23715A9A587E00&album_id=35709002",
+          "lrc": "",
+          "duration": 179
+        }
+      },
       {
         "key": "kugou:7D2731B4BE3D79602E19DF76409099F6",
         "at": 1795760588365,
@@ -499,21 +514,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3333988321",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3333988321",
           "duration": 235.285
-        }
-      },
-      {
-        "key": "netease:3451961424",
-        "at": 1795657153801,
-        "track": {
-          "id": "3451961424",
-          "source": "netease",
-          "name": "慌啥子嘛",
-          "artist": "村口吴老二",
-          "album": "慌啥子嘛",
-          "cover": "https://p2.music.126.net/4t7sE3F8_59UTs1gbLwVdA==/109951174144789308.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3451961424",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3451961424",
-          "duration": 186.04652
         }
       }
     ],
