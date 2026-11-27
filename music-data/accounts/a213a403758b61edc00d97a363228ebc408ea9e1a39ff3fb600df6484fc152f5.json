@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795760329878,
+  "updatedAt": 1795760419604,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,10 +38,10 @@
       }
     ],
     "bm:stats": {
-      "plays": 1184,
+      "plays": 1187,
       "sources": {
         "netease": 1140,
-        "tencent": 3,
+        "tencent": 5,
         "local": 2,
         "kugou": 8
       },
@@ -50,10 +50,10 @@
         "2026-11-26",
         "2026-11-27"
       ],
-      "searches": 6,
+      "searches": 7,
       "imports": 0,
       "quality": 22,
-      "lyrics": 33,
+      "lyrics": 35,
       "nights": 18,
       "mornings": 10
     },
@@ -74,8 +74,22 @@
     ],
     "bm:history": [
       {
+        "key": "local:firefly-cmj",
+        "at": 1795760418871,
+        "track": {
+          "id": "firefly-cmj",
+          "source": "local",
+          "name": "萤火之森",
+          "artist": "CMJ",
+          "album": "BURGER CHAT · LOCAL",
+          "cover": "",
+          "url": "/assets/music/firefly-cmj.mp3?v=0.40.52r3",
+          "duration": 0
+        }
+      },
+      {
         "key": "tencent:004ONTLy3opabZ",
-        "at": 1795760329263,
+        "at": 1795760346675,
         "track": {
           "id": "004ONTLy3opabZ",
           "source": "tencent",
@@ -380,20 +394,6 @@
           "url": "https://api.injahow.cn/meting/?server=tencent&type=url&id=0026Mz8z1ReUvu",
           "lrc": "https://api.injahow.cn/meting/?server=tencent&type=lrc&id=0026Mz8z1ReUvu",
           "duration": 191.906666
-        }
-      },
-      {
-        "key": "local:firefly-cmj",
-        "at": 1795659492811,
-        "track": {
-          "id": "firefly-cmj",
-          "source": "local",
-          "name": "萤火之森",
-          "artist": "CMJ",
-          "album": "BURGER CHAT · LOCAL",
-          "cover": "",
-          "url": "/assets/music/firefly-cmj.mp3?v=0.40.52r3",
-          "duration": 152.5625
         }
       },
       {
