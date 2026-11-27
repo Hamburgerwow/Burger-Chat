@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795760779835,
+  "updatedAt": 1795760824683,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,22 +38,22 @@
       }
     ],
     "bm:stats": {
-      "plays": 1193,
+      "plays": 1195,
       "sources": {
         "netease": 1143,
         "tencent": 5,
         "local": 3,
-        "kugou": 10
+        "kugou": 12
       },
       "days": [
         "2026-11-25",
         "2026-11-26",
         "2026-11-27"
       ],
-      "searches": 15,
+      "searches": 16,
       "imports": 0,
       "quality": 22,
-      "lyrics": 38,
+      "lyrics": 39,
       "nights": 18,
       "mornings": 10
     },
@@ -73,6 +73,36 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:BA6D5C534A9FE2AF6DCB91F4CE834C94",
+        "at": 1795760818689,
+        "track": {
+          "id": "BA6D5C534A9FE2AF6DCB91F4CE834C94",
+          "source": "kugou",
+          "name": "Love Me Like You Do (降调版)",
+          "artist": "Diluv",
+          "album": "Demons",
+          "cover": "https://imge.kugou.com/stdmusic/400/20230915/20230915151444566489.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=BA6D5C534A9FE2AF6DCB91F4CE834C94&album_id=78336755",
+          "lrc": "",
+          "duration": 263
+        }
+      },
+      {
+        "key": "kugou:8F232697BBD04BA6B42F4B6180782F79",
+        "at": 1795760817731,
+        "track": {
+          "id": "8F232697BBD04BA6B42F4B6180782F79",
+          "source": "kugou",
+          "name": "Demons",
+          "artist": "Boyce Avenue、Jennel Garcia",
+          "album": "Cover Sessions, Vol. 3",
+          "cover": "https://imge.kugou.com/stdmusic/400/20220416/20220416082805963579.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=8F232697BBD04BA6B42F4B6180782F79&album_id=47521152",
+          "lrc": "",
+          "duration": 174
+        }
+      },
       {
         "key": "kugou:B485731B58AA6ECD9D23715A9A587E00",
         "at": 1795760770844,
@@ -484,36 +514,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=488249475",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=488249475",
           "duration": 222.683356
-        }
-      },
-      {
-        "key": "tencent:003Wir1t2wevOV",
-        "at": 1795657627930,
-        "track": {
-          "id": "003Wir1t2wevOV",
-          "source": "tencent",
-          "name": "放弃我是你的错",
-          "artist": "杨蔓",
-          "album": "听 好女人心",
-          "cover": "https://y.gtimg.cn/music/photo_new/T002R300x300M000000tUmjJ2gwH8t.jpg",
-          "url": "https://api.injahow.cn/meting/?server=tencent&type=url&id=003Wir1t2wevOV",
-          "lrc": "https://api.injahow.cn/meting/?server=tencent&type=lrc&id=003Wir1t2wevOV",
-          "duration": 276
-        }
-      },
-      {
-        "key": "netease:3333988321",
-        "at": 1795657322957,
-        "track": {
-          "id": "3333988321",
-          "source": "netease",
-          "name": "一半一半",
-          "artist": "Top Barry / INDEcompany",
-          "album": "一半一半",
-          "cover": "https://p2.music.126.net/EgbPD3CwVQojZ4OWse4YrA==/109951172511748152.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3333988321",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3333988321",
-          "duration": 235.285
         }
       }
     ],
