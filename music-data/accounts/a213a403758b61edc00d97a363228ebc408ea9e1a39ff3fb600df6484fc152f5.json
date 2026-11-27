@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795760950743,
+  "updatedAt": 1795761022997,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1199,
+      "plays": 1200,
       "sources": {
-        "netease": 1143,
+        "netease": 1144,
         "tencent": 5,
         "local": 3,
         "kugou": 16
@@ -50,7 +50,7 @@
         "2026-11-26",
         "2026-11-27"
       ],
-      "searches": 19,
+      "searches": 21,
       "imports": 0,
       "quality": 22,
       "lyrics": 41,
@@ -73,6 +73,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:3B2442F938DEB7466523D12D94F322CD",
+        "at": 1795761015052,
+        "track": {
+          "id": "3B2442F938DEB7466523D12D94F322CD",
+          "source": "kugou",
+          "name": "กอดอุ่น (温暖的拥抱)",
+          "artist": "Butterbear",
+          "album": "กอดอุ่น(温暖的拥抱)",
+          "cover": "https://imge.kugou.com/stdmusic/400/20250314/20250314181602265699.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=3B2442F938DEB7466523D12D94F322CD&album_id=140791357",
+          "lrc": "",
+          "duration": 190
+        }
+      },
       {
         "key": "netease:3427602198",
         "at": 1795760942625,
@@ -501,19 +516,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3382908505",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3382908505",
           "duration": 185.04
-        }
-      },
-      {
-        "key": "netease:108485",
-        "at": 1795750879284,
-        "track": {
-          "id": "108485",
-          "source": "netease",
-          "name": "Always Online",
-          "artist": "林俊杰",
-          "cover": "/api/bm/image?url=https%3A%2F%2Fp1.music.126.net%2FzjSzQ70gDJrneldAwvLBOg%3D%3D%2F109951173971284858.jpg%3Fparam%3D240y240",
-          "url": "https://hamburgerwow.top/api/bm/stream?url=https%3A%2F%2Fapi.injahow.cn%2Fmeting%2F%3Fserver%3Dnetease%26type%3Durl%26id%3D108485",
-          "duration": 225.013356
         }
       }
     ],
