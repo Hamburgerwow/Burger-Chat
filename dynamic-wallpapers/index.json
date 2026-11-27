@@ -33,7 +33,9 @@
       "file": "wp-plugin-mwyneyuc.mp4",
       "url": "/api/gh-release/wallpapers/wp-plugin-mwyneyuc.mp4",
       "at": 1795763824356,
-      "release": true
+      "release": true,
+      "poster": "https://hamburgerwow.top/assets/wallpaper-plana-poster.jpg?v=33q",
+      "thumb": "https://hamburgerwow.top/assets/wallpaper-plana-poster.jpg?v=33q"
     },
     {
       "id": "dynamic-horizontal",
