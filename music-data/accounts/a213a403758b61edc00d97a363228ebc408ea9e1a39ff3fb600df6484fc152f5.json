@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795763029212,
+  "updatedAt": 1795763047356,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1205,
+      "plays": 1207,
       "sources": {
-        "netease": 1147,
+        "netease": 1148,
         "tencent": 5,
         "local": 3,
         "kugou": 18
@@ -52,7 +52,7 @@
       ],
       "searches": 21,
       "imports": 0,
-      "quality": 25,
+      "quality": 26,
       "lyrics": 43,
       "nights": 18,
       "mornings": 10
@@ -75,7 +75,7 @@
     "bm:history": [
       {
         "key": "netease:2161222939",
-        "at": 1795763009847,
+        "at": 1795763039656,
         "track": {
           "id": "2161222939",
           "source": "netease",
@@ -85,7 +85,22 @@
           "cover": "https://p1.music.126.net/ctib5R--oR68W2IrOk765w==/109951169635716223.jpg?param=240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2161222939",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2161222939",
-          "duration": 183.77
+          "duration": 183.770708
+        }
+      },
+      {
+        "key": "netease:167655",
+        "at": 1795763037148,
+        "track": {
+          "id": "167655",
+          "source": "netease",
+          "name": "幻听",
+          "artist": "许嵩",
+          "album": "梦游计",
+          "cover": "https://p1.music.126.net/7X3irAHmXIkyZKu1OzDZdQ==/109951172321460834.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=167655",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=167655",
+          "duration": 273.266
         }
       },
       {
@@ -500,24 +515,9 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=287719",
           "duration": 271.493333
         }
-      },
-      {
-        "key": "netease:2041026502",
-        "at": 1795751228552,
-        "track": {
-          "id": "2041026502",
-          "source": "netease",
-          "name": "愿与愁",
-          "artist": "林俊杰",
-          "album": "愿与愁",
-          "cover": "https://p2.music.126.net/vtnI8JpimWnZSzkXdmIB3w==/109951168558210782.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2041026502",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2041026502",
-          "duration": 231.586
-        }
       }
     ],
-    "bm:quality": "standard",
+    "bm:quality": "lossless",
     "bm:lyric-trans": 1,
     "bm:volume": 1,
     "bm:account-meta": {
