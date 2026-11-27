@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795763047356,
+  "updatedAt": 1795772623604,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,7 +38,7 @@
       }
     ],
     "bm:stats": {
-      "plays": 1207,
+      "plays": 1208,
       "sources": {
         "netease": 1148,
         "tencent": 5,
@@ -75,16 +75,14 @@
     "bm:history": [
       {
         "key": "netease:2161222939",
-        "at": 1795763039656,
+        "at": 1795772614850,
         "track": {
           "id": "2161222939",
           "source": "netease",
           "name": "沦陷",
           "artist": "贾格JuggShots",
-          "album": "沦陷",
-          "cover": "https://p1.music.126.net/ctib5R--oR68W2IrOk765w==/109951169635716223.jpg?param=240y240",
+          "cover": "/api/bm/image?url=https%3A%2F%2Fp1.music.126.net%2Fctib5R--oR68W2IrOk765w%3D%3D%2F109951169635716223.jpg%3Fparam%3D240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2161222939",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2161222939",
           "duration": 183.770708
         }
       },
