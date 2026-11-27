@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795759361596,
+  "updatedAt": 1795759614494,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1166,
+      "plays": 1168,
       "sources": {
-        "netease": 1132,
+        "netease": 1133,
         "tencent": 3,
         "local": 2,
         "kugou": 1
@@ -50,7 +50,7 @@
         "2026-11-26",
         "2026-11-27"
       ],
-      "searches": 1,
+      "searches": 2,
       "imports": 0,
       "quality": 22,
       "lyrics": 25,
@@ -72,6 +72,34 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:F90BE042DC7EB01D61B0815D64328769",
+        "at": 1795759612888,
+        "track": {
+          "id": "F90BE042DC7EB01D61B0815D64328769",
+          "source": "kugou",
+          "name": "隐藏结局",
+          "artist": "南瓜造梦局",
+          "album": "您好，已封号",
+          "cover": "https://imge.kugou.com/stdmusic/400/20261107/20261107174039105138.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=F90BE042DC7EB01D61B0815D64328769&album_id=214204169",
+          "lrc": "",
+          "duration": 307
+        }
+      },
+      {
+        "key": "netease:1379918404",
+        "at": 1795759587516,
+        "track": {
+          "id": "1379918404",
+          "source": "netease",
+          "name": "time machine (feat. aren park)",
+          "artist": "mj apanay / aren park",
+          "cover": "/api/bm/image?url=https%3A%2F%2Fp1.music.126.net%2Fb15pmn1qj28nyam8DdcCHA%3D%3D%2F109951167480966719.jpg%3Fparam%3D240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1379918404",
+          "duration": 225.933061
+        }
+      },
       {
         "key": "netease:28403111",
         "at": 1795755414886,
@@ -188,21 +216,6 @@
           "cover": "/api/bm/image?url=https%3A%2F%2Fp2.music.126.net%2F1HJILQwc62AfvcXkGgVJHQ%3D%3D%2F109951165549820772.jpg%3Fparam%3D240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=287719",
           "duration": 271.493333
-        }
-      },
-      {
-        "key": "netease:1379918404",
-        "at": 1795751230507,
-        "track": {
-          "id": "1379918404",
-          "source": "netease",
-          "name": "time machine (feat. aren park)",
-          "artist": "mj apanay / aren park",
-          "album": "seen 11:23 pm",
-          "cover": "https://p1.music.126.net/b15pmn1qj28nyam8DdcCHA==/109951167480966719.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1379918404",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1379918404",
-          "duration": 225.933
         }
       },
       {
@@ -500,21 +513,6 @@
           "url": "",
           "lrc": "",
           "duration": 201.333
-        }
-      },
-      {
-        "key": "netease:3454246134",
-        "at": 1795604911584,
-        "track": {
-          "id": "3454246134",
-          "source": "netease",
-          "name": "张桂珍（窗外的桂花开）",
-          "artist": "SUS.",
-          "album": "张桂珍（窗外的桂花开）",
-          "cover": "https://p2.music.126.net/msx-90dPtZK_29QHeubhVg==/109951174178688008.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 210.16
         }
       }
     ],
