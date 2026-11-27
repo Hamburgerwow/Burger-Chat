@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795760321058,
+  "updatedAt": 1795760329878,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,7 +38,7 @@
       }
     ],
     "bm:stats": {
-      "plays": 1183,
+      "plays": 1184,
       "sources": {
         "netease": 1140,
         "tencent": 3,
@@ -50,7 +50,7 @@
         "2026-11-26",
         "2026-11-27"
       ],
-      "searches": 5,
+      "searches": 6,
       "imports": 0,
       "quality": 22,
       "lyrics": 33,
@@ -73,6 +73,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "tencent:004ONTLy3opabZ",
+        "at": 1795760329263,
+        "track": {
+          "id": "004ONTLy3opabZ",
+          "source": "tencent",
+          "name": "Lần Hẹn Hò Đầu Tiên (越南甜妹舞)",
+          "artist": "Erceso",
+          "album": "Lần Hẹn Hò Đầu Tiên(越南甜妹舞)",
+          "cover": "https://api.injahow.cn/meting/?server=tencent&type=pic&id=004ONTLy3opabZ",
+          "url": "https://api.injahow.cn/meting/?server=tencent&type=url&id=004ONTLy3opabZ",
+          "lrc": "https://api.injahow.cn/meting/?server=tencent&type=lrc&id=004ONTLy3opabZ",
+          "duration": 207
+        }
+      },
       {
         "key": "netease:1379918404",
         "at": 1795760226112,
@@ -499,21 +514,6 @@
           "url": "",
           "lrc": "",
           "duration": 226.469
-        }
-      },
-      {
-        "key": "netease:1927693793",
-        "at": 1795644904251,
-        "track": {
-          "id": "1927693793",
-          "source": "netease",
-          "name": "再等冬天(Memories)",
-          "artist": "h3R3",
-          "album": "故事商铺·上",
-          "cover": "https://p2.music.126.net/JBe7AwcGkYHhleOfQvY2hg==/109951169798343077.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1927693793",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1927693793",
-          "duration": 168
         }
       }
     ],
