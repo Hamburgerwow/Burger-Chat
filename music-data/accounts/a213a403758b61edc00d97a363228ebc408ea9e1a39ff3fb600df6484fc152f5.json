@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795755738294,
+  "updatedAt": 1795759361596,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1165,
+      "plays": 1166,
       "sources": {
-        "netease": 1131,
+        "netease": 1132,
         "tencent": 3,
         "local": 2,
         "kugou": 1
@@ -52,7 +52,7 @@
       ],
       "searches": 1,
       "imports": 0,
-      "quality": 21,
+      "quality": 22,
       "lyrics": 25,
       "nights": 18,
       "mornings": 10
@@ -518,7 +518,7 @@
         }
       }
     ],
-    "bm:quality": "low",
+    "bm:quality": "lossless",
     "bm:lyric-trans": 1,
     "bm:volume": 1,
     "bm:account-meta": {
