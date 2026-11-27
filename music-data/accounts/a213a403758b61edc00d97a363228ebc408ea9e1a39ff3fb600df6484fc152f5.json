@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795750942365,
+  "updatedAt": 1795751234511,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1153,
+      "plays": 1156,
       "sources": {
-        "netease": 1121,
+        "netease": 1123,
         "tencent": 3,
         "local": 2
       },
@@ -70,7 +70,7 @@
     "bm:history": [
       {
         "key": "netease:1379918404",
-        "at": 1795750936061,
+        "at": 1795751230507,
         "track": {
           "id": "1379918404",
           "source": "netease",
@@ -80,7 +80,22 @@
           "cover": "https://p1.music.126.net/b15pmn1qj28nyam8DdcCHA==/109951167480966719.jpg?param=240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1379918404",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1379918404",
-          "duration": 225.933061
+          "duration": 225.933
+        }
+      },
+      {
+        "key": "netease:2041026502",
+        "at": 1795751228552,
+        "track": {
+          "id": "2041026502",
+          "source": "netease",
+          "name": "愿与愁",
+          "artist": "林俊杰",
+          "album": "愿与愁",
+          "cover": "https://p2.music.126.net/vtnI8JpimWnZSzkXdmIB3w==/109951168558210782.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2041026502",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2041026502",
+          "duration": 231.586
         }
       },
       {
@@ -498,21 +513,6 @@
           "url": "",
           "lrc": "",
           "duration": 213.594
-        }
-      },
-      {
-        "key": "netease:1918576268",
-        "at": 1795604319910,
-        "track": {
-          "id": "1918576268",
-          "source": "netease",
-          "name": "红",
-          "artist": "罗言",
-          "album": "When the world is came，take it！",
-          "cover": "https://p2.music.126.net/G-inyKjA-jO5MuOuV3g7Pg==/109951167027986653.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 161.585
         }
       }
     ],
