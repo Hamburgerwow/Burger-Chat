@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795774294604,
+  "updatedAt": 1795774366733,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1209,
+      "plays": 1212,
       "sources": {
-        "netease": 1148,
+        "netease": 1151,
         "tencent": 5,
         "local": 3,
         "kugou": 18
@@ -50,7 +50,7 @@
         "2026-11-26",
         "2026-11-27"
       ],
-      "searches": 21,
+      "searches": 22,
       "imports": 0,
       "quality": 26,
       "lyrics": 43,
@@ -73,6 +73,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "netease:3465658178",
+        "at": 1795774366625,
+        "track": {
+          "id": "3465658178",
+          "source": "netease",
+          "name": "隐藏结局",
+          "artist": "南瓜",
+          "album": "您好，已封号",
+          "cover": "https://p1.music.126.net/D1kE8hsGt4D8N4SmdlcKcQ==/109951174346305566.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3465658178",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3465658178",
+          "duration": 307
+        }
+      },
       {
         "key": "netease:2161222939",
         "at": 1795774285831,
@@ -381,19 +396,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=442867526",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=442867526",
           "duration": 260.253
-        }
-      },
-      {
-        "key": "netease:3465658178",
-        "at": 1795759879309,
-        "track": {
-          "id": "3465658178",
-          "source": "netease",
-          "name": "隐藏结局",
-          "artist": "南瓜",
-          "cover": "/api/bm/image?url=https%3A%2F%2Fp2.music.126.net%2FD1kE8hsGt4D8N4SmdlcKcQ%3D%3D%2F109951174346305566.jpg%3Fparam%3D240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3465658178",
-          "duration": 307.014895
         }
       },
       {
