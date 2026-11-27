@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795759996751,
+  "updatedAt": 1795760005519,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1179,
+      "plays": 1180,
       "sources": {
-        "netease": 1135,
+        "netease": 1136,
         "tencent": 3,
         "local": 2,
         "kugou": 8
@@ -72,6 +72,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "netease:442867526",
+        "at": 1795760002414,
+        "track": {
+          "id": "442867526",
+          "source": "netease",
+          "name": "Die For You",
+          "artist": "The Weeknd",
+          "album": "Starboy",
+          "cover": "https://p2.music.126.net/ep-76DyFxU4Fml8Xot4Pqw==/109951174069698501.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=442867526",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=442867526",
+          "duration": 260.253
+        }
+      },
       {
         "key": "netease:1973665667",
         "at": 1795759995399,
@@ -496,21 +511,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1927693793",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1927693793",
           "duration": 168
-        }
-      },
-      {
-        "key": "netease:287398",
-        "at": 1795637797564,
-        "track": {
-          "id": "287398",
-          "source": "netease",
-          "name": "我不难过",
-          "artist": "孙燕姿",
-          "album": "未完成",
-          "cover": "https://p2.music.126.net/Pzxy6py26NgNmhJjYMf2RQ==/109951169724216323.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=287398",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=287398",
-          "duration": 30
         }
       }
     ],
