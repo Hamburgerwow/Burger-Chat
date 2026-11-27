@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795755332394,
+  "updatedAt": 1795755413427,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,11 +38,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1162,
+      "plays": 1164,
       "sources": {
-        "netease": 1128,
+        "netease": 1129,
         "tencent": 3,
-        "local": 2
+        "local": 2,
+        "kugou": 1
       },
       "days": [
         "2026-11-25",
@@ -69,6 +70,36 @@
     },
     "bm:favorites": [],
     "bm:history": [
+      {
+        "key": "netease:1456890009",
+        "at": 1795755411094,
+        "track": {
+          "id": "1456890009",
+          "source": "netease",
+          "name": "罗生门（Follow）",
+          "artist": "梨冻紧 / Wiz_H张子豪",
+          "album": "罗生门（Follow）",
+          "cover": "https://p1.music.126.net/yN1ke1xYMJ718FiHaDWtYQ==/109951165076380471.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1456890009",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1456890009",
+          "duration": 243.754
+        }
+      },
+      {
+        "key": "netease:1973665667",
+        "at": 1795755410502,
+        "track": {
+          "id": "1973665667",
+          "source": "netease",
+          "name": "海屿你",
+          "artist": "马也_Crabbit",
+          "album": "海屿你",
+          "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
+          "duration": 295.94
+        }
+      },
       {
         "key": "kugou:1E74D5C0745E2865D3D2638B3F5B8A4D",
         "at": 1795755325563,
@@ -97,21 +128,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2161222939",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2161222939",
           "duration": 183.77
-        }
-      },
-      {
-        "key": "netease:1973665667",
-        "at": 1795755189448,
-        "track": {
-          "id": "1973665667",
-          "source": "netease",
-          "name": "海屿你",
-          "artist": "马也_Crabbit",
-          "album": "海屿你",
-          "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
-          "duration": 295.94
         }
       },
       {
@@ -228,21 +244,6 @@
           "url": "https://api.injahow.cn/meting/?server=tencent&type=url&id=0026Mz8z1ReUvu",
           "lrc": "https://api.injahow.cn/meting/?server=tencent&type=lrc&id=0026Mz8z1ReUvu",
           "duration": 191.906666
-        }
-      },
-      {
-        "key": "netease:1456890009",
-        "at": 1795659524200,
-        "track": {
-          "id": "1456890009",
-          "source": "netease",
-          "name": "罗生门（Follow）",
-          "artist": "梨冻紧 / Wiz_H张子豪",
-          "album": "罗生门（Follow）",
-          "cover": "https://p2.music.126.net/yN1ke1xYMJ718FiHaDWtYQ==/109951165076380471.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1456890009",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1456890009",
-          "duration": 243.754
         }
       },
       {
