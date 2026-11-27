@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795732618752,
+  "updatedAt": 1795750924551,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [],
@@ -38,9 +38,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1148,
+      "plays": 1150,
       "sources": {
-        "netease": 1117,
+        "netease": 1118,
         "tencent": 3,
         "local": 2
       },
@@ -51,8 +51,8 @@
       ],
       "searches": 1,
       "imports": 0,
-      "quality": 10,
-      "lyrics": 19,
+      "quality": 11,
+      "lyrics": 20,
       "nights": 18,
       "mornings": 10
     },
@@ -70,17 +70,30 @@
     "bm:history": [
       {
         "key": "netease:1973665667",
-        "at": 1795721709808,
+        "at": 1795750924271,
         "track": {
           "id": "1973665667",
           "source": "netease",
           "name": "海屿你",
           "artist": "马也_Crabbit",
           "album": "海屿你",
-          "cover": "https://p1.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
+          "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
-          "duration": 191.906666
+          "duration": 295.94
+        }
+      },
+      {
+        "key": "netease:108485",
+        "at": 1795750879284,
+        "track": {
+          "id": "108485",
+          "source": "netease",
+          "name": "Always Online",
+          "artist": "林俊杰",
+          "cover": "/api/bm/image?url=https%3A%2F%2Fp1.music.126.net%2FzjSzQ70gDJrneldAwvLBOg%3D%3D%2F109951173971284858.jpg%3Fparam%3D240y240",
+          "url": "https://hamburgerwow.top/api/bm/stream?url=https%3A%2F%2Fapi.injahow.cn%2Fmeting%2F%3Fserver%3Dnetease%26type%3Durl%26id%3D108485",
+          "duration": 225.013356
         }
       },
       {
@@ -500,21 +513,6 @@
           "url": "",
           "lrc": "",
           "duration": 282.188
-        }
-      },
-      {
-        "key": "netease:3382908505",
-        "at": 1795604314709,
-        "track": {
-          "id": "3382908505",
-          "source": "netease",
-          "name": "玻璃",
-          "artist": "Gareth.T",
-          "album": "玻璃",
-          "cover": "https://p1.music.126.net/MSKoQP60up7v3y1P1d3JIQ==/109951173234747322.jpg?param=240y240",
-          "url": "",
-          "lrc": "",
-          "duration": 185.04
         }
       }
     ],
