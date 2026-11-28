@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795851141235,
+  "updatedAt": 1795851165721,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1311,
+      "plays": 1312,
       "sources": {
         "netease": 1163,
         "tencent": 6,
         "local": 4,
-        "kugou": 92
+        "kugou": 93
       },
       "days": [
         "2026-11-25",
@@ -11574,7 +11574,7 @@
     "bm:history": [
       {
         "key": "kugou:8E21C8F3484FB56833F563754A05CB25",
-        "at": 1795851133039,
+        "at": 1795851140280,
         "track": {
           "id": "8E21C8F3484FB56833F563754A05CB25",
           "source": "kugou",
@@ -11584,7 +11584,7 @@
           "cover": "https://imge.kugou.com/stdmusic/400/20230803/20230803171602735758.jpg",
           "url": "/burger-music/api/bm/kugou-stream?hash=8E21C8F3484FB56833F563754A05CB25&album_id=32452531",
           "lrc": "",
-          "duration": 275
+          "duration": 274.568344
         }
       },
       {
