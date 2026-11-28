@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795856648396,
+  "updatedAt": 1795856796326,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,9 +11535,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1334,
+      "plays": 1336,
       "sources": {
-        "netease": 1168,
+        "netease": 1169,
         "tencent": 6,
         "local": 4,
         "kugou": 106
@@ -11574,7 +11574,7 @@
     "bm:history": [
       {
         "key": "netease:2755710644",
-        "at": 1795856639411,
+        "at": 1795856794646,
         "track": {
           "id": "2755710644",
           "source": "netease",
@@ -11584,7 +11584,7 @@
           "cover": "https://p2.music.126.net/ODlrxB8b_86bDZTuCXGK1w==/109951172153456358.jpg?param=240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2755710644",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2755710644",
-          "duration": 197
+          "duration": 197.384708
         }
       },
       {
