@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795857021620,
+  "updatedAt": 1795861074139,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1341,
+      "plays": 1343,
       "sources": {
         "netease": 1173,
         "tencent": 6,
         "local": 4,
-        "kugou": 107
+        "kugou": 108
       },
       "days": [
         "2026-11-25",
@@ -11573,17 +11573,30 @@
     ],
     "bm:history": [
       {
+        "key": "netease:1973665667",
+        "at": 1795861069983,
+        "track": {
+          "id": "1973665667",
+          "source": "netease",
+          "name": "海屿你",
+          "artist": "马也_Crabbit",
+          "album": "海屿你",
+          "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
+          "duration": 295.94
+        }
+      },
+      {
         "key": "kugou:8CCCBAC04264BAD4D911BE5DF1CBFB94",
-        "at": 1795857019278,
+        "at": 1795861062429,
         "track": {
           "id": "8CCCBAC04264BAD4D911BE5DF1CBFB94",
           "source": "kugou",
           "name": "Six Feet Under (Explicit)",
           "artist": "The Weeknd",
-          "album": "Starboy (Explicit)",
           "cover": "https://imge.kugou.com/stdmusic/400/20261008/20261008030632893620.jpg",
           "url": "/burger-music/api/bm/kugou-stream?hash=8CCCBAC04264BAD4D911BE5DF1CBFB94&album_id=52123998",
-          "lrc": "",
           "duration": 238
         }
       },
@@ -11643,21 +11656,6 @@
           "cover": "https://p2.music.126.net/XNqTec6E48ITyNJwf_Mv4w==/109951174324596777.jpg?param=240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2673175226",
           "duration": 186.121875
-        }
-      },
-      {
-        "key": "netease:1973665667",
-        "at": 1795854654273,
-        "track": {
-          "id": "1973665667",
-          "source": "netease",
-          "name": "海屿你",
-          "artist": "马也_Crabbit",
-          "album": "海屿你",
-          "cover": "https://p1.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
-          "duration": 295.94
         }
       },
       {
