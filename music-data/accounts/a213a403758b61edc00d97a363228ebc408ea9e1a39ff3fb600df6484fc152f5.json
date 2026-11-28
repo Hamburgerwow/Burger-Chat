@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795862448277,
+  "updatedAt": 1795862596621,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1348,
+      "plays": 1351,
       "sources": {
         "netease": 1176,
         "tencent": 6,
-        "local": 4,
-        "kugou": 109
+        "local": 5,
+        "kugou": 110
       },
       "days": [
         "2026-11-25",
@@ -11573,8 +11573,37 @@
     ],
     "bm:history": [
       {
+        "key": "netease:1973665667",
+        "at": 1795862593072,
+        "track": {
+          "id": "1973665667",
+          "source": "netease",
+          "name": "海屿你",
+          "artist": "马也_Crabbit",
+          "album": "海屿你",
+          "cover": "https://p1.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
+          "duration": 295.94
+        }
+      },
+      {
+        "key": "local:firefly-cmj",
+        "at": 1795862592289,
+        "track": {
+          "id": "firefly-cmj",
+          "source": "local",
+          "name": "萤火之森",
+          "artist": "CMJ",
+          "album": "BURGER CHAT · LOCAL",
+          "cover": "",
+          "url": "/assets/music/firefly-cmj.mp3?v=0.40.52r3",
+          "duration": 0
+        }
+      },
+      {
         "key": "kugou:83B8717BC9184337CA8B2D8C60A9B15A",
-        "at": 1795862439157,
+        "at": 1795862549489,
         "track": {
           "id": "83B8717BC9184337CA8B2D8C60A9B15A",
           "source": "kugou",
@@ -11628,21 +11657,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=28718313",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=28718313",
           "duration": 228.08
-        }
-      },
-      {
-        "key": "netease:1973665667",
-        "at": 1795861069983,
-        "track": {
-          "id": "1973665667",
-          "source": "netease",
-          "name": "海屿你",
-          "artist": "马也_Crabbit",
-          "album": "海屿你",
-          "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
-          "duration": 295.94
         }
       },
       {
@@ -11995,19 +12009,6 @@
           "cover": "/api/bm/image?url=https%3A%2F%2Fimge.kugou.com%2Fstdmusic%2F400%2F20170621%2F20170621081010458930.jpg",
           "url": "/burger-music/api/bm/kugou-stream?hash=2886DB04C5D3684F108F04F22A5C0D16&album_id=8581598",
           "duration": 222.571428
-        }
-      },
-      {
-        "key": "netease:2161222939",
-        "at": 1795839945424,
-        "track": {
-          "id": "2161222939",
-          "source": "netease",
-          "name": "沦陷",
-          "artist": "贾格JuggShots",
-          "cover": "/api/bm/image?url=https%3A%2F%2Fp1.music.126.net%2Fctib5R--oR68W2IrOk765w%3D%3D%2F109951169635716223.jpg%3Fparam%3D240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2161222939",
-          "duration": 183.770708
         }
       }
     ],
