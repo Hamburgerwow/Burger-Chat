@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795834132328,
+  "updatedAt": 1795834243237,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1243,
+      "plays": 1245,
       "sources": {
-        "netease": 1154,
+        "netease": 1155,
         "tencent": 5,
         "local": 4,
-        "kugou": 41
+        "kugou": 42
       },
       "days": [
         "2026-11-25",
@@ -11572,6 +11572,36 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:63D626669932E4C02C9C858EAFA6F660",
+        "at": 1795834231587,
+        "track": {
+          "id": "63D626669932E4C02C9C858EAFA6F660",
+          "source": "kugou",
+          "name": "您点的 Claude 已转接",
+          "artist": "南瓜造梦局",
+          "album": "您好，已封号",
+          "cover": "https://imge.kugou.com/stdmusic/400/20261107/20261107174039105138.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=63D626669932E4C02C9C858EAFA6F660&album_id=214204169",
+          "lrc": "",
+          "duration": 227
+        }
+      },
+      {
+        "key": "netease:1973665667",
+        "at": 1795834119882,
+        "track": {
+          "id": "1973665667",
+          "source": "netease",
+          "name": "海屿你",
+          "artist": "马也_Crabbit",
+          "album": "海屿你",
+          "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
+          "duration": 295.94
+        }
+      },
       {
         "key": "kugou:1E93D3D628B2AD72E31A794E68909708",
         "at": 1795834109351,
@@ -11628,21 +11658,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=9DA445E35FBDA7D813B40A211DB05E4B&album_id=51352350",
           "lrc": "",
           "duration": 199
-        }
-      },
-      {
-        "key": "kugou:63D626669932E4C02C9C858EAFA6F660",
-        "at": 1795833561020,
-        "track": {
-          "id": "63D626669932E4C02C9C858EAFA6F660",
-          "source": "kugou",
-          "name": "您点的 Claude 已转接",
-          "artist": "南瓜造梦局",
-          "album": "您好，已封号",
-          "cover": "https://imge.kugou.com/stdmusic/400/20261107/20261107174039105138.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=63D626669932E4C02C9C858EAFA6F660&album_id=214204169",
-          "lrc": "",
-          "duration": 227.2
         }
       },
       {
@@ -11788,21 +11803,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=316100",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=316100",
           "duration": 260.48
-        }
-      },
-      {
-        "key": "netease:1973665667",
-        "at": 1795762998282,
-        "track": {
-          "id": "1973665667",
-          "source": "netease",
-          "name": "海屿你",
-          "artist": "马也_Crabbit",
-          "album": "海屿你",
-          "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
-          "duration": 295.94
         }
       },
       {
