@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795833941248,
+  "updatedAt": 1795833948209,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1240,
+      "plays": 1241,
       "sources": {
         "netease": 1154,
         "tencent": 5,
         "local": 4,
-        "kugou": 38
+        "kugou": 39
       },
       "days": [
         "2026-11-25",
@@ -11572,6 +11572,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:1E93D3D628B2AD72E31A794E68909708",
+        "at": 1795833918845,
+        "track": {
+          "id": "1E93D3D628B2AD72E31A794E68909708",
+          "source": "kugou",
+          "name": "MILLION DOLLAR BABY (VHS)",
+          "artist": "Tommy Richman",
+          "album": "MILLION DOLLAR BABY",
+          "cover": "https://imge.kugou.com/stdmusic/400/20240504/20240504035801880684.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=1E93D3D628B2AD72E31A794E68909708&album_id=92377866",
+          "lrc": "",
+          "duration": 155
+        }
+      },
       {
         "key": "kugou:123B19C61B9631853051484FF0313568",
         "at": 1795833898185,
@@ -11998,21 +12013,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1379918404",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1379918404",
           "duration": 225.933
-        }
-      },
-      {
-        "key": "netease:442867526",
-        "at": 1795760002414,
-        "track": {
-          "id": "442867526",
-          "source": "netease",
-          "name": "Die For You",
-          "artist": "The Weeknd",
-          "album": "Starboy",
-          "cover": "https://p2.music.126.net/ep-76DyFxU4Fml8Xot4Pqw==/109951174069698501.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=442867526",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=442867526",
-          "duration": 260.253
         }
       }
     ],
