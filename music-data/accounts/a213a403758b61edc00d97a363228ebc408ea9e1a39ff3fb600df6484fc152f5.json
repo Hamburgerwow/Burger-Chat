@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795835070884,
+  "updatedAt": 1795835116675,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1268,
+      "plays": 1272,
       "sources": {
         "netease": 1155,
         "tencent": 5,
         "local": 4,
-        "kugou": 64
+        "kugou": 67
       },
       "days": [
         "2026-11-25",
@@ -11573,8 +11573,23 @@
     ],
     "bm:history": [
       {
+        "key": "kugou:1586060E27AA797DBBE16F30E500C433",
+        "at": 1795835105368,
+        "track": {
+          "id": "1586060E27AA797DBBE16F30E500C433",
+          "source": "kugou",
+          "name": "Axis Of Your Love",
+          "artist": "Rival / Cadmium / Veronica Bravo / Jon Becker",
+          "album": "Axis Of Your Love",
+          "cover": "https://imge.kugou.com/stdmusic/400/20190626/20190626210118359072.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=1586060E27AA797DBBE16F30E500C433&album_id=23598370",
+          "lrc": "",
+          "duration": 221
+        }
+      },
+      {
         "key": "kugou:63D626669932E4C02C9C858EAFA6F660",
-        "at": 1795835066188,
+        "at": 1795835077360,
         "track": {
           "id": "63D626669932E4C02C9C858EAFA6F660",
           "source": "kugou",
@@ -11584,7 +11599,7 @@
           "cover": "https://imge.kugou.com/stdmusic/400/20261107/20261107174039105138.jpg",
           "url": "/burger-music/api/bm/kugou-stream?hash=63D626669932E4C02C9C858EAFA6F660&album_id=214204169",
           "lrc": "",
-          "duration": 227
+          "duration": 227.2
         }
       },
       {
@@ -11994,21 +12009,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=7D2731B4BE3D79602E19DF76409099F6&album_id=963016",
           "lrc": "",
           "duration": 215
-        }
-      },
-      {
-        "key": "netease:3461036786",
-        "at": 1795760425473,
-        "track": {
-          "id": "3461036786",
-          "source": "netease",
-          "name": "1000 winters",
-          "artist": "小北LinY",
-          "album": "1000 winters",
-          "cover": "https://p2.music.126.net/rt4KqGUE4GmU3mnBpj8Gdw==/109951174305908087.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3461036786",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3461036786",
-          "duration": 175.304
         }
       }
     ],
