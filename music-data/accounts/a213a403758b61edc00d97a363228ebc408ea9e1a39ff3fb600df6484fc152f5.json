@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795843571573,
+  "updatedAt": 1795843589347,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1289,
+      "plays": 1290,
       "sources": {
         "netease": 1161,
         "tencent": 6,
         "local": 4,
-        "kugou": 74
+        "kugou": 76
       },
       "days": [
         "2026-11-25",
@@ -11551,7 +11551,7 @@
       "searches": 22,
       "imports": 1,
       "quality": 31,
-      "lyrics": 63,
+      "lyrics": 64,
       "nights": 18,
       "mornings": 11
     },
@@ -11572,6 +11572,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:9859AD4620F09D35D1F1C1A2E4DD1CBD",
+        "at": 1795843577650,
+        "track": {
+          "id": "9859AD4620F09D35D1F1C1A2E4DD1CBD",
+          "source": "kugou",
+          "name": "find my way",
+          "artist": "fcj / Moon Jelly / shirovw",
+          "album": "find my way",
+          "cover": "https://imge.kugou.com/stdmusic/400/20260717/20260717005922328975.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=9859AD4620F09D35D1F1C1A2E4DD1CBD&album_id=201471147",
+          "lrc": "",
+          "duration": 270
+        }
+      },
       {
         "key": "kugou:296E14D341DE24FA4DABAB292A89A299",
         "at": 1795843563358,
@@ -11990,21 +12005,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=316100",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=316100",
           "duration": 260.48
-        }
-      },
-      {
-        "key": "kugou:1E74D5C0745E2865D3D2638B3F5B8A4D",
-        "at": 1795762992098,
-        "track": {
-          "id": "1E74D5C0745E2865D3D2638B3F5B8A4D",
-          "source": "kugou",
-          "name": "爱情不是身份",
-          "artist": "杨友友",
-          "album": "",
-          "cover": "https://imge.kugou.com/stdmusic/400/20261123/20261123163248900275.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=1E74D5C0745E2865D3D2638B3F5B8A4D&album_id=216079216",
-          "lrc": "",
-          "duration": 212
         }
       }
     ],
