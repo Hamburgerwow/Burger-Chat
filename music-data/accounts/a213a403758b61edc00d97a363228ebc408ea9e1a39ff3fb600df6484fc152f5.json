@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795834673612,
+  "updatedAt": 1795834678155,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1257,
+      "plays": 1258,
       "sources": {
         "netease": 1155,
         "tencent": 5,
         "local": 4,
-        "kugou": 53
+        "kugou": 54
       },
       "days": [
         "2026-11-25",
@@ -11572,6 +11572,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:F90BE042DC7EB01D61B0815D64328769",
+        "at": 1795834667709,
+        "track": {
+          "id": "F90BE042DC7EB01D61B0815D64328769",
+          "source": "kugou",
+          "name": "隐藏结局",
+          "artist": "南瓜造梦局",
+          "album": "您好，已封号",
+          "cover": "https://imge.kugou.com/stdmusic/400/20261107/20261107174039105138.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=F90BE042DC7EB01D61B0815D64328769&album_id=214204169",
+          "lrc": "",
+          "duration": 307
+        }
+      },
       {
         "key": "kugou:63D626669932E4C02C9C858EAFA6F660",
         "at": 1795834662300,
@@ -11994,21 +12009,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3465504604",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3465504604",
           "duration": 182.424
-        }
-      },
-      {
-        "key": "tencent:004ONTLy3opabZ",
-        "at": 1795760346675,
-        "track": {
-          "id": "004ONTLy3opabZ",
-          "source": "tencent",
-          "name": "Lần Hẹn Hò Đầu Tiên (越南甜妹舞)",
-          "artist": "Erceso",
-          "album": "Lần Hẹn Hò Đầu Tiên(越南甜妹舞)",
-          "cover": "https://api.injahow.cn/meting/?server=tencent&type=pic&id=004ONTLy3opabZ",
-          "url": "https://api.injahow.cn/meting/?server=tencent&type=url&id=004ONTLy3opabZ",
-          "lrc": "https://api.injahow.cn/meting/?server=tencent&type=lrc&id=004ONTLy3opabZ",
-          "duration": 207
         }
       }
     ],
