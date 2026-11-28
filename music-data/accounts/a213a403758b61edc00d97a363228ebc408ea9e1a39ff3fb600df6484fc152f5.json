@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795833858840,
+  "updatedAt": 1795833903585,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,7 +11535,7 @@
       }
     ],
     "bm:stats": {
-      "plays": 1238,
+      "plays": 1239,
       "sources": {
         "netease": 1154,
         "tencent": 5,
@@ -11573,6 +11573,21 @@
     ],
     "bm:history": [
       {
+        "key": "kugou:A95878A79E87E4430AE17EC8CF7E464D",
+        "at": 1795833896994,
+        "track": {
+          "id": "A95878A79E87E4430AE17EC8CF7E464D",
+          "source": "kugou",
+          "name": "清欢问你",
+          "artist": "Ace组合",
+          "album": "清欢问你",
+          "cover": "https://imge.kugou.com/stdmusic/400/20220622/20220622001020694993.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=A95878A79E87E4430AE17EC8CF7E464D&album_id=15077011",
+          "lrc": "",
+          "duration": 248.999183
+        }
+      },
+      {
         "key": "kugou:9DA445E35FBDA7D813B40A211DB05E4B",
         "at": 1795833812833,
         "track": {
@@ -11585,21 +11600,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=9DA445E35FBDA7D813B40A211DB05E4B&album_id=51352350",
           "lrc": "",
           "duration": 199
-        }
-      },
-      {
-        "key": "kugou:A95878A79E87E4430AE17EC8CF7E464D",
-        "at": 1795833795837,
-        "track": {
-          "id": "A95878A79E87E4430AE17EC8CF7E464D",
-          "source": "kugou",
-          "name": "清欢问你",
-          "artist": "Ace组合",
-          "album": "清欢问你",
-          "cover": "https://imge.kugou.com/stdmusic/400/20220622/20220622001020694993.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=A95878A79E87E4430AE17EC8CF7E464D&album_id=15077011",
-          "lrc": "",
-          "duration": 248
         }
       },
       {
