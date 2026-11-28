@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795856852971,
+  "updatedAt": 1795856895339,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,9 +11535,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1339,
+      "plays": 1340,
       "sources": {
-        "netease": 1172,
+        "netease": 1173,
         "tencent": 6,
         "local": 4,
         "kugou": 106
@@ -11572,6 +11572,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:974BA658991CF32B4EF415A6CE1A25FF",
+        "at": 1795856885598,
+        "track": {
+          "id": "974BA658991CF32B4EF415A6CE1A25FF",
+          "source": "kugou",
+          "name": "Outside",
+          "artist": "MdL / Palm Trees / Abi F Jones",
+          "album": "Outside",
+          "cover": "https://imge.kugou.com/stdmusic/400/20240424/20240424000904332869.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=974BA658991CF32B4EF415A6CE1A25FF&album_id=8780123",
+          "lrc": "",
+          "duration": 178
+        }
+      },
       {
         "key": "netease:3465201773",
         "at": 1795856842023,
@@ -11686,21 +11701,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=2FF5CF3808DF57AB04AE3223283799AE&album_id=36651820",
           "lrc": "",
           "duration": 209.49043
-        }
-      },
-      {
-        "key": "kugou:974BA658991CF32B4EF415A6CE1A25FF",
-        "at": 1795852574559,
-        "track": {
-          "id": "974BA658991CF32B4EF415A6CE1A25FF",
-          "source": "kugou",
-          "name": "Outside",
-          "artist": "MdL / Palm Trees / Abi F Jones",
-          "album": "Outside",
-          "cover": "https://imge.kugou.com/stdmusic/400/20240424/20240424000904332869.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=974BA658991CF32B4EF415A6CE1A25FF&album_id=8780123",
-          "lrc": "",
-          "duration": 177.474353
         }
       },
       {
