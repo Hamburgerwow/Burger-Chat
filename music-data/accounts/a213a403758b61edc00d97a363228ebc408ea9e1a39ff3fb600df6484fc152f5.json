@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795851273581,
+  "updatedAt": 1795852211725,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1316,
+      "plays": 1321,
       "sources": {
         "netease": 1165,
         "tencent": 6,
         "local": 4,
-        "kugou": 94
+        "kugou": 98
       },
       "days": [
         "2026-11-25",
@@ -11551,7 +11551,7 @@
       "searches": 23,
       "imports": 1,
       "quality": 31,
-      "lyrics": 70,
+      "lyrics": 74,
       "nights": 18,
       "mornings": 11
     },
@@ -11573,8 +11573,68 @@
     ],
     "bm:history": [
       {
+        "key": "kugou:2FF5CF3808DF57AB04AE3223283799AE",
+        "at": 1795852198344,
+        "track": {
+          "id": "2FF5CF3808DF57AB04AE3223283799AE",
+          "source": "kugou",
+          "name": "SKYLINE",
+          "artist": "김세정",
+          "album": "화분",
+          "cover": "https://imge.kugou.com/stdmusic/400/20200317/20200317151108334831.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=2FF5CF3808DF57AB04AE3223283799AE&album_id=36651820",
+          "lrc": "",
+          "duration": 210
+        }
+      },
+      {
+        "key": "kugou:974BA658991CF32B4EF415A6CE1A25FF",
+        "at": 1795852196407,
+        "track": {
+          "id": "974BA658991CF32B4EF415A6CE1A25FF",
+          "source": "kugou",
+          "name": "Outside",
+          "artist": "MdL / Palm Trees / Abi F Jones",
+          "album": "Outside",
+          "cover": "https://imge.kugou.com/stdmusic/400/20240424/20240424000904332869.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=974BA658991CF32B4EF415A6CE1A25FF&album_id=8780123",
+          "lrc": "",
+          "duration": 178
+        }
+      },
+      {
+        "key": "kugou:17E5E84C1A210528A998A4C1C5DAFBD3",
+        "at": 1795852194564,
+        "track": {
+          "id": "17E5E84C1A210528A998A4C1C5DAFBD3",
+          "source": "kugou",
+          "name": "Always Been You",
+          "artist": "StarlingEDM / 9ethes",
+          "album": "Always Been You",
+          "cover": "https://imge.kugou.com/stdmusic/400/20241002/20241002010106894480.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=17E5E84C1A210528A998A4C1C5DAFBD3&album_id=83601545",
+          "lrc": "",
+          "duration": 137
+        }
+      },
+      {
+        "key": "kugou:F90BE042DC7EB01D61B0815D64328769",
+        "at": 1795851980475,
+        "track": {
+          "id": "F90BE042DC7EB01D61B0815D64328769",
+          "source": "kugou",
+          "name": "隐藏结局",
+          "artist": "南瓜造梦局",
+          "album": "您好，已封号",
+          "cover": "https://imge.kugou.com/stdmusic/400/20261107/20261107174039105138.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=F90BE042DC7EB01D61B0815D64328769&album_id=214204169",
+          "lrc": "",
+          "duration": 307
+        }
+      },
+      {
         "key": "kugou:8E21C8F3484FB56833F563754A05CB25",
-        "at": 1795851263065,
+        "at": 1795851974718,
         "track": {
           "id": "8E21C8F3484FB56833F563754A05CB25",
           "source": "kugou",
@@ -11807,32 +11867,6 @@
         }
       },
       {
-        "key": "kugou:17E5E84C1A210528A998A4C1C5DAFBD3",
-        "at": 1795843067777,
-        "track": {
-          "id": "17E5E84C1A210528A998A4C1C5DAFBD3",
-          "source": "kugou",
-          "name": "Always Been You",
-          "artist": "StarlingEDM / 9ethes",
-          "cover": "/api/bm/image?url=https%3A%2F%2Fimge.kugou.com%2Fstdmusic%2F400%2F20241002%2F20241002010106894480.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=17E5E84C1A210528A998A4C1C5DAFBD3&album_id=83601545",
-          "duration": 137.142879
-        }
-      },
-      {
-        "key": "kugou:974BA658991CF32B4EF415A6CE1A25FF",
-        "at": 1795841716557,
-        "track": {
-          "id": "974BA658991CF32B4EF415A6CE1A25FF",
-          "source": "kugou",
-          "name": "Outside",
-          "artist": "MdL / Palm Trees / Abi F Jones",
-          "cover": "/api/bm/image?url=https%3A%2F%2Fimge.kugou.com%2Fstdmusic%2F400%2F20240424%2F20240424000904332869.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=974BA658991CF32B4EF415A6CE1A25FF&album_id=8780123",
-          "duration": 177.474353
-        }
-      },
-      {
         "key": "netease:2161222939",
         "at": 1795839945424,
         "track": {
@@ -11919,21 +11953,6 @@
         }
       },
       {
-        "key": "kugou:F90BE042DC7EB01D61B0815D64328769",
-        "at": 1795834667709,
-        "track": {
-          "id": "F90BE042DC7EB01D61B0815D64328769",
-          "source": "kugou",
-          "name": "隐藏结局",
-          "artist": "南瓜造梦局",
-          "album": "您好，已封号",
-          "cover": "https://imge.kugou.com/stdmusic/400/20261107/20261107174039105138.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=F90BE042DC7EB01D61B0815D64328769&album_id=214204169",
-          "lrc": "",
-          "duration": 307
-        }
-      },
-      {
         "key": "kugou:B4E07B87001AB6130040B8A1440B19FE",
         "at": 1795834565404,
         "track": {
@@ -11988,21 +12007,6 @@
           "cover": "",
           "url": "/assets/music/firefly-cmj.mp3?v=0.40.52r3",
           "duration": 0
-        }
-      },
-      {
-        "key": "kugou:464C607C5BAEF1831267DB77A06EFEAA",
-        "at": 1795833468688,
-        "track": {
-          "id": "464C607C5BAEF1831267DB77A06EFEAA",
-          "source": "kugou",
-          "name": "Secret",
-          "artist": "茶太",
-          "album": "eclipse 改",
-          "cover": "https://imge.kugou.com/stdmusic/400/20250101/20250101074627273338.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=464C607C5BAEF1831267DB77A06EFEAA&album_id=1595020",
-          "lrc": "",
-          "duration": 275
         }
       }
     ],
