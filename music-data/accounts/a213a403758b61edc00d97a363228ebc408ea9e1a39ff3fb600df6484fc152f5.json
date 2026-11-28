@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795833903585,
+  "updatedAt": 1795833911755,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1239,
+      "plays": 1240,
       "sources": {
         "netease": 1154,
         "tencent": 5,
         "local": 4,
-        "kugou": 37
+        "kugou": 38
       },
       "days": [
         "2026-11-25",
@@ -11572,6 +11572,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:123B19C61B9631853051484FF0313568",
+        "at": 1795833898185,
+        "track": {
+          "id": "123B19C61B9631853051484FF0313568",
+          "source": "kugou",
+          "name": "春有约 花不误",
+          "artist": "星野夏KELO",
+          "album": "春有约 花不误",
+          "cover": "https://imge.kugou.com/stdmusic/400/20250101/20250101044355401720.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=123B19C61B9631853051484FF0313568&album_id=90579222",
+          "lrc": "",
+          "duration": 210
+        }
+      },
       {
         "key": "kugou:A95878A79E87E4430AE17EC8CF7E464D",
         "at": 1795833896994,
@@ -11998,21 +12013,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=442867526",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=442867526",
           "duration": 260.253
-        }
-      },
-      {
-        "key": "kugou:F90BE042DC7EB01D61B0815D64328769",
-        "at": 1795759731658,
-        "track": {
-          "id": "F90BE042DC7EB01D61B0815D64328769",
-          "source": "kugou",
-          "name": "隐藏结局",
-          "artist": "南瓜造梦局",
-          "album": "您好，已封号",
-          "cover": "https://imge.kugou.com/stdmusic/400/20261107/20261107174039105138.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=F90BE042DC7EB01D61B0815D64328769&album_id=214204169",
-          "lrc": "",
-          "duration": 307.014897
         }
       }
     ],
