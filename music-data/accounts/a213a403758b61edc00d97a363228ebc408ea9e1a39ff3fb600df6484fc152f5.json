@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795854068957,
+  "updatedAt": 1795854247883,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1328,
+      "plays": 1329,
       "sources": {
         "netease": 1165,
         "tencent": 6,
         "local": 4,
-        "kugou": 105
+        "kugou": 106
       },
       "days": [
         "2026-11-25",
@@ -11551,7 +11551,7 @@
       "searches": 23,
       "imports": 1,
       "quality": 31,
-      "lyrics": 76,
+      "lyrics": 78,
       "nights": 18,
       "mornings": 11
     },
@@ -11572,6 +11572,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:FF6DCD358F450EB26796ED6C6B7D9A55",
+        "at": 1795854242255,
+        "track": {
+          "id": "FF6DCD358F450EB26796ED6C6B7D9A55",
+          "source": "kugou",
+          "name": "Hạ Phỏm (下垂)",
+          "artist": "Hoàng Thùy Linh",
+          "album": "LINK",
+          "cover": "https://imge.kugou.com/stdmusic/400/20250101/20250101174226896729.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=FF6DCD358F450EB26796ED6C6B7D9A55&album_id=59716009",
+          "lrc": "",
+          "duration": 196
+        }
+      },
       {
         "key": "kugou:DA493C4BF2FA75F9A51820A8E378B861",
         "at": 1795854063547,
@@ -11993,21 +12008,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=123B19C61B9631853051484FF0313568&album_id=90579222",
           "lrc": "",
           "duration": 210
-        }
-      },
-      {
-        "key": "kugou:A95878A79E87E4430AE17EC8CF7E464D",
-        "at": 1795833896994,
-        "track": {
-          "id": "A95878A79E87E4430AE17EC8CF7E464D",
-          "source": "kugou",
-          "name": "清欢问你",
-          "artist": "Ace组合",
-          "album": "清欢问你",
-          "cover": "https://imge.kugou.com/stdmusic/400/20220622/20220622001020694993.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=A95878A79E87E4430AE17EC8CF7E464D&album_id=15077011",
-          "lrc": "",
-          "duration": 248.999183
         }
       }
     ],
