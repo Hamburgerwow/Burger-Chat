@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795861093438,
+  "updatedAt": 1795862064580,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,9 +11535,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1344,
+      "plays": 1346,
       "sources": {
-        "netease": 1174,
+        "netease": 1176,
         "tencent": 6,
         "local": 4,
         "kugou": 108
@@ -11551,7 +11551,7 @@
       "searches": 24,
       "imports": 1,
       "quality": 31,
-      "lyrics": 81,
+      "lyrics": 83,
       "nights": 18,
       "mornings": 11
     },
@@ -11572,6 +11572,34 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:EBACB0EA8CB81F61A8A66EC239F1E481",
+        "at": 1795862062711,
+        "track": {
+          "id": "EBACB0EA8CB81F61A8A66EC239F1E481",
+          "source": "kugou",
+          "name": "ONE LAST TIME (Prod.AmPm)",
+          "artist": "eill",
+          "album": "ONE LAST TIME (Prod.AmPm)",
+          "cover": "https://imge.kugou.com/stdmusic/400/20190923/20190923142302604184.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=EBACB0EA8CB81F61A8A66EC239F1E481&album_id=29301242",
+          "lrc": "",
+          "duration": 226
+        }
+      },
+      {
+        "key": "netease:2673175226",
+        "at": 1795861742587,
+        "track": {
+          "id": "2673175226",
+          "source": "netease",
+          "name": "零距离的思念",
+          "artist": "TINY7",
+          "cover": "https://p2.music.126.net/XNqTec6E48ITyNJwf_Mv4w==/109951174324596777.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2673175226",
+          "duration": 186.121875
+        }
+      },
       {
         "key": "netease:28718313",
         "at": 1795861086372,
@@ -11658,19 +11686,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2755710644",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2755710644",
           "duration": 197.384708
-        }
-      },
-      {
-        "key": "netease:2673175226",
-        "at": 1795856473384,
-        "track": {
-          "id": "2673175226",
-          "source": "netease",
-          "name": "零距离的思念",
-          "artist": "TINY7",
-          "cover": "https://p2.music.126.net/XNqTec6E48ITyNJwf_Mv4w==/109951174324596777.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2673175226",
-          "duration": 186.121875
         }
       },
       {
@@ -11993,21 +12008,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=1586060E27AA797DBBE16F30E500C433&album_id=23598370",
           "lrc": "",
           "duration": 221
-        }
-      },
-      {
-        "key": "kugou:63D626669932E4C02C9C858EAFA6F660",
-        "at": 1795835077360,
-        "track": {
-          "id": "63D626669932E4C02C9C858EAFA6F660",
-          "source": "kugou",
-          "name": "您点的 Claude 已转接",
-          "artist": "南瓜造梦局",
-          "album": "您好，已封号",
-          "cover": "https://imge.kugou.com/stdmusic/400/20261107/20261107174039105138.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=63D626669932E4C02C9C858EAFA6F660&album_id=214204169",
-          "lrc": "",
-          "duration": 227.2
         }
       }
     ],
