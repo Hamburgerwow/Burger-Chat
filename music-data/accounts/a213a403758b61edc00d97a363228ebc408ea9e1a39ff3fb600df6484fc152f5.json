@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795833051760,
+  "updatedAt": 1795833072030,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1225,
+      "plays": 1227,
       "sources": {
         "netease": 1154,
         "tencent": 5,
         "local": 3,
-        "kugou": 24
+        "kugou": 26
       },
       "days": [
         "2026-11-25",
@@ -11573,6 +11573,36 @@
     ],
     "bm:history": [
       {
+        "key": "kugou:1CA8E8934C5404BC8639F488B365947F",
+        "at": 1795833048041,
+        "track": {
+          "id": "1CA8E8934C5404BC8639F488B365947F",
+          "source": "kugou",
+          "name": "空白",
+          "artist": "Pank / 罗凯元（SUPER KY）",
+          "album": "空白",
+          "cover": "https://imge.kugou.com/stdmusic/400/20251219/20251219110351733733.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=1CA8E8934C5404BC8639F488B365947F&album_id=157401094",
+          "lrc": "",
+          "duration": 171
+        }
+      },
+      {
+        "key": "kugou:63D626669932E4C02C9C858EAFA6F660",
+        "at": 1795833038175,
+        "track": {
+          "id": "63D626669932E4C02C9C858EAFA6F660",
+          "source": "kugou",
+          "name": "您点的 Claude 已转接",
+          "artist": "南瓜造梦局",
+          "album": "您好，已封号",
+          "cover": "https://imge.kugou.com/stdmusic/400/20261107/20261107174039105138.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=63D626669932E4C02C9C858EAFA6F660&album_id=214204169",
+          "lrc": "",
+          "duration": 227.2
+        }
+      },
+      {
         "key": "kugou:390E8508DF4BCE4CE6EB91C00B520E11",
         "at": 1795833030217,
         "track": {
@@ -11585,21 +11615,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=390E8508DF4BCE4CE6EB91C00B520E11&album_id=38477893",
           "lrc": "",
           "duration": 199
-        }
-      },
-      {
-        "key": "kugou:63D626669932E4C02C9C858EAFA6F660",
-        "at": 1795832999946,
-        "track": {
-          "id": "63D626669932E4C02C9C858EAFA6F660",
-          "source": "kugou",
-          "name": "您点的 Claude 已转接",
-          "artist": "南瓜造梦局",
-          "album": "您好，已封号",
-          "cover": "https://imge.kugou.com/stdmusic/400/20261107/20261107174039105138.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=63D626669932E4C02C9C858EAFA6F660&album_id=214204169",
-          "lrc": "",
-          "duration": 227.2
         }
       },
       {
@@ -11998,21 +12013,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=28403111",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=28403111",
           "duration": 259.064
-        }
-      },
-      {
-        "key": "netease:1456890009",
-        "at": 1795755411094,
-        "track": {
-          "id": "1456890009",
-          "source": "netease",
-          "name": "罗生门（Follow）",
-          "artist": "梨冻紧 / Wiz_H张子豪",
-          "album": "罗生门（Follow）",
-          "cover": "https://p1.music.126.net/yN1ke1xYMJ718FiHaDWtYQ==/109951165076380471.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1456890009",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1456890009",
-          "duration": 243.754
         }
       }
     ],
