@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795862596621,
+  "updatedAt": 1795866037327,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,9 +11535,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1351,
+      "plays": 1353,
       "sources": {
-        "netease": 1176,
+        "netease": 1177,
         "tencent": 6,
         "local": 5,
         "kugou": 110
@@ -11573,8 +11573,23 @@
     ],
     "bm:history": [
       {
+        "key": "kuwo:27588231",
+        "at": 1795866029590,
+        "track": {
+          "id": "27588231",
+          "source": "kuwo",
+          "name": "一座城池",
+          "artist": "左小祖咒",
+          "album": "",
+          "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951169741121026",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=27588231",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=27588231",
+          "duration": 0
+        }
+      },
+      {
         "key": "netease:1973665667",
-        "at": 1795862593072,
+        "at": 1795866024721,
         "track": {
           "id": "1973665667",
           "source": "netease",
@@ -11584,7 +11599,7 @@
           "cover": "https://p1.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
-          "duration": 295.94
+          "duration": 295.940062
         }
       },
       {
@@ -11996,19 +12011,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2758538358",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2758538358",
           "duration": 232.405
-        }
-      },
-      {
-        "key": "kugou:2886DB04C5D3684F108F04F22A5C0D16",
-        "at": 1795843330150,
-        "track": {
-          "id": "2886DB04C5D3684F108F04F22A5C0D16",
-          "source": "kugou",
-          "name": "Lunisolar",
-          "artist": "SHAUN",
-          "cover": "/api/bm/image?url=https%3A%2F%2Fimge.kugou.com%2Fstdmusic%2F400%2F20170621%2F20170621081010458930.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=2886DB04C5D3684F108F04F22A5C0D16&album_id=8581598",
-          "duration": 222.571428
         }
       }
     ],
