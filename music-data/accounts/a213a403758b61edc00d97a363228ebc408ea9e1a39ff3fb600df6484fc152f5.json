@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795854247883,
+  "updatedAt": 1795854671041,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,9 +11535,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1329,
+      "plays": 1332,
       "sources": {
-        "netease": 1165,
+        "netease": 1167,
         "tencent": 6,
         "local": 4,
         "kugou": 106
@@ -11572,6 +11572,49 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "netease:2673175226",
+        "at": 1795854663378,
+        "track": {
+          "id": "2673175226",
+          "source": "netease",
+          "name": "零距离的思念",
+          "artist": "TINY7",
+          "album": "Chose one me",
+          "cover": "https://p2.music.126.net/XNqTec6E48ITyNJwf_Mv4w==/109951174324596777.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2673175226",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2673175226",
+          "duration": 186.121
+        }
+      },
+      {
+        "key": "netease:1973665667",
+        "at": 1795854654273,
+        "track": {
+          "id": "1973665667",
+          "source": "netease",
+          "name": "海屿你",
+          "artist": "马也_Crabbit",
+          "album": "海屿你",
+          "cover": "https://p1.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
+          "duration": 295.94
+        }
+      },
+      {
+        "key": "netease:1968907338",
+        "at": 1795854640107,
+        "track": {
+          "id": "1968907338",
+          "source": "netease",
+          "name": "Gieo Quẻ",
+          "artist": "Hoàng Thùy Linh / Đen",
+          "cover": "https://p2.music.126.net/t9SPgdZacnRwKPwTD1YONg==/109951167738633245.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1968907338",
+          "duration": 199.018231
+        }
+      },
       {
         "key": "kugou:FF6DCD358F450EB26796ED6C6B7D9A55",
         "at": 1795854242255,
@@ -11673,19 +11716,6 @@
           "cover": "https://imge.kugou.com/stdmusic/400/20230803/20230803171602735758.jpg",
           "url": "/burger-music/api/bm/kugou-stream?hash=8E21C8F3484FB56833F563754A05CB25&album_id=32452531",
           "duration": 274.568344
-        }
-      },
-      {
-        "key": "netease:1968907338",
-        "at": 1795851259953,
-        "track": {
-          "id": "1968907338",
-          "source": "netease",
-          "name": "Gieo Quẻ",
-          "artist": "Hoàng Thùy Linh / Đen",
-          "cover": "https://p2.music.126.net/t9SPgdZacnRwKPwTD1YONg==/109951167738633245.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1968907338",
-          "duration": 199.018231
         }
       },
       {
@@ -11791,21 +11821,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=781C7B03DAC61FDDE29F335B92344D1E&album_id=20090314",
           "lrc": "",
           "duration": 164.627845
-        }
-      },
-      {
-        "key": "netease:1973665667",
-        "at": 1795849583745,
-        "track": {
-          "id": "1973665667",
-          "source": "netease",
-          "name": "海屿你",
-          "artist": "马也_Crabbit",
-          "album": "海屿你",
-          "cover": "https://p1.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
-          "duration": 295.94
         }
       },
       {
@@ -11993,21 +12008,6 @@
           "cover": "/api/bm/image?url=https%3A%2F%2Fimge.kugou.com%2Fstdmusic%2F400%2F20250101%2F20250101193012843584.jpg",
           "url": "/burger-music/api/bm/kugou-stream?hash=B4E07B87001AB6130040B8A1440B19FE&album_id=90054464",
           "duration": 207.75
-        }
-      },
-      {
-        "key": "kugou:123B19C61B9631853051484FF0313568",
-        "at": 1795833898185,
-        "track": {
-          "id": "123B19C61B9631853051484FF0313568",
-          "source": "kugou",
-          "name": "春有约 花不误",
-          "artist": "星野夏KELO",
-          "album": "春有约 花不误",
-          "cover": "https://imge.kugou.com/stdmusic/400/20250101/20250101044355401720.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=123B19C61B9631853051484FF0313568&album_id=90579222",
-          "lrc": "",
-          "duration": 210
         }
       }
     ],
