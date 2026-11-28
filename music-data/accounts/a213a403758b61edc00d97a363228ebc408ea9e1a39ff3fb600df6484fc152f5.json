@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795849880870,
+  "updatedAt": 1795850241309,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1296,
+      "plays": 1302,
       "sources": {
         "netease": 1162,
         "tencent": 6,
         "local": 4,
-        "kugou": 79
+        "kugou": 85
       },
       "days": [
         "2026-11-25",
@@ -11573,8 +11573,23 @@
     ],
     "bm:history": [
       {
+        "key": "kugou:9859AD4620F09D35D1F1C1A2E4DD1CBD",
+        "at": 1795850228874,
+        "track": {
+          "id": "9859AD4620F09D35D1F1C1A2E4DD1CBD",
+          "source": "kugou",
+          "name": "find my way",
+          "artist": "fcj / Moon Jelly / shirovw",
+          "album": "find my way",
+          "cover": "https://imge.kugou.com/stdmusic/400/20260717/20260717005922328975.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=9859AD4620F09D35D1F1C1A2E4DD1CBD&album_id=201471147",
+          "lrc": "",
+          "duration": 270
+        }
+      },
+      {
         "key": "kugou:781C7B03DAC61FDDE29F335B92344D1E",
-        "at": 1795849873730,
+        "at": 1795850165172,
         "track": {
           "id": "781C7B03DAC61FDDE29F335B92344D1E",
           "source": "kugou",
@@ -11600,19 +11615,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
           "duration": 295.94
-        }
-      },
-      {
-        "key": "kugou:9859AD4620F09D35D1F1C1A2E4DD1CBD",
-        "at": 1795849495585,
-        "track": {
-          "id": "9859AD4620F09D35D1F1C1A2E4DD1CBD",
-          "source": "kugou",
-          "name": "find my way",
-          "artist": "fcj / Moon Jelly / shirovw",
-          "cover": "/api/bm/image?url=https%3A%2F%2Fimge.kugou.com%2Fstdmusic%2F400%2F20260717%2F20260717005922328975.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=9859AD4620F09D35D1F1C1A2E4DD1CBD&album_id=201471147",
-          "duration": 270.344829
         }
       },
       {
