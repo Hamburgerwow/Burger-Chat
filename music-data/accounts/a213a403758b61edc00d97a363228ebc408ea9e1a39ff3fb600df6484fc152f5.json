@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795833812864,
+  "updatedAt": 1795833843214,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1237,
+      "plays": 1238,
       "sources": {
         "netease": 1154,
         "tencent": 5,
         "local": 4,
-        "kugou": 35
+        "kugou": 37
       },
       "days": [
         "2026-11-25",
@@ -11550,8 +11550,8 @@
       ],
       "searches": 22,
       "imports": 1,
-      "quality": 28,
-      "lyrics": 49,
+      "quality": 29,
+      "lyrics": 50,
       "nights": 18,
       "mornings": 11
     },
@@ -11573,6 +11573,21 @@
     ],
     "bm:history": [
       {
+        "key": "kugou:9DA445E35FBDA7D813B40A211DB05E4B",
+        "at": 1795833812833,
+        "track": {
+          "id": "9DA445E35FBDA7D813B40A211DB05E4B",
+          "source": "kugou",
+          "name": "Gieo Quẻ (卜卦)",
+          "artist": "Hoàng Thùy Linh / Đen",
+          "album": "Gieo Quẻ",
+          "cover": "https://imge.kugou.com/stdmusic/400/20250101/20250101174347227651.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=9DA445E35FBDA7D813B40A211DB05E4B&album_id=51352350",
+          "lrc": "",
+          "duration": 199
+        }
+      },
+      {
         "key": "kugou:A95878A79E87E4430AE17EC8CF7E464D",
         "at": 1795833795837,
         "track": {
@@ -11585,21 +11600,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=A95878A79E87E4430AE17EC8CF7E464D&album_id=15077011",
           "lrc": "",
           "duration": 248
-        }
-      },
-      {
-        "key": "kugou:9DA445E35FBDA7D813B40A211DB05E4B",
-        "at": 1795833713213,
-        "track": {
-          "id": "9DA445E35FBDA7D813B40A211DB05E4B",
-          "source": "kugou",
-          "name": "Gieo Quẻ (卜卦)",
-          "artist": "Hoàng Thùy Linh / Đen",
-          "album": "Gieo Quẻ",
-          "cover": "https://imge.kugou.com/stdmusic/400/20250101/20250101174347227651.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=9DA445E35FBDA7D813B40A211DB05E4B&album_id=51352350",
-          "lrc": "",
-          "duration": 199
         }
       },
       {
@@ -12016,7 +12016,7 @@
         }
       }
     ],
-    "bm:quality": "lossless",
+    "bm:quality": "low",
     "bm:lyric-trans": 1,
     "bm:volume": 1,
     "bm:account-meta": {
