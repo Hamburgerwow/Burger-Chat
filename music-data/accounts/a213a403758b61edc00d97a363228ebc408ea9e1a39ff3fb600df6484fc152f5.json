@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795833205826,
+  "updatedAt": 1795833719818,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1229,
+      "plays": 1235,
       "sources": {
         "netease": 1154,
         "tencent": 5,
-        "local": 3,
-        "kugou": 28
+        "local": 4,
+        "kugou": 33
       },
       "days": [
         "2026-11-25",
@@ -11550,8 +11550,8 @@
       ],
       "searches": 22,
       "imports": 1,
-      "quality": 26,
-      "lyrics": 44,
+      "quality": 28,
+      "lyrics": 48,
       "nights": 18,
       "mornings": 11
     },
@@ -11572,6 +11572,65 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:9DA445E35FBDA7D813B40A211DB05E4B",
+        "at": 1795833707670,
+        "track": {
+          "id": "9DA445E35FBDA7D813B40A211DB05E4B",
+          "source": "kugou",
+          "name": "Gieo Quẻ (卜卦)",
+          "artist": "Hoàng Thùy Linh / Đen",
+          "album": "Gieo Quẻ",
+          "cover": "https://imge.kugou.com/stdmusic/400/20250101/20250101174347227651.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=9DA445E35FBDA7D813B40A211DB05E4B&album_id=51352350",
+          "lrc": "",
+          "duration": 199
+        }
+      },
+      {
+        "key": "kugou:63D626669932E4C02C9C858EAFA6F660",
+        "at": 1795833561020,
+        "track": {
+          "id": "63D626669932E4C02C9C858EAFA6F660",
+          "source": "kugou",
+          "name": "您点的 Claude 已转接",
+          "artist": "南瓜造梦局",
+          "album": "您好，已封号",
+          "cover": "https://imge.kugou.com/stdmusic/400/20261107/20261107174039105138.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=63D626669932E4C02C9C858EAFA6F660&album_id=214204169",
+          "lrc": "",
+          "duration": 227.2
+        }
+      },
+      {
+        "key": "local:firefly-cmj",
+        "at": 1795833544570,
+        "track": {
+          "id": "firefly-cmj",
+          "source": "local",
+          "name": "萤火之森",
+          "artist": "CMJ",
+          "album": "BURGER CHAT · LOCAL",
+          "cover": "",
+          "url": "/assets/music/firefly-cmj.mp3?v=0.40.52r3",
+          "duration": 0
+        }
+      },
+      {
+        "key": "kugou:464C607C5BAEF1831267DB77A06EFEAA",
+        "at": 1795833468688,
+        "track": {
+          "id": "464C607C5BAEF1831267DB77A06EFEAA",
+          "source": "kugou",
+          "name": "Secret",
+          "artist": "茶太",
+          "album": "eclipse 改",
+          "cover": "https://imge.kugou.com/stdmusic/400/20250101/20250101074627273338.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=464C607C5BAEF1831267DB77A06EFEAA&album_id=1595020",
+          "lrc": "",
+          "duration": 275
+        }
+      },
       {
         "key": "kugou:19E768B898576294A0BC4001C6B4C38B",
         "at": 1795833193219,
@@ -11615,21 +11674,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=1CA8E8934C5404BC8639F488B365947F&album_id=157401094",
           "lrc": "",
           "duration": 171
-        }
-      },
-      {
-        "key": "kugou:63D626669932E4C02C9C858EAFA6F660",
-        "at": 1795833038175,
-        "track": {
-          "id": "63D626669932E4C02C9C858EAFA6F660",
-          "source": "kugou",
-          "name": "您点的 Claude 已转接",
-          "artist": "南瓜造梦局",
-          "album": "您好，已封号",
-          "cover": "https://imge.kugou.com/stdmusic/400/20261107/20261107174039105138.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=63D626669932E4C02C9C858EAFA6F660&album_id=214204169",
-          "lrc": "",
-          "duration": 227.2
         }
       },
       {
@@ -11852,21 +11896,6 @@
         }
       },
       {
-        "key": "kugou:464C607C5BAEF1831267DB77A06EFEAA",
-        "at": 1795760484000,
-        "track": {
-          "id": "464C607C5BAEF1831267DB77A06EFEAA",
-          "source": "kugou",
-          "name": "Secret",
-          "artist": "茶太",
-          "album": "eclipse 改",
-          "cover": "https://imge.kugou.com/stdmusic/400/20250101/20250101074627273338.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=464C607C5BAEF1831267DB77A06EFEAA&album_id=1595020",
-          "lrc": "",
-          "duration": 275
-        }
-      },
-      {
         "key": "netease:3461036786",
         "at": 1795760425473,
         "track": {
@@ -11909,20 +11938,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3465504604",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3465504604",
           "duration": 182.424
-        }
-      },
-      {
-        "key": "local:firefly-cmj",
-        "at": 1795760418871,
-        "track": {
-          "id": "firefly-cmj",
-          "source": "local",
-          "name": "萤火之森",
-          "artist": "CMJ",
-          "album": "BURGER CHAT · LOCAL",
-          "cover": "",
-          "url": "/assets/music/firefly-cmj.mp3?v=0.40.52r3",
-          "duration": 0
         }
       },
       {
@@ -11998,21 +12013,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=ECFDFABB9ADF1D09ECF97EE48824BC5D&album_id=554244",
           "lrc": "",
           "duration": 214
-        }
-      },
-      {
-        "key": "kugou:32C2919189194EA228BA1F02E2A72B10",
-        "at": 1795759717974,
-        "track": {
-          "id": "32C2919189194EA228BA1F02E2A72B10",
-          "source": "kugou",
-          "name": "今生只为你守望",
-          "artist": "蔡疏影·",
-          "album": "情愿守着这份孤独",
-          "cover": "https://imge.kugou.com/stdmusic/400/20260429/20260429125705774248.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=32C2919189194EA228BA1F02E2A72B10&album_id=186265064",
-          "lrc": "",
-          "duration": 177
         }
       }
     ],
