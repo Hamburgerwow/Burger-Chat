@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795833107906,
+  "updatedAt": 1795833198212,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1228,
+      "plays": 1229,
       "sources": {
         "netease": 1154,
         "tencent": 5,
         "local": 3,
-        "kugou": 27
+        "kugou": 28
       },
       "days": [
         "2026-11-25",
@@ -11572,6 +11572,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:19E768B898576294A0BC4001C6B4C38B",
+        "at": 1795833193219,
+        "track": {
+          "id": "19E768B898576294A0BC4001C6B4C38B",
+          "source": "kugou",
+          "name": "Demons",
+          "artist": "Felix Snow / ROZES",
+          "album": "Demons",
+          "cover": "https://imge.kugou.com/stdmusic/400/20260114/20260114053912415848.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=19E768B898576294A0BC4001C6B4C38B&album_id=8573950",
+          "lrc": "",
+          "duration": 199
+        }
+      },
       {
         "key": "kugou:25F0DBBF16A423910EA1D1D6C8F1A3E6",
         "at": 1795833077000,
@@ -11998,21 +12013,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=32C2919189194EA228BA1F02E2A72B10&album_id=186265064",
           "lrc": "",
           "duration": 177
-        }
-      },
-      {
-        "key": "kugou:D6E45FF72D84903325BADCC20AD27189",
-        "at": 1795759716475,
-        "track": {
-          "id": "D6E45FF72D84903325BADCC20AD27189",
-          "source": "kugou",
-          "name": "只剩心伤",
-          "artist": "蔡疏影",
-          "album": "只能选择假装洒脱",
-          "cover": "https://imge.kugou.com/stdmusic/400/20260512/20260512160533960614.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=D6E45FF72D84903325BADCC20AD27189&album_id=190695363",
-          "lrc": "",
-          "duration": 166
         }
       }
     ],
