@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795843449117,
+  "updatedAt": 1795843481080,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,10 +11535,10 @@
       }
     ],
     "bm:stats": {
-      "plays": 1283,
+      "plays": 1287,
       "sources": {
-        "netease": 1157,
-        "tencent": 5,
+        "netease": 1160,
+        "tencent": 6,
         "local": 4,
         "kugou": 73
       },
@@ -11574,7 +11574,7 @@
     "bm:history": [
       {
         "key": "netease:1973665667",
-        "at": 1795843398226,
+        "at": 1795843453819,
         "track": {
           "id": "1973665667",
           "source": "netease",
@@ -11584,7 +11584,37 @@
           "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
-          "duration": 295.94
+          "duration": 295.940062
+        }
+      },
+      {
+        "key": "tencent:003Wir1t2wevOV",
+        "at": 1795843410154,
+        "track": {
+          "id": "003Wir1t2wevOV",
+          "source": "tencent",
+          "name": "放弃我是你的错",
+          "artist": "杨蔓",
+          "album": "听 好女人心",
+          "cover": "https://y.gtimg.cn/music/photo_new/T002R300x300M000000tUmjJ2gwH8t.jpg",
+          "url": "https://api.injahow.cn/meting/?server=tencent&type=url&id=003Wir1t2wevOV",
+          "lrc": "https://api.injahow.cn/meting/?server=tencent&type=lrc&id=003Wir1t2wevOV",
+          "duration": 276
+        }
+      },
+      {
+        "key": "netease:1842728629",
+        "at": 1795843403838,
+        "track": {
+          "id": "1842728629",
+          "source": "netease",
+          "name": "如果呢",
+          "artist": "郑润泽",
+          "album": "如果呢",
+          "cover": "https://p1.music.126.net/-xMsNLpquZTmMZlIztTgHg==/109951165953469081.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1842728629",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1842728629",
+          "duration": 257.532
         }
       },
       {
@@ -11973,36 +12003,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3427602198",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3427602198",
           "duration": 229
-        }
-      },
-      {
-        "key": "kugou:FCD10B6AA5B9AFAB1913B45C2495BA06",
-        "at": 1795760917749,
-        "track": {
-          "id": "FCD10B6AA5B9AFAB1913B45C2495BA06",
-          "source": "kugou",
-          "name": "晚风告白",
-          "artist": "星野",
-          "album": "晚风告白",
-          "cover": "https://imge.kugou.com/stdmusic/400/20221109/20221109200205763516.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=FCD10B6AA5B9AFAB1913B45C2495BA06&album_id=62388963",
-          "lrc": "",
-          "duration": 235
-        }
-      },
-      {
-        "key": "kugou:99B4B643E4E0E39D49A1B64FE10B7D22",
-        "at": 1795760857786,
-        "track": {
-          "id": "99B4B643E4E0E39D49A1B64FE10B7D22",
-          "source": "kugou",
-          "name": "เมื่อได้พบเธอ (泰版晚风告白)",
-          "artist": "Serious Bacon",
-          "album": "เมื่อได้พบเธอ（泰版晚风告白）",
-          "cover": "https://imge.kugou.com/stdmusic/400/20250427/20250427155231603540.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=99B4B643E4E0E39D49A1B64FE10B7D22&album_id=145760979",
-          "lrc": "",
-          "duration": 211
         }
       }
     ],
