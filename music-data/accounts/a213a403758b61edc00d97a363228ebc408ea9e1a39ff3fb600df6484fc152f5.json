@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795850241309,
+  "updatedAt": 1795850322679,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1302,
+      "plays": 1306,
       "sources": {
         "netease": 1162,
         "tencent": 6,
         "local": 4,
-        "kugou": 85
+        "kugou": 89
       },
       "days": [
         "2026-11-25",
@@ -11573,8 +11573,53 @@
     ],
     "bm:history": [
       {
+        "key": "kugou:BBF90DC707BF8A1F5FED6DF57C8D8FDB",
+        "at": 1795850315354,
+        "track": {
+          "id": "BBF90DC707BF8A1F5FED6DF57C8D8FDB",
+          "source": "kugou",
+          "name": "POSE",
+          "artist": "辻诗音",
+          "album": "OH! MY MISTAKES!",
+          "cover": "https://imge.kugou.com/stdmusic/400/20190418/20190418052519578805.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=BBF90DC707BF8A1F5FED6DF57C8D8FDB&album_id=24271192",
+          "lrc": "",
+          "duration": 220
+        }
+      },
+      {
+        "key": "kugou:33B18A14BC77CDFDAA0483E0E63E01A1",
+        "at": 1795850312421,
+        "track": {
+          "id": "33B18A14BC77CDFDAA0483E0E63E01A1",
+          "source": "kugou",
+          "name": "それは内緒にしておいて (Keep It a Secret)",
+          "artist": "鎖那",
+          "album": "それは内緒にしておいて",
+          "cover": "https://imge.kugou.com/stdmusic/400/20250307/20250307194202577653.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=33B18A14BC77CDFDAA0483E0E63E01A1&album_id=140168343",
+          "lrc": "",
+          "duration": 187
+        }
+      },
+      {
+        "key": "kugou:BD63F5D864CE50BCCD79BD6DD2103B3E",
+        "at": 1795850310255,
+        "track": {
+          "id": "BD63F5D864CE50BCCD79BD6DD2103B3E",
+          "source": "kugou",
+          "name": "Do It Right",
+          "artist": "Austin Mahone",
+          "album": "Do It Right",
+          "cover": "https://imge.kugou.com/stdmusic/400/20240119/20240119060103252791.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=BD63F5D864CE50BCCD79BD6DD2103B3E&album_id=18699958",
+          "lrc": "",
+          "duration": 225
+        }
+      },
+      {
         "key": "kugou:9859AD4620F09D35D1F1C1A2E4DD1CBD",
-        "at": 1795850228874,
+        "at": 1795850308324,
         "track": {
           "id": "9859AD4620F09D35D1F1C1A2E4DD1CBD",
           "source": "kugou",
@@ -11584,7 +11629,7 @@
           "cover": "https://imge.kugou.com/stdmusic/400/20260717/20260717005922328975.jpg",
           "url": "/burger-music/api/bm/kugou-stream?hash=9859AD4620F09D35D1F1C1A2E4DD1CBD&album_id=201471147",
           "lrc": "",
-          "duration": 270
+          "duration": 270.344829
         }
       },
       {
@@ -11962,49 +12007,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=25F0DBBF16A423910EA1D1D6C8F1A3E6&album_id=8117794",
           "lrc": "",
           "duration": 220
-        }
-      },
-      {
-        "key": "kugou:1CA8E8934C5404BC8639F488B365947F",
-        "at": 1795833048041,
-        "track": {
-          "id": "1CA8E8934C5404BC8639F488B365947F",
-          "source": "kugou",
-          "name": "空白",
-          "artist": "Pank / 罗凯元（SUPER KY）",
-          "album": "空白",
-          "cover": "https://imge.kugou.com/stdmusic/400/20251219/20251219110351733733.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=1CA8E8934C5404BC8639F488B365947F&album_id=157401094",
-          "lrc": "",
-          "duration": 171
-        }
-      },
-      {
-        "key": "netease:3465658178",
-        "at": 1795832960197,
-        "track": {
-          "id": "3465658178",
-          "source": "netease",
-          "name": "隐藏结局",
-          "artist": "南瓜",
-          "cover": "/api/bm/image?url=https%3A%2F%2Fp1.music.126.net%2FD1kE8hsGt4D8N4SmdlcKcQ%3D%3D%2F109951174346305566.jpg%3Fparam%3D240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3465658178",
-          "duration": 307.014895
-        }
-      },
-      {
-        "key": "netease:167655",
-        "at": 1795763037148,
-        "track": {
-          "id": "167655",
-          "source": "netease",
-          "name": "幻听",
-          "artist": "许嵩",
-          "album": "梦游计",
-          "cover": "https://p1.music.126.net/7X3irAHmXIkyZKu1OzDZdQ==/109951172321460834.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=167655",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=167655",
-          "duration": 273.266
         }
       }
     ],
