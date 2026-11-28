@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795840387794,
+  "updatedAt": 1795840413259,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,7 +11535,7 @@
       }
     ],
     "bm:stats": {
-      "plays": 1276,
+      "plays": 1275,
       "sources": {
         "netease": 1156,
         "tencent": 5,
@@ -11574,15 +11574,17 @@
     "bm:history": [
       {
         "key": "kugou:974BA658991CF32B4EF415A6CE1A25FF",
-        "at": 1795840305766,
+        "at": 1795839978820,
         "track": {
           "id": "974BA658991CF32B4EF415A6CE1A25FF",
           "source": "kugou",
           "name": "Outside",
           "artist": "MdL / Palm Trees / Abi F Jones",
-          "cover": "/api/bm/image?url=https%3A%2F%2Fimge.kugou.com%2Fstdmusic%2F400%2F20240424%2F20240424000904332869.jpg",
+          "album": "Outside",
+          "cover": "https://imge.kugou.com/stdmusic/400/20240424/20240424000904332869.jpg",
           "url": "/burger-music/api/bm/kugou-stream?hash=974BA658991CF32B4EF415A6CE1A25FF&album_id=8780123",
-          "duration": 177.474353
+          "lrc": "",
+          "duration": 178
         }
       },
       {
