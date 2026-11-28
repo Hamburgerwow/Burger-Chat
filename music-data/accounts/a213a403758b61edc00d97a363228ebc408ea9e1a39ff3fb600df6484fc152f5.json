@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795849595687,
+  "updatedAt": 1795849880870,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1294,
+      "plays": 1296,
       "sources": {
-        "netease": 1161,
+        "netease": 1162,
         "tencent": 6,
         "local": 4,
-        "kugou": 78
+        "kugou": 79
       },
       "days": [
         "2026-11-25",
@@ -11551,7 +11551,7 @@
       "searches": 22,
       "imports": 1,
       "quality": 31,
-      "lyrics": 67,
+      "lyrics": 69,
       "nights": 18,
       "mornings": 11
     },
@@ -11573,6 +11573,21 @@
     ],
     "bm:history": [
       {
+        "key": "kugou:781C7B03DAC61FDDE29F335B92344D1E",
+        "at": 1795849873730,
+        "track": {
+          "id": "781C7B03DAC61FDDE29F335B92344D1E",
+          "source": "kugou",
+          "name": "One Day",
+          "artist": "Diamond Pistols / Emily Vaughn",
+          "album": "One Day",
+          "cover": "https://imge.kugou.com/stdmusic/400/20190507/20190507002302482656.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=781C7B03DAC61FDDE29F335B92344D1E&album_id=20090314",
+          "lrc": "",
+          "duration": 164.627845
+        }
+      },
+      {
         "key": "netease:1973665667",
         "at": 1795849583745,
         "track": {
@@ -11585,21 +11600,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
           "duration": 295.94
-        }
-      },
-      {
-        "key": "kugou:781C7B03DAC61FDDE29F335B92344D1E",
-        "at": 1795849536930,
-        "track": {
-          "id": "781C7B03DAC61FDDE29F335B92344D1E",
-          "source": "kugou",
-          "name": "One Day",
-          "artist": "Diamond Pistols / Emily Vaughn",
-          "album": "One Day",
-          "cover": "https://imge.kugou.com/stdmusic/400/20190507/20190507002302482656.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=781C7B03DAC61FDDE29F335B92344D1E&album_id=20090314",
-          "lrc": "",
-          "duration": 165
         }
       },
       {
