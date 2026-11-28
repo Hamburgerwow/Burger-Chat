@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795843601607,
+  "updatedAt": 1795849440871,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,7 +11535,7 @@
       }
     ],
     "bm:stats": {
-      "plays": 1290,
+      "plays": 1291,
       "sources": {
         "netease": 1161,
         "tencent": 6,
@@ -11574,17 +11574,15 @@
     "bm:history": [
       {
         "key": "kugou:9859AD4620F09D35D1F1C1A2E4DD1CBD",
-        "at": 1795843577650,
+        "at": 1795849422894,
         "track": {
           "id": "9859AD4620F09D35D1F1C1A2E4DD1CBD",
           "source": "kugou",
           "name": "find my way",
           "artist": "fcj / Moon Jelly / shirovw",
-          "album": "find my way",
-          "cover": "https://imge.kugou.com/stdmusic/400/20260717/20260717005922328975.jpg",
+          "cover": "/api/bm/image?url=https%3A%2F%2Fimge.kugou.com%2Fstdmusic%2F400%2F20260717%2F20260717005922328975.jpg",
           "url": "/burger-music/api/bm/kugou-stream?hash=9859AD4620F09D35D1F1C1A2E4DD1CBD&album_id=201471147",
-          "lrc": "",
-          "duration": 270
+          "duration": 270.344829
         }
       },
       {
