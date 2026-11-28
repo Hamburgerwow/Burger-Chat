@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795856796326,
+  "updatedAt": 1795856852971,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,9 +11535,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1336,
+      "plays": 1339,
       "sources": {
-        "netease": 1169,
+        "netease": 1172,
         "tencent": 6,
         "local": 4,
         "kugou": 106
@@ -11573,8 +11573,23 @@
     ],
     "bm:history": [
       {
+        "key": "netease:3465201773",
+        "at": 1795856842023,
+        "track": {
+          "id": "3465201773",
+          "source": "netease",
+          "name": "心动一半",
+          "artist": "Gareth.T",
+          "album": "心动一半",
+          "cover": "https://p2.music.126.net/UlJ-JVVBZAgTICKFaQMnXw==/109951174340876814.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=3465201773",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=3465201773",
+          "duration": 233.374
+        }
+      },
+      {
         "key": "netease:2755710644",
-        "at": 1795856794646,
+        "at": 1795856796765,
         "track": {
           "id": "2755710644",
           "source": "netease",
@@ -11995,19 +12010,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=390E8508DF4BCE4CE6EB91C00B520E11&album_id=38477893",
           "lrc": "",
           "duration": 199
-        }
-      },
-      {
-        "key": "kugou:1E93D3D628B2AD72E31A794E68909708",
-        "at": 1795834789142,
-        "track": {
-          "id": "1E93D3D628B2AD72E31A794E68909708",
-          "source": "kugou",
-          "name": "MILLION DOLLAR BABY (VHS)",
-          "artist": "Tommy Richman",
-          "cover": "/api/bm/image?url=https%3A%2F%2Fimge.kugou.com%2Fstdmusic%2F400%2F20240504%2F20240504035801880684.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=1E93D3D628B2AD72E31A794E68909708&album_id=92377866",
-          "duration": 155.151927
         }
       }
     ],
