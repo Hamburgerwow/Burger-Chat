@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795849440871,
+  "updatedAt": 1795849546541,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1291,
+      "plays": 1293,
       "sources": {
         "netease": 1161,
         "tencent": 6,
         "local": 4,
-        "kugou": 76
+        "kugou": 77
       },
       "days": [
         "2026-11-25",
@@ -11551,7 +11551,7 @@
       "searches": 22,
       "imports": 1,
       "quality": 31,
-      "lyrics": 64,
+      "lyrics": 66,
       "nights": 18,
       "mornings": 11
     },
@@ -11573,8 +11573,23 @@
     ],
     "bm:history": [
       {
+        "key": "kugou:781C7B03DAC61FDDE29F335B92344D1E",
+        "at": 1795849536930,
+        "track": {
+          "id": "781C7B03DAC61FDDE29F335B92344D1E",
+          "source": "kugou",
+          "name": "One Day",
+          "artist": "Diamond Pistols / Emily Vaughn",
+          "album": "One Day",
+          "cover": "https://imge.kugou.com/stdmusic/400/20190507/20190507002302482656.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=781C7B03DAC61FDDE29F335B92344D1E&album_id=20090314",
+          "lrc": "",
+          "duration": 165
+        }
+      },
+      {
         "key": "kugou:9859AD4620F09D35D1F1C1A2E4DD1CBD",
-        "at": 1795849422894,
+        "at": 1795849495585,
         "track": {
           "id": "9859AD4620F09D35D1F1C1A2E4DD1CBD",
           "source": "kugou",
@@ -11988,21 +12003,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=167655",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=167655",
           "duration": 273.266
-        }
-      },
-      {
-        "key": "netease:316100",
-        "at": 1795763005666,
-        "track": {
-          "id": "316100",
-          "source": "netease",
-          "name": "雨爱",
-          "artist": "杨丞琳",
-          "album": "雨爱",
-          "cover": "https://p2.music.126.net/Qt6sfLxRCscFZVXhbQ4bfg==/109951172020385959.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=316100",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=316100",
-          "duration": 260.48
         }
       }
     ],
