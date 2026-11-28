@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795835120878,
+  "updatedAt": 1795839970462,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,9 +11535,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1272,
+      "plays": 1274,
       "sources": {
-        "netease": 1155,
+        "netease": 1156,
         "tencent": 5,
         "local": 4,
         "kugou": 67
@@ -11572,6 +11572,34 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:17E5E84C1A210528A998A4C1C5DAFBD3",
+        "at": 1795839958683,
+        "track": {
+          "id": "17E5E84C1A210528A998A4C1C5DAFBD3",
+          "source": "kugou",
+          "name": "Always Been You",
+          "artist": "StarlingEDM / 9ethes",
+          "album": "Always Been You",
+          "cover": "https://imge.kugou.com/stdmusic/400/20241002/20241002010106894480.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=17E5E84C1A210528A998A4C1C5DAFBD3&album_id=83601545",
+          "lrc": "",
+          "duration": 137
+        }
+      },
+      {
+        "key": "netease:2161222939",
+        "at": 1795839945424,
+        "track": {
+          "id": "2161222939",
+          "source": "netease",
+          "name": "沦陷",
+          "artist": "贾格JuggShots",
+          "cover": "/api/bm/image?url=https%3A%2F%2Fp1.music.126.net%2Fctib5R--oR68W2IrOk765w%3D%3D%2F109951169635716223.jpg%3Fparam%3D240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2161222939",
+          "duration": 183.770708
+        }
+      },
       {
         "key": "kugou:1586060E27AA797DBBE16F30E500C433",
         "at": 1795835105368,
@@ -11836,19 +11864,6 @@
         }
       },
       {
-        "key": "netease:2161222939",
-        "at": 1795787854517,
-        "track": {
-          "id": "2161222939",
-          "source": "netease",
-          "name": "沦陷",
-          "artist": "贾格JuggShots",
-          "cover": "/api/bm/image?url=https%3A%2F%2Fp1.music.126.net%2Fctib5R--oR68W2IrOk765w%3D%3D%2F109951169635716223.jpg%3Fparam%3D240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2161222939",
-          "duration": 183.770708
-        }
-      },
-      {
         "key": "netease:167655",
         "at": 1795763037148,
         "track": {
@@ -11994,21 +12009,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=B485731B58AA6ECD9D23715A9A587E00&album_id=35709002",
           "lrc": "",
           "duration": 179
-        }
-      },
-      {
-        "key": "kugou:7D2731B4BE3D79602E19DF76409099F6",
-        "at": 1795760588365,
-        "track": {
-          "id": "7D2731B4BE3D79602E19DF76409099F6",
-          "source": "kugou",
-          "name": "氹我",
-          "artist": "JW",
-          "album": "That`s Me",
-          "cover": "https://imge.kugou.com/stdmusic/400/20250125/20250125121724771447.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=7D2731B4BE3D79602E19DF76409099F6&album_id=963016",
-          "lrc": "",
-          "duration": 215
         }
       }
     ],
