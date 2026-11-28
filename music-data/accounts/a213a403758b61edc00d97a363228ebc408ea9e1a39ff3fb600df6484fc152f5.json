@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795861074139,
+  "updatedAt": 1795861093438,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,9 +11535,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1343,
+      "plays": 1344,
       "sources": {
-        "netease": 1173,
+        "netease": 1174,
         "tencent": 6,
         "local": 4,
         "kugou": 108
@@ -11572,6 +11572,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "netease:28718313",
+        "at": 1795861086372,
+        "track": {
+          "id": "28718313",
+          "source": "netease",
+          "name": "The Way I Still Love You",
+          "artist": "Reynard Silva",
+          "album": "Reynard Silva",
+          "cover": "https://p2.music.126.net/JyPsd_g00M-4mqXLLtHncw==/5984641790343690.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=28718313",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=28718313",
+          "duration": 228.08
+        }
+      },
       {
         "key": "netease:1973665667",
         "at": 1795861069983,
@@ -11993,21 +12008,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=63D626669932E4C02C9C858EAFA6F660&album_id=214204169",
           "lrc": "",
           "duration": 227.2
-        }
-      },
-      {
-        "key": "kugou:D67AA91AB9CA87594FA824B44997C717",
-        "at": 1795835065072,
-        "track": {
-          "id": "D67AA91AB9CA87594FA824B44997C717",
-          "source": "kugou",
-          "name": "Eh!",
-          "artist": "林景云NuNew (Chawarin Perdpiriyawong) / Tan Lipta",
-          "album": "Eh!",
-          "cover": "https://imge.kugou.com/stdmusic/400/20231213/20231213190509476582.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=D67AA91AB9CA87594FA824B44997C717&album_id=81274712",
-          "lrc": "",
-          "duration": 200.443562
         }
       }
     ],
