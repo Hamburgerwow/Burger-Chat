@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795843517492,
+  "updatedAt": 1795843571573,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,7 +11535,7 @@
       }
     ],
     "bm:stats": {
-      "plays": 1288,
+      "plays": 1289,
       "sources": {
         "netease": 1161,
         "tencent": 6,
@@ -11551,7 +11551,7 @@
       "searches": 22,
       "imports": 1,
       "quality": 31,
-      "lyrics": 61,
+      "lyrics": 63,
       "nights": 18,
       "mornings": 11
     },
@@ -11572,6 +11572,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:296E14D341DE24FA4DABAB292A89A299",
+        "at": 1795843563358,
+        "track": {
+          "id": "296E14D341DE24FA4DABAB292A89A299",
+          "source": "kugou",
+          "name": "水花朵朵",
+          "artist": "庄东茹",
+          "album": "水花朵朵",
+          "cover": "https://imge.kugou.com/stdmusic/400/20240906/20240906163027445981.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=296E14D341DE24FA4DABAB292A89A299&album_id=94326428",
+          "lrc": "",
+          "duration": 175
+        }
+      },
       {
         "key": "kugou:A4E85174E01BFD13784371A48A160902",
         "at": 1795843487535,
@@ -11990,19 +12005,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=1E74D5C0745E2865D3D2638B3F5B8A4D&album_id=216079216",
           "lrc": "",
           "duration": 212
-        }
-      },
-      {
-        "key": "kugou:3B2442F938DEB7466523D12D94F322CD",
-        "at": 1795762803583,
-        "track": {
-          "id": "3B2442F938DEB7466523D12D94F322CD",
-          "source": "kugou",
-          "name": "กอดอุ่น (温暖的拥抱)",
-          "artist": "Butterbear",
-          "cover": "/api/bm/image?url=https%3A%2F%2Fimge.kugou.com%2Fstdmusic%2F400%2F20250314%2F20250314181602265699.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=3B2442F938DEB7466523D12D94F322CD&album_id=140791357",
-          "duration": 190.2
         }
       }
     ],
