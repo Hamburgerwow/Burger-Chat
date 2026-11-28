@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795843119261,
+  "updatedAt": 1795843449117,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1280,
+      "plays": 1283,
       "sources": {
-        "netease": 1156,
+        "netease": 1157,
         "tencent": 5,
         "local": 4,
-        "kugou": 72
+        "kugou": 73
       },
       "days": [
         "2026-11-25",
@@ -11551,7 +11551,7 @@
       "searches": 22,
       "imports": 1,
       "quality": 31,
-      "lyrics": 56,
+      "lyrics": 60,
       "nights": 18,
       "mornings": 11
     },
@@ -11573,17 +11573,45 @@
     ],
     "bm:history": [
       {
+        "key": "netease:1973665667",
+        "at": 1795843398226,
+        "track": {
+          "id": "1973665667",
+          "source": "netease",
+          "name": "海屿你",
+          "artist": "马也_Crabbit",
+          "album": "海屿你",
+          "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
+          "duration": 295.94
+        }
+      },
+      {
+        "key": "netease:2758538358",
+        "at": 1795843396235,
+        "track": {
+          "id": "2758538358",
+          "source": "netease",
+          "name": "冷空气",
+          "artist": "Zzh / 赋生",
+          "album": "冷空气",
+          "cover": "https://p1.music.126.net/Ptk4g3BWtTU9lkB2rwXyBg==/109951172194860522.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2758538358",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2758538358",
+          "duration": 232.405
+        }
+      },
+      {
         "key": "kugou:2886DB04C5D3684F108F04F22A5C0D16",
-        "at": 1795843096574,
+        "at": 1795843330150,
         "track": {
           "id": "2886DB04C5D3684F108F04F22A5C0D16",
           "source": "kugou",
           "name": "Lunisolar",
           "artist": "SHAUN",
-          "album": "WE LOVE VOCAL EDM, Season 4",
-          "cover": "https://imge.kugou.com/stdmusic/400/20170621/20170621081010458930.jpg",
+          "cover": "/api/bm/image?url=https%3A%2F%2Fimge.kugou.com%2Fstdmusic%2F400%2F20170621%2F20170621081010458930.jpg",
           "url": "/burger-music/api/bm/kugou-stream?hash=2886DB04C5D3684F108F04F22A5C0D16&album_id=8581598",
-          "lrc": "",
           "duration": 222.571428
         }
       },
@@ -11740,21 +11768,6 @@
           "cover": "/api/bm/image?url=https%3A%2F%2Fimge.kugou.com%2Fstdmusic%2F400%2F20250101%2F20250101193012843584.jpg",
           "url": "/burger-music/api/bm/kugou-stream?hash=B4E07B87001AB6130040B8A1440B19FE&album_id=90054464",
           "duration": 207.75
-        }
-      },
-      {
-        "key": "netease:1973665667",
-        "at": 1795834119882,
-        "track": {
-          "id": "1973665667",
-          "source": "netease",
-          "name": "海屿你",
-          "artist": "马也_Crabbit",
-          "album": "海屿你",
-          "cover": "https://p2.music.126.net/RfguLkQJ8aMVkiIaxdy70Q==/109951170483263672.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1973665667",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1973665667",
-          "duration": 295.94
         }
       },
       {
@@ -11990,21 +12003,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=99B4B643E4E0E39D49A1B64FE10B7D22&album_id=145760979",
           "lrc": "",
           "duration": 211
-        }
-      },
-      {
-        "key": "kugou:BA6D5C534A9FE2AF6DCB91F4CE834C94",
-        "at": 1795760818689,
-        "track": {
-          "id": "BA6D5C534A9FE2AF6DCB91F4CE834C94",
-          "source": "kugou",
-          "name": "Love Me Like You Do (降调版)",
-          "artist": "Diluv",
-          "album": "Demons",
-          "cover": "https://imge.kugou.com/stdmusic/400/20230915/20230915151444566489.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=BA6D5C534A9FE2AF6DCB91F4CE834C94&album_id=78336755",
-          "lrc": "",
-          "duration": 263
         }
       }
     ],
