@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795850337406,
+  "updatedAt": 1795850398900,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1308,
+      "plays": 1309,
       "sources": {
         "netease": 1162,
         "tencent": 6,
         "local": 4,
-        "kugou": 91
+        "kugou": 92
       },
       "days": [
         "2026-11-25",
@@ -11548,7 +11548,7 @@
         "2026-11-27",
         "2026-11-28"
       ],
-      "searches": 22,
+      "searches": 23,
       "imports": 1,
       "quality": 31,
       "lyrics": 69,
@@ -11572,6 +11572,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "netease:1968907338",
+        "at": 1795850384802,
+        "track": {
+          "id": "1968907338",
+          "source": "netease",
+          "name": "Gieo Quẻ",
+          "artist": "Hoàng Thùy Linh / Đen",
+          "album": "LINK",
+          "cover": "https://p2.music.126.net/t9SPgdZacnRwKPwTD1YONg==/109951167738633245.jpg?param=240y240",
+          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1968907338",
+          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1968907338",
+          "duration": 199
+        }
+      },
       {
         "key": "kugou:9DA445E35FBDA7D813B40A211DB05E4B",
         "at": 1795850331882,
@@ -11992,21 +12007,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=464C607C5BAEF1831267DB77A06EFEAA&album_id=1595020",
           "lrc": "",
           "duration": 275
-        }
-      },
-      {
-        "key": "kugou:19E768B898576294A0BC4001C6B4C38B",
-        "at": 1795833193219,
-        "track": {
-          "id": "19E768B898576294A0BC4001C6B4C38B",
-          "source": "kugou",
-          "name": "Demons",
-          "artist": "Felix Snow / ROZES",
-          "album": "Demons",
-          "cover": "https://imge.kugou.com/stdmusic/400/20260114/20260114053912415848.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=19E768B898576294A0BC4001C6B4C38B&album_id=8573950",
-          "lrc": "",
-          "duration": 199
         }
       }
     ],
