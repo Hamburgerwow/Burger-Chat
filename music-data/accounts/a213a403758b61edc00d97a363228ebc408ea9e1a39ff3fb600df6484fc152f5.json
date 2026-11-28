@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795833960152,
+  "updatedAt": 1795834132328,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,7 +11535,7 @@
       }
     ],
     "bm:stats": {
-      "plays": 1242,
+      "plays": 1243,
       "sources": {
         "netease": 1154,
         "tencent": 5,
@@ -11574,17 +11574,15 @@
     "bm:history": [
       {
         "key": "kugou:1E93D3D628B2AD72E31A794E68909708",
-        "at": 1795833920602,
+        "at": 1795834109351,
         "track": {
           "id": "1E93D3D628B2AD72E31A794E68909708",
           "source": "kugou",
           "name": "MILLION DOLLAR BABY (VHS)",
           "artist": "Tommy Richman",
-          "album": "MILLION DOLLAR BABY",
-          "cover": "https://imge.kugou.com/stdmusic/400/20240504/20240504035801880684.jpg",
+          "cover": "/api/bm/image?url=https%3A%2F%2Fimge.kugou.com%2Fstdmusic%2F400%2F20240504%2F20240504035801880684.jpg",
           "url": "/burger-music/api/bm/kugou-stream?hash=1E93D3D628B2AD72E31A794E68909708&album_id=92377866",
-          "lrc": "",
-          "duration": 155
+          "duration": 155.151927
         }
       },
       {
