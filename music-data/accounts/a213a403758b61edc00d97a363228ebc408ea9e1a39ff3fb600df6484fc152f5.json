@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795850398900,
+  "updatedAt": 1795851141235,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,9 +11535,9 @@
       }
     ],
     "bm:stats": {
-      "plays": 1309,
+      "plays": 1311,
       "sources": {
-        "netease": 1162,
+        "netease": 1163,
         "tencent": 6,
         "local": 4,
         "kugou": 92
@@ -11573,18 +11573,31 @@
     ],
     "bm:history": [
       {
+        "key": "kugou:8E21C8F3484FB56833F563754A05CB25",
+        "at": 1795851133039,
+        "track": {
+          "id": "8E21C8F3484FB56833F563754A05CB25",
+          "source": "kugou",
+          "name": "有我呢",
+          "artist": "郭一凡",
+          "album": "重返地球",
+          "cover": "https://imge.kugou.com/stdmusic/400/20230803/20230803171602735758.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=8E21C8F3484FB56833F563754A05CB25&album_id=32452531",
+          "lrc": "",
+          "duration": 275
+        }
+      },
+      {
         "key": "netease:1968907338",
-        "at": 1795850384802,
+        "at": 1795851080425,
         "track": {
           "id": "1968907338",
           "source": "netease",
           "name": "Gieo Quẻ",
           "artist": "Hoàng Thùy Linh / Đen",
-          "album": "LINK",
           "cover": "https://p2.music.126.net/t9SPgdZacnRwKPwTD1YONg==/109951167738633245.jpg?param=240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1968907338",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1968907338",
-          "duration": 199
+          "duration": 199.018231
         }
       },
       {
@@ -11877,21 +11890,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=D67AA91AB9CA87594FA824B44997C717&album_id=81274712",
           "lrc": "",
           "duration": 200.443562
-        }
-      },
-      {
-        "key": "kugou:8E21C8F3484FB56833F563754A05CB25",
-        "at": 1795834845438,
-        "track": {
-          "id": "8E21C8F3484FB56833F563754A05CB25",
-          "source": "kugou",
-          "name": "有我呢",
-          "artist": "郭一凡",
-          "album": "重返地球",
-          "cover": "https://imge.kugou.com/stdmusic/400/20230803/20230803171602735758.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=8E21C8F3484FB56833F563754A05CB25&album_id=32452531",
-          "lrc": "",
-          "duration": 275
         }
       },
       {
