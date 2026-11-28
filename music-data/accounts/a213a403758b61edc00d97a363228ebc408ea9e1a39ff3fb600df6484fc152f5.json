@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795866037327,
+  "updatedAt": 1795866910114,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,13 @@
       }
     ],
     "bm:stats": {
-      "plays": 1353,
+      "plays": 1354,
       "sources": {
         "netease": 1177,
         "tencent": 6,
         "local": 5,
-        "kugou": 110
+        "kugou": 110,
+        "kuwo": 1
       },
       "days": [
         "2026-11-25",
@@ -11572,6 +11573,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:1E74D5C0745E2865D3D2638B3F5B8A4D",
+        "at": 1795866905840,
+        "track": {
+          "id": "1E74D5C0745E2865D3D2638B3F5B8A4D",
+          "source": "kugou",
+          "name": "爱情不是身份",
+          "artist": "杨友友",
+          "album": "",
+          "cover": "https://imge.kugou.com/stdmusic/400/20261123/20261123163248900275.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=1E74D5C0745E2865D3D2638B3F5B8A4D&album_id=216079216",
+          "lrc": "",
+          "duration": 212
+        }
+      },
       {
         "key": "kuwo:27588231",
         "at": 1795866029590,
@@ -11996,21 +12012,6 @@
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1842728629",
           "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1842728629",
           "duration": 257.532
-        }
-      },
-      {
-        "key": "netease:2758538358",
-        "at": 1795843396235,
-        "track": {
-          "id": "2758538358",
-          "source": "netease",
-          "name": "冷空气",
-          "artist": "Zzh / 赋生",
-          "album": "冷空气",
-          "cover": "https://p1.music.126.net/Ptk4g3BWtTU9lkB2rwXyBg==/109951172194860522.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2758538358",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=2758538358",
-          "duration": 232.405
         }
       }
     ],
