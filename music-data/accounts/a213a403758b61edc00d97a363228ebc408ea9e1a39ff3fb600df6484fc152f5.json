@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795834636381,
+  "updatedAt": 1795834647481,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1254,
+      "plays": 1256,
       "sources": {
         "netease": 1155,
         "tencent": 5,
         "local": 4,
-        "kugou": 51
+        "kugou": 52
       },
       "days": [
         "2026-11-25",
@@ -11574,7 +11574,7 @@
     "bm:history": [
       {
         "key": "kugou:63D626669932E4C02C9C858EAFA6F660",
-        "at": 1795834590273,
+        "at": 1795834625878,
         "track": {
           "id": "63D626669932E4C02C9C858EAFA6F660",
           "source": "kugou",
