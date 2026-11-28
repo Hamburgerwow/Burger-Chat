@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795862064580,
+  "updatedAt": 1795862448277,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1346,
+      "plays": 1348,
       "sources": {
         "netease": 1176,
         "tencent": 6,
         "local": 4,
-        "kugou": 108
+        "kugou": 109
       },
       "days": [
         "2026-11-25",
@@ -11573,8 +11573,23 @@
     ],
     "bm:history": [
       {
+        "key": "kugou:83B8717BC9184337CA8B2D8C60A9B15A",
+        "at": 1795862439157,
+        "track": {
+          "id": "83B8717BC9184337CA8B2D8C60A9B15A",
+          "source": "kugou",
+          "name": "皇家萌卫",
+          "artist": "灵空GTech",
+          "album": "皇家萌卫",
+          "cover": "https://imge.kugou.com/stdmusic/400/20250217/20250217144509347950.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=83B8717BC9184337CA8B2D8C60A9B15A&album_id=18694318",
+          "lrc": "",
+          "duration": 209
+        }
+      },
+      {
         "key": "kugou:EBACB0EA8CB81F61A8A66EC239F1E481",
-        "at": 1795862062711,
+        "at": 1795862408905,
         "track": {
           "id": "EBACB0EA8CB81F61A8A66EC239F1E481",
           "source": "kugou",
@@ -11993,21 +12008,6 @@
           "cover": "/api/bm/image?url=https%3A%2F%2Fp1.music.126.net%2Fctib5R--oR68W2IrOk765w%3D%3D%2F109951169635716223.jpg%3Fparam%3D240y240",
           "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=2161222939",
           "duration": 183.770708
-        }
-      },
-      {
-        "key": "kugou:1586060E27AA797DBBE16F30E500C433",
-        "at": 1795835105368,
-        "track": {
-          "id": "1586060E27AA797DBBE16F30E500C433",
-          "source": "kugou",
-          "name": "Axis Of Your Love",
-          "artist": "Rival / Cadmium / Veronica Bravo / Jon Becker",
-          "album": "Axis Of Your Love",
-          "cover": "https://imge.kugou.com/stdmusic/400/20190626/20190626210118359072.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=1586060E27AA797DBBE16F30E500C433&album_id=23598370",
-          "lrc": "",
-          "duration": 221
         }
       }
     ],
