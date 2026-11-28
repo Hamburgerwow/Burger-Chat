@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795850322679,
+  "updatedAt": 1795850337406,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1306,
+      "plays": 1308,
       "sources": {
         "netease": 1162,
         "tencent": 6,
         "local": 4,
-        "kugou": 89
+        "kugou": 91
       },
       "days": [
         "2026-11-25",
@@ -11572,6 +11572,36 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:9DA445E35FBDA7D813B40A211DB05E4B",
+        "at": 1795850331882,
+        "track": {
+          "id": "9DA445E35FBDA7D813B40A211DB05E4B",
+          "source": "kugou",
+          "name": "Gieo Quẻ (卜卦)",
+          "artist": "Hoàng Thùy Linh / Đen",
+          "album": "Gieo Quẻ",
+          "cover": "https://imge.kugou.com/stdmusic/400/20250101/20250101174347227651.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=9DA445E35FBDA7D813B40A211DB05E4B&album_id=51352350",
+          "lrc": "",
+          "duration": 199
+        }
+      },
+      {
+        "key": "kugou:B356C0CDAAE90ABEDFCD0152F5C26FA1",
+        "at": 1795850317516,
+        "track": {
+          "id": "B356C0CDAAE90ABEDFCD0152F5C26FA1",
+          "source": "kugou",
+          "name": "Crazy Enough",
+          "artist": "Julie Bergan",
+          "album": "Crazy Enough",
+          "cover": "https://imge.kugou.com/stdmusic/400/20190813/20190813201308989365.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=B356C0CDAAE90ABEDFCD0152F5C26FA1&album_id=26799157",
+          "lrc": "",
+          "duration": 192
+        }
+      },
       {
         "key": "kugou:BBF90DC707BF8A1F5FED6DF57C8D8FDB",
         "at": 1795850315354,
@@ -11936,21 +11966,6 @@
         }
       },
       {
-        "key": "kugou:9DA445E35FBDA7D813B40A211DB05E4B",
-        "at": 1795833812833,
-        "track": {
-          "id": "9DA445E35FBDA7D813B40A211DB05E4B",
-          "source": "kugou",
-          "name": "Gieo Quẻ (卜卦)",
-          "artist": "Hoàng Thùy Linh / Đen",
-          "album": "Gieo Quẻ",
-          "cover": "https://imge.kugou.com/stdmusic/400/20250101/20250101174347227651.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=9DA445E35FBDA7D813B40A211DB05E4B&album_id=51352350",
-          "lrc": "",
-          "duration": 199
-        }
-      },
-      {
         "key": "local:firefly-cmj",
         "at": 1795833544570,
         "track": {
@@ -11992,21 +12007,6 @@
           "url": "/burger-music/api/bm/kugou-stream?hash=19E768B898576294A0BC4001C6B4C38B&album_id=8573950",
           "lrc": "",
           "duration": 199
-        }
-      },
-      {
-        "key": "kugou:25F0DBBF16A423910EA1D1D6C8F1A3E6",
-        "at": 1795833077000,
-        "track": {
-          "id": "25F0DBBF16A423910EA1D1D6C8F1A3E6",
-          "source": "kugou",
-          "name": "Leavin'",
-          "artist": "KLYMVX / Roxanne Emery",
-          "album": "Leavin'",
-          "cover": "https://imge.kugou.com/stdmusic/400/20250101/20250101124653921385.jpg",
-          "url": "/burger-music/api/bm/kugou-stream?hash=25F0DBBF16A423910EA1D1D6C8F1A3E6&album_id=8117794",
-          "lrc": "",
-          "duration": 220
         }
       }
     ],
