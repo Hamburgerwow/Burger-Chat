@@ -3,7 +3,7 @@
   "name": "Hamburger",
   "avatar": "",
   "createdAt": "2026-11-26T00:17:15.777Z",
-  "updatedAt": 1795834243237,
+  "updatedAt": 1795834250755,
   "firebaseUid": "PwfQKTrWr1WIovXvWVRvTbIAxH73",
   "data": {
     "bm:playlists": [
@@ -11535,12 +11535,12 @@
       }
     ],
     "bm:stats": {
-      "plays": 1245,
+      "plays": 1246,
       "sources": {
         "netease": 1155,
         "tencent": 5,
         "local": 4,
-        "kugou": 42
+        "kugou": 43
       },
       "days": [
         "2026-11-25",
@@ -11572,6 +11572,21 @@
       "netease:28403111"
     ],
     "bm:history": [
+      {
+        "key": "kugou:B4E07B87001AB6130040B8A1440B19FE",
+        "at": 1795834239582,
+        "track": {
+          "id": "B4E07B87001AB6130040B8A1440B19FE",
+          "source": "kugou",
+          "name": "Lần Hẹn Hò Đầu Tiên (越南甜妹舞)",
+          "artist": "Erceso",
+          "album": "Lần Hẹn Hò Đầu Tiên(越南甜妹舞)",
+          "cover": "https://imge.kugou.com/stdmusic/400/20250101/20250101193012843584.jpg",
+          "url": "/burger-music/api/bm/kugou-stream?hash=B4E07B87001AB6130040B8A1440B19FE&album_id=90054464",
+          "lrc": "",
+          "duration": 208
+        }
+      },
       {
         "key": "kugou:63D626669932E4C02C9C858EAFA6F660",
         "at": 1795834231587,
@@ -11996,21 +12011,6 @@
           "url": "https://api.injahow.cn/meting/?server=tencent&type=url&id=004ONTLy3opabZ",
           "lrc": "https://api.injahow.cn/meting/?server=tencent&type=lrc&id=004ONTLy3opabZ",
           "duration": 207
-        }
-      },
-      {
-        "key": "netease:1379918404",
-        "at": 1795760226112,
-        "track": {
-          "id": "1379918404",
-          "source": "netease",
-          "name": "time machine (feat. aren park)",
-          "artist": "mj apanay / aren park",
-          "album": "seen 11:23 pm",
-          "cover": "https://p2.music.126.net/b15pmn1qj28nyam8DdcCHA==/109951167480966719.jpg?param=240y240",
-          "url": "https://api.injahow.cn/meting/?server=netease&type=url&id=1379918404",
-          "lrc": "https://api.injahow.cn/meting/?server=netease&type=lrc&id=1379918404",
-          "duration": 225.933
         }
       }
     ],
